@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
-import { Div, Container, Row, Anchor } from "atomize"
+import { Div, Container, Row, Anchor, Text } from "atomize"
 import Logo from "../images/logo.svg"
 
 function Header({ siteTitle }) {
@@ -42,7 +42,9 @@ function Header({ siteTitle }) {
           </Div>
 
           <Anchor p={{ l: "1rem" }} href="https://www.google.com" d="block">
-            Link 1
+            <Text textSize="anchor" fontFamily="secondary">
+              Hey
+            </Text>
           </Anchor>
           <Anchor p={{ l: "1rem" }} href="https://www.google.com" d="block">
             Link 2

@@ -4,20 +4,27 @@ const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: "#0095ff",
-    black: "#333",
+    primary: "#00A8E8",
+    secondary: "#F9D788",
+    black: "#0A0A0A",
   },
   textSize: {
     ...DefaultTheme.textSize,
     size: {
       ...DefaultTheme.textSize.size,
-      paragraph: "15px",
+      display3: "96px",
+      display2: "60px",
+      display1: "48px",
+      header: "34px",
+      paragraph: "16px",
+      caption: "12px",
+      anchor: "20px",
     },
   },
   fontFamily: {
     ...DefaultTheme.fontFamily,
-    primary: `'Poppins', sans-serif`,
-    secondary: `'IBM Plex Mono', monospace`,
+    primary: `'Lato'`,
+    secondary: `'Montserrat'`,
   },
 }
 
