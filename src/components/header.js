@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
 import { Div, Container, Row, Anchor, Text } from "atomize"
 import Logo from "../images/logo.svg"
+import BigLink from "./link.js"
 
 function Header({ siteTitle }) {
   const [isTop, setIsTop] = useState(true)
@@ -40,18 +41,21 @@ function Header({ siteTitle }) {
           <Div p={{ r: "3rem" }}>
             <Logo style={{ fill: "white" }} />
           </Div>
-
-          <Anchor p={{ l: "1rem" }} href="https://www.google.com" d="block">
-            <Text textSize="anchor" fontFamily="secondary">
-              Hey
-            </Text>
-          </Anchor>
-          <Anchor p={{ l: "1rem" }} href="https://www.google.com" d="block">
-            Link 2
-          </Anchor>
-          <Anchor p={{ l: "1rem" }} href="https://www.google.com" d="block">
-            Link 3
-          </Anchor>
+          <BigLink
+            name="Location"
+            textColor={"white"}
+            hoverTextColor={"primary"}
+          ></BigLink>
+          <BigLink
+            name="Location"
+            textColor={"white"}
+            hoverTextColor={"primary"}
+          ></BigLink>
+          <BigLink
+            name="Location"
+            textColor={"white"}
+            hoverTextColor={"primary"}
+          ></BigLink>
         </Row>
       </Div>
     )
@@ -81,15 +85,21 @@ function Header({ siteTitle }) {
             <Logo />
           </Div>
 
-          <Anchor p={{ l: "1rem" }} href="https://www.google.com" d="block">
-            Link 1
-          </Anchor>
-          <Anchor p={{ l: "1rem" }} href="https://www.google.com" d="block">
-            Link 2
-          </Anchor>
-          <Anchor p={{ l: "1rem" }} href="https://www.google.com" d="block">
-            Link 3
-          </Anchor>
+          <BigLink
+            name="Location"
+            textColor={"black"}
+            hoverTextColor={"primary"}
+          ></BigLink>
+          <BigLink
+            name="Location"
+            textColor={"black"}
+            hoverTextColor={"primary"}
+          ></BigLink>
+          <BigLink
+            name="Location"
+            textColor={"black"}
+            hoverTextColor={"primary"}
+          ></BigLink>
         </Row>
       </Div>
     )

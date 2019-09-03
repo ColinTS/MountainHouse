@@ -4,9 +4,10 @@ const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: "#00A8E8",
+    primary: "#82A9FF",
     secondary: "#F9D788",
     black: "#0A0A0A",
+    white: "#FFFFFF",
   },
   textSize: {
     ...DefaultTheme.textSize,
@@ -25,6 +26,9 @@ const theme = {
     ...DefaultTheme.fontFamily,
     primary: `'Lato'`,
     secondary: `'Montserrat'`,
+  },
+  transition: {
+    custom: "all 0.8s ease",
   },
 }
 
