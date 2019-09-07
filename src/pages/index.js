@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Div, Container, Row, Anchor, Button } from "atomize"
+import { Div, Container, Row, Anchor, Button, Text } from "atomize"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -16,6 +16,7 @@ const IndexPage = () => (
         height: "100vh",
         width: "100%",
         overflow: "hidden",
+        position: "relative",
       }}
     >
       <video
@@ -35,6 +36,16 @@ const IndexPage = () => (
         <source src={video} type="video/mp4" />
         <source src={video} type="video/ogg" />
       </video>
+      <Div
+        style={{
+          position: "absolute",
+          margin: "0 auto",
+        }}
+      >
+        <Text textSize="display1" fontFamily="secondary">
+          Welcome to mountainhouse
+        </Text>
+      </Div>
     </Div>
     <Layout>
       <SEO title="Home" />

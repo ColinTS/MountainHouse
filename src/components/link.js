@@ -10,7 +10,7 @@ export default function BigLink(props) {
 
   return (
     <Link to="/page-2/">
-      <Anchor p={{ l: "1rem" }} d="block">
+      <Anchor p={{ l: "3rem" }} d="block">
         <Text
           style={{
             "-webkit-transition": "color .3s ease, opacity .3s ease",

@@ -19,13 +19,13 @@ const theme = {
       header: "34px",
       paragraph: "16px",
       caption: "12px",
-      anchor: "20px",
+      anchor: "22px",
     },
   },
   fontFamily: {
     ...DefaultTheme.fontFamily,
     primary: `'Lato'`,
-    secondary: `'Montserrat'`,
+    secondary: `'Rubik'`,
   },
   transition: {
     custom: "all 0.8s ease",

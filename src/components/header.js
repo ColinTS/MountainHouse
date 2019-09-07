@@ -32,30 +32,38 @@ function Header({ siteTitle }) {
         <Row
           d="flex"
           align="center"
+          justify="space-between"
           style={{
             margin: `0 auto`,
             maxWidth: 1760,
             padding: `1.45rem 1.0875rem`,
           }}
         >
-          <Div p={{ r: "3rem" }}>
+          <Div p={{ r: "3rem" }} d="flex" direction="row" align="center">
             <Logo style={{ fill: "white" }} />
+            <BigLink
+              name="Location"
+              textColor={"white"}
+              hoverTextColor={"primary"}
+            ></BigLink>
+            <BigLink
+              name="Activities"
+              textColor={"white"}
+              hoverTextColor={"primary"}
+            ></BigLink>
+            <BigLink
+              name="About us"
+              textColor={"white"}
+              hoverTextColor={"primary"}
+            ></BigLink>
           </Div>
-          <BigLink
-            name="Location"
-            textColor={"white"}
-            hoverTextColor={"primary"}
-          ></BigLink>
-          <BigLink
-            name="Location"
-            textColor={"white"}
-            hoverTextColor={"primary"}
-          ></BigLink>
-          <BigLink
-            name="Location"
-            textColor={"white"}
-            hoverTextColor={"primary"}
-          ></BigLink>
+          <Div>
+            <BigLink
+              name="Bookings"
+              textColor={"white"}
+              hoverTextColor={"primary"}
+            ></BigLink>
+          </Div>
         </Row>
       </Div>
     )
@@ -75,31 +83,38 @@ function Header({ siteTitle }) {
         <Row
           d="flex"
           align="center"
+          justify="space-between"
           style={{
             margin: `0 auto`,
             maxWidth: 1760,
             padding: `1.45rem 1.0875rem`,
           }}
         >
-          <Div p={{ r: "3rem" }}>
+          <Div p={{ r: "3rem" }} d="flex" direction="row" align="center">
             <Logo />
+            <BigLink
+              name="Location"
+              textColor={"black"}
+              hoverTextColor={"primary"}
+            ></BigLink>
+            <BigLink
+              name="Activities"
+              textColor={"black"}
+              hoverTextColor={"primary"}
+            ></BigLink>
+            <BigLink
+              name="About us"
+              textColor={"black"}
+              hoverTextColor={"primary"}
+            ></BigLink>
           </Div>
-
-          <BigLink
-            name="Location"
-            textColor={"black"}
-            hoverTextColor={"primary"}
-          ></BigLink>
-          <BigLink
-            name="Location"
-            textColor={"black"}
-            hoverTextColor={"primary"}
-          ></BigLink>
-          <BigLink
-            name="Location"
-            textColor={"black"}
-            hoverTextColor={"primary"}
-          ></BigLink>
+          <Div>
+            <BigLink
+              name="Bookings"
+              textColor={"black"}
+              hoverTextColor={"primary"}
+            ></BigLink>
+          </Div>
         </Row>
       </Div>
     )
