@@ -39,12 +39,32 @@ const IndexPage = () => (
       <Div
         style={{
           position: "absolute",
-          margin: "0 auto",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          textAlign: "center",
         }}
       >
-        <Text textSize="display1" fontFamily="secondary">
-          Welcome to mountainhouse
+        <Text
+          textSize="display1"
+          fontFamily="secondary"
+          textColor="white"
+          textWeight="400"
+        >
+          Welcome to MountainHouse
         </Text>
+        <Div p={{ t: "1rem" }}>
+          <Text
+            textSize="subHeader"
+            fontFamily="secondary"
+            textColor="white"
+            textWeight="200"
+            style={{ lineHeight: 1.2 }}
+          >
+            A place for co-working, surfing, yoga, and relaxing - located at the
+            foot of the atlas mountains, near Taghazout, Morocco
+          </Text>
+        </Div>
       </Div>
     </Div>
     <Layout>

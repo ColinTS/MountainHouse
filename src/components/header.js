@@ -42,7 +42,7 @@ function Header({ siteTitle }) {
           <Div p={{ r: "3rem" }} d="flex" direction="row" align="center">
             <Logo style={{ fill: "white" }} />
             <BigLink
-              name="Location"
+              name="About"
               textColor={"white"}
               hoverTextColor={"primary"}
             ></BigLink>
@@ -52,7 +52,12 @@ function Header({ siteTitle }) {
               hoverTextColor={"primary"}
             ></BigLink>
             <BigLink
-              name="About us"
+              name="Location"
+              textColor={"white"}
+              hoverTextColor={"primary"}
+            ></BigLink>
+            <BigLink
+              name="Contact us"
               textColor={"white"}
               hoverTextColor={"primary"}
             ></BigLink>
@@ -93,7 +98,7 @@ function Header({ siteTitle }) {
           <Div p={{ r: "3rem" }} d="flex" direction="row" align="center">
             <Logo />
             <BigLink
-              name="Location"
+              name="About"
               textColor={"black"}
               hoverTextColor={"primary"}
             ></BigLink>
@@ -103,7 +108,12 @@ function Header({ siteTitle }) {
               hoverTextColor={"primary"}
             ></BigLink>
             <BigLink
-              name="About us"
+              name="Location"
+              textColor={"black"}
+              hoverTextColor={"primary"}
+            ></BigLink>
+            <BigLink
+              name="Contact us"
               textColor={"black"}
               hoverTextColor={"primary"}
             ></BigLink>

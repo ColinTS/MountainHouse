@@ -5,7 +5,7 @@ const theme = {
   colors: {
     ...DefaultTheme.colors,
     primary: "#82A9FF",
-    secondary: "#F9D788",
+    secondary: "#FFCF8A",
     black: "#0A0A0A",
     white: "#FFFFFF",
   },
@@ -17,6 +17,7 @@ const theme = {
       display2: "60px",
       display1: "48px",
       header: "34px",
+      subHeader: "24px",
       paragraph: "16px",
       caption: "12px",
       anchor: "22px",

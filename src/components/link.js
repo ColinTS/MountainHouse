@@ -17,6 +17,7 @@ export default function BigLink(props) {
           }}
           textSize="anchor"
           fontFamily="secondary"
+          textWeight="400"
           textColor={textColor}
           hoverTextColor={hoverTextColor}
         >
