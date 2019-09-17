@@ -17,7 +17,7 @@ const theme = {
       display2: "60px",
       display1: "48px",
       header: "34px",
-      subHeader: "24px",
+      subHeader: "28px",
       paragraph: "16px",
       caption: "12px",
       anchor: "22px",

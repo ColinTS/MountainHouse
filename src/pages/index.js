@@ -5,6 +5,7 @@ import { Div, Container, Row, Anchor, Button, Text } from "atomize"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import Dunes from "../images/dunes.svg"
 
 import video from "../images/Tag.mp4"
 
@@ -39,6 +40,18 @@ const IndexPage = () => (
       <Div
         style={{
           position: "absolute",
+          bottom: "-1%",
+          width: "100vw",
+          margin: 0,
+          padding: 0,
+        }}
+      >
+        <Dunes style={{ width: "100%", height: "auto" }} />
+      </Div>
+
+      <Div
+        style={{
+          position: "absolute",
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
@@ -46,10 +59,13 @@ const IndexPage = () => (
         }}
       >
         <Text
-          textSize="display1"
+          textSize="display2"
           fontFamily="secondary"
           textColor="white"
           textWeight="400"
+          style={{
+            textShadow: "1px 1px 1px #353535",
+          }}
         >
           Welcome to MountainHouse
         </Text>
@@ -59,7 +75,7 @@ const IndexPage = () => (
             fontFamily="secondary"
             textColor="white"
             textWeight="200"
-            style={{ lineHeight: 1.2 }}
+            style={{ lineHeight: 1.2, textShadow: "1px 1px 1px #353535" }}
           >
             A place for co-working, surfing, yoga, and relaxing - located at the
             foot of the atlas mountains, near Taghazout, Morocco
@@ -69,23 +85,6 @@ const IndexPage = () => (
     </Div>
     <Layout>
       <SEO title="Home" />
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <Button bg="warning700">It worked</Button>
-      <Div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </Div>
-      <Link to="/page-2/">Go to page 2</Link>
-      <SEO title="Home" />
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <Button bg="warning700">It worked</Button>
-      <Div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </Div>
-      <Link to="/page-2/">Go to page 2</Link>
     </Layout>
   </Div>
 )
