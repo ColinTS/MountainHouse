@@ -14,6 +14,7 @@ export default function BigLink(props) {
         <Text
           style={{
             "-webkit-transition": "color .3s ease, opacity .3s ease",
+            letterSpacing: "0.02rem",
           }}
           textSize="anchor"
           fontFamily="secondary"

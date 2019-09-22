@@ -59,23 +59,24 @@ const IndexPage = () => (
         }}
       >
         <Text
-          textSize="display2"
+          textSize="display3"
           fontFamily="secondary"
           textColor="white"
-          textWeight="400"
+          textWeight="700"
           style={{
-            textShadow: "1px 1px 1px #353535",
+            letterSpacing: "0.1rem",
+            textShadow: "0 0 6px rgba(0,0,0,.3)",
           }}
         >
-          Welcome to MountainHouse
+          MOUNTAIN HOUSE
         </Text>
-        <Div p={{ t: "1rem" }}>
+        <Div p={{ t: "2rem" }}>
           <Text
             textSize="subHeader"
             fontFamily="secondary"
             textColor="white"
-            textWeight="200"
-            style={{ lineHeight: 1.2, textShadow: "1px 1px 1px #353535" }}
+            textWeight="400"
+            style={{ lineHeight: 1.2, textShadow: "0 0 6px rgba(0,0,0,.3)" }}
           >
             A place for co-working, surfing, yoga, and relaxing - located at the
             foot of the atlas mountains, near Taghazout, Morocco
