@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { Div, Container, Row, Anchor, Button, Text } from "atomize"
 
 import Layout from "../components/layout"
+import PrimaryContainer from "../components/container"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import Dunes from "../images/dunes.svg"
@@ -84,8 +85,19 @@ const IndexPage = () => (
         </Div>
       </Div>
     </Div>
+    {/* <PrimaryContainer>
+      <Div h="10rem">
+        <Text>Hey</Text>
+      </Div>
+    </PrimaryContainer> */}
+
     <Layout>
       <SEO title="Home" />
+      <Div bg="secondary" h="10rem">
+        <Container>
+          <Text>Hey</Text>
+        </Container>
+      </Div>
     </Layout>
   </Div>
 )
