@@ -85,19 +85,14 @@ const IndexPage = () => (
         </Div>
       </Div>
     </Div>
-    {/* <PrimaryContainer>
-      <Div h="10rem">
-        <Text>Hey</Text>
-      </Div>
-    </PrimaryContainer> */}
 
     <Layout>
       <SEO title="Home" />
-      <Div bg="secondary" h="10rem">
+      <PrimaryContainer bg="secondary">
         <Container>
-          <Text>Hey</Text>
+          <Text>Heyo</Text>
         </Container>
-      </Div>
+      </PrimaryContainer>
     </Layout>
   </Div>
 )
