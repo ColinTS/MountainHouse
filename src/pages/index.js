@@ -1,16 +1,28 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { Div, Container, Row, Anchor, Button, Text } from "atomize"
-
+import Img from "gatsby-image"
 import Layout from "../components/layout"
 import PrimaryContainer from "../components/container"
-import Image from "../components/image"
+
 import SEO from "../components/seo"
 import Dunes from "../images/dunes.svg"
 
 import video from "../images/Tag.mp4"
 
-const IndexPage = () => (
+export const data = graphql`
+  query {
+    placeholderImage: file(relativePath: { eq: "image.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
+
+const IndexPage = ({ data }) => (
   <Div>
     <Div
       style={{
@@ -89,8 +101,9 @@ const IndexPage = () => (
     <Layout>
       <SEO title="Home" />
       <PrimaryContainer bg="secondary">
-        <Container>
-          <Text>Heyo</Text>
+        <Container justify="center">
+          <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+          <Text textAlign="center">Heyo</Text>
         </Container>
       </PrimaryContainer>
     </Layout>
