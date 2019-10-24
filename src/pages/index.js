@@ -12,9 +12,9 @@ import video from "../images/Tag.mp4"
 
 export const data = graphql`
   query {
-    placeholderImage: file(relativePath: { eq: "image.png" }) {
+    placeholderImage: file(relativePath: { eq: "image.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid {
           ...GatsbyImageSharpFluid
         }
       }
@@ -102,8 +102,8 @@ const IndexPage = ({ data }) => (
       <SEO title="Home" />
       <PrimaryContainer bg="secondary">
         <Container justify="center">
-          <Img fluid={data.placeholderImage.childImageSharp.fluid} />
           <Text textAlign="center">Heyo</Text>
+          <Img fluid={data.placeholderImage.childImageSharp.fluid} />
         </Container>
       </PrimaryContainer>
     </Layout>
