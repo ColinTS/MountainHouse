@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { Div, Container, Row, Anchor, Button, Text } from "atomize"
+import { Div, Container, Row, Col, Anchor, Button, Text } from "atomize"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import PrimaryContainer from "../components/container"
@@ -81,7 +81,7 @@ const IndexPage = ({ data }) => (
             textShadow: "0 0 6px rgba(0,0,0,.3)",
           }}
         >
-          MOUNTAIN HOUSE
+          SINGLE FIN
         </Text>
         <Div p={{ t: "2rem" }}>
           <Text
@@ -102,8 +102,14 @@ const IndexPage = ({ data }) => (
       <SEO title="Home" />
       <PrimaryContainer bg="secondary">
         <Container justify="center">
-          <Text textAlign="center">Heyo</Text>
-          <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+          <Row>
+            <Col size="5">
+              <Text textAlign="center">Heyo</Text>
+            </Col>
+            <Col size="7">
+              <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+            </Col>
+          </Row>
         </Container>
       </PrimaryContainer>
     </Layout>
