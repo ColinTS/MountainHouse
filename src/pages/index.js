@@ -104,7 +104,15 @@ const IndexPage = ({ data }) => (
         <Container justify="center">
           <Row>
             <Col size="5">
-              <Text textAlign="center">Heyo</Text>
+              <Text
+                textSize="subHeader"
+                fontFamily="secondary"
+                textColor="black"
+                textWeight="600"
+                style={{ lineHeight: 1.2 }}
+              >
+                Singlefin is a holiday stay in Taghazout, Morocco
+              </Text>
             </Col>
             <Col size="7">
               <Img fluid={data.placeholderImage.childImageSharp.fluid} />
