@@ -109,9 +109,23 @@ const IndexPage = ({ data }) => (
                 fontFamily="secondary"
                 textColor="black"
                 textWeight="600"
-                style={{ lineHeight: 1.2 }}
+                style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
               >
-                Singlefin is a holiday stay in Taghazout, Morocco
+                Singlefin is a surf, yoga, and coworking experience
+              </Text>
+              <Text
+                textSize="paragraph"
+                fontFamily="primary"
+                textColor="offBlack"
+                textWeight="400"
+                p={{ t: "1rem" }}
+                style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+              >
+                Founded in 2019, we offer an authentic moroccan stay for guests
+                from around the globe. Whether you want to have a memorable time
+                surfing southern morocco, practicing yoga in our mountain villa,
+                or joining our community of digital nomads to get work done,
+                Singlefin welcomes you with open arms.
               </Text>
             </Col>
             <Col size="7">
