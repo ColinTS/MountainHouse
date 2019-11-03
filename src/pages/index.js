@@ -108,7 +108,7 @@ const IndexPage = ({ data }) => (
                 textSize="subHeader"
                 fontFamily="secondary"
                 textColor="black"
-                textWeight="600"
+                textWeight="500"
                 style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
               >
                 Singlefin is a surf, yoga, and coworking experience
@@ -132,6 +132,31 @@ const IndexPage = ({ data }) => (
               <Img fluid={data.placeholderImage.childImageSharp.fluid} />
             </Col>
           </Row>
+        </Container>
+      </PrimaryContainer>
+      <PrimaryContainer bg="white">
+        <Container justify="center">
+          <Text
+            textSize="subHeader"
+            fontFamily="secondary"
+            textColor="black"
+            textWeight="500"
+            textAlign="center"
+            style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
+          >
+            Activities
+          </Text>
+          <Text
+            textSize="paragraph"
+            fontFamily="primary"
+            textColor="offBlack"
+            textWeight="400"
+            textAlign="center"
+            p={{ t: "0.5rem" }}
+            style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+          >
+            There's a lot to do here
+          </Text>
         </Container>
       </PrimaryContainer>
     </Layout>
