@@ -37,6 +37,14 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "gatsby-plugin-styletron",
+      options: {
+        // You can pass options to Styletron.
+        // Prefix all generated classNames:
+        prefix: "_",
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
