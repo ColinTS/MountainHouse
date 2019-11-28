@@ -4,6 +4,7 @@ import { Div, Container, Row, Col, Anchor, Button, Text } from "atomize"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import PrimaryContainer from "../components/container"
+import ActivityThumbnail from "../components/activity"
 
 import SEO from "../components/seo"
 import Dunes from "../images/dunes.svg"
@@ -14,7 +15,14 @@ export const data = graphql`
   query {
     placeholderImage: file(relativePath: { eq: "image.jpg" }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 4000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    surfActivity: file(relativePath: { eq: "surfActivity.JPG" }) {
+      childImageSharp {
+        fluid(maxWidth: 4000) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -73,7 +81,7 @@ const IndexPage = ({ data }) => (
       >
         <Text
           textSize="display3"
-          fontFamily="secondary"
+          fontFamily="primary"
           textColor="white"
           textWeight="700"
           style={{
@@ -108,7 +116,7 @@ const IndexPage = ({ data }) => (
                 textSize="subHeader"
                 fontFamily="secondary"
                 textColor="black"
-                textWeight="500"
+                textWeight="700"
                 style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
               >
                 Singlefin is a surf, yoga, and coworking experience
@@ -129,7 +137,12 @@ const IndexPage = ({ data }) => (
               </Text>
             </Col>
             <Col size="7">
-              <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+              <Img
+                style={{
+                  borderRadius: 4,
+                }}
+                fluid={data.placeholderImage.childImageSharp.fluid}
+              />
             </Col>
           </Row>
         </Container>
@@ -140,7 +153,7 @@ const IndexPage = ({ data }) => (
             textSize="subHeader"
             fontFamily="secondary"
             textColor="black"
-            textWeight="500"
+            textWeight="700"
             textAlign="center"
             style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
           >
@@ -157,6 +170,7 @@ const IndexPage = ({ data }) => (
           >
             There's a lot to do here
           </Text>
+          <ActivityThumbnail data={data.surfActivity.childImageSharp.fluid} />
         </Container>
       </PrimaryContainer>
     </Layout>
