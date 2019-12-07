@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import PrimaryContainer from "../components/container"
 import ActivityThumbnail from "../components/activity"
+import SlideShow from "../components/slideshow"
 
 import SEO from "../components/seo"
 import Dunes from "../images/dunes.svg"
@@ -24,6 +25,22 @@ export const data = graphql`
       childImageSharp {
         fluid(maxWidth: 4000) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    surf: allFile(
+      sort: { fields: name, order: DESC }
+      filter: { relativeDirectory: { eq: "surf" } }
+    ) {
+      edges {
+        node {
+          id
+          name
+          childImageSharp {
+            fluid(maxWidth: 600) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
         }
       }
     }
@@ -157,7 +174,7 @@ const IndexPage = ({ data }) => (
             textAlign="center"
             style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
           >
-            Activities
+            Stay with us
           </Text>
           <Text
             textSize="paragraph"
@@ -168,9 +185,10 @@ const IndexPage = ({ data }) => (
             p={{ t: "0.5rem" }}
             style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
           >
-            There's a lot to do here
+            Rooms right on the beach
           </Text>
-          <ActivityThumbnail data={data.surfActivity.childImageSharp.fluid} />
+
+          <SlideShow data={data.surf} />
         </Container>
       </PrimaryContainer>
     </Layout>
