@@ -37,8 +37,8 @@ export const data = graphql`
           id
           name
           childImageSharp {
-            fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            fluid(maxWidth: 4000) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
