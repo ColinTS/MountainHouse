@@ -25,26 +25,29 @@ export default function SlideShow(props) {
         key={node.id}
         alt={node.name.replace(/-/g, " ").substring(2)}
       />
-      <button
+      <Icon
+        name="LeftArrow"
+        color="white"
+        size="50px"
         style={{
           position: "absolute",
           top: "50%",
           left: "5%",
         }}
         onClick={() => handlePrevious()}
-      >
-        Previous
-      </button>
-      <button
+      />
+
+      <Icon
+        name="RightArrow"
+        color="white"
+        size="50px"
         style={{
           position: "absolute",
           top: "50%",
           right: "5%",
         }}
         onClick={() => handleNext()}
-      >
-        Next
-      </button>
+      />
     </div>
   )
 }
