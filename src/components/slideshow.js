@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React, { useState, useEffect } from "react"
-import { Div, Text, Icon } from "atomize"
+import { Div, Text, Icon, Button } from "atomize"
 import Img from "gatsby-image"
 
 export default function SlideShow(props) {
@@ -25,29 +25,49 @@ export default function SlideShow(props) {
         key={node.id}
         alt={node.name.replace(/-/g, " ").substring(2)}
       />
-      <Icon
-        name="LeftArrow"
-        color="white"
-        size="50px"
+      <Button
+        rounded="circle"
+        h="2.5rem"
+        w="2.5rem"
+        m={{ r: "1rem" }}
+        bg="white"
+        shadow="2"
+        hoverShadow="4"
         style={{
           position: "absolute",
           top: "50%",
           left: "5%",
         }}
-        onClick={() => handlePrevious()}
-      />
+      >
+        <Icon
+          name="LeftArrow"
+          color="primary"
+          size="40px"
+          onClick={() => handlePrevious()}
+        />
+      </Button>
 
-      <Icon
-        name="RightArrow"
-        color="white"
-        size="50px"
+      <Button
+        rounded="circle"
+        h="2.5rem"
+        w="2.5rem"
+        m={{ r: "1rem" }}
+        bg="white"
+        shadow="2"
+        hoverShadow="4"
         style={{
           position: "absolute",
           top: "50%",
           right: "5%",
         }}
-        onClick={() => handleNext()}
-      />
+      >
+        <Icon
+          name="RightArrow"
+          color="primary"
+          size="40px"
+          onClick={() => handleNext()}
+        />
+      </Button>
     </div>
   )
 }
