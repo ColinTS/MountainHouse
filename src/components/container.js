@@ -8,7 +8,7 @@ export default function PrimaryContainer(props) {
   useEffect(() => {})
 
   return (
-    <Div bg={bg} p={{ t: "12rem", b: "12rem" }} d="flex" align="center">
+    <Div bg={bg} p={{ t: "14rem", b: "14rem" }} d="flex" align="center">
       {props.children}
     </Div>
   )
