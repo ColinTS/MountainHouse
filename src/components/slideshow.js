@@ -21,6 +21,9 @@ export default function SlideShow(props) {
       }}
     >
       <Img
+        style={{
+          borderRadius: 4,
+        }}
         fluid={node.childImageSharp.fluid}
         key={node.id}
         alt={node.name.replace(/-/g, " ").substring(2)}

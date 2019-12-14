@@ -44,6 +44,22 @@ export const data = graphql`
         }
       }
     }
+    stay: allFile(
+      sort: { fields: name, order: DESC }
+      filter: { relativeDirectory: { eq: "stay" } }
+    ) {
+      edges {
+        node {
+          id
+          name
+          childImageSharp {
+            fluid(maxWidth: 4000) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
   }
 `
 
@@ -184,13 +200,13 @@ const IndexPage = ({ data }) => (
             textColor="offBlack"
             textWeight="400"
             textAlign="center"
-            p={{ t: "0.5rem" }}
+            p={{ t: "0.25rem", b: "3rem" }}
             style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
           >
             Rooms right on the beach
           </Text>
 
-          <SlideShow data={data.surf} />
+          <SlideShow data={data.stay} />
         </Container>
       </PrimaryContainer>
     </Layout>
