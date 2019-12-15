@@ -184,29 +184,68 @@ const IndexPage = ({ data }) => (
       </Div>
       <PrimaryContainer bg="white">
         <Container justify="center">
-          <Text
-            textSize="subHeader"
-            fontFamily="secondary"
-            textColor="black"
-            textWeight="700"
-            textAlign="center"
-            style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
-          >
-            Stay with us
-          </Text>
-          <Text
-            textSize="paragraph"
-            fontFamily="primary"
-            textColor="offBlack"
-            textWeight="400"
-            textAlign="center"
-            p={{ t: "0.25rem", b: "3rem" }}
-            style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-          >
-            Rooms right on the beach
-          </Text>
+          <Row>
+            <Col size="12">
+              <Text
+                textSize="subHeader"
+                fontFamily="secondary"
+                textColor="black"
+                textWeight="700"
+                textAlign="center"
+                style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
+              >
+                Stay with us
+              </Text>
+              <Text
+                textSize="paragraph"
+                fontFamily="primary"
+                textColor="offBlack"
+                textWeight="400"
+                textAlign="center"
+                p={{ t: "0.25rem", b: "3rem" }}
+                style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+              >
+                Rooms right on the beach
+              </Text>
 
-          <SlideShow data={data.stay} />
+              <SlideShow data={data.stay} />
+            </Col>
+          </Row>
+          <Row p={{ t: "3rem" }}>
+            <Col size="5">
+              <Text
+                textSize="subHeader"
+                fontFamily="secondary"
+                textColor="black"
+                textWeight="700"
+                style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
+              >
+                Singlefin is a surf, yoga, and coworking experience
+              </Text>
+              <Text
+                textSize="paragraph"
+                fontFamily="primary"
+                textColor="offBlack"
+                textWeight="400"
+                p={{ t: "1rem" }}
+                style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+              >
+                Founded in 2019, we offer an authentic moroccan stay for guests
+                from around the globe. Whether you want to have a memorable time
+                surfing southern morocco, practicing yoga in our mountain villa,
+                or joining our community of digital nomads to get work done,
+                Singlefin welcomes you with open arms.
+              </Text>
+            </Col>
+            <Col size="7">
+              <Img
+                style={{
+                  borderRadius: 4,
+                }}
+                fluid={data.placeholderImage.childImageSharp.fluid}
+              />
+            </Col>
+          </Row>
         </Container>
       </PrimaryContainer>
     </Layout>
