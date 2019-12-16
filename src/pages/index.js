@@ -141,7 +141,7 @@ const IndexPage = ({ data }) => (
 
     <Layout>
       <SEO title="Home" />
-      <Div m={{ t: "-6rem" }}>
+      <Div m={{ t: "-8rem" }}>
         <PrimaryContainer bg="secondary">
           <Container justify="center">
             <Row>
@@ -212,7 +212,7 @@ const IndexPage = ({ data }) => (
             </Col>
           </Row>
           <Row p={{ t: "3rem" }}>
-            <Col size="5">
+            <Col size="8">
               <Text
                 textSize="subHeader"
                 fontFamily="secondary"
@@ -237,7 +237,7 @@ const IndexPage = ({ data }) => (
                 Singlefin welcomes you with open arms.
               </Text>
             </Col>
-            <Col size="7">
+            <Col size="4">
               <Img
                 style={{
                   borderRadius: 4,
