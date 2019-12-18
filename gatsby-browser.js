@@ -23,7 +23,7 @@ const theme = {
     },
   },
   fontFamily: {
-    primary: "Lato",
+    primary: "serif",
     secondary: "Lato",
   },
   transition: {

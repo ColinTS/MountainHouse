@@ -220,7 +220,7 @@ const IndexPage = ({ data }) => (
                 textWeight="700"
                 style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
               >
-                Singlefin is a surf, yoga, and coworking experience
+                Sleep and surf
               </Text>
               <Text
                 textSize="paragraph"
@@ -230,20 +230,21 @@ const IndexPage = ({ data }) => (
                 p={{ t: "1rem" }}
                 style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
               >
-                Founded in 2019, we offer an authentic moroccan stay for guests
-                from around the globe. Whether you want to have a memorable time
-                surfing southern morocco, practicing yoga in our mountain villa,
-                or joining our community of digital nomads to get work done,
-                Singlefin welcomes you with open arms.
+                From cozy one-beds to a spacious penthouse, we have the room for
+                you. Located right on the beach, surfing is literally steps away
+                from your bedroom.
               </Text>
             </Col>
             <Col size="4">
-              <Img
-                style={{
-                  borderRadius: 4,
-                }}
-                fluid={data.placeholderImage.childImageSharp.fluid}
-              />
+              <Text
+                textSize="subHeader"
+                fontFamily="secondary"
+                textColor="black"
+                textWeight="700"
+                style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
+              >
+                Amenities{" "}
+              </Text>
             </Col>
           </Row>
         </Container>
