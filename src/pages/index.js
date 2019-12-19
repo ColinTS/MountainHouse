@@ -241,10 +241,19 @@ const IndexPage = ({ data }) => (
                 fontFamily="secondary"
                 textColor="black"
                 textWeight="700"
+                p={{ b: "1rem" }}
                 style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
               >
                 Amenities{" "}
               </Text>
+              <Div
+                style={{
+                  padding: "1rem",
+                  borderStyle: "solid",
+                  borderColor: "#d3d3d3",
+                  borderRadius: 3,
+                }}
+              ></Div>
             </Col>
           </Row>
         </Container>
