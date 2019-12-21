@@ -23,8 +23,8 @@ const theme = {
     },
   },
   fontFamily: {
-    primary: "serif",
-    secondary: "Lato",
+    primary: `'Lato', sans-serif;`,
+    secondary: `'Lato', sans-serif;`,
   },
   transition: {
     custom: "all 0.8s ease",

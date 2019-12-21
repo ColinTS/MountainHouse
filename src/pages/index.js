@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { Div, Container, Row, Col, Anchor, Button, Text } from "atomize"
+import { Div, Container, Row, Col, Anchor, Button, Text, Icon } from "atomize"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import PrimaryContainer from "../components/container"
@@ -253,7 +253,60 @@ const IndexPage = ({ data }) => (
                   borderColor: "#d3d3d3",
                   borderRadius: 3,
                 }}
-              ></Div>
+              >
+                <Row align="center">
+                  <Icon name="Checked" color="primary" size="40px" />
+                  <Text
+                    textSize="paragraph"
+                    fontFamily="primary"
+                    textColor="offBlack"
+                    textWeight="400"
+                    p={{ l: "1rem" }}
+                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+                  >
+                    Full furnishings
+                  </Text>
+                </Row>
+                <Row align="center">
+                  <Icon name="Checked" color="primary" size="40px" />
+                  <Text
+                    textSize="paragraph"
+                    fontFamily="primary"
+                    textColor="offBlack"
+                    textWeight="400"
+                    p={{ l: "1rem" }}
+                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+                  >
+                    Free breakfast
+                  </Text>
+                </Row>
+                <Row align="center">
+                  <Icon name="Checked" color="primary" size="40px" />
+                  <Text
+                    textSize="paragraph"
+                    fontFamily="primary"
+                    textColor="offBlack"
+                    textWeight="400"
+                    p={{ l: "1rem" }}
+                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+                  >
+                    Fast WiFi
+                  </Text>
+                </Row>
+                <Row align="center">
+                  <Icon name="Checked" color="primary" size="40px" />
+                  <Text
+                    textSize="paragraph"
+                    fontFamily="primary"
+                    textColor="offBlack"
+                    textWeight="400"
+                    p={{ l: "1rem" }}
+                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+                  >
+                    Ocean views{" "}
+                  </Text>
+                </Row>
+              </Div>
             </Col>
           </Row>
         </Container>
