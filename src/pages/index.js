@@ -156,7 +156,7 @@ const IndexPage = ({ data }) => (
                   Singlefin is a surf, yoga, and coworking experience
                 </Text>
                 <Text
-                  textSize="paragraph"
+                  textSize="header2"
                   fontFamily="primary"
                   textColor="offBlack"
                   textWeight="400"
@@ -197,7 +197,7 @@ const IndexPage = ({ data }) => (
                 Stay with us
               </Text>
               <Text
-                textSize="paragraph"
+                textSize="header2"
                 fontFamily="primary"
                 textColor="offBlack"
                 textWeight="400"
@@ -214,7 +214,7 @@ const IndexPage = ({ data }) => (
           <Row p={{ t: "3rem" }}>
             <Col size="8">
               <Text
-                textSize="subHeader"
+                textSize="header2"
                 fontFamily="secondary"
                 textColor="black"
                 textWeight="700"
@@ -237,7 +237,7 @@ const IndexPage = ({ data }) => (
             </Col>
             <Col size="4">
               <Text
-                textSize="subHeader"
+                textSize="header2"
                 fontFamily="secondary"
                 textColor="black"
                 textWeight="700"
@@ -255,7 +255,7 @@ const IndexPage = ({ data }) => (
                 }}
               >
                 <Row align="center">
-                  <Icon name="Checked" color="primary" size="40px" />
+                  <Icon name="Checked" color="primary" size="30px" />
                   <Text
                     textSize="paragraph"
                     fontFamily="primary"
@@ -268,7 +268,7 @@ const IndexPage = ({ data }) => (
                   </Text>
                 </Row>
                 <Row align="center">
-                  <Icon name="Checked" color="primary" size="40px" />
+                  <Icon name="Checked" color="primary" size="30px" />
                   <Text
                     textSize="paragraph"
                     fontFamily="primary"
@@ -281,7 +281,7 @@ const IndexPage = ({ data }) => (
                   </Text>
                 </Row>
                 <Row align="center">
-                  <Icon name="Checked" color="primary" size="40px" />
+                  <Icon name="Checked" color="primary" size="30px" />
                   <Text
                     textSize="paragraph"
                     fontFamily="primary"
@@ -294,7 +294,7 @@ const IndexPage = ({ data }) => (
                   </Text>
                 </Row>
                 <Row align="center">
-                  <Icon name="Checked" color="primary" size="40px" />
+                  <Icon name="Checked" color="primary" size="30px" />
                   <Text
                     textSize="paragraph"
                     fontFamily="primary"
@@ -327,7 +327,7 @@ const IndexPage = ({ data }) => (
                 Surf with us
               </Text>
               <Text
-                textSize="paragraph"
+                textSize="header2"
                 fontFamily="primary"
                 textColor="offBlack"
                 textWeight="400"
@@ -345,7 +345,7 @@ const IndexPage = ({ data }) => (
           <Row p={{ t: "3rem" }}>
             <Col size="8">
               <Text
-                textSize="subHeader"
+                textSize="header2"
                 fontFamily="secondary"
                 textColor="black"
                 textWeight="700"
@@ -368,14 +368,14 @@ const IndexPage = ({ data }) => (
             </Col>
             <Col size="4">
               <Text
-                textSize="subHeader"
+                textSize="header2"
                 fontFamily="secondary"
                 textColor="black"
                 textWeight="700"
                 p={{ b: "1rem" }}
                 style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
               >
-                Amenities{" "}
+                What's included
               </Text>
               <Div
                 style={{
@@ -386,7 +386,7 @@ const IndexPage = ({ data }) => (
                 }}
               >
                 <Row align="center">
-                  <Icon name="Checked" color="primary" size="40px" />
+                  <Icon name="Checked" color="primary" size="30px" />
                   <Text
                     textSize="paragraph"
                     fontFamily="primary"
@@ -395,11 +395,11 @@ const IndexPage = ({ data }) => (
                     p={{ l: "1rem" }}
                     style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
                   >
-                    Full furnishings
+                    2 hour surf lesson
                   </Text>
                 </Row>
                 <Row align="center">
-                  <Icon name="Checked" color="primary" size="40px" />
+                  <Icon name="Checked" color="primary" size="30px" />
                   <Text
                     textSize="paragraph"
                     fontFamily="primary"
@@ -408,11 +408,11 @@ const IndexPage = ({ data }) => (
                     p={{ l: "1rem" }}
                     style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
                   >
-                    Free breakfast
+                    Board and wetsuit
                   </Text>
                 </Row>
                 <Row align="center">
-                  <Icon name="Checked" color="primary" size="40px" />
+                  <Icon name="Checked" color="primary" size="30px" />
                   <Text
                     textSize="paragraph"
                     fontFamily="primary"
@@ -425,7 +425,7 @@ const IndexPage = ({ data }) => (
                   </Text>
                 </Row>
                 <Row align="center">
-                  <Icon name="Checked" color="primary" size="40px" />
+                  <Icon name="Checked" color="primary" size="30px" />
                   <Text
                     textSize="paragraph"
                     fontFamily="primary"
