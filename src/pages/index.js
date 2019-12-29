@@ -60,6 +60,22 @@ export const data = graphql`
         }
       }
     }
+    eat: allFile(
+      sort: { fields: name, order: DESC }
+      filter: { relativeDirectory: { eq: "eat" } }
+    ) {
+      edges {
+        node {
+          id
+          name
+          childImageSharp {
+            fluid(maxWidth: 4000) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
   }
 `
 
@@ -340,6 +356,136 @@ const IndexPage = ({ data }) => (
               </Text>
 
               <SlideShow data={data.surf} />
+            </Col>
+          </Row>
+          <Row p={{ t: "3rem" }}>
+            <Col size="8">
+              <Text
+                textSize="header2"
+                fontFamily="secondary"
+                textColor="black"
+                textWeight="700"
+                style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
+              >
+                Lessons and Guides
+              </Text>
+              <Text
+                textSize="paragraph"
+                fontFamily="primary"
+                textColor="offBlack"
+                textWeight="400"
+                p={{ t: "1rem" }}
+                style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+              >
+                At Singlefin we love to surf. Our local guides know the best
+                spots to improve your surfing, whether you are a beginner,
+                intermediate, or advanced.
+              </Text>
+            </Col>
+            <Col size="4">
+              <Text
+                textSize="header2"
+                fontFamily="secondary"
+                textColor="black"
+                textWeight="700"
+                p={{ b: "1rem" }}
+                style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
+              >
+                What's included
+              </Text>
+              <Div
+                style={{
+                  padding: "1rem",
+                  borderStyle: "solid",
+                  borderColor: "#d3d3d3",
+                  borderRadius: 3,
+                }}
+              >
+                <Row align="center">
+                  <Icon name="Checked" color="primary" size="30px" />
+                  <Text
+                    textSize="paragraph"
+                    fontFamily="primary"
+                    textColor="offBlack"
+                    textWeight="400"
+                    p={{ l: "1rem" }}
+                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+                  >
+                    2 hour surf lesson
+                  </Text>
+                </Row>
+                <Row align="center">
+                  <Icon name="Checked" color="primary" size="30px" />
+                  <Text
+                    textSize="paragraph"
+                    fontFamily="primary"
+                    textColor="offBlack"
+                    textWeight="400"
+                    p={{ l: "1rem" }}
+                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+                  >
+                    Board and wetsuit
+                  </Text>
+                </Row>
+                <Row align="center">
+                  <Icon name="Checked" color="primary" size="30px" />
+                  <Text
+                    textSize="paragraph"
+                    fontFamily="primary"
+                    textColor="offBlack"
+                    textWeight="400"
+                    p={{ l: "1rem" }}
+                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+                  >
+                    Fast WiFi
+                  </Text>
+                </Row>
+                <Row align="center">
+                  <Icon name="Checked" color="primary" size="30px" />
+                  <Text
+                    textSize="paragraph"
+                    fontFamily="primary"
+                    textColor="offBlack"
+                    textWeight="400"
+                    p={{ l: "1rem" }}
+                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+                  >
+                    Ocean views{" "}
+                  </Text>
+                </Row>
+              </Div>
+            </Col>
+          </Row>
+        </Container>
+      </PrimaryContainer>
+      {/* Eat */}
+      <PrimaryContainer bg="white">
+        <Container justify="center">
+          <Row>
+            <Col size="12">
+              <Text
+                textSize="subHeader"
+                fontFamily="secondary"
+                textColor="black"
+                textWeight="700"
+                textAlign="center"
+                style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
+              >
+                Eat with us
+              </Text>
+              <Text
+                textSize="header2"
+                fontFamily="primary"
+                textColor="offBlack"
+                textWeight="400"
+                textAlign="center"
+                p={{ t: "0.25rem", b: "3rem" }}
+                style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+              >
+                We offer healthy Moroccon meals at our kitchen by the sea
+              </Text>
+
+              <SlideShow data={data.eat} />
             </Col>
           </Row>
           <Row p={{ t: "3rem" }}>
