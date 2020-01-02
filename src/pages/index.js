@@ -21,6 +21,13 @@ export const data = graphql`
         }
       }
     }
+    kitchenLogo: file(relativePath: { eq: "kitchenLogo.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 4000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     surfActivity: file(relativePath: { eq: "surfActivity.JPG" }) {
       childImageSharp {
         fluid(maxWidth: 4000) {
@@ -497,7 +504,7 @@ const IndexPage = ({ data }) => (
                 textWeight="700"
                 style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
               >
-                Lessons and Guides
+                Food and Drinks{" "}
               </Text>
               <Text
                 textSize="paragraph"
@@ -507,83 +514,18 @@ const IndexPage = ({ data }) => (
                 p={{ t: "1rem" }}
                 style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
               >
-                At Singlefin we love to surf. Our local guides know the best
-                spots to improve your surfing, whether you are a beginner,
-                intermediate, or advanced.
+                Singlefin's Seafood Kitchen is located on Taghazout beach,
+                serving up some of the freshest seafood brought in by the local
+                fisherman.
               </Text>
             </Col>
             <Col size="4">
-              <Text
-                textSize="header2"
-                fontFamily="secondary"
-                textColor="black"
-                textWeight="700"
-                p={{ b: "1rem" }}
-                style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
-              >
-                What's included
-              </Text>
-              <Div
+              <Img
                 style={{
-                  padding: "1rem",
-                  borderStyle: "solid",
-                  borderColor: "#d3d3d3",
-                  borderRadius: 3,
+                  borderRadius: 4,
                 }}
-              >
-                <Row align="center">
-                  <Icon name="Checked" color="primary" size="30px" />
-                  <Text
-                    textSize="paragraph"
-                    fontFamily="primary"
-                    textColor="offBlack"
-                    textWeight="400"
-                    p={{ l: "1rem" }}
-                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                  >
-                    2 hour surf lesson
-                  </Text>
-                </Row>
-                <Row align="center">
-                  <Icon name="Checked" color="primary" size="30px" />
-                  <Text
-                    textSize="paragraph"
-                    fontFamily="primary"
-                    textColor="offBlack"
-                    textWeight="400"
-                    p={{ l: "1rem" }}
-                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                  >
-                    Board and wetsuit
-                  </Text>
-                </Row>
-                <Row align="center">
-                  <Icon name="Checked" color="primary" size="30px" />
-                  <Text
-                    textSize="paragraph"
-                    fontFamily="primary"
-                    textColor="offBlack"
-                    textWeight="400"
-                    p={{ l: "1rem" }}
-                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                  >
-                    Fast WiFi
-                  </Text>
-                </Row>
-                <Row align="center">
-                  <Icon name="Checked" color="primary" size="30px" />
-                  <Text
-                    textSize="paragraph"
-                    fontFamily="primary"
-                    textColor="offBlack"
-                    textWeight="400"
-                    p={{ l: "1rem" }}
-                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                  >
-                    Ocean views{" "}
-                  </Text>
-                </Row>
-              </Div>
+                fluid={data.kitchenLogo.childImageSharp.fluid}
+              />
             </Col>
           </Row>
         </Container>
