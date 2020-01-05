@@ -180,7 +180,7 @@ const IndexPage = ({ data }) => (
                 </Text>
                 <Text
                   textSize="header2"
-                  fontFamily="primary"
+                  fontFamily="secondary"
                   textColor="offBlack"
                   textWeight="400"
                   p={{ t: "1rem" }}
