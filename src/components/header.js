@@ -36,7 +36,7 @@ function Header({ siteTitle }) {
           style={{
             margin: `0 auto`,
             maxWidth: 1760,
-            padding: `1.45rem 1.0875rem`,
+            padding: `1.45rem`,
           }}
         >
           <Div p={{ r: "3rem" }} d="flex" direction="row" align="center">
