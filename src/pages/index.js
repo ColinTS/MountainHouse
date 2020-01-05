@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import PrimaryContainer from "../components/container"
 import ActivityThumbnail from "../components/activity"
+import BigHeader from "../components/bigHeader"
 import SlideShow from "../components/slideshow"
 
 import SEO from "../components/seo"
@@ -135,18 +136,7 @@ const IndexPage = ({ data }) => (
           textAlign: "center",
         }}
       >
-        <Text
-          textSize="display3"
-          fontFamily="primary"
-          textColor="white"
-          textWeight="700"
-          style={{
-            letterSpacing: "0.1rem",
-            textShadow: "0 0 6px rgba(0,0,0,.3)",
-          }}
-        >
-          SINGLE FIN
-        </Text>
+        <BigHeader text="SINGLE FIN"></BigHeader>
         <Div p={{ t: "2rem" }}>
           <Text
             textSize="subHeader"
