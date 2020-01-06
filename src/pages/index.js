@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import PrimaryContainer from "../components/container"
 import ActivityThumbnail from "../components/activity"
 import BigHeader from "../components/bigHeader"
+import SubHeader from "../components/subHeader"
 import SlideShow from "../components/slideshow"
 
 import SEO from "../components/seo"
@@ -137,18 +138,12 @@ const IndexPage = ({ data }) => (
         }}
       >
         <BigHeader text="SINGLE FIN"></BigHeader>
-        <Div p={{ t: "2rem" }}>
-          <Text
-            textSize="subHeader"
-            fontFamily="secondary"
-            textColor="white"
-            textWeight="400"
-            style={{ lineHeight: 1.2, textShadow: "0 0 6px rgba(0,0,0,.3)" }}
-          >
-            A place for co-working, surfing, yoga, and relaxing - located at the
-            foot of the atlas mountains, near Taghazout, Morocco
-          </Text>
-        </Div>
+        {/* <Div p={{ t: "2rem" }}>
+          <SubHeader
+            text=" A place for co-working, surfing, yoga, and relaxing - located at the
+            foot of the atlas mountains, near Taghazout, Morocco"
+          ></SubHeader>
+        </Div> */}
       </Div>
     </Div>
 
