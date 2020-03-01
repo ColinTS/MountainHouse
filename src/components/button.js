@@ -1,30 +1,33 @@
 import { Link } from "gatsby"
 import React, { useState, useEffect } from "react"
-import { Anchor, Text } from "atomize"
-import Logo from "../images/logo.svg"
+import { Div, Text } from "atomize"
 
-export default function BigLink(props) {
-  const { name, textColor, hoverTextColor } = props
+export default function ButtonLink(props) {
+  const { name, textColor, bg } = props
 
   useEffect(() => {})
 
   return (
     <Link to="/page-2/">
-      <Anchor p={{ l: "3rem" }} d="block">
+      <Div
+        bg={bg}
+        d="flex"
+        align="center"
+        p={{ x: "2.25rem", y: "0.75rem" }}
+        rounded="circle"
+      >
         <Text
           style={{
-            "-webkit-transition": "color .3s ease, opacity .3s ease",
             letterSpacing: "0.075rem",
           }}
           textSize="button"
           fontFamily="secondary"
           textWeight="400"
           textColor={textColor}
-          hoverTextColor={hoverTextColor}
         >
           {name}
         </Text>
-      </Anchor>
+      </Div>
     </Link>
   )
 }

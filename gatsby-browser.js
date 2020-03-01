@@ -6,6 +6,7 @@ const theme = {
   colors: {
     primary: "#82A9FF",
     secondary: "#FFCF8A",
+    darkDune: "#EABD7C",
     black: "#0A0A0A",
     offBlack: "#333333",
     white: "#FFFFFF",
@@ -20,6 +21,7 @@ const theme = {
       header2: "20px",
       paragraph: "16px",
       caption: "12px",
+      button: "18px",
       anchor: "22px",
     },
   },

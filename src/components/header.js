@@ -3,7 +3,9 @@ import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
 import { Div, Container, Row, Anchor, Text } from "atomize"
 import Logo from "../images/logo.svg"
+import LogoBlack from "../images/logoBlack.svg"
 import BigLink from "./link.js"
+import ButtonLink from "./button.js"
 
 function Header({ siteTitle }) {
   const [isTop, setIsTop] = useState(true)
@@ -23,7 +25,7 @@ function Header({ siteTitle }) {
         style={{
           zIndex: 5000,
           background: `none`,
-          marginBottom: `1.45rem`,
+          marginBottom: `1.0rem`,
           width: "100%",
           top: 0,
           position: "fixed",
@@ -36,11 +38,11 @@ function Header({ siteTitle }) {
           style={{
             margin: `0 auto`,
             maxWidth: 1760,
-            padding: `1.45rem`,
+            padding: `1.0rem`,
           }}
         >
           <Div p={{ r: "3rem" }} d="flex" direction="row" align="center">
-            <Logo style={{ fill: "white" }} />
+            <Logo style={{ width: "75px" }} />
             {/* <BigLink
               name="About"
               textColor={"white"}
@@ -62,12 +64,15 @@ function Header({ siteTitle }) {
               hoverTextColor={"primary"}
             ></BigLink> */}
           </Div>
-          <Div>
+          <Div d="flex" direction="column" align="center">
             <BigLink
-              name="Bookings"
+              name="Our Packages"
               textColor={"white"}
               hoverTextColor={"primary"}
             ></BigLink>
+            <Div p={{ l: "2rem" }}>
+              <ButtonLink name="Book Now" textColor="white" bg="primary" />
+            </Div>
           </Div>
         </Row>
       </Div>
@@ -79,7 +84,7 @@ function Header({ siteTitle }) {
         style={{
           zIndex: 5000,
           background: `white`,
-          marginBottom: `1.45rem`,
+          marginBottom: `1.0rem`,
           width: "100%",
           top: 0,
           position: "fixed",
@@ -92,11 +97,11 @@ function Header({ siteTitle }) {
           style={{
             margin: `0 auto`,
             maxWidth: 1760,
-            padding: `1.45rem 1.0875rem`,
+            padding: `1.0rem 1.0875rem`,
           }}
         >
           <Div p={{ r: "3rem" }} d="flex" direction="row" align="center">
-            <Logo />
+            <LogoBlack style={{ width: "75px" }} />
             {/* <BigLink
               name="About"
               textColor={"black"}
@@ -118,12 +123,15 @@ function Header({ siteTitle }) {
               hoverTextColor={"primary"}
             ></BigLink> */}
           </Div>
-          <Div>
+          <Div d="flex" direction="column" align="center">
             <BigLink
-              name="Bookings"
+              name="Our Packages"
               textColor={"black"}
               hoverTextColor={"primary"}
             ></BigLink>
+            <Div p={{ l: "2rem" }}>
+              <ButtonLink name="Book Now" textColor="white" bg="primary" />
+            </Div>
           </Div>
         </Row>
       </Div>

@@ -8,6 +8,7 @@ import ActivityThumbnail from "../components/activity"
 import BigHeader from "../components/bigHeader"
 import SubHeader from "../components/subHeader"
 import SlideShow from "../components/slideshow"
+import BigLogo from "../images/bigLogo.svg"
 
 import SEO from "../components/seo"
 import Dunes from "../images/dunes.svg"
@@ -131,13 +132,18 @@ const IndexPage = ({ data }) => (
       <Div
         style={{
           position: "absolute",
-          top: "50%",
+          top: "40%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          textAlign: "center",
+          // textAlign: "center",
         }}
       >
-        <BigHeader text="SINGLE FIN"></BigHeader>
+        <BigLogo
+          style={{
+            width: "500px",
+            height: "500px",
+          }}
+        />
         {/* <Div p={{ t: "2rem" }}>
           <SubHeader
             text=" A place for co-working, surfing, yoga, and relaxing - located at the
