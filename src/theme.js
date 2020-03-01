@@ -1,4 +1,4 @@
-const themeFile = {
+const theme = {
   colors: {
     primary: "#82A9FF",
     secondary: "#FFCF8A",
@@ -30,4 +30,4 @@ const themeFile = {
   },
 }
 
-export default themeFile
+export default theme

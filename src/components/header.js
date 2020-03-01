@@ -6,7 +6,7 @@ import Logo from "../images/logo.svg"
 import LogoBlack from "../images/logoBlack.svg"
 import BigLink from "./link.js"
 import ButtonLink from "./button.js"
-import themeFile from "../themeFile.js"
+import theme from "../theme.js"
 
 function Header({ siteTitle }) {
   const [isTop, setIsTop] = useState(true)
@@ -75,7 +75,7 @@ function Header({ siteTitle }) {
               <ButtonLink
                 name="Book Now"
                 textColor="white"
-                bg={themeFile.colors.secondary}
+                bg={theme.colors.primary}
               />
             </Div>
           </Div>

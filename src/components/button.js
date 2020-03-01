@@ -1,11 +1,10 @@
 import { Link } from "gatsby"
 import React, { useState, useEffect } from "react"
 import { Div, Text } from "atomize"
-import themeFile from "../themeFile.js"
+import theme from "../theme.js"
 
 export default function ButtonLink(props) {
   const { name, textColor, bg } = props
-  console.log(themeFile)
 
   useEffect(() => {})
 
@@ -22,8 +21,8 @@ export default function ButtonLink(props) {
           style={{
             letterSpacing: "0.075rem",
           }}
-          textSize="button"
-          fontFamily="secondary"
+          textSize={theme.textSize.size.button}
+          fontFamily={theme.fontFamily.secondary}
           textWeight="400"
           textColor={textColor}
         >

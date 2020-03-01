@@ -9,6 +9,7 @@ import BigHeader from "../components/bigHeader"
 import SubHeader from "../components/subHeader"
 import SlideShow from "../components/slideshow"
 import BigLogo from "../images/bigLogo.svg"
+import theme from "../theme.js"
 
 import SEO from "../components/seo"
 import Dunes from "../images/dunes.svg"
@@ -156,13 +157,13 @@ const IndexPage = ({ data }) => (
     <Layout>
       <SEO title="Home" />
       <Div m={{ t: "-8rem" }}>
-        <PrimaryContainer bg="secondary">
+        <PrimaryContainer bg={theme.colors.secondary}>
           <Container justify="center">
             <Row>
               <Col size="5">
                 <Text
-                  textSize="subHeader"
-                  fontFamily="secondary"
+                  textSize={theme.textSize.size.subHeader}
+                  fontFamily={theme.fontFamily.secondary}
                   textColor="black"
                   textWeight="700"
                   style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
@@ -170,8 +171,8 @@ const IndexPage = ({ data }) => (
                   Singlefin is a surf, yoga, and coworking experience
                 </Text>
                 <Text
-                  textSize="header2"
-                  fontFamily="secondary"
+                  textSize={theme.textSize.size.header2}
+                  fontFamily={theme.fontFamily.secondary}
                   textColor="offBlack"
                   textWeight="400"
                   p={{ t: "1rem" }}
