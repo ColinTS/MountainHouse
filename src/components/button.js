@@ -1,9 +1,11 @@
 import { Link } from "gatsby"
 import React, { useState, useEffect } from "react"
 import { Div, Text } from "atomize"
+import themeFile from "../themeFile.js"
 
 export default function ButtonLink(props) {
   const { name, textColor, bg } = props
+  console.log(themeFile)
 
   useEffect(() => {})
 

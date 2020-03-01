@@ -6,6 +6,7 @@ import Logo from "../images/logo.svg"
 import LogoBlack from "../images/logoBlack.svg"
 import BigLink from "./link.js"
 import ButtonLink from "./button.js"
+import themeFile from "../themeFile.js"
 
 function Header({ siteTitle }) {
   const [isTop, setIsTop] = useState(true)
@@ -71,7 +72,11 @@ function Header({ siteTitle }) {
               hoverTextColor={"primary"}
             ></BigLink>
             <Div p={{ l: "2rem" }}>
-              <ButtonLink name="Book Now" textColor="white" bg="primary" />
+              <ButtonLink
+                name="Book Now"
+                textColor="white"
+                bg={themeFile.colors.secondary}
+              />
             </Div>
           </Div>
         </Row>
