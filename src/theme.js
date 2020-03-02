@@ -2,7 +2,7 @@ const theme = {
   colors: {
     primary: "#82A9FF",
     secondary: "#FFCF8A",
-    darkDune: "#EABD7C",
+    darkDune: "#533C1C",
     black: "#0A0A0A",
     offBlack: "#333333",
     white: "#FFFFFF",
@@ -12,7 +12,7 @@ const theme = {
       display3: "96px",
       display2: "60px",
       display1: "48px",
-      header: "34px",
+      header: "32px",
       subHeader: "28px",
       header2: "20px",
       paragraph: "16px",

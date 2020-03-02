@@ -9,7 +9,12 @@ export default function ButtonLink(props) {
   useEffect(() => {})
 
   return (
-    <Link to="/page-2/">
+    <Link
+      style={{
+        textDecorationLine: "none",
+      }}
+      to="/page-2/"
+    >
       <Div
         bg={bg}
         d="flex"
@@ -25,6 +30,7 @@ export default function ButtonLink(props) {
           fontFamily={theme.fontFamily.secondary}
           textWeight="400"
           textColor={textColor}
+          textDecor="none"
         >
           {name}
         </Text>

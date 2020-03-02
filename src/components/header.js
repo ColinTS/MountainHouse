@@ -69,7 +69,7 @@ function Header({ siteTitle }) {
             <BigLink
               name="Our Packages"
               textColor={"white"}
-              hoverTextColor={"primary"}
+              hoverTextColor={theme.colors.primary}
             ></BigLink>
             <Div p={{ l: "2rem" }}>
               <ButtonLink
@@ -135,7 +135,11 @@ function Header({ siteTitle }) {
               hoverTextColor={"primary"}
             ></BigLink>
             <Div p={{ l: "2rem" }}>
-              <ButtonLink name="Book Now" textColor={"white"} bg={"primary"} />
+              <ButtonLink
+                name="Book Now"
+                textColor="white"
+                bg={theme.colors.primary}
+              />
             </Div>
           </Div>
         </Row>
