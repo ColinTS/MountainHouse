@@ -156,306 +156,86 @@ const IndexPage = ({ data }) => (
 
     <Layout>
       <SEO title="Home" />
-      <Div m={{ t: "-8rem" }}>
+      <Div m={{ t: "-4rem" }}>
         <PrimaryContainer bg={theme.colors.secondary}>
-          <Container justify="center">
-            <Row>
-              <Col size="5">
-                <Text
-                  textSize={theme.textSize.size.header}
-                  fontFamily={theme.fontFamily.secondary}
-                  textColor={theme.colors.darkDune}
-                  textWeight="700"
-                  style={{ lineHeight: 1.3, letterSpacing: 1.2 }}
-                >
-                  Single Fin is a holiday retreat in Taghazout, Morocco{" "}
-                </Text>
-                <Text
-                  textSize={theme.textSize.size.header2}
-                  fontFamily={theme.fontFamily.secondary}
-                  textColor={theme.colors.darkDune}
-                  textWeight="400"
-                  p={{ t: "1rem" }}
-                  style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                >
-                  We offer an authentic moroccan stay for guests from around the
-                  globe. Whether you want to have a memorable time surfing
-                  southern Morocco, have a relaxed holiday exploring the
-                  country, or eat healthy, local food from our restaurant,
-                  Single Fin welcomes you with open arms.
-                </Text>
-              </Col>
-              <Col size="7">
+          <Container justify="center" maxW="900px">
+            <Text
+              textSize={theme.textSize.size.header}
+              fontFamily={theme.fontFamily.secondary}
+              textColor={theme.colors.darkDune}
+              textWeight="700"
+              style={{
+                lineHeight: 1.3,
+                letterSpacing: 1.2,
+                textAlign: "center",
+              }}
+            >
+              Single Fin is a holiday retreat in Taghazout, Morocco{" "}
+            </Text>
+            <Text
+              textSize={theme.textSize.size.header2}
+              fontFamily={theme.fontFamily.secondary}
+              textColor={theme.colors.darkDune}
+              textWeight="400"
+              p={{ t: "1rem" }}
+              style={{
+                lineHeight: 1.6,
+                letterSpacing: 1.2,
+                textAlign: "center",
+              }}
+            >
+              We offer an authentic moroccan stay for guests from around the
+              globe. Whether you want to have a memorable time surfing southern
+              Morocco, have a relaxed holiday exploring the country, or eat
+              healthy, local food from our restaurant, Single Fin welcomes you
+              with open arms.
+            </Text>
+
+            {/* <Col size="7">
                 <Img
                   style={{
                     borderRadius: 4,
                   }}
                   fluid={data.placeholderImage.childImageSharp.fluid}
                 />
-              </Col>
-            </Row>
+              </Col> */}
           </Container>
         </PrimaryContainer>
       </Div>
-      <PrimaryContainer bg="white">
-        <Container justify="center">
-          <Row>
-            <Col size="12">
-              <Text
-                textSize="subHeader"
-                fontFamily="secondary"
-                textColor="black"
-                textWeight="700"
-                textAlign="center"
-                style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
-              >
-                Stay with us
-              </Text>
-              <Text
-                textSize="header2"
-                fontFamily="primary"
-                textColor="offBlack"
-                textWeight="400"
-                textAlign="center"
-                p={{ t: "0.25rem", b: "3rem" }}
-                style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-              >
-                Rooms right on the beach
-              </Text>
 
-              <SlideShow data={data.stay} />
-            </Col>
-          </Row>
-          <Row p={{ t: "3rem" }}>
-            <Col size="8">
-              <Text
-                textSize="header2"
-                fontFamily="secondary"
-                textColor="black"
-                textWeight="700"
-                style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
-              >
-                Sleep and surf
-              </Text>
-              <Text
-                textSize="paragraph"
-                fontFamily="primary"
-                textColor="offBlack"
-                textWeight="400"
-                p={{ t: "1rem" }}
-                style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-              >
-                From cozy one-beds to a spacious penthouse, we have the room for
-                you. Located right on the beach, surfing is literally steps away
-                from your bedroom.
-              </Text>
-            </Col>
-            <Col size="4">
-              <Text
-                textSize="header2"
-                fontFamily="secondary"
-                textColor="black"
-                textWeight="700"
-                p={{ b: "1rem" }}
-                style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
-              >
-                Amenities{" "}
-              </Text>
-              <Div
-                style={{
-                  padding: "1rem",
-                  borderStyle: "solid",
-                  borderColor: "#d3d3d3",
-                  borderRadius: 3,
-                }}
-              >
-                <Row align="center">
-                  <Icon name="Checked" color="primary" size="30px" />
-                  <Text
-                    textSize="paragraph"
-                    fontFamily="primary"
-                    textColor="offBlack"
-                    textWeight="400"
-                    p={{ l: "1rem" }}
-                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                  >
-                    Full furnishings
-                  </Text>
-                </Row>
-                <Row align="center">
-                  <Icon name="Checked" color="primary" size="30px" />
-                  <Text
-                    textSize="paragraph"
-                    fontFamily="primary"
-                    textColor="offBlack"
-                    textWeight="400"
-                    p={{ l: "1rem" }}
-                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                  >
-                    Free breakfast
-                  </Text>
-                </Row>
-                <Row align="center">
-                  <Icon name="Checked" color="primary" size="30px" />
-                  <Text
-                    textSize="paragraph"
-                    fontFamily="primary"
-                    textColor="offBlack"
-                    textWeight="400"
-                    p={{ l: "1rem" }}
-                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                  >
-                    Fast WiFi
-                  </Text>
-                </Row>
-                <Row align="center">
-                  <Icon name="Checked" color="primary" size="30px" />
-                  <Text
-                    textSize="paragraph"
-                    fontFamily="primary"
-                    textColor="offBlack"
-                    textWeight="400"
-                    p={{ l: "1rem" }}
-                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                  >
-                    Ocean views{" "}
-                  </Text>
-                </Row>
-              </Div>
-            </Col>
-          </Row>
-        </Container>
-      </PrimaryContainer>
       {/* surf */}
-      <PrimaryContainer bg="#F9EACC">
-        <Container justify="center">
-          <Row>
-            <Col size="12">
+      <PrimaryContainer bg={theme.colors.secondary}>
+        <Div style={{ display: "flex", width: "100%", maxWidth: "1200" }}>
+          <Div p={{ l: "3rem" }} style={{ flexBasis: "50%", maxWidth: "50%" }}>
+            <Div w="500px" pos="relative" left="33.33333%">
               <Text
-                textSize="subHeader"
-                fontFamily="secondary"
-                textColor="black"
+                textSize={theme.textSize.size.header}
+                fontFamily={theme.fontFamily.secondary}
+                textColor={theme.colors.darkDune}
                 textWeight="700"
-                textAlign="center"
                 style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
               >
                 Surf with us
               </Text>
               <Text
-                textSize="header2"
-                fontFamily="primary"
-                textColor="offBlack"
+                textSize={theme.textSize.size.header2}
+                fontFamily={theme.fontFamily.secondary}
+                textColor={theme.colors.darkDune}
                 textWeight="400"
-                textAlign="center"
                 p={{ t: "0.25rem", b: "3rem" }}
                 style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
               >
                 From beginner to advanced, we offer surf lessons and surf
                 guiding for all
               </Text>
+            </Div>
+          </Div>
 
-              <SlideShow data={data.surf} />
-            </Col>
-          </Row>
-          <Row p={{ t: "3rem" }}>
-            <Col size="8">
-              <Text
-                textSize="header2"
-                fontFamily="secondary"
-                textColor="black"
-                textWeight="700"
-                style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
-              >
-                Lessons and Guides
-              </Text>
-              <Text
-                textSize="paragraph"
-                fontFamily="primary"
-                textColor="offBlack"
-                textWeight="400"
-                p={{ t: "1rem" }}
-                style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-              >
-                At Singlefin we love to surf. Our local guides know the best
-                spots to improve your surfing, whether you are a beginner,
-                intermediate, or advanced.
-              </Text>
-            </Col>
-            <Col size="4">
-              <Text
-                textSize="header2"
-                fontFamily="secondary"
-                textColor="black"
-                textWeight="700"
-                p={{ b: "1rem" }}
-                style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
-              >
-                What's included
-              </Text>
-              <Div
-                style={{
-                  padding: "1rem",
-                  borderStyle: "solid",
-                  borderColor: "#d3d3d3",
-                  borderRadius: 3,
-                }}
-              >
-                <Row align="center">
-                  <Icon name="Checked" color="primary" size="30px" />
-                  <Text
-                    textSize="paragraph"
-                    fontFamily="primary"
-                    textColor="offBlack"
-                    textWeight="400"
-                    p={{ l: "1rem" }}
-                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                  >
-                    2 hour surf lesson
-                  </Text>
-                </Row>
-                <Row align="center">
-                  <Icon name="Checked" color="primary" size="30px" />
-                  <Text
-                    textSize="paragraph"
-                    fontFamily="primary"
-                    textColor="offBlack"
-                    textWeight="400"
-                    p={{ l: "1rem" }}
-                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                  >
-                    Board and wetsuit
-                  </Text>
-                </Row>
-                <Row align="center">
-                  <Icon name="Checked" color="primary" size="30px" />
-                  <Text
-                    textSize="paragraph"
-                    fontFamily="primary"
-                    textColor="offBlack"
-                    textWeight="400"
-                    p={{ l: "1rem" }}
-                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                  >
-                    Fast WiFi
-                  </Text>
-                </Row>
-                <Row align="center">
-                  <Icon name="Checked" color="primary" size="30px" />
-                  <Text
-                    textSize="paragraph"
-                    fontFamily="primary"
-                    textColor="offBlack"
-                    textWeight="400"
-                    p={{ l: "1rem" }}
-                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                  >
-                    Ocean views{" "}
-                  </Text>
-                </Row>
-              </Div>
-            </Col>
-          </Row>
-        </Container>
+          <Div style={{ flexBasis: "50%", maxWidth: "50%" }}>
+            {" "}
+            <SlideShow data={data.surf} />
+          </Div>
+        </Div>
       </PrimaryContainer>
       {/* Eat */}
       <PrimaryContainer bg="white">
