@@ -39,7 +39,7 @@ function Header({ siteTitle }) {
           style={{
             margin: `0 auto`,
             maxWidth: 1760,
-            padding: `1.0rem`,
+            padding: `0.4rem`,
           }}
         >
           <Div p={{ r: "3rem" }} d="flex" direction="row" align="center">
@@ -102,7 +102,7 @@ function Header({ siteTitle }) {
           style={{
             margin: `0 auto`,
             maxWidth: 1760,
-            padding: `1.0rem 1.0875rem`,
+            padding: `0.4rem`,
           }}
         >
           <Div p={{ r: "3rem" }} d="flex" direction="row" align="center">

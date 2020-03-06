@@ -204,7 +204,12 @@ const IndexPage = ({ data }) => (
       </Div>
 
       {/* surf */}
-      <PrimaryContainer bg={theme.colors.secondary}>
+      <Div
+        bg={"linear-gradient(to bottom, #FFCF8A 0%, #F9EACC 80%)"}
+        p={{ t: "6rem", b: "6rem" }}
+        d="flex"
+        align="center"
+      >
         <Div style={{ display: "flex", width: "100%", maxWidth: "1200" }}>
           <Div p={{ l: "3rem" }} style={{ flexBasis: "50%", maxWidth: "50%" }}>
             <Div w="500px" pos="relative" left="33.33333%">
@@ -215,7 +220,7 @@ const IndexPage = ({ data }) => (
                 textWeight="700"
                 style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
               >
-                Surf with us
+                Surf the coastal paradise of southern Morocco
               </Text>
               <Text
                 textSize={theme.textSize.size.header2}
@@ -236,71 +241,71 @@ const IndexPage = ({ data }) => (
             <SlideShow data={data.surf} />
           </Div>
         </Div>
-      </PrimaryContainer>
-      {/* Eat */}
-      <PrimaryContainer bg="white">
-        <Container justify="center">
+      </Div>
+      <Div bg="#F9EACC">
+        <Container justify="center" maxW="1000px">
           <Row>
             <Col size="12">
               <Text
-                textSize="subHeader"
-                fontFamily="secondary"
-                textColor="black"
+                textSize={theme.textSize.size.header2}
+                fontFamily={theme.fontFamily.secondary}
+                textColor={theme.colors.darkDune}
                 textWeight="700"
-                textAlign="center"
-                style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
-              >
-                Eat with us
-              </Text>
-              <Text
-                textSize="header2"
-                fontFamily="primary"
-                textColor="offBlack"
-                textWeight="400"
-                textAlign="center"
                 p={{ t: "0.25rem", b: "3rem" }}
+                textAlign="center"
                 style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
               >
-                We offer healthy Moroccon meals at our kitchen by the sea
+                Surf Packages
               </Text>
-
-              <SlideShow data={data.eat} />
             </Col>
           </Row>
-          <Row p={{ t: "3rem" }}>
-            <Col size="8">
-              <Text
-                textSize="header2"
-                fontFamily="secondary"
-                textColor="black"
-                textWeight="700"
-                style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
-              >
-                Food and Drinks{" "}
-              </Text>
-              <Text
-                textSize="paragraph"
-                fontFamily="primary"
-                textColor="offBlack"
-                textWeight="400"
-                p={{ t: "1rem" }}
-                style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-              >
-                Singlefin's Seafood Kitchen is located on Taghazout beach,
-                serving up some of the freshest seafood brought in by the local
-                fisherman.
-              </Text>
+          <Row justify="space-between">
+            <Col size="6">
+              <Div bg="white" rounded="sm">
+                <Img
+                  style={{
+                    borderRadius: "4px 4px 0px 0px",
+                    maxHeight: "240px",
+
+                    width: "auto",
+                  }}
+                  fluid={data.placeholderImage.childImageSharp.fluid}
+                />
+                <Div p="2rem">
+                  <Text
+                    textSize={theme.textSize.size.header2}
+                    fontFamily={theme.fontFamily.secondary}
+                    textColor={theme.colors.darkDune}
+                    textWeight="700"
+                    p={{ t: "0.25rem", b: "3rem" }}
+                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+                  >
+                    Package 1
+                  </Text>
+                </Div>
+              </Div>
             </Col>
-            <Col size="4">
-              <Img
-                style={{
-                  borderRadius: 4,
-                }}
-                fluid={data.kitchenLogo.childImageSharp.fluid}
-              />
+            <Col size="6">
+              <Div bg="white" p="2rem" rounded="sm">
+                <Text
+                  textSize={theme.textSize.size.header2}
+                  fontFamily={theme.fontFamily.secondary}
+                  textColor={theme.colors.darkDune}
+                  textWeight="700"
+                  p={{ t: "0.25rem", b: "3rem" }}
+                  style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+                >
+                  Package 1
+                </Text>
+              </Div>
             </Col>
           </Row>
         </Container>
+      </Div>
+
+      {/* Eat */}
+      <PrimaryContainer bg={theme.colors.lightDune}>
+        <Container justify="center"></Container>
       </PrimaryContainer>
     </Layout>
   </Div>
