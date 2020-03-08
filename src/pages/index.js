@@ -10,6 +10,7 @@ import SubHeader from "../components/subHeader"
 import SlideShow from "../components/slideshow"
 import BigLogo from "../images/bigLogo.svg"
 import theme from "../theme.js"
+import ButtonLink from "../components/button.js"
 
 import SEO from "../components/seo"
 import Dunes from "../images/dunes.svg"
@@ -261,7 +262,18 @@ const IndexPage = ({ data }) => (
           </Row>
           <Row justify="space-between">
             <Col size="6">
-              <Div bg="white" rounded="sm">
+              <Div
+                bg="white"
+                rounded="sm"
+                hoverShadow="4"
+                cursor="pointer"
+                style={{
+                  "&:hover": {
+                    transform: "translateX(20rem)",
+                    cursor: "pointer",
+                  },
+                }}
+              >
                 <Img
                   style={{
                     borderRadius: "4px 4px 0px 0px",
@@ -271,17 +283,139 @@ const IndexPage = ({ data }) => (
                   }}
                   fluid={data.placeholderImage.childImageSharp.fluid}
                 />
-                <Div p="2rem">
-                  <Text
-                    textSize={theme.textSize.size.header2}
-                    fontFamily={theme.fontFamily.secondary}
-                    textColor={theme.colors.darkDune}
-                    textWeight="700"
-                    p={{ t: "0.25rem", b: "3rem" }}
-                    style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                  >
-                    Package 1
-                  </Text>
+                <Div p={{ t: "1rem", l: "2rem" }}>
+                  <Row>
+                    <Text
+                      textSize={theme.textSize.size.header2}
+                      fontFamily={theme.fontFamily.secondary}
+                      textColor={theme.colors.darkDune}
+                      textWeight="700"
+                      p={{ b: "0.5rem" }}
+                      style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+                    >
+                      Surf and Stay
+                    </Text>
+                  </Row>
+                  <Row>
+                    <Text
+                      textSize={theme.textSize.size.paragraph}
+                      fontFamily={theme.fontFamily.secondary}
+                      textColor={theme.colors.darkDune}
+                      textWeight="500"
+                      p={{ b: "1rem" }}
+                      style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+                    >
+                      Starting from{" "}
+                      <span style={{ fontWeight: "900" }}>450 EUR</span>{" "}
+                      per/week
+                    </Text>
+                  </Row>
+                  <Row>
+                    <Text
+                      textSize={theme.textSize.size.paragraph}
+                      fontFamily={theme.fontFamily.secondary}
+                      textColor={theme.colors.darkDune}
+                      textWeight="500"
+                      p={{ b: "1rem" }}
+                      style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+                    >
+                      Are you a surfer with some experience and want to surf the
+                      sweetest waves of Southern Morocco? Our local, lovable
+                      guides will take you to their favorite places to surf.
+                    </Text>
+                  </Row>
+                  <Row align="center" p={{ b: "0.25rem" }}>
+                    <Icon
+                      name="Checked"
+                      color={theme.colors.secondary}
+                      size="30px"
+                    />
+
+                    <Text
+                      textSize={theme.textSize.size.paragraph}
+                      fontFamily={theme.fontFamily.secondary}
+                      textColor={theme.colors.darkDune}
+                      textWeight="500"
+                      style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+                    >
+                      Find the swell: daily surf excursions
+                    </Text>
+                  </Row>
+                  <Row align="center" p={{ b: "0.25rem" }}>
+                    <Icon
+                      name="Checked"
+                      color={theme.colors.secondary}
+                      size="30px"
+                    />
+
+                    <Text
+                      textSize={theme.textSize.size.paragraph}
+                      fontFamily={theme.fontFamily.secondary}
+                      textColor={theme.colors.darkDune}
+                      textWeight="500"
+                      style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+                    >
+                      Overnight stay in one of our rooms
+                    </Text>
+                  </Row>
+                  <Row align="center" p={{ b: "0.25rem" }}>
+                    <Icon
+                      name="Checked"
+                      color={theme.colors.secondary}
+                      size="30px"
+                    />
+
+                    <Text
+                      textSize={theme.textSize.size.paragraph}
+                      fontFamily={theme.fontFamily.secondary}
+                      textColor={theme.colors.darkDune}
+                      textWeight="500"
+                      style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+                    >
+                      Free healthy breakfast
+                    </Text>
+                  </Row>
+                  <Row align="center" p={{ b: "0.25rem" }}>
+                    <Icon
+                      name="Checked"
+                      color={theme.colors.secondary}
+                      size="30px"
+                    />
+
+                    <Text
+                      textSize={theme.textSize.size.paragraph}
+                      fontFamily={theme.fontFamily.secondary}
+                      textColor={theme.colors.darkDune}
+                      textWeight="500"
+                      style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+                    >
+                      Chill-out terrace over the sea
+                    </Text>
+                  </Row>
+                  <Row align="center" p={{ b: "0.25rem" }}>
+                    <Icon
+                      name="Checked"
+                      color={theme.colors.secondary}
+                      size="30px"
+                    />
+
+                    <Text
+                      textSize={theme.textSize.size.paragraph}
+                      fontFamily={theme.fontFamily.secondary}
+                      textColor={theme.colors.darkDune}
+                      textWeight="500"
+                      style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
+                    >
+                      200/20 Mbps internet
+                    </Text>
+                  </Row>
+                  <Row p={{ t: "1rem", b: "1rem" }}>
+                    <ButtonLink
+                      name="Book Now"
+                      textColor="white"
+                      bg={theme.colors.primary}
+                    />
+                  </Row>
                 </Div>
               </Div>
             </Col>

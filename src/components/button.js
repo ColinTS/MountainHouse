@@ -20,7 +20,7 @@ export default function ButtonLink(props) {
         d="flex"
         align="center"
         p={{ x: "2.25rem", y: "0.75rem" }}
-        rounded="circle"
+        rounded="sm"
       >
         <Text
           style={{
