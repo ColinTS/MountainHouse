@@ -7,6 +7,7 @@ import LogoBlack from "../images/logoBlack.svg"
 import BigLink from "./link.js"
 import ButtonLink from "./button.js"
 import theme from "../theme.js"
+import { jsx } from "theme-ui"
 
 function Header({ siteTitle }) {
   const [isTop, setIsTop] = useState(true)

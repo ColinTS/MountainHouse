@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { Div, Container, Row, Col, Anchor, Button, Text, Icon } from "atomize"
+import { jsx, Box, Container } from "theme-ui"
+import { Div, Row, Col, Anchor, Button, Text, Icon } from "atomize"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import PrimaryContainer from "../components/container"
@@ -92,9 +93,9 @@ export const data = graphql`
 `
 
 const IndexPage = ({ data }) => (
-  <Div>
-    <Div
-      style={{
+  <div>
+    <div
+      css={{
         margin: 0,
         height: "100vh",
         width: "100%",
@@ -119,8 +120,8 @@ const IndexPage = ({ data }) => (
         <source src={video} type="video/mp4" />
         <source src={video} type="video/ogg" />
       </video>
-      <Div
-        style={{
+      <div
+        css={{
           position: "absolute",
           bottom: "-1%",
           width: "100vw",
@@ -129,15 +130,14 @@ const IndexPage = ({ data }) => (
         }}
       >
         <Dunes style={{ width: "100%", height: "auto" }} />
-      </Div>
+      </div>
 
-      <Div
-        style={{
+      <div
+        css={{
           position: "absolute",
           top: "40%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          // textAlign: "center",
         }}
       >
         <BigLogo
@@ -146,20 +146,14 @@ const IndexPage = ({ data }) => (
             height: "500px",
           }}
         />
-        {/* <Div p={{ t: "2rem" }}>
-          <SubHeader
-            text=" A place for co-working, surfing, yoga, and relaxing - located at the
-            foot of the atlas mountains, near Taghazout, Morocco"
-          ></SubHeader>
-        </Div> */}
-      </Div>
-    </Div>
+      </div>
+    </div>
 
     <Layout>
       <SEO title="Home" />
-      <Div m={{ t: "-4rem" }}>
-        <PrimaryContainer bg={theme.colors.secondary}>
-          <Container justify="center" maxW="900px">
+      <div css={{ marginTop: "-4rem" }}>
+        <Box sx={{ bg: "secondary", py: 6 }}>
+          <Container sx={{ maxWidth: "smallContainer" }} justify="center">
             <Text
               textSize={theme.textSize.size.header}
               fontFamily={theme.fontFamily.secondary}
@@ -173,6 +167,7 @@ const IndexPage = ({ data }) => (
             >
               Single Fin is a holiday retreat in Taghazout, Morocco{" "}
             </Text>
+
             <Text
               textSize={theme.textSize.size.header2}
               fontFamily={theme.fontFamily.secondary}
@@ -201,8 +196,8 @@ const IndexPage = ({ data }) => (
                 />
               </Col> */}
           </Container>
-        </PrimaryContainer>
-      </Div>
+        </Box>
+      </div>
 
       {/* surf */}
       <Div
@@ -262,15 +257,17 @@ const IndexPage = ({ data }) => (
           </Row>
           <Row justify="space-between">
             <Col size="6">
-              <Div
+              <Box
                 bg="white"
-                rounded="sm"
-                hoverShadow="4"
-                cursor="pointer"
-                style={{
-                  "&:hover": {
-                    transform: "translateX(20rem)",
-                    cursor: "pointer",
+                sx={{
+                  cursor: "pointer",
+                  borderRadius: 4,
+                  transform: "translate(0, 0px)",
+                  transition: "all .4s ease",
+                  ":hover": {
+                    transform: "translate(0, -8px)",
+                    transition: "all .4s ease",
+                    boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
                   },
                 }}
               >
@@ -417,7 +414,7 @@ const IndexPage = ({ data }) => (
                     />
                   </Row>
                 </Div>
-              </Div>
+              </Box>
             </Col>
             <Col size="6">
               <Div bg="white" p="2rem" rounded="sm">
@@ -442,7 +439,7 @@ const IndexPage = ({ data }) => (
         <Container justify="center"></Container>
       </PrimaryContainer>
     </Layout>
-  </Div>
+  </div>
 )
 
 export default IndexPage
