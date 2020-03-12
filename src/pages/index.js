@@ -1,6 +1,7 @@
+/** @jsx jsx */
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { jsx, Box, Container } from "theme-ui"
+import { jsx, Box, Container, Heading } from "theme-ui"
 import { Div, Row, Col, Anchor, Button, Text, Icon } from "atomize"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
@@ -152,28 +153,17 @@ const IndexPage = ({ data }) => (
     <Layout>
       <SEO title="Home" />
       <div css={{ marginTop: "-4rem" }}>
-        <Box sx={{ bg: "secondary", py: 6 }}>
+        <div sx={{ bg: "secondary", py: 6 }}>
           <Container sx={{ maxWidth: "smallContainer" }} justify="center">
-            <Text
-              textSize={theme.textSize.size.header}
-              fontFamily={theme.fontFamily.secondary}
-              textColor={theme.colors.darkDune}
-              textWeight="700"
-              style={{
-                lineHeight: 1.3,
-                letterSpacing: 1.2,
-                textAlign: "center",
-              }}
-            >
+            <h1 sx={{ variant: "styles.h1", textAlign: "center" }}>
               Single Fin is a holiday retreat in Taghazout, Morocco{" "}
-            </Text>
+            </h1>
 
             <Text
               textSize={theme.textSize.size.header2}
               fontFamily={theme.fontFamily.secondary}
               textColor={theme.colors.darkDune}
               textWeight="400"
-              p={{ t: "1rem" }}
               style={{
                 lineHeight: 1.6,
                 letterSpacing: 1.2,
@@ -196,7 +186,7 @@ const IndexPage = ({ data }) => (
                 />
               </Col> */}
           </Container>
-        </Box>
+        </div>
       </div>
 
       {/* surf */}
