@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx, Box, Container, Heading, Grid, Flex } from "theme-ui"
 import { Link } from "gatsby"
 import React, { useState, useEffect } from "react"
 import { Div, Text } from "atomize"
@@ -15,12 +17,15 @@ export default function ButtonLink(props) {
       }}
       to="/page-2/"
     >
-      <Div
-        bg={bg}
-        d="flex"
-        align="center"
-        p={{ x: "2.25rem", y: "0.75rem" }}
-        rounded="sm"
+      <div
+        sx={{
+          backgroundColor: bg,
+          display: "flex",
+          alignContent: "center",
+          px: 3,
+          py: 3,
+          borderRadius: 4,
+        }}
       >
         <Text
           style={{
@@ -34,7 +39,7 @@ export default function ButtonLink(props) {
         >
           {name}
         </Text>
-      </Div>
+      </div>
     </Link>
   )
 }

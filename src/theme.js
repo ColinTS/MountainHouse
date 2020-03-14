@@ -7,6 +7,7 @@ const theme = {
     black: "#0A0A0A",
     offBlack: "#333333",
     white: "#FFFFFF",
+    blue: "#428DA4",
   },
   textSize: {
     size: {

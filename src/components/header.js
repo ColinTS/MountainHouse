@@ -1,13 +1,14 @@
+/** @jsx jsx */
+import { jsx, Box, Container, Heading, Grid, Flex } from "theme-ui"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
-import { Div, Container, Row, Anchor, Text } from "atomize"
+import { Div, Row, Anchor, Text } from "atomize"
 import Logo from "../images/logo.svg"
 import LogoBlack from "../images/logoBlack.svg"
 import BigLink from "./link.js"
 import ButtonLink from "./button.js"
 import theme from "../theme.js"
-import { jsx } from "theme-ui"
 
 function Header({ siteTitle }) {
   const [isTop, setIsTop] = useState(true)
@@ -53,11 +54,7 @@ function Header({ siteTitle }) {
             hoverTextColor={theme.colors.primary}
           ></BigLink>
           <Div p={{ l: "2rem" }}>
-            <ButtonLink
-              name="Book Now"
-              textColor="white"
-              bg={theme.colors.primary}
-            />
+            <ButtonLink name="Book Now" textColor="white" bg="blue" />
           </Div>
         </Div>
       </Row>

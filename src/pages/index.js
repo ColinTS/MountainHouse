@@ -159,7 +159,7 @@ const IndexPage = ({ data }) => (
               Singlefin is a holiday retreat in Taghazout, Morocco{" "}
             </h1>
 
-            <p sx={{ variant: "styles.p", textAlign: "center" }}>
+            <p sx={{ variant: "styles.p", textAlign: "center", pt: 2 }}>
               We offer an authentic moroccan stay for guests from around the
               globe. Whether you want to have a memorable time surfing southern
               Morocco, have a relaxed holiday exploring the country, or eat
@@ -363,11 +363,7 @@ const IndexPage = ({ data }) => (
                   </p>
                 </Flex>
                 <Flex sx={{ pt: "1rem", pb: "1rem" }}>
-                  <ButtonLink
-                    name="Book Now"
-                    textColor="white"
-                    bg={theme.colors.primary}
-                  />
+                  <ButtonLink name="Book Now" textColor="white" bg="blue" />
                 </Flex>
               </Box>
             </Box>
@@ -515,11 +511,7 @@ const IndexPage = ({ data }) => (
                   </p>
                 </Flex>
                 <Flex sx={{ pt: "1rem", pb: "1rem" }}>
-                  <ButtonLink
-                    name="Book Now"
-                    textColor="white"
-                    bg={theme.colors.primary}
-                  />
+                  <ButtonLink name="Book Now" textColor="white" bg="blue" />
                 </Flex>
               </Box>
             </Box>
