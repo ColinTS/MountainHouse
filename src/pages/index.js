@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { jsx, Box, Container, Heading } from "theme-ui"
+import { jsx, Box, Container, Heading, Grid, Flex } from "theme-ui"
 import { Div, Row, Col, Anchor, Button, Text, Icon } from "atomize"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
@@ -153,281 +153,438 @@ const IndexPage = ({ data }) => (
     <Layout>
       <SEO title="Home" />
       <div css={{ marginTop: "-4rem" }}>
-        <div sx={{ bg: "secondary", py: 6 }}>
+        <div sx={{ bg: "secondary", pt: 6, pb: 2 }}>
           <Container sx={{ maxWidth: "smallContainer" }} justify="center">
             <h1 sx={{ variant: "styles.h1", textAlign: "center" }}>
-              Single Fin is a holiday retreat in Taghazout, Morocco{" "}
+              Singlefin is a holiday retreat in Taghazout, Morocco{" "}
             </h1>
 
-            <Text
-              textSize={theme.textSize.size.header2}
-              fontFamily={theme.fontFamily.secondary}
-              textColor={theme.colors.darkDune}
-              textWeight="400"
-              style={{
-                lineHeight: 1.6,
-                letterSpacing: 1.2,
-                textAlign: "center",
-              }}
-            >
+            <p sx={{ variant: "styles.p", textAlign: "center" }}>
               We offer an authentic moroccan stay for guests from around the
               globe. Whether you want to have a memorable time surfing southern
               Morocco, have a relaxed holiday exploring the country, or eat
               healthy, local food from our restaurant, Single Fin welcomes you
               with open arms.
-            </Text>
-
-            {/* <Col size="7">
-                <Img
-                  style={{
-                    borderRadius: 4,
-                  }}
-                  fluid={data.placeholderImage.childImageSharp.fluid}
-                />
-              </Col> */}
+            </p>
           </Container>
         </div>
       </div>
 
       {/* surf */}
-      <Div
-        bg={"linear-gradient(to bottom, #FFCF8A 0%, #F9EACC 80%)"}
-        p={{ t: "6rem", b: "6rem" }}
-        d="flex"
-        align="center"
+      <div
+        sx={{
+          variant: "layout.primaryContainer",
+          background: "linear-gradient(to bottom, #FFCF8A 0%, #F9EACC 80%)",
+        }}
       >
-        <Div style={{ display: "flex", width: "100%", maxWidth: "1200" }}>
-          <Div p={{ l: "3rem" }} style={{ flexBasis: "50%", maxWidth: "50%" }}>
-            <Div w="500px" pos="relative" left="33.33333%">
-              <Text
-                textSize={theme.textSize.size.header}
-                fontFamily={theme.fontFamily.secondary}
-                textColor={theme.colors.darkDune}
-                textWeight="700"
-                style={{ lineHeight: 1.4, letterSpacing: 1.2 }}
-              >
+        <div css={{ display: "flex", width: "100%", maxWidth: "1200" }}>
+          <div
+            css={{ flexBasis: "40%", maxWidth: "40%", paddingRight: "3rem" }}
+          >
+            <div
+              css={{ width: "500px", position: "relative", marginLeft: "auto" }}
+            >
+              <h2 sx={{ variant: "styles.h2" }}>
                 Surf the coastal paradise of southern Morocco
-              </Text>
-              <Text
-                textSize={theme.textSize.size.header2}
-                fontFamily={theme.fontFamily.secondary}
-                textColor={theme.colors.darkDune}
-                textWeight="400"
-                p={{ t: "0.25rem", b: "3rem" }}
-                style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-              >
+              </h2>
+              <p sx={{ variant: "styles.p" }}>
                 From beginner to advanced, we offer surf lessons and surf
                 guiding for all
-              </Text>
-            </Div>
-          </Div>
+              </p>
+            </div>
+          </div>
 
-          <Div style={{ flexBasis: "50%", maxWidth: "50%" }}>
+          <div css={{ flexBasis: "60%", maxWidth: "60%" }}>
             {" "}
             <SlideShow data={data.surf} />
-          </Div>
-        </Div>
-      </Div>
-      <Div bg="#F9EACC">
-        <Container justify="center" maxW="1000px">
-          <Row>
-            <Col size="12">
-              <Text
-                textSize={theme.textSize.size.header2}
-                fontFamily={theme.fontFamily.secondary}
-                textColor={theme.colors.darkDune}
-                textWeight="700"
-                p={{ t: "0.25rem", b: "3rem" }}
-                textAlign="center"
-                style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-              >
-                Surf Packages
-              </Text>
-            </Col>
-          </Row>
-          <Row justify="space-between">
-            <Col size="6">
-              <Box
-                bg="white"
-                sx={{
-                  cursor: "pointer",
-                  borderRadius: 4,
-                  transform: "translate(0, 0px)",
+          </div>
+        </div>
+      </div>
+      <div sx={{ bg: "tertiary", display: "flex", justifyContent: "center" }}>
+        <div
+          sx={{
+            maxWidth: "mediumContainer",
+          }}
+        >
+          <Box>
+            <h3
+              sx={{
+                variant: "styles.h3",
+                pt: "0.25rem",
+                pb: "3rem",
+                textAlign: "center",
+              }}
+            >
+              Surf Packages
+            </h3>
+          </Box>
+
+          <Grid gap={4} columns={[1, 1, 2]}>
+            <Box
+              bg="white"
+              sx={{
+                cursor: "pointer",
+                borderRadius: 4,
+                transform: "translate(0, 0px)",
+                transition: "all .4s ease",
+                ":hover": {
+                  transform: "translate(0, -8px)",
                   transition: "all .4s ease",
-                  ":hover": {
-                    transform: "translate(0, -8px)",
-                    transition: "all .4s ease",
-                    boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
-                  },
+                  boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+                },
+              }}
+            >
+              <Img
+                style={{
+                  borderRadius: "4px 4px 0px 0px",
+                  maxHeight: "240px",
+
+                  width: "auto",
                 }}
-              >
-                <Img
-                  style={{
-                    borderRadius: "4px 4px 0px 0px",
-                    maxHeight: "240px",
+                fluid={data.placeholderImage.childImageSharp.fluid}
+              />
+              <Box sx={{ pt: "1rem", px: "2rem" }}>
+                <Container>
+                  <h3
+                    sx={{
+                      variant: "styles.h3",
+                      pb: 1,
+                    }}
+                  >
+                    Surf and stay
+                  </h3>
+                </Container>
+                <Container>
+                  <p
+                    sx={{
+                      variant: "styles.p",
+                      fontSize: 16,
+                      pb: 1,
+                    }}
+                  >
+                    Starting from{" "}
+                    <span style={{ fontWeight: "900" }}>450 EUR</span> per/week
+                  </p>
+                </Container>
+                <Container>
+                  <p
+                    sx={{
+                      variant: "styles.p",
+                      fontSize: 16,
+                      pb: 1,
+                    }}
+                  >
+                    Are you a surfer with some experience and want to surf the
+                    sweetest waves of Southern Morocco? Our local, lovable
+                    guides will take you to their favorite places to surf.
+                  </p>
+                </Container>
+                <Flex sx={{ alignItems: "center" }}>
+                  <Icon
+                    name="Checked"
+                    color={theme.colors.secondary}
+                    size="30px"
+                  />
 
-                    width: "auto",
-                  }}
-                  fluid={data.placeholderImage.childImageSharp.fluid}
-                />
-                <Div p={{ t: "1rem", l: "2rem" }}>
-                  <Row>
-                    <Text
-                      textSize={theme.textSize.size.header2}
-                      fontFamily={theme.fontFamily.secondary}
-                      textColor={theme.colors.darkDune}
-                      textWeight="700"
-                      p={{ b: "0.5rem" }}
-                      style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                    >
-                      Surf and Stay
-                    </Text>
-                  </Row>
-                  <Row>
-                    <Text
-                      textSize={theme.textSize.size.paragraph}
-                      fontFamily={theme.fontFamily.secondary}
-                      textColor={theme.colors.darkDune}
-                      textWeight="500"
-                      p={{ b: "1rem" }}
-                      style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                    >
-                      Starting from{" "}
-                      <span style={{ fontWeight: "900" }}>450 EUR</span>{" "}
-                      per/week
-                    </Text>
-                  </Row>
-                  <Row>
-                    <Text
-                      textSize={theme.textSize.size.paragraph}
-                      fontFamily={theme.fontFamily.secondary}
-                      textColor={theme.colors.darkDune}
-                      textWeight="500"
-                      p={{ b: "1rem" }}
-                      style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                    >
-                      Are you a surfer with some experience and want to surf the
-                      sweetest waves of Southern Morocco? Our local, lovable
-                      guides will take you to their favorite places to surf.
-                    </Text>
-                  </Row>
-                  <Row align="center" p={{ b: "0.25rem" }}>
-                    <Icon
-                      name="Checked"
-                      color={theme.colors.secondary}
-                      size="30px"
-                    />
+                  <p
+                    sx={{
+                      variant: "styles.p",
+                      fontSize: 16,
+                      mb: 0,
+                    }}
+                  >
+                    Find the swell: daily surf excursions
+                  </p>
+                </Flex>
+                <Flex sx={{ alignItems: "center" }}>
+                  <Icon
+                    name="Checked"
+                    color={theme.colors.secondary}
+                    size="30px"
+                  />
+                  <p
+                    sx={{
+                      variant: "styles.p",
+                      fontSize: 16,
+                      mb: 0,
+                    }}
+                  >
+                    Overnight stay in one of our rooms
+                  </p>
+                </Flex>
+                <Flex sx={{ alignItems: "center" }}>
+                  <Icon
+                    name="Checked"
+                    color={theme.colors.secondary}
+                    size="30px"
+                  />
+                  <p
+                    sx={{
+                      variant: "styles.p",
+                      fontSize: 16,
+                      mb: 0,
+                    }}
+                  >
+                    Free healthy breakfast
+                  </p>
+                </Flex>
+                <Flex sx={{ alignItems: "center" }}>
+                  <Icon
+                    name="Checked"
+                    color={theme.colors.secondary}
+                    size="30px"
+                  />
 
-                    <Text
-                      textSize={theme.textSize.size.paragraph}
-                      fontFamily={theme.fontFamily.secondary}
-                      textColor={theme.colors.darkDune}
-                      textWeight="500"
-                      style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                    >
-                      Find the swell: daily surf excursions
-                    </Text>
-                  </Row>
-                  <Row align="center" p={{ b: "0.25rem" }}>
-                    <Icon
-                      name="Checked"
-                      color={theme.colors.secondary}
-                      size="30px"
-                    />
+                  <p
+                    sx={{
+                      variant: "styles.p",
+                      fontSize: 16,
+                      mb: 0,
+                    }}
+                  >
+                    Chill-out terrace over the sea
+                  </p>
+                </Flex>
+                <Flex sx={{ alignItems: "center" }}>
+                  <Icon
+                    name="Checked"
+                    color={theme.colors.secondary}
+                    size="30px"
+                  />
 
-                    <Text
-                      textSize={theme.textSize.size.paragraph}
-                      fontFamily={theme.fontFamily.secondary}
-                      textColor={theme.colors.darkDune}
-                      textWeight="500"
-                      style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                    >
-                      Overnight stay in one of our rooms
-                    </Text>
-                  </Row>
-                  <Row align="center" p={{ b: "0.25rem" }}>
-                    <Icon
-                      name="Checked"
-                      color={theme.colors.secondary}
-                      size="30px"
-                    />
-
-                    <Text
-                      textSize={theme.textSize.size.paragraph}
-                      fontFamily={theme.fontFamily.secondary}
-                      textColor={theme.colors.darkDune}
-                      textWeight="500"
-                      style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                    >
-                      Free healthy breakfast
-                    </Text>
-                  </Row>
-                  <Row align="center" p={{ b: "0.25rem" }}>
-                    <Icon
-                      name="Checked"
-                      color={theme.colors.secondary}
-                      size="30px"
-                    />
-
-                    <Text
-                      textSize={theme.textSize.size.paragraph}
-                      fontFamily={theme.fontFamily.secondary}
-                      textColor={theme.colors.darkDune}
-                      textWeight="500"
-                      style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                    >
-                      Chill-out terrace over the sea
-                    </Text>
-                  </Row>
-                  <Row align="center" p={{ b: "0.25rem" }}>
-                    <Icon
-                      name="Checked"
-                      color={theme.colors.secondary}
-                      size="30px"
-                    />
-
-                    <Text
-                      textSize={theme.textSize.size.paragraph}
-                      fontFamily={theme.fontFamily.secondary}
-                      textColor={theme.colors.darkDune}
-                      textWeight="500"
-                      style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                    >
-                      200/20 Mbps internet
-                    </Text>
-                  </Row>
-                  <Row p={{ t: "1rem", b: "1rem" }}>
-                    <ButtonLink
-                      name="Book Now"
-                      textColor="white"
-                      bg={theme.colors.primary}
-                    />
-                  </Row>
-                </Div>
+                  <p
+                    sx={{
+                      variant: "styles.p",
+                      fontSize: 16,
+                      mb: 0,
+                    }}
+                  >
+                    Blazing 200/20 Mbps internet
+                  </p>
+                </Flex>
+                <Flex sx={{ pt: "1rem", pb: "1rem" }}>
+                  <ButtonLink
+                    name="Book Now"
+                    textColor="white"
+                    bg={theme.colors.primary}
+                  />
+                </Flex>
               </Box>
-            </Col>
-            <Col size="6">
-              <Div bg="white" p="2rem" rounded="sm">
-                <Text
-                  textSize={theme.textSize.size.header2}
-                  fontFamily={theme.fontFamily.secondary}
-                  textColor={theme.colors.darkDune}
-                  textWeight="700"
-                  p={{ t: "0.25rem", b: "3rem" }}
-                  style={{ lineHeight: 1.6, letterSpacing: 1.2 }}
-                >
-                  Package 1
-                </Text>
-              </Div>
-            </Col>
-          </Row>
-        </Container>
-      </Div>
+            </Box>
+
+            <Box
+              bg="white"
+              sx={{
+                cursor: "pointer",
+                borderRadius: 4,
+                transform: "translate(0, 0px)",
+                transition: "all .4s ease",
+                ":hover": {
+                  transform: "translate(0, -8px)",
+                  transition: "all .4s ease",
+                  boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+                },
+              }}
+            >
+              <Img
+                style={{
+                  borderRadius: "4px 4px 0px 0px",
+                  maxHeight: "240px",
+
+                  width: "auto",
+                }}
+                fluid={data.placeholderImage.childImageSharp.fluid}
+              />
+              <Box sx={{ pt: "1rem", px: "2rem" }}>
+                <Container>
+                  <h3
+                    sx={{
+                      variant: "styles.h3",
+                      pb: 1,
+                    }}
+                  >
+                    Surf and stay
+                  </h3>
+                </Container>
+                <Container>
+                  <p
+                    sx={{
+                      variant: "styles.p",
+                      fontSize: 16,
+                      pb: 1,
+                    }}
+                  >
+                    Starting from{" "}
+                    <span style={{ fontWeight: "900" }}>450 EUR</span> per/week
+                  </p>
+                </Container>
+                <Container>
+                  <p
+                    sx={{
+                      variant: "styles.p",
+                      fontSize: 16,
+                      pb: 1,
+                    }}
+                  >
+                    Are you a surfer with some experience and want to surf the
+                    sweetest waves of Southern Morocco? Our local, lovable
+                    guides will take you to their favorite places to surf.
+                  </p>
+                </Container>
+                <Flex sx={{ alignItems: "center" }}>
+                  <Icon
+                    name="Checked"
+                    color={theme.colors.secondary}
+                    size="30px"
+                  />
+
+                  <p
+                    sx={{
+                      variant: "styles.p",
+                      fontSize: 16,
+                      mb: 0,
+                    }}
+                  >
+                    Find the swell: daily surf excursions
+                  </p>
+                </Flex>
+                <Flex sx={{ alignItems: "center" }}>
+                  <Icon
+                    name="Checked"
+                    color={theme.colors.secondary}
+                    size="30px"
+                  />
+                  <p
+                    sx={{
+                      variant: "styles.p",
+                      fontSize: 16,
+                      mb: 0,
+                    }}
+                  >
+                    Overnight stay in one of our rooms
+                  </p>
+                </Flex>
+                <Flex sx={{ alignItems: "center" }}>
+                  <Icon
+                    name="Checked"
+                    color={theme.colors.secondary}
+                    size="30px"
+                  />
+                  <p
+                    sx={{
+                      variant: "styles.p",
+                      fontSize: 16,
+                      mb: 0,
+                    }}
+                  >
+                    Free healthy breakfast
+                  </p>
+                </Flex>
+                <Flex sx={{ alignItems: "center" }}>
+                  <Icon
+                    name="Checked"
+                    color={theme.colors.secondary}
+                    size="30px"
+                  />
+
+                  <p
+                    sx={{
+                      variant: "styles.p",
+                      fontSize: 16,
+                      mb: 0,
+                    }}
+                  >
+                    Chill-out terrace over the sea
+                  </p>
+                </Flex>
+                <Flex sx={{ alignItems: "center" }}>
+                  <Icon
+                    name="Checked"
+                    color={theme.colors.secondary}
+                    size="30px"
+                  />
+
+                  <p
+                    sx={{
+                      variant: "styles.p",
+                      fontSize: 16,
+                      mb: 0,
+                    }}
+                  >
+                    Blazing 200/20 Mbps internet
+                  </p>
+                </Flex>
+                <Flex sx={{ pt: "1rem", pb: "1rem" }}>
+                  <ButtonLink
+                    name="Book Now"
+                    textColor="white"
+                    bg={theme.colors.primary}
+                  />
+                </Flex>
+              </Box>
+            </Box>
+          </Grid>
+        </div>
+      </div>
 
       {/* Eat */}
-      <PrimaryContainer bg={theme.colors.lightDune}>
-        <Container justify="center"></Container>
-      </PrimaryContainer>
+      <div
+        sx={{
+          variant: "layout.primaryContainer",
+          bg: "tertiary",
+        }}
+      >
+        <div
+          css={{
+            display: "flex",
+            flexDirection: "row-reverse",
+            width: "100%",
+            maxWidth: "1200",
+          }}
+        >
+          <div css={{ flexBasis: "40%", maxWidth: "40%", paddingLeft: "3rem" }}>
+            <div
+              css={{
+                width: "500px",
+                position: "relative",
+                marginRight: "auto",
+              }}
+            >
+              <h2 sx={{ variant: "styles.h2" }}>
+                Surf the coastal paradise of southern Morocco
+              </h2>
+              <p sx={{ variant: "styles.p" }}>
+                From beginner to advanced, we offer surf lessons and surf
+                guiding for all
+              </p>
+            </div>
+          </div>
+
+          <div css={{ flexBasis: "60%", maxWidth: "60%" }}>
+            {" "}
+            <SlideShow data={data.stay} />
+          </div>
+        </div>
+        {/* <div css={{ display: "flex", width: "100%", maxWidth: "1200" }}>
+          <div css={{ flexBasis: "50%", maxWidth: "50%" }}>
+            {" "}
+            <SlideShow data={data.surf} />
+          </div>
+          <div css={{ flexBasis: "50%", maxWidth: "50%" }}>
+            <div
+              css={{ width: "500px", position: "relative", left: "33.33333%" }}
+            >
+              <h2 sx={{ variant: "styles.h2" }}> 
+                Surf the coastal paradise of southern Morocco
+              </h2>
+              <p sx={{ variant: "styles.p" }}>
+                From beginner to advanced, we offer surf lessons and surf
+                guiding for all
+              </p>
+            </div>
+          </div>
+        </div> */}
+      </div>
     </Layout>
   </div>
 )
