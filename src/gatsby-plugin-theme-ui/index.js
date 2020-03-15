@@ -35,8 +35,8 @@ export default {
   },
   layout: {
     primaryContainer: {
-      paddingTop: "8rem",
-      paddingBottom: "8rem",
+      paddingTop: "4rem",
+      paddingBottom: "4rem",
       display: "flex",
       alignContent: "center",
     },

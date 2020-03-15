@@ -11,6 +11,7 @@ import BigHeader from "../components/bigHeader"
 import SubHeader from "../components/subHeader"
 import SlideShow from "../components/slideshow"
 import BigLogo from "../images/bigLogo.svg"
+import Check from "../images/check.svg"
 import theme from "../theme.js"
 import ButtonLink from "../components/button.js"
 
@@ -153,7 +154,7 @@ const IndexPage = ({ data }) => (
     <Layout>
       <SEO title="Home" />
       <div css={{ marginTop: "-4rem" }}>
-        <div sx={{ bg: "secondary", pt: 6, pb: 2 }}>
+        <div sx={{ bg: "secondary", pt: 6, pb: 6 }}>
           <Container sx={{ maxWidth: "smallContainer" }} justify="center">
             <h1 sx={{ variant: "styles.h1", textAlign: "center" }}>
               Singlefin is a holiday retreat in Taghazout, Morocco{" "}
@@ -211,7 +212,7 @@ const IndexPage = ({ data }) => (
               sx={{
                 variant: "styles.h3",
                 pt: "0.25rem",
-                pb: "3rem",
+                pb: "1rem",
                 textAlign: "center",
               }}
             >
@@ -280,10 +281,13 @@ const IndexPage = ({ data }) => (
                   </p>
                 </Container>
                 <Flex sx={{ alignItems: "center" }}>
-                  <Icon
-                    name="Checked"
-                    color={theme.colors.secondary}
-                    size="30px"
+                  <Check
+                    sx={{
+                      width: "14px",
+                      height: "14px",
+                      fill: "secondary",
+                      mr: 1,
+                    }}
                   />
 
                   <p
@@ -297,10 +301,13 @@ const IndexPage = ({ data }) => (
                   </p>
                 </Flex>
                 <Flex sx={{ alignItems: "center" }}>
-                  <Icon
-                    name="Checked"
-                    color={theme.colors.secondary}
-                    size="30px"
+                  <Check
+                    sx={{
+                      width: "14px",
+                      height: "14px",
+                      fill: "secondary",
+                      mr: 1,
+                    }}
                   />
                   <p
                     sx={{
@@ -313,10 +320,13 @@ const IndexPage = ({ data }) => (
                   </p>
                 </Flex>
                 <Flex sx={{ alignItems: "center" }}>
-                  <Icon
-                    name="Checked"
-                    color={theme.colors.secondary}
-                    size="30px"
+                  <Check
+                    sx={{
+                      width: "14px",
+                      height: "14px",
+                      fill: "secondary",
+                      mr: 1,
+                    }}
                   />
                   <p
                     sx={{
@@ -329,10 +339,13 @@ const IndexPage = ({ data }) => (
                   </p>
                 </Flex>
                 <Flex sx={{ alignItems: "center" }}>
-                  <Icon
-                    name="Checked"
-                    color={theme.colors.secondary}
-                    size="30px"
+                  <Check
+                    sx={{
+                      width: "14px",
+                      height: "14px",
+                      fill: "secondary",
+                      mr: 1,
+                    }}
                   />
 
                   <p
@@ -346,10 +359,13 @@ const IndexPage = ({ data }) => (
                   </p>
                 </Flex>
                 <Flex sx={{ alignItems: "center" }}>
-                  <Icon
-                    name="Checked"
-                    color={theme.colors.secondary}
-                    size="30px"
+                  <Check
+                    sx={{
+                      width: "14px",
+                      height: "14px",
+                      fill: "secondary",
+                      mr: 1,
+                    }}
                   />
 
                   <p
@@ -428,10 +444,13 @@ const IndexPage = ({ data }) => (
                   </p>
                 </Container>
                 <Flex sx={{ alignItems: "center" }}>
-                  <Icon
-                    name="Checked"
-                    color={theme.colors.secondary}
-                    size="30px"
+                  <Check
+                    sx={{
+                      width: "14px",
+                      height: "14px",
+                      fill: "secondary",
+                      mr: 1,
+                    }}
                   />
 
                   <p
@@ -445,10 +464,13 @@ const IndexPage = ({ data }) => (
                   </p>
                 </Flex>
                 <Flex sx={{ alignItems: "center" }}>
-                  <Icon
-                    name="Checked"
-                    color={theme.colors.secondary}
-                    size="30px"
+                  <Check
+                    sx={{
+                      width: "14px",
+                      height: "14px",
+                      fill: "secondary",
+                      mr: 1,
+                    }}
                   />
                   <p
                     sx={{
@@ -461,10 +483,13 @@ const IndexPage = ({ data }) => (
                   </p>
                 </Flex>
                 <Flex sx={{ alignItems: "center" }}>
-                  <Icon
-                    name="Checked"
-                    color={theme.colors.secondary}
-                    size="30px"
+                  <Check
+                    sx={{
+                      width: "14px",
+                      height: "14px",
+                      fill: "secondary",
+                      mr: 1,
+                    }}
                   />
                   <p
                     sx={{
@@ -477,10 +502,13 @@ const IndexPage = ({ data }) => (
                   </p>
                 </Flex>
                 <Flex sx={{ alignItems: "center" }}>
-                  <Icon
-                    name="Checked"
-                    color={theme.colors.secondary}
-                    size="30px"
+                  <Check
+                    sx={{
+                      width: "14px",
+                      height: "14px",
+                      fill: "secondary",
+                      mr: 1,
+                    }}
                   />
 
                   <p
@@ -494,10 +522,13 @@ const IndexPage = ({ data }) => (
                   </p>
                 </Flex>
                 <Flex sx={{ alignItems: "center" }}>
-                  <Icon
-                    name="Checked"
-                    color={theme.colors.secondary}
-                    size="30px"
+                  <Check
+                    sx={{
+                      width: "14px",
+                      height: "14px",
+                      fill: "secondary",
+                      mr: 1,
+                    }}
                   />
 
                   <p
@@ -557,25 +588,110 @@ const IndexPage = ({ data }) => (
             <SlideShow data={data.stay} />
           </div>
         </div>
-        {/* <div css={{ display: "flex", width: "100%", maxWidth: "1200" }}>
-          <div css={{ flexBasis: "50%", maxWidth: "50%" }}>
-            {" "}
-            <SlideShow data={data.surf} />
-          </div>
-          <div css={{ flexBasis: "50%", maxWidth: "50%" }}>
-            <div
-              css={{ width: "500px", position: "relative", left: "33.33333%" }}
+      </div>
+      <div sx={{ bg: "tertiary", pb: 2 }}>
+        <Container sx={{ maxWidth: "container" }} justify="center">
+          <Box>
+            <h3
+              sx={{
+                variant: "styles.h3",
+                pb: 3,
+              }}
             >
-              <h2 sx={{ variant: "styles.h2" }}> 
-                Surf the coastal paradise of southern Morocco
-              </h2>
-              <p sx={{ variant: "styles.p" }}>
-                From beginner to advanced, we offer surf lessons and surf
-                guiding for all
-              </p>
-            </div>
-          </div>
-        </div> */}
+              What's in your stay?
+            </h3>
+          </Box>
+          <Grid sx={{ pt: 2 }} gap={6} columns={[1, 1, 2]}>
+            <Box>
+              <Flex sx={{ pb: 4 }}>
+                <div>
+                  <Check
+                    sx={{
+                      height: "auto",
+                      width: "24px",
+                      fill: "secondary",
+                      mr: 3,
+                    }}
+                  />
+                </div>
+
+                <p
+                  sx={{
+                    variant: "styles.p",
+                    mb: 0,
+                  }}
+                >
+                  Bright, airy rooms with views to the sea
+                </p>
+              </Flex>
+              <Flex sx={{ pb: 4 }}>
+                <div>
+                  <Check
+                    sx={{
+                      height: "auto",
+                      width: "24px",
+                      fill: "secondary",
+                      mr: 3,
+                    }}
+                  />
+                </div>
+
+                <p
+                  sx={{
+                    variant: "styles.p",
+                    mb: 0,
+                  }}
+                >
+                  Free, healthy breakfast served at our restaurant by the beach
+                </p>
+              </Flex>
+              <Flex sx={{ pb: 4 }}>
+                <div>
+                  <Check
+                    sx={{
+                      height: "auto",
+                      width: "24px",
+
+                      fill: "secondary",
+                      mr: 3,
+                    }}
+                  />
+                </div>
+
+                <p
+                  sx={{
+                    variant: "styles.p",
+                    mb: 0,
+                  }}
+                >
+                  Roof-top terrace with a covered space to lounge, eat food, and
+                  watch the sunset
+                </p>
+              </Flex>
+            </Box>
+            <Box>
+              <Flex sx={{ alignItems: "center" }}>
+                <Check
+                  sx={{
+                    width: "28px",
+                    height: "28px",
+                    fill: "secondary",
+                    mr: 1,
+                  }}
+                />
+
+                <p
+                  sx={{
+                    variant: "styles.p",
+                    mb: 0,
+                  }}
+                >
+                  Blazing 200/20 Mbps internet
+                </p>
+              </Flex>
+            </Box>
+          </Grid>
+        </Container>
       </div>
     </Layout>
   </div>
