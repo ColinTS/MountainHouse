@@ -204,7 +204,7 @@ const IndexPage = ({ data }) => (
       <div sx={{ bg: "tertiary", display: "flex", justifyContent: "center" }}>
         <div
           sx={{
-            maxWidth: "mediumContainer",
+            maxWidth: "container",
           }}
         >
           <Box>
@@ -213,7 +213,7 @@ const IndexPage = ({ data }) => (
                 variant: "styles.h3",
                 pt: "0.25rem",
                 pb: "1rem",
-                textAlign: "center",
+                // textAlign: "center",
               }}
             >
               Surf Packages
