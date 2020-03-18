@@ -604,12 +604,12 @@ const IndexPage = ({ data }) => (
           <Grid sx={{ pt: 2 }} gap={6} columns={[1, 1, 2]}>
             <Box>
               <Flex sx={{ pb: 4 }}>
-                <div>
+                <div css={{ display: "flex" }}>
                   <Check
                     sx={{
                       height: "auto",
-                      width: "24px",
-                      fill: "secondary",
+                      width: "20px",
+                      fill: "blue",
                       mr: 3,
                     }}
                   />
@@ -625,12 +625,12 @@ const IndexPage = ({ data }) => (
                 </p>
               </Flex>
               <Flex sx={{ pb: 4 }}>
-                <div>
+                <div css={{ display: "flex" }}>
                   <Check
                     sx={{
                       height: "auto",
-                      width: "24px",
-                      fill: "secondary",
+                      width: "20px",
+                      fill: "blue",
                       mr: 3,
                     }}
                   />
@@ -646,13 +646,13 @@ const IndexPage = ({ data }) => (
                 </p>
               </Flex>
               <Flex sx={{ pb: 4 }}>
-                <div>
+                <div css={{ display: "flex" }}>
                   <Check
                     sx={{
                       height: "auto",
-                      width: "24px",
+                      width: "20px",
 
-                      fill: "secondary",
+                      fill: "blue",
                       mr: 3,
                     }}
                   />
@@ -671,14 +671,17 @@ const IndexPage = ({ data }) => (
             </Box>
             <Box>
               <Flex sx={{ alignItems: "center" }}>
-                <Check
-                  sx={{
-                    width: "28px",
-                    height: "28px",
-                    fill: "secondary",
-                    mr: 1,
-                  }}
-                />
+                <div css={{ display: "flex" }}>
+                  <Check
+                    sx={{
+                      height: "auto",
+                      width: "20px",
+
+                      fill: "blue",
+                      mr: 3,
+                    }}
+                  />
+                </div>
 
                 <p
                   sx={{

@@ -48,11 +48,11 @@ function Header({ siteTitle }) {
           <Logo style={{ width: "75px" }} />
         </Div>
         <Div d="flex" direction="column" align="center">
-          <BigLink
+          {/* <BigLink
             name="Our Packages"
             textColor={"white"}
             hoverTextColor={theme.colors.primary}
-          ></BigLink>
+          ></BigLink> */}
           <Div p={{ l: "2rem" }}>
             <ButtonLink name="Book Now" textColor="white" bg="blue" />
           </Div>
