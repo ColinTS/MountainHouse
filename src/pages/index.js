@@ -11,6 +11,7 @@ import BigHeader from "../components/bigHeader"
 import SubHeader from "../components/subHeader"
 import SlideShow from "../components/slideshow"
 import BigLogo from "../images/bigLogo.svg"
+import Logo from "../images/logo2.svg"
 import Check from "../images/check.svg"
 import theme from "../theme.js"
 import ButtonLink from "../components/button.js"
@@ -142,10 +143,16 @@ const IndexPage = ({ data }) => (
           transform: "translate(-50%, -50%)",
         }}
       >
-        <BigLogo
+        {/* <BigLogo
           style={{
             width: "500px",
             height: "500px",
+          }}
+        /> */}
+        <Logo
+          style={{
+            width: "500px",
+            height: "auto",
           }}
         />
       </div>
@@ -550,7 +557,7 @@ const IndexPage = ({ data }) => (
         </div>
       </div>
 
-      {/* Eat */}
+      {/* Stay */}
       <div
         sx={{
           variant: "layout.primaryContainer",
@@ -573,9 +580,7 @@ const IndexPage = ({ data }) => (
                 marginRight: "auto",
               }}
             >
-              <h2 sx={{ variant: "styles.h2" }}>
-                Surf the coastal paradise of southern Morocco
-              </h2>
+              <h2 sx={{ variant: "styles.h2" }}>Sleep above the sea</h2>
               <p sx={{ variant: "styles.p" }}>
                 From beginner to advanced, we offer surf lessons and surf
                 guiding for all
@@ -642,7 +647,7 @@ const IndexPage = ({ data }) => (
                     mb: 0,
                   }}
                 >
-                  Free, healthy breakfast served at our restaurant by the beach
+                  Daily, healthy breakfast served at our restaurant by the beach
                 </p>
               </Flex>
               <Flex sx={{ pb: 4 }}>
@@ -670,7 +675,7 @@ const IndexPage = ({ data }) => (
               </Flex>
             </Box>
             <Box>
-              <Flex sx={{ alignItems: "center" }}>
+              <Flex sx={{ alignItems: "center", pb: 4 }}>
                 <div css={{ display: "flex" }}>
                   <Check
                     sx={{
@@ -692,9 +697,71 @@ const IndexPage = ({ data }) => (
                   Blazing 200/20 Mbps internet
                 </p>
               </Flex>
+              <Flex sx={{ alignItems: "center", pb: 4 }}>
+                <div css={{ display: "flex" }}>
+                  <Check
+                    sx={{
+                      height: "auto",
+                      width: "20px",
+
+                      fill: "blue",
+                      mr: 3,
+                    }}
+                  />
+                </div>
+
+                <p
+                  sx={{
+                    variant: "styles.p",
+                    mb: 0,
+                  }}
+                >
+                  Fully equipped kitchen to cook your own food
+                </p>
+              </Flex>
             </Box>
           </Grid>
         </Container>
+      </div>
+      {/* Eat */}
+      <div
+        sx={{
+          variant: "layout.primaryContainer",
+          bg: "tertiary",
+        }}
+      >
+        <div
+          css={{
+            display: "flex",
+            width: "100%",
+            maxWidth: "1200",
+          }}
+        >
+          <div
+            css={{ flexBasis: "40%", maxWidth: "40%", paddingRight: "3rem" }}
+          >
+            <div
+              css={{
+                width: "500px",
+                position: "relative",
+                marginLeft: "auto",
+              }}
+            >
+              <h2 sx={{ variant: "styles.h2" }}>
+                Eat like a local from food made with love
+              </h2>
+              <p sx={{ variant: "styles.p" }}>
+                From beginner to advanced, we offer surf lessons and surf
+                guiding for all
+              </p>
+            </div>
+          </div>
+
+          <div css={{ flexBasis: "60%", maxWidth: "60%" }}>
+            {" "}
+            <SlideShow data={data.eat} />
+          </div>
+        </div>
       </div>
     </Layout>
   </div>

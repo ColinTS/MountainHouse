@@ -23,7 +23,7 @@ export default {
   fontWeights: {
     body: 400,
     heading: 700,
-    subHeading: 500,
+    subHeading: 700,
     bold: 700,
   },
   lineHeights: {
