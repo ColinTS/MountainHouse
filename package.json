@@ -28,7 +28,9 @@
     "react-helmet": "^5.2.1",
     "react-transition-group": "^4.3.0",
     "styled-components": "^4.3.2",
-    "theme-ui": "^0.3.1"
+    "theme-ui": "^0.3.1",
+    "typeface-roboto": "0.0.75",
+    "typeface-rubik": "^0.0.72"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
