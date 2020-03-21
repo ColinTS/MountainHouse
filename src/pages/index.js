@@ -11,6 +11,9 @@ import SlideShow from "../components/slideshow"
 import BigLogo from "../images/bigLogo.svg"
 import Logo from "../images/logo2.svg"
 import Check from "../images/check.svg"
+import BerberOne from "../images/berberOne.svg"
+import BerberTwo from "../images/berberTwo.svg"
+import BerberThree from "../images/berberThree.svg"
 import theme from "../theme.js"
 import ButtonLink from "../components/button.js"
 
@@ -21,7 +24,14 @@ import video from "../images/Tag.mp4"
 
 export const data = graphql`
   query {
-    placeholderImage: file(relativePath: { eq: "image.jpg" }) {
+    surfStay: file(relativePath: { eq: "surfStay.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 4000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    surfCoaching: file(relativePath: { eq: "surfCoaching.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 4000) {
           ...GatsbyImageSharpFluid
@@ -159,7 +169,7 @@ const IndexPage = ({ data }) => (
     <Layout>
       <SEO title="Home" />
       <div css={{ marginTop: "-4rem" }}>
-        <div sx={{ bg: "secondary", pt: 6, pb: 6 }}>
+        <div sx={{ bg: "secondary", pt: 6 }}>
           <Container sx={{ maxWidth: "smallContainer" }} justify="center">
             <h1 sx={{ variant: "styles.h1", textAlign: "center" }}>
               Singlefin is a holiday retreat in Taghazout, Morocco{" "}
@@ -173,6 +183,9 @@ const IndexPage = ({ data }) => (
               with open arms.
             </p>
           </Container>
+          <Flex sx={{ justifyContent: "center", pt: 5 }}>
+            <BerberOne sx={{ height: 150, width: "auto" }}></BerberOne>
+          </Flex>
         </div>
       </div>
 
@@ -233,7 +246,7 @@ const IndexPage = ({ data }) => (
                 // textAlign: "center",
               }}
             >
-              Surf Packages
+              Surf packages
             </h3>
           </Box>
 
@@ -256,17 +269,17 @@ const IndexPage = ({ data }) => (
                 style={{
                   borderRadius: "4px 4px 0px 0px",
                   maxHeight: "240px",
-
                   width: "auto",
                 }}
-                fluid={data.placeholderImage.childImageSharp.fluid}
+                fluid={data.surfStay.childImageSharp.fluid}
               />
               <Box sx={{ pt: "1rem", px: "2rem" }}>
                 <Container>
                   <h3
                     sx={{
                       variant: "styles.h3",
-                      pb: 1,
+                      pb: 3,
+                      fontWeight: 500,
                     }}
                   >
                     Surf and stay
@@ -281,7 +294,7 @@ const IndexPage = ({ data }) => (
                     }}
                   >
                     Starting from{" "}
-                    <span style={{ fontWeight: "900" }}>450 EUR</span> per/week
+                    <span style={{ fontWeight: "900" }}>370 EUR</span> per/week
                   </p>
                 </Container>
                 <Container>
@@ -293,8 +306,8 @@ const IndexPage = ({ data }) => (
                     }}
                   >
                     Are you a surfer with some experience and want to surf the
-                    sweetest waves of Southern Morocco? Our local, lovable
-                    guides will take you to their favorite places to surf.
+                    sweetest waves of Southern Morocco? Our experienced guides
+                    will take you to their favorite places to surf.
                   </p>
                 </Container>
                 <Flex sx={{ alignItems: "center" }}>
@@ -419,20 +432,20 @@ const IndexPage = ({ data }) => (
                 style={{
                   borderRadius: "4px 4px 0px 0px",
                   maxHeight: "240px",
-
                   width: "auto",
                 }}
-                fluid={data.placeholderImage.childImageSharp.fluid}
+                fluid={data.surfCoaching.childImageSharp.fluid}
               />
               <Box sx={{ pt: "1rem", px: "2rem" }}>
                 <Container>
                   <h3
                     sx={{
                       variant: "styles.h3",
-                      pb: 1,
+                      pb: 3,
+                      fontWeight: 500,
                     }}
                   >
-                    Surf and stay
+                    Surf coaching
                   </h3>
                 </Container>
                 <Container>
@@ -455,9 +468,9 @@ const IndexPage = ({ data }) => (
                       pb: 1,
                     }}
                   >
-                    Are you a surfer with some experience and want to surf the
-                    sweetest waves of Southern Morocco? Our local, lovable
-                    guides will take you to their favorite places to surf.
+                    Are you new to surfing and would like to learn to surf while
+                    having a comfortable place to stay? Our experienced surf
+                    instructors will help unleash your inner surfer.
                   </p>
                 </Container>
                 <Flex sx={{ alignItems: "center" }}>
@@ -477,7 +490,7 @@ const IndexPage = ({ data }) => (
                       mb: 0,
                     }}
                   >
-                    Find the swell: daily surf excursions
+                    Daily surf lessons at different surf spots
                   </p>
                 </Flex>
                 <Flex sx={{ alignItems: "center" }}>
@@ -564,10 +577,14 @@ const IndexPage = ({ data }) => (
               </Box>
             </Box>
           </Grid>
+          <Flex sx={{ justifyContent: "center", pt: 6, pb: 2 }}>
+            <BerberThree sx={{ height: 150, width: "auto" }}></BerberThree>
+          </Flex>
         </div>
       </div>
 
       {/* Stay */}
+
       <div
         sx={{
           variant: "layout.primaryContainer",
@@ -731,6 +748,9 @@ const IndexPage = ({ data }) => (
               </Flex>
             </Box>
           </Grid>
+          <Flex sx={{ justifyContent: "center", pt: 5, pb: 2 }}>
+            <BerberTwo sx={{ width: 130, height: "auto" }}></BerberTwo>
+          </Flex>
         </Container>
       </div>
       {/* Eat */}
