@@ -180,7 +180,7 @@ const IndexPage = ({ data }) => (
       <div
         sx={{
           variant: "layout.primaryContainer",
-          background: "linear-gradient(to bottom, #FFCF8A 0%, #F9EACC 80%)",
+          background: "linear-gradient(to bottom, #FFCF8A 0%, #f7f0e1 80%)",
         }}
       >
         <div css={{ display: "flex", width: "100%", maxWidth: "1200" }}>
@@ -193,9 +193,21 @@ const IndexPage = ({ data }) => (
               <h2 sx={{ variant: "styles.h2" }}>
                 Surf the coastal paradise of southern Morocco
               </h2>
+              <p sx={{ variant: "styles.p", py: 3 }}>
+                There is surfing all-year round in Morocco and Taghazout is at
+                the center of it all. Just within a few km of the village there
+                are 10 beautiful surfing spots, for beginners and pros.
+              </p>
+              <p sx={{ variant: "styles.p", pb: 3 }}>
+                Right in front of our beach house there are 2 spots - Hash point
+                and Panorama. Just a quick walk down the beach and you'll find
+                Anchor point - One of Morocco's most famous places to surf. In
+                fact, you can check the surf from our roof terrace.
+              </p>
               <p sx={{ variant: "styles.p" }}>
-                From beginner to advanced, we offer surf lessons and surf
-                guiding for all
+                We offer surf lessons for beginners and guided surf trips for
+                those with more experience. No matter your skill level you'll be
+                surfing your heart out when you stay with us.
               </p>
             </div>
           </div>

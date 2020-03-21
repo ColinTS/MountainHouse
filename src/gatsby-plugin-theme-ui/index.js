@@ -1,16 +1,16 @@
 export default {
   colors: {
     text: "#604218",
-    blackText: "#262626",
+    blackText: "#2e2e2e",
     background: "#fff",
     primary: "#333",
     secondary: "#FFCF8A",
-    tertiary: "#F9EACC",
+    tertiary: "#f7f0e1",
     blue: "#428DA4",
   },
   fonts: {
     body:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+      ' Roboto,system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
     heading:
       'Rubik, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     monospace: "Menlo, monospace",
@@ -27,7 +27,7 @@ export default {
     bold: 700,
   },
   lineHeights: {
-    body: 1.4,
+    body: 1.5,
     heading: 1.2,
   },
   letterSpacings: {
