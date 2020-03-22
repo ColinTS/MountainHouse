@@ -39,14 +39,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-styletron",
-      options: {
-        // You can pass options to Styletron.
-        // Prefix all generated classNames:
-        prefix: "_",
-      },
-    },
-    {
       resolve: "gatsby-plugin-crisp-chat",
       options: {
         websiteId: "3f96f73e-9f2d-40ac-81d8-12ba7e9462b4",

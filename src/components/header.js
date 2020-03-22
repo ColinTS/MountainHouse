@@ -1,14 +1,8 @@
 /** @jsx jsx */
-import { jsx, Box, Container, Heading, Grid, Flex } from "theme-ui"
-import { Link } from "gatsby"
+import { jsx, Flex } from "theme-ui"
 import PropTypes from "prop-types"
-import React, { useState, useEffect } from "react"
-import { Div, Row, Anchor, Text } from "atomize"
-import Logo from "../images/logo.svg"
-import LogoBlack from "../images/logoBlack.svg"
-import BigLink from "./link.js"
+import { useState, useEffect } from "react"
 import ButtonLink from "./button.js"
-import theme from "../theme.js"
 
 function Header({ siteTitle }) {
   const [isTop, setIsTop] = useState(true)
@@ -24,7 +18,7 @@ function Header({ siteTitle }) {
 
   // if (isTop) {
   return (
-    <Div
+    <div
       style={{
         zIndex: 5000,
         background: `none`,
@@ -34,77 +28,21 @@ function Header({ siteTitle }) {
         position: "absolute",
       }}
     >
-      <Row
-        d="flex"
-        align="center"
-        justify="space-between"
-        style={{
-          margin: `0 auto`,
+      <Flex
+        sx={{
+          alignItems: "center",
+          justifyContent: "flex-end",
+          margin: "0 auto",
           maxWidth: 1760,
-          padding: `0.4rem`,
+          py: 3,
         }}
       >
-        <Div p={{ r: "3rem" }} d="flex" direction="row" align="center">
-          <Logo style={{ width: "75px" }} />
-        </Div>
-        <Div d="flex" direction="column" align="center">
-          {/* <BigLink
-            name="Our Packages"
-            textColor={"white"}
-            hoverTextColor={theme.colors.primary}
-          ></BigLink> */}
-          <Div p={{ l: "2rem" }}>
-            <ButtonLink name="Book Now" textColor="white" bg="blue" />
-          </Div>
-        </Div>
-      </Row>
-    </Div>
+        <div>
+          <ButtonLink name="Book Now" textColor="white" bg="blue" />
+        </div>
+      </Flex>
+    </div>
   )
-
-  // else
-  //   return (
-  //     <Div
-  //       shadow="3"
-  //       style={{
-  //         zIndex: 5000,
-  //         background: `white`,
-  //         marginBottom: `1.0rem`,
-  //         width: "100%",
-  //         top: 0,
-  //         position: "absolute",
-  //       }}
-  //     >
-  //       <Row
-  //         d="flex"
-  //         align="center"
-  //         justify="space-between"
-  //         style={{
-  //           margin: `0 auto`,
-  //           maxWidth: 1760,
-  //           padding: `0.4rem`,
-  //         }}
-  //       >
-  //         <Div p={{ r: "3rem" }} d="flex" direction="row" align="center">
-  //           <LogoBlack style={{ width: "75px" }} />
-
-  //         </Div>
-  //         <Div d="flex" direction="column" align="center">
-  //           <BigLink
-  //             name="Our Packages"
-  //             textColor={"black"}
-  //             hoverTextColor={"primary"}
-  //           ></BigLink>
-  //           <Div p={{ l: "2rem" }}>
-  //             <ButtonLink
-  //               name="Book Now"
-  //               textColor="white"
-  //               bg={theme.colors.primary}
-  //             />
-  //           </Div>
-  //         </Div>
-  //       </Row>
-  //     </Div>
-  //   )
 }
 
 Header.propTypes = {

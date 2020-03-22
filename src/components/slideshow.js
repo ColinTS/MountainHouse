@@ -1,7 +1,8 @@
-import { useStaticQuery, graphql } from "gatsby"
-import React, { useState, useEffect } from "react"
-import { Div, Text, Icon, Button } from "atomize"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
+import { useState } from "react"
 import Img from "gatsby-image"
+import Arrow from "../images/arrow.svg"
 
 export default function SlideShow(props) {
   const { data } = props
@@ -28,49 +29,56 @@ export default function SlideShow(props) {
         key={node.id}
         alt={node.name.replace(/-/g, " ").substring(2)}
       />
-      <Button
-        rounded="circle"
-        h="2.5rem"
-        w="2.5rem"
-        m={{ r: "1rem" }}
-        bg="white"
-        shadow="2"
-        hoverShadow="4"
-        style={{
+      <button
+        css={{
           position: "absolute",
-          top: "50%",
+          top: "47%",
           left: "5%",
+          background: "none",
+          border: "none",
+          outline: "none",
         }}
       >
-        <Icon
-          name="LeftArrow"
-          color="primary"
-          size="40px"
+        <Arrow
+          css={{
+            width: "70px",
+            height: "auto",
+            cursor: "pointer",
+            transform: "rotate(180deg) translate(0, 0px)",
+            transition: "all .4s ease",
+            ":hover": {
+              transform: "rotate(180deg) translate(5px, 0)",
+              transition: "all .4s ease",
+            },
+          }}
           onClick={() => handlePrevious()}
-        />
-      </Button>
-
-      <Button
-        rounded="circle"
-        h="2.5rem"
-        w="2.5rem"
-        m={{ r: "1rem" }}
-        bg="white"
-        shadow="2"
-        hoverShadow="4"
-        style={{
+        ></Arrow>
+      </button>
+      <button
+        css={{
           position: "absolute",
-          top: "50%",
+          top: "47%",
           right: "5%",
+          background: "none",
+          border: "none",
+          outline: "none",
         }}
       >
-        <Icon
-          name="RightArrow"
-          color="primary"
-          size="40px"
+        <Arrow
+          css={{
+            width: "70px",
+            height: "auto",
+            cursor: "pointer",
+            transform: "translate(0, 0px)",
+            transition: "all .4s ease",
+            ":hover": {
+              transform: "translate(5px, 0)",
+              transition: "all .4s ease",
+            },
+          }}
           onClick={() => handleNext()}
-        />
-      </Button>
+        ></Arrow>
+      </button>
     </div>
   )
 }

@@ -1,12 +1,10 @@
 /** @jsx jsx */
-import { jsx, Box, Container, Heading, Grid, Flex, Text } from "theme-ui"
+import { jsx } from "theme-ui"
 import { Link } from "gatsby"
-import React, { useState, useEffect } from "react"
-import { Div } from "atomize"
-import theme from "../theme.js"
+import { useEffect } from "react"
 
 export default function ButtonLink(props) {
-  const { name, textColor, bg } = props
+  const { name, bg } = props
 
   useEffect(() => {})
 
