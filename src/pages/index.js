@@ -251,10 +251,10 @@ const IndexPage = ({ data }) => (
                 cursor: "pointer",
                 borderRadius: 4,
                 transform: "translate(0, 0px)",
-                transition: "all .4s ease",
+                transition: "all .3s ease",
                 ":hover": {
                   transform: "translate(0, -8px)",
-                  transition: "all .4s ease",
+                  transition: "all .3 ease",
                   boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
                 },
               }}
@@ -414,10 +414,10 @@ const IndexPage = ({ data }) => (
                 cursor: "pointer",
                 borderRadius: 4,
                 transform: "translate(0, 0px)",
-                transition: "all .4s ease",
+                transition: "all .3s ease",
                 ":hover": {
                   transform: "translate(0, -8px)",
-                  transition: "all .4s ease",
+                  transition: "all .3s ease",
                   boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
                 },
               }}
@@ -601,10 +601,18 @@ const IndexPage = ({ data }) => (
                 marginRight: "auto",
               }}
             >
-              <h2 sx={{ variant: "styles.h2" }}>Sleep above the sea</h2>
-              <p sx={{ variant: "styles.p" }}>
-                From beginner to advanced, we offer surf lessons and surf
-                guiding for all
+              <h2 sx={{ variant: "styles.h2" }}>Stay by the sea</h2>
+              <p sx={{ variant: "styles.p", py: 3 }}>
+                The Singlefin beach house is your front-row seat to the Alantic
+                ocean. Located right on Taghazout beach and facing the sea, our
+                rooms are bright, airy, and got a view you'll remember.
+              </p>
+              <p sx={{ variant: "styles.p", pb: 3 }}>
+                Built on multiple levels, the house is designed and decorated
+                with a tradtional Berber style, and whether you want to check
+                the surf from your room, relax on the roof top terrace with some
+                tea, or fill up on home-cooked meals at our restaurant below you
+                will find yourself at home.
               </p>
             </div>
           </div>

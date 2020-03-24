@@ -44,11 +44,11 @@ export default function SlideShow(props) {
             width: "70px",
             height: "auto",
             cursor: "pointer",
-            transform: "rotate(180deg) translate(0, 0px)",
-            transition: "all .4s ease",
+            transform: "rotate(180deg) scale(1)",
+            transition: "all .3s ease",
             ":hover": {
-              transform: "rotate(180deg) translate(5px, 0)",
-              transition: "all .4s ease",
+              transform: "rotate(180deg) scale(1.2)",
+              transition: "all .3s ease",
             },
           }}
           onClick={() => handlePrevious()}
@@ -69,11 +69,11 @@ export default function SlideShow(props) {
             width: "70px",
             height: "auto",
             cursor: "pointer",
-            transform: "translate(0, 0px)",
-            transition: "all .4s ease",
+            transform: "scale(1)",
+            transition: "all .3s ease",
             ":hover": {
-              transform: "translate(5px, 0)",
-              transition: "all .4s ease",
+              transform: "scale(1.2)",
+              transition: "all .3s ease",
             },
           }}
           onClick={() => handleNext()}
