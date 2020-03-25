@@ -3,32 +3,78 @@ import { jsx } from "theme-ui"
 import { useState } from "react"
 import Img from "gatsby-image"
 import Arrow from "../images/arrow.svg"
+import { motion, AnimatePresence } from "framer-motion"
+
+const variants = {
+  enter: direction => {
+    return {
+      opacity: 0,
+    }
+  },
+  center: {
+    zIndex: 1,
+    opacity: 1,
+  },
+  exit: direction => {
+    return {
+      zIndex: 0,
+      opacity: 0,
+    }
+  },
+}
 
 export default function SlideShow(props) {
   const { data } = props
   const [index, setIndex] = useState(0)
 
-  //Minus 1 for array offset from 0
   const length = data.edges.length - 1
-  const handleNext = () =>
+  const handleNext = () => {
+    paginate(1)
     index === length ? setIndex(0) : setIndex(index + 1)
-  const handlePrevious = () =>
+  }
+
+  const handlePrevious = () => {
+    paginate(-1)
     index === 0 ? setIndex(length) : setIndex(index - 1)
+  }
+
   const { node } = data.edges[index]
+
+  const [[page, direction], setPage] = useState([0, 0])
+  const paginate = newDirection => {
+    setPage([page + newDirection, newDirection])
+  }
+
   return (
     <div
-      style={{
+      css={{
         position: "relative",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
-      <Img
-        style={{
-          borderRadius: 4,
-        }}
-        fluid={node.childImageSharp.fluid}
-        key={node.id}
-        alt={node.name.replace(/-/g, " ").substring(2)}
-      />
+      <AnimatePresence initial={false} custom={direction}>
+        <motion.div
+          key={page}
+          custom={direction}
+          variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{
+            opacity: { duration: 5 },
+          }}
+        >
+          <Img
+            style={{
+              borderRadius: 4,
+            }}
+            fluid={node.childImageSharp.fluid}
+            alt={node.name.replace(/-/g, " ").substring(2)}
+          />
+        </motion.div>
+      </AnimatePresence>
+
       <button
         css={{
           position: "absolute",

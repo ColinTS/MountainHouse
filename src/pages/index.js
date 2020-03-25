@@ -56,7 +56,7 @@ export const data = graphql`
           name
           childImageSharp {
             fluid(maxWidth: 4000) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
@@ -219,7 +219,12 @@ const IndexPage = ({ data }) => (
             </div>
           </div>
 
-          <div css={{ flexBasis: "60%", maxWidth: "60%" }}>
+          <div
+            css={{
+              flexBasis: "60%",
+              maxWidth: "60%",
+            }}
+          >
             {" "}
             <SlideShow data={data.surf} />
           </div>
