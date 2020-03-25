@@ -177,7 +177,7 @@ const IndexPage = ({ data }) => (
               with open arms.
             </p>
           </Container>
-          <Flex sx={{ justifyContent: "center", pt: 5 }}>
+          <Flex sx={{ justifyContent: "center" }}>
             <BerberOne sx={{ height: 150, width: "auto" }}></BerberOne>
           </Flex>
         </div>
@@ -188,15 +188,19 @@ const IndexPage = ({ data }) => (
         sx={{
           variant: "layout.primaryContainer",
           background: "linear-gradient(to bottom, #FFCF8A 0%, #f7f0e1 80%)",
+          boxSizing: "border-box",
         }}
       >
-        <div css={{ display: "flex", width: "100%", maxWidth: "1200" }}>
+        <div css={{ display: "flex" }}>
           <div
-            css={{ flexBasis: "40%", maxWidth: "40%", paddingRight: "3rem" }}
+            css={{
+              flexBasis: "40%",
+              maxWidth: "40%",
+              paddingRight: "3rem",
+              height: "640px",
+            }}
           >
-            <div
-              css={{ width: "500px", position: "relative", marginLeft: "auto" }}
-            >
+            <div css={{ width: "500px", marginLeft: "auto" }}>
               <h2 sx={{ variant: "styles.h2" }}>
                 Surf the coastal paradise of southern Morocco
               </h2>
@@ -594,11 +598,16 @@ const IndexPage = ({ data }) => (
           css={{
             display: "flex",
             flexDirection: "row-reverse",
-            width: "100%",
-            maxWidth: "1200",
           }}
         >
-          <div css={{ flexBasis: "40%", maxWidth: "40%", paddingLeft: "3rem" }}>
+          <div
+            css={{
+              flexBasis: "40%",
+              maxWidth: "40%",
+              paddingLeft: "3rem",
+              height: "640px",
+            }}
+          >
             <div
               css={{
                 width: "500px",
@@ -770,12 +779,15 @@ const IndexPage = ({ data }) => (
         <div
           css={{
             display: "flex",
-            width: "100%",
-            maxWidth: "1200",
           }}
         >
           <div
-            css={{ flexBasis: "40%", maxWidth: "40%", paddingRight: "3rem" }}
+            css={{
+              flexBasis: "40%",
+              maxWidth: "40%",
+              paddingRight: "3rem",
+              height: "640px",
+            }}
           >
             <div
               css={{

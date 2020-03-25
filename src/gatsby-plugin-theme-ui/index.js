@@ -38,8 +38,6 @@ export default {
     primaryContainer: {
       paddingTop: "4rem",
       paddingBottom: "4rem",
-      display: "flex",
-      alignContent: "center",
     },
   },
   breakpoints: ["40em", "56em", "64em"],

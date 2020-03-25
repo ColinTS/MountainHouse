@@ -8,15 +8,18 @@ import { motion, AnimatePresence } from "framer-motion"
 const variants = {
   enter: direction => {
     return {
+      x: direction > 0 ? 1000 : -1000,
       opacity: 0,
     }
   },
   center: {
+    x: 0,
     zIndex: 1,
     opacity: 1,
   },
   exit: direction => {
     return {
+      x: direction < 0 ? 1000 : -1000,
       zIndex: 0,
       opacity: 0,
     }
@@ -49,11 +52,11 @@ export default function SlideShow(props) {
     <div
       css={{
         position: "relative",
-        justifyContent: "center",
-        alignItems: "center",
+        height: "100%",
+        overflow: "hidden",
       }}
     >
-      <AnimatePresence initial={false} custom={direction}>
+      <AnimatePresence initial={false} custom={direction} style={{}}>
         <motion.div
           key={page}
           custom={direction}
@@ -62,12 +65,19 @@ export default function SlideShow(props) {
           animate="center"
           exit="exit"
           transition={{
-            opacity: { duration: 5 },
+            x: { type: "spring", stiffness: 300, damping: 200 },
+            opacity: { duration: 0.2 },
+          }}
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
           }}
         >
           <Img
             style={{
               borderRadius: 4,
+              height: "640px",
             }}
             fluid={node.childImageSharp.fluid}
             alt={node.name.replace(/-/g, " ").substring(2)}
@@ -83,6 +93,7 @@ export default function SlideShow(props) {
           background: "none",
           border: "none",
           outline: "none",
+          zIndex: 2,
         }}
       >
         <Arrow
@@ -108,6 +119,7 @@ export default function SlideShow(props) {
           background: "none",
           border: "none",
           outline: "none",
+          zIndex: 2,
         }}
       >
         <Arrow
