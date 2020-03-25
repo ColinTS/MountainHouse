@@ -72,7 +72,7 @@ export const data = graphql`
           name
           childImageSharp {
             fluid(maxWidth: 4000) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
@@ -88,7 +88,7 @@ export const data = graphql`
           name
           childImageSharp {
             fluid(maxWidth: 4000) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
@@ -177,7 +177,7 @@ const IndexPage = ({ data }) => (
               with open arms.
             </p>
           </Container>
-          <Flex sx={{ justifyContent: "center" }}>
+          <Flex sx={{ justifyContent: "center", pt: 6 }}>
             <BerberOne sx={{ height: 150, width: "auto" }}></BerberOne>
           </Flex>
         </div>
