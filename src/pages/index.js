@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SlideShow from "../components/slideshow"
 import Logo from "../images/logo2.svg"
+import LogoDark from "../images/logoDark.svg"
 import Check from "../images/check.svg"
 import BerberOne from "../images/berberOne.svg"
 import BerberTwo from "../images/berberTwo.svg"
@@ -177,7 +178,7 @@ const IndexPage = ({ data }) => (
               with open arms.
             </p>
           </Container>
-          <Flex sx={{ justifyContent: "center", pt: 6 }}>
+          <Flex sx={{ justifyContent: "center", pt: 5 }}>
             <BerberOne sx={{ height: 150, width: "auto" }}></BerberOne>
           </Flex>
         </div>
@@ -773,7 +774,7 @@ const IndexPage = ({ data }) => (
       <div
         sx={{
           variant: "layout.primaryContainer",
-          bg: "tertiary",
+          background: "linear-gradient(to bottom, #f7f0e1 0%, white)",
         }}
       >
         <div
@@ -797,11 +798,20 @@ const IndexPage = ({ data }) => (
               }}
             >
               <h2 sx={{ variant: "styles.h2" }}>
-                Eat like a local from food made with love
+                Eat local food made with love
               </h2>
-              <p sx={{ variant: "styles.p" }}>
-                From beginner to advanced, we offer surf lessons and surf
-                guiding for all
+              <p sx={{ variant: "styles.p", py: 3 }}>
+                Attached to Singlefin is our beachside restaurant: Seafood
+                Kitchen. Our local chefs take pride in serving our guests a
+                healthy fusion of Moroccan and European cuisine.
+              </p>
+              <p sx={{ variant: "styles.p", pb: 3 }}>
+                Every morning we will serve you a delicious Moroccan breakfast
+                for you to enjoy by the sea or on the roof terrace. Throughout
+                the day and evening we are preparing tasty vegetarian,
+                non-vegetarian meals, and of course our specialty: seafood. We
+                also have an extensive menu of healthy smoothies, desserts,
+                teas, and coffee.
               </p>
             </div>
           </div>
@@ -811,6 +821,85 @@ const IndexPage = ({ data }) => (
             <SlideShow data={data.eat} />
           </div>
         </div>
+      </div>
+      <div
+        sx={{
+          variant: "layout.primaryContainer",
+          background: "white",
+          pb: 0,
+          overflow: "hidden",
+          position: "relative",
+        }}
+      >
+        <Container sx={{ maxWidth: "largeContainer" }} justify="center">
+          <h2 sx={{ variant: "styles.h2", textAlign: "center" }}>
+            What our guests say
+          </h2>
+        </Container>
+        <Container sx={{ maxWidth: "smallContainer", pb: 6 }} justify="center">
+          <p
+            sx={{
+              variant: "styles.p",
+              py: 3,
+              textAlign: "center",
+              marginBottom: 0,
+            }}
+          >
+            <span sx={{ fontWeight: "900", fontSize: "26px", color: "blue" }}>
+              "
+            </span>
+            My stay at Singlefin was amazing. The views from the rooftop terrace
+            are amazing. Incredible spot to watch the surf, watch the beautiful
+            sunsets, read a book, have a coffee, enjoy a meal and just hang out.
+            <span sx={{ fontWeight: "900", fontSize: "26px", color: "blue" }}>
+              "
+            </span>
+          </p>
+          <p
+            sx={{
+              variant: "styles.p",
+              fontSize: "14px",
+              fontWeight: 900,
+              textAlign: "center",
+            }}
+          >
+            James - Australia
+          </p>
+        </Container>
+        <div
+          css={{
+            width: "100vw",
+            margin: 0,
+            padding: 0,
+
+            marginBottom: "-2%",
+          }}
+        >
+          <Dunes style={{ width: "100%", height: "auto" }} />
+        </div>
+      </div>
+      <div sx={{ bg: "secondary" }}>
+        <Container sx={{ maxWidth: "largeContainer", pb: 5 }} justify="center">
+          <Grid gap={4} columns={[1, 1, 3]}>
+            <div>
+              <LogoDark
+                style={{
+                  width: "240px",
+                  height: "auto",
+                }}
+              />
+              <p sx={{ variant: "styles.p", pt: 2 }}>
+                Singlefin is a holiday retreat in Taghazout, Morocco
+              </p>
+              <p sx={{ variant: "styles.p", fontSize: 14, pt: 4 }}>
+                © 2020 Singlefin
+              </p>
+            </div>
+
+            <div></div>
+            <div></div>
+          </Grid>
+        </Container>
       </div>
     </Layout>
   </div>
