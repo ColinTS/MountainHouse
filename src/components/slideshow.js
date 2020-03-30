@@ -5,12 +5,6 @@ import Img from "gatsby-image"
 import Arrow from "../images/arrow.svg"
 import { motion, AnimatePresence } from "framer-motion"
 
-const images = [
-  "https://d33wubrfki0l68.cloudfront.net/dd23708ebc4053551bb33e18b7174e73b6e1710b/dea24/static/images/wallpapers/shared-colors@2x.png",
-  "https://d33wubrfki0l68.cloudfront.net/49de349d12db851952c5556f3c637ca772745316/cfc56/static/images/wallpapers/bridge-02@2x.png",
-  "https://d33wubrfki0l68.cloudfront.net/594de66469079c21fc54c14db0591305a1198dd6/3f4b1/static/images/wallpapers/bridge-01@2x.png",
-]
-
 const imageIndex = Math.floor(Math.random() * 3)
 
 const variants = {
@@ -35,7 +29,7 @@ const variants = {
 }
 
 export default function SlideShow(props) {
-  const { data } = props
+  const { data, images } = props
   const [index, setIndex] = useState(0)
 
   const length = data.edges.length - 1
