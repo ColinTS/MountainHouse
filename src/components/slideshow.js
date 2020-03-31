@@ -67,7 +67,7 @@ export default function SlideShow(props) {
           animate="center"
           exit="exit"
           transition={{
-            x: { type: "spring", stiffness: 300, damping: 200 },
+            x: { type: "spring", stiffness: 300, damping: 201 },
             opacity: { duration: 0.2 },
           }}
           style={{
