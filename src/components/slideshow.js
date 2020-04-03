@@ -29,7 +29,10 @@ const variants = {
 }
 
 export default function SlideShow(props) {
-  const { data, images } = props
+  const { data, images, data2 } = props
+  console.log("data", data)
+  console.log("data2", data2)
+
   const [index, setIndex] = useState(0)
 
   const length = data.edges.length - 1
@@ -44,6 +47,9 @@ export default function SlideShow(props) {
   }
 
   const { node } = data.edges[index]
+
+  const node2 = data2.edges[0].node.images[index]
+  console.log("node2", node2)
 
   const [[page, direction], setPage] = useState([0, 0])
   const paginate = newDirection => {
@@ -82,7 +88,7 @@ export default function SlideShow(props) {
               height: "640px",
             }}
             // fluid={node.childImageSharp.fluid}
-            src={images[page]}
+            src={node2.fluid.src}
             alt={node.name.replace(/-/g, " ").substring(2)}
           />
         </motion.div>

@@ -53,6 +53,17 @@ export const data = graphql`
         }
       }
     }
+    surfing: allContentfulSlideshowImages(filter: { tag: { eq: "surf" } }) {
+      edges {
+        node {
+          images {
+            fluid(maxWidth: 4000) {
+              src
+            }
+          }
+        }
+      }
+    }
     surf: allFile(
       sort: { fields: name, order: DESC }
       filter: { relativeDirectory: { eq: "surf" } }
@@ -237,7 +248,7 @@ const IndexPage = ({ data }) => (
             }}
           >
             {" "}
-            <SlideShow data={data.surf} images={images} />
+            <SlideShow data={data.surf} images={images} data2={data.surfing} />
           </div>
         </div>
       </div>
@@ -640,7 +651,7 @@ const IndexPage = ({ data }) => (
 
           <div css={{ flexBasis: "60%", maxWidth: "60%" }}>
             {" "}
-            <SlideShow data={data.stay} images={images} />
+            <SlideShow data={data.stay} images={images} data2={data.surfing} />
           </div>
         </div>
       </div>
@@ -824,7 +835,7 @@ const IndexPage = ({ data }) => (
 
           <div css={{ flexBasis: "60%", maxWidth: "60%" }}>
             {" "}
-            <SlideShow data={data.eat} images={images} />
+            <SlideShow data={data.eat} images={images} data2={data.surfing} />
           </div>
         </div>
       </div>
