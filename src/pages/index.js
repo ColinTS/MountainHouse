@@ -64,6 +64,17 @@ export const data = graphql`
         }
       }
     }
+    staying: allContentfulSlideshowImages(filter: { tag: { eq: "stay" } }) {
+      edges {
+        node {
+          images {
+            fluid(maxWidth: 4000) {
+              src
+            }
+          }
+        }
+      }
+    }
     surf: allFile(
       sort: { fields: name, order: DESC }
       filter: { relativeDirectory: { eq: "surf" } }
@@ -651,7 +662,7 @@ const IndexPage = ({ data }) => (
 
           <div css={{ flexBasis: "60%", maxWidth: "60%" }}>
             {" "}
-            <SlideShow data={data.stay} images={images} data2={data.surfing} />
+            <SlideShow data={data.stay} images={images} data2={data.staying} />
           </div>
         </div>
       </div>
