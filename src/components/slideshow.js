@@ -4,6 +4,7 @@ import { useState } from "react"
 import Img from "gatsby-image"
 import Arrow from "../images/arrow.svg"
 import { motion, AnimatePresence } from "framer-motion"
+import { wrap } from "@popmotion/popcorn"
 
 const imageIndex = Math.floor(Math.random() * 3)
 
@@ -55,6 +56,7 @@ export default function SlideShow(props) {
   const paginate = newDirection => {
     setPage([page + newDirection, newDirection])
   }
+  const imageIndex = wrap(0, images.length, page)
 
   return (
     <div
@@ -89,7 +91,7 @@ export default function SlideShow(props) {
             }}
             // fluid={node.childImageSharp.fluid}
             // src={node2.fluid.src}
-            src={images[Math.floor(index)]}
+            src={images[imageIndex]}
             alt={node.name.replace(/-/g, " ").substring(2)}
           />
         </motion.div>

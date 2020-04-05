@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@callstack/react-theme-provider": "^3.0.3",
+    "@popmotion/popcorn": "^0.4.4",
     "babel-plugin-styled-components": "^1.10.6",
     "dotenv": "^8.2.0",
     "framer-motion": "^1.10.2",

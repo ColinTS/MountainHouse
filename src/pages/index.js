@@ -17,10 +17,17 @@ import Dunes from "../images/dunes.svg"
 
 import video from "../images/Tag.mp4"
 
-const images = [
-  "//images.ctfassets.net/qlhp1q6elgxs/5vc4HttUmh4n6W1GynB9y3/0288c946282fd76c09ee44bb97bcf68f/surf2__1_.jpg?w=4000&q=50",
-  "//images.ctfassets.net/qlhp1q6elgxs/16NM1a7FJI0IcByEiwRAvb/0bb8fb72a8f9264dbb2359bc7d54e8d3/surf4__1_.jpg?w=4000&q=50",
-  "//images.ctfassets.net/qlhp1q6elgxs/5wUx0XFkFjIKnj12dwOJOI/144ae6c5dc08eeb927701ac63c2b4a8e/surf3__1_.jpg?w=4000&q=50",
+const surfImages = [
+  "//images.ctfassets.net/qlhp1q6elgxs/16NM1a7FJI0IcByEiwRAvb/0bb8fb72a8f9264dbb2359bc7d54e8d3/surf4__1_.jpg",
+  "//images.ctfassets.net/qlhp1q6elgxs/5wUx0XFkFjIKnj12dwOJOI/144ae6c5dc08eeb927701ac63c2b4a8e/surf3__1_.jpg",
+  "//images.ctfassets.net/qlhp1q6elgxs/5vc4HttUmh4n6W1GynB9y3/0288c946282fd76c09ee44bb97bcf68f/surf2__1_.jpg",
+  "//images.ctfassets.net/qlhp1q6elgxs/OjI0Pf4TQlMgHIfQwbEm8/91912ff2b7e4418d7c9fde000fbcb24d/surf1__1_.jpg",
+]
+
+const stayImages = [
+  "//images.ctfassets.net/qlhp1q6elgxs/6fRrUT7HibbliXEqsHEoEh/5b86c02b8e52bea2664cbead64edc0d2/stay2__1_.jpg",
+  "//images.ctfassets.net/qlhp1q6elgxs/4PPpQ1Gix8mRIMqitai0xl/f7472db8f764f30ba182b68aa3da0983/stay1__1_.jpg",
+  "//images.ctfassets.net/qlhp1q6elgxs/41YnxrUFrNSQ1NrhO7A4QK/003d73da191b8fc0f1114600a391f0e7/stay_11_.jpg",
 ]
 
 export const data = graphql`
@@ -260,7 +267,11 @@ const IndexPage = ({ data }) => (
             }}
           >
             {" "}
-            <SlideShow data={data.surf} images={images} data2={data.surfing} />
+            <SlideShow
+              data={data.surf}
+              images={surfImages}
+              data2={data.surfing}
+            />
           </div>
         </div>
       </div>
@@ -663,7 +674,11 @@ const IndexPage = ({ data }) => (
 
           <div css={{ flexBasis: "60%", maxWidth: "60%" }}>
             {" "}
-            <SlideShow data={data.stay} images={images} data2={data.staying} />
+            <SlideShow
+              data={data.stay}
+              images={stayImages}
+              data2={data.staying}
+            />
           </div>
         </div>
       </div>
@@ -847,7 +862,11 @@ const IndexPage = ({ data }) => (
 
           <div css={{ flexBasis: "60%", maxWidth: "60%" }}>
             {" "}
-            <SlideShow data={data.eat} images={images} data2={data.surfing} />
+            <SlideShow
+              data={data.eat}
+              images={stayImages}
+              data2={data.surfing}
+            />
           </div>
         </div>
       </div>
