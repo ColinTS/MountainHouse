@@ -12,19 +12,16 @@ const variants = {
   enter: direction => {
     return {
       x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
     }
   },
   center: {
     x: 0,
     zIndex: 1,
-    opacity: 1,
   },
   exit: direction => {
     return {
       x: direction < 0 ? 1000 : -1000,
       zIndex: 0,
-      opacity: 0,
     }
   },
 }
@@ -76,7 +73,7 @@ export default function SlideShow(props) {
           exit="exit"
           transition={{
             x: { type: "spring", stiffness: 300, damping: 200 },
-            opacity: { duration: 0.2 },
+            opacity: { duration: 0.7 },
           }}
           style={{
             position: "absolute",
@@ -87,7 +84,7 @@ export default function SlideShow(props) {
           <img
             style={{
               borderRadius: 4,
-              height: "640px",
+              height: "auto",
             }}
             // fluid={node.childImageSharp.fluid}
             // src={node2.fluid.src}
