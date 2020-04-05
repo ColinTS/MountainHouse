@@ -82,13 +82,14 @@ export default function SlideShow(props) {
             height: "100%",
           }}
         >
-          <Img
+          <img
             style={{
               borderRadius: 4,
               height: "640px",
             }}
-            fluid={node.childImageSharp.fluid}
+            // fluid={node.childImageSharp.fluid}
             // src={node2.fluid.src}
+            src={images[Math.floor(index)]}
             alt={node.name.replace(/-/g, " ").substring(2)}
           />
         </motion.div>
