@@ -57,8 +57,8 @@ export default function SlideShow(props) {
 
   return (
     <div
-      css={{
-        position: "relative",
+      sx={{
+        position: [null, null, "relative"],
         height: "100%",
         overflow: "hidden",
       }}
@@ -84,7 +84,6 @@ export default function SlideShow(props) {
           <img
             style={{
               borderRadius: 4,
-              height: "auto",
             }}
             // fluid={node.childImageSharp.fluid}
             // src={node2.fluid.src}

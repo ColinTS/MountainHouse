@@ -195,8 +195,8 @@ const IndexPage = ({ data }) => (
           }}
         /> */}
         <Logo
-          style={{
-            width: "500px",
+          sx={{
+            width: ["250px", "400px", "500px"],
             height: "auto",
           }}
         />
@@ -206,7 +206,7 @@ const IndexPage = ({ data }) => (
     <Layout>
       <SEO title="Home" />
       <div css={{ marginTop: "-4rem" }}>
-        <div sx={{ bg: "secondary", pt: 6 }}>
+        <div sx={{ bg: "secondary", pt: 6, px: 3 }}>
           <Container sx={{ maxWidth: "smallContainer" }} justify="center">
             <h1 sx={{ variant: "styles.h1", textAlign: "center" }}>
               Singlefin is a holiday retreat in Taghazout, Morocco{" "}
@@ -221,7 +221,9 @@ const IndexPage = ({ data }) => (
             </p>
           </Container>
           <Flex sx={{ justifyContent: "center", pt: 5 }}>
-            <BerberOne sx={{ height: 150, width: "auto" }}></BerberOne>
+            <BerberOne
+              sx={{ height: [75, 100, 140], width: "auto" }}
+            ></BerberOne>
           </Flex>
         </div>
       </div>
@@ -234,16 +236,22 @@ const IndexPage = ({ data }) => (
           boxSizing: "border-box",
         }}
       >
-        <div css={{ display: "flex" }}>
+        <div sx={{ display: [null, null, "flex"] }}>
           <div
-            css={{
-              flexBasis: "40%",
-              maxWidth: "40%",
-              paddingRight: "3rem",
-              height: "640px",
+            sx={{
+              flexBasis: ["100%", "100%", "40%"],
+              maxWidth: ["100%", "100%", "40%"],
+              paddingRight: [null, null, "3rem"],
+              height: ["auto", "auto", "640px"],
             }}
           >
-            <div css={{ width: "500px", marginLeft: "auto" }}>
+            <div
+              sx={{
+                width: ["100%", "100%", "500px"],
+                marginLeft: "auto",
+                px: [3, 3, 0],
+              }}
+            >
               <h2 sx={{ variant: "styles.h2" }}>
                 Surf the coastal paradise of southern Morocco
               </h2>
@@ -267,9 +275,11 @@ const IndexPage = ({ data }) => (
           </div>
 
           <div
-            css={{
-              flexBasis: "60%",
-              maxWidth: "60%",
+            sx={{
+              flexBasis: [null, null, "60%"],
+              maxWidth: ["100vw", null, "60%"],
+              width: ["100vw", null, null],
+              position: ["relative", null, null],
             }}
           >
             {" "}
