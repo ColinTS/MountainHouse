@@ -30,6 +30,12 @@ const stayImages = [
   "//images.ctfassets.net/qlhp1q6elgxs/41YnxrUFrNSQ1NrhO7A4QK/003d73da191b8fc0f1114600a391f0e7/stay_11_.jpg",
 ]
 
+const eatImages = [
+  "//images.ctfassets.net/qlhp1q6elgxs/77Z9ImgC6c5FDiV1tiLrJH/fe6142f0fdd671f8dc624582b9c29dd5/eat3__1_.jpg",
+  "//images.ctfassets.net/qlhp1q6elgxs/3t4GEn6P5EjeSEw12q2Nq7/9554559823f613e72a70504fcef1aa3a/eat4__1_.jpg",
+  "//images.ctfassets.net/qlhp1q6elgxs/71tzqqkxG9vjzn8xxpPSYD/50db9beba71b68ab90cc421e3551341d/eat2__1_.jpg",
+]
+
 export const data = graphql`
   query {
     surfStay: file(relativePath: { eq: "surfStay.jpg" }) {
@@ -864,7 +870,7 @@ const IndexPage = ({ data }) => (
             {" "}
             <SlideShow
               data={data.eat}
-              images={stayImages}
+              images={eatImages}
               data2={data.surfing}
             />
           </div>
