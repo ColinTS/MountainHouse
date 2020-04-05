@@ -37,15 +37,15 @@ export default function SlideShow(props) {
   const [index, setIndex] = useState(0)
 
   const length = data.edges.length - 1
-  const handleNext = () => {
-    paginate(1)
-    index === length ? setIndex(0) : setIndex(index + 1)
-  }
+  // const handleNext = () => {
+  //   paginate(1)
+  //   index === length ? setIndex(0) : setIndex(index + 1)
+  // }
 
-  const handlePrevious = () => {
-    paginate(-1)
-    index === 0 ? setIndex(length) : setIndex(index - 1)
-  }
+  // const handlePrevious = () => {
+  //   paginate(-1)
+  //   index === 0 ? setIndex(length) : setIndex(index - 1)
+  // }
 
   const { node } = data.edges[index]
 
@@ -120,7 +120,7 @@ export default function SlideShow(props) {
               transition: "all .3s ease",
             },
           }}
-          onClick={() => handlePrevious()}
+          onClick={() => paginate(1)}
         ></Arrow>
       </button>
       <button
@@ -146,7 +146,7 @@ export default function SlideShow(props) {
               transition: "all .3s ease",
             },
           }}
-          onClick={() => handleNext()}
+          onClick={() => paginate(-1)}
         ></Arrow>
       </button>
     </div>
