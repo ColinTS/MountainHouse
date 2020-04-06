@@ -6,8 +6,6 @@ import Arrow from "../images/arrow.svg"
 import { motion, AnimatePresence } from "framer-motion"
 import { wrap } from "@popmotion/popcorn"
 
-const imageIndex = Math.floor(Math.random() * 3)
-
 const variants = {
   enter: direction => {
     return {
@@ -58,13 +56,14 @@ export default function SlideShow(props) {
   return (
     <div
       sx={{
-        position: [null, null, "relative"],
+        position: ["relative", null, "relative"],
         height: "100%",
-        overflow: "hidden",
+        width: "auto",
+        overflow: ["hidden", null, "hidden"],
       }}
     >
-      <AnimatePresence initial={false} custom={direction} style={{}}>
-        <motion.div
+      <AnimatePresence initial={false} custom={direction}>
+        <motion.img
           key={page}
           custom={direction}
           variants={variants}
@@ -75,22 +74,17 @@ export default function SlideShow(props) {
             x: { type: "spring", stiffness: 300, damping: 200 },
             opacity: { duration: 0.7 },
           }}
-          style={{
-            position: "absolute",
-            width: "100%",
-            height: "100%",
+          sx={{
+            borderRadius: 4,
+            position: ["absolute", null, "absolute"],
+            minHeight: [null, null, "600px"],
+            objectFit: "cover",
           }}
-        >
-          <img
-            style={{
-              borderRadius: 4,
-            }}
-            // fluid={node.childImageSharp.fluid}
-            // src={node2.fluid.src}
-            src={images[imageIndex]}
-            alt={node.name.replace(/-/g, " ").substring(2)}
-          />
-        </motion.div>
+          // fluid={node.childImageSharp.fluid}
+          // src={node2.fluid.src}
+          src={images[imageIndex]}
+          alt={node.name.replace(/-/g, " ").substring(2)}
+        />
       </AnimatePresence>
 
       <button

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { graphql } from "gatsby"
-import { jsx, Box, Container, Grid, Flex } from "theme-ui"
+import { jsx, Box, Container, Grid, Flex, AspectRatio } from "theme-ui"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SlideShow from "../components/slideshow"
@@ -233,22 +233,32 @@ const IndexPage = ({ data }) => (
         sx={{
           variant: "layout.primaryContainer",
           background: "linear-gradient(to bottom, #FFCF8A 0%, #f7f0e1 80%)",
-          boxSizing: "border-box",
         }}
       >
-        <div sx={{ display: [null, null, "flex"] }}>
+        <Grid
+          columns={[1, 1, "1fr 1.5fr"]}
+          sx={
+            {
+              // display: ["flex", "flex", "flex"],
+              // flexDirection: ["column", null, null],
+            }
+          }
+        >
           <div
             sx={{
-              flexBasis: ["100%", "100%", "40%"],
-              maxWidth: ["100%", "100%", "40%"],
-              paddingRight: [null, null, "3rem"],
-              height: ["auto", "auto", "640px"],
+              // flexBasis: ["100%", "100%", "40%"],
+              // maxWidth: ["100%", "100%", "40%"],
+              paddingLeft: [null, null, "2rem"],
+              paddingRight: [null, null, "2rem"],
+              width: [null, null, "550px"],
+              marginLeft: ["auto"],
+              height: ["auto", "auto", "auto"],
+              maxHeight: [null, null, "600px"],
             }}
           >
             <div
               sx={{
-                width: ["100%", "100%", "500px"],
-                marginLeft: "auto",
+                width: ["100%", "100%", "100%"],
                 px: [3, 3, 0],
               }}
             >
@@ -274,12 +284,16 @@ const IndexPage = ({ data }) => (
             </div>
           </div>
 
-          <div
+          <AspectRatio
+            ratio={16 / 9}
             sx={{
-              flexBasis: [null, null, "60%"],
-              maxWidth: ["100vw", null, "60%"],
-              width: ["100vw", null, null],
-              position: ["relative", null, null],
+              // flexBasis: ["100%", "60%", "60%"],
+              // maxWidth: ["100%", "60%", "60%"],
+              overflow: "hidden",
+              // position: "absolute",
+
+              // width: ["100vw", null, null],
+              // position: ["relative", null, null],
             }}
           >
             {" "}
@@ -288,13 +302,21 @@ const IndexPage = ({ data }) => (
               images={surfImages}
               data2={data.surfing}
             />
-          </div>
-        </div>
+          </AspectRatio>
+        </Grid>
+        {/* <div>
+          <SlideShow
+            data={data.surf}
+            images={surfImages}
+            data2={data.surfing}
+          />
+        </div> */}
       </div>
       <div sx={{ bg: "tertiary", display: "flex", justifyContent: "center" }}>
         <div
           sx={{
             maxWidth: "container",
+            pt: [null, null, 4],
           }}
         >
           <Box>
