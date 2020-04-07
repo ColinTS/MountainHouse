@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useState } from "react"
-import Img from "gatsby-image"
 import Arrow from "../images/arrow.svg"
 import { motion, AnimatePresence } from "framer-motion"
 import { wrap } from "@popmotion/popcorn"
@@ -25,27 +24,7 @@ const variants = {
 }
 
 export default function SlideShow(props) {
-  const { data, images, data2 } = props
-  console.log("data", data)
-  console.log("data2", data2)
-
-  const [index, setIndex] = useState(0)
-
-  const length = data.edges.length - 1
-  // const handleNext = () => {
-  //   paginate(1)
-  //   index === length ? setIndex(0) : setIndex(index + 1)
-  // }
-
-  // const handlePrevious = () => {
-  //   paginate(-1)
-  //   index === 0 ? setIndex(length) : setIndex(index - 1)
-  // }
-
-  const { node } = data.edges[index]
-
-  const node2 = data2.edges[0].node.images[index]
-  console.log("node2", node2)
+  const { images } = props
 
   const [[page, direction], setPage] = useState([0, 0])
   const paginate = newDirection => {
@@ -80,10 +59,8 @@ export default function SlideShow(props) {
             minHeight: [null, null, "600px"],
             objectFit: "cover",
           }}
-          // fluid={node.childImageSharp.fluid}
-          // src={node2.fluid.src}
           src={images[imageIndex]}
-          alt={node.name.replace(/-/g, " ").substring(2)}
+          // alt={node.name.replace(/-/g, " ").substring(2)}
         />
       </AnimatePresence>
 

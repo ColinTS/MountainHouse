@@ -66,77 +66,6 @@ export const data = graphql`
         }
       }
     }
-    surfing: allContentfulSlideshowImages(filter: { tag: { eq: "surf" } }) {
-      edges {
-        node {
-          images {
-            fluid(maxWidth: 4000) {
-              src
-              srcSet
-            }
-          }
-        }
-      }
-    }
-    staying: allContentfulSlideshowImages(filter: { tag: { eq: "stay" } }) {
-      edges {
-        node {
-          images {
-            fluid(maxWidth: 4000) {
-              src
-            }
-          }
-        }
-      }
-    }
-    surf: allFile(
-      sort: { fields: name, order: DESC }
-      filter: { relativeDirectory: { eq: "surf" } }
-    ) {
-      edges {
-        node {
-          id
-          name
-          childImageSharp {
-            fluid(maxWidth: 4000) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
-          }
-        }
-      }
-    }
-    stay: allFile(
-      sort: { fields: name, order: DESC }
-      filter: { relativeDirectory: { eq: "stay" } }
-    ) {
-      edges {
-        node {
-          id
-          name
-          childImageSharp {
-            fluid(maxWidth: 4000) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
-          }
-        }
-      }
-    }
-    eat: allFile(
-      sort: { fields: name, order: DESC }
-      filter: { relativeDirectory: { eq: "eat" } }
-    ) {
-      edges {
-        node {
-          id
-          name
-          childImageSharp {
-            fluid(maxWidth: 4000) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
-          }
-        }
-      }
-    }
   }
 `
 
@@ -188,12 +117,6 @@ const IndexPage = ({ data }) => (
           transform: "translate(-50%, -50%)",
         }}
       >
-        {/* <BigLogo
-          style={{
-            width: "500px",
-            height: "500px",
-          }}
-        /> */}
         <Logo
           sx={{
             width: ["250px", "400px", "500px"],
@@ -205,8 +128,14 @@ const IndexPage = ({ data }) => (
 
     <Layout>
       <SEO title="Home" />
-      <div css={{ marginTop: "-4rem" }}>
-        <div sx={{ bg: "secondary", pt: 6, px: 3 }}>
+      <div css={{}}>
+        <div
+          sx={{
+            background: "linear-gradient(to bottom, #FFCF8A 0%, #f7f0e1 80%)",
+            variant: "layout.primaryContainer",
+            px: [3, 3, 3],
+          }}
+        >
           <Container sx={{ maxWidth: "smallContainer" }} justify="center">
             <h1 sx={{ variant: "styles.h1", textAlign: "center" }}>
               Singlefin is a holiday retreat in Taghazout, Morocco{" "}
@@ -220,7 +149,7 @@ const IndexPage = ({ data }) => (
               with open arms.
             </p>
           </Container>
-          <Flex sx={{ justifyContent: "center", pt: 5 }}>
+          <Flex sx={{ justifyContent: "center", pt: 6 }}>
             <BerberOne
               sx={{ height: [75, 100, 140], width: "auto" }}
             ></BerberOne>
@@ -231,23 +160,14 @@ const IndexPage = ({ data }) => (
       {/* surf */}
       <div
         sx={{
-          variant: "layout.primaryContainer",
-          background: "linear-gradient(to bottom, #FFCF8A 0%, #f7f0e1 80%)",
+          paddingTop: "4rem",
+          paddingBottom: "4rem",
+          background: "#f7f0e1",
         }}
       >
-        <Grid
-          columns={[1, 1, "1fr 1.5fr"]}
-          sx={
-            {
-              // display: ["flex", "flex", "flex"],
-              // flexDirection: ["column", null, null],
-            }
-          }
-        >
+        <Grid columns={[1, 1, "1fr 1.5fr"]}>
           <div
             sx={{
-              // flexBasis: ["100%", "100%", "40%"],
-              // maxWidth: ["100%", "100%", "40%"],
               paddingLeft: [null, null, "2rem"],
               paddingRight: [null, null, "2rem"],
               width: [null, null, "550px"],
@@ -259,7 +179,7 @@ const IndexPage = ({ data }) => (
             <div
               sx={{
                 width: ["100%", "100%", "100%"],
-                px: [3, 3, 0],
+                px: [3, 3, 3],
               }}
             >
               <h2 sx={{ variant: "styles.h2" }}>
@@ -283,36 +203,25 @@ const IndexPage = ({ data }) => (
               </p>
             </div>
           </div>
-
           <AspectRatio
             ratio={16 / 9}
             sx={{
-              // flexBasis: ["100%", "60%", "60%"],
-              // maxWidth: ["100%", "60%", "60%"],
               overflow: "hidden",
-              // position: "absolute",
-
-              // width: ["100vw", null, null],
-              // position: ["relative", null, null],
             }}
           >
             {" "}
-            <SlideShow
-              data={data.surf}
-              images={surfImages}
-              data2={data.surfing}
-            />
+            <SlideShow images={surfImages} />
           </AspectRatio>
         </Grid>
-        {/* <div>
-          <SlideShow
-            data={data.surf}
-            images={surfImages}
-            data2={data.surfing}
-          />
-        </div> */}
       </div>
-      <div sx={{ bg: "tertiary", display: "flex", justifyContent: "center" }}>
+      <div
+        sx={{
+          bg: "tertiary",
+          display: "flex",
+          justifyContent: "center",
+          px: [3, 3, 0],
+        }}
+      >
         <div
           sx={{
             maxWidth: "container",
@@ -325,7 +234,6 @@ const IndexPage = ({ data }) => (
                 variant: "styles.h3",
                 pt: "0.25rem",
                 pb: "1rem",
-                // textAlign: "center",
               }}
             >
               Surf packages
@@ -371,7 +279,7 @@ const IndexPage = ({ data }) => (
                   <p
                     sx={{
                       variant: "styles.p",
-                      fontSize: 16,
+                      fontSize: [1, 1, 2],
                       pb: 1,
                     }}
                   >
@@ -383,7 +291,7 @@ const IndexPage = ({ data }) => (
                   <p
                     sx={{
                       variant: "styles.p",
-                      fontSize: 16,
+                      fontSize: [1, 1, 2],
                       pb: 1,
                     }}
                   >
@@ -405,7 +313,7 @@ const IndexPage = ({ data }) => (
                   <p
                     sx={{
                       variant: "styles.p",
-                      fontSize: 16,
+                      fontSize: [1, 1, 2],
                       mb: 0,
                     }}
                   >
@@ -424,7 +332,7 @@ const IndexPage = ({ data }) => (
                   <p
                     sx={{
                       variant: "styles.p",
-                      fontSize: 16,
+                      fontSize: [1, 1, 2],
                       mb: 0,
                     }}
                   >
@@ -443,7 +351,7 @@ const IndexPage = ({ data }) => (
                   <p
                     sx={{
                       variant: "styles.p",
-                      fontSize: 16,
+                      fontSize: [1, 1, 2],
                       mb: 0,
                     }}
                   >
@@ -463,7 +371,7 @@ const IndexPage = ({ data }) => (
                   <p
                     sx={{
                       variant: "styles.p",
-                      fontSize: 16,
+                      fontSize: [1, 1, 2],
                       mb: 0,
                     }}
                   >
@@ -483,7 +391,7 @@ const IndexPage = ({ data }) => (
                   <p
                     sx={{
                       variant: "styles.p",
-                      fontSize: 16,
+                      fontSize: [1, 1, 2],
                       mb: 0,
                     }}
                   >
@@ -534,7 +442,7 @@ const IndexPage = ({ data }) => (
                   <p
                     sx={{
                       variant: "styles.p",
-                      fontSize: 16,
+                      fontSize: [1, 1, 2],
                       pb: 1,
                     }}
                   >
@@ -546,7 +454,7 @@ const IndexPage = ({ data }) => (
                   <p
                     sx={{
                       variant: "styles.p",
-                      fontSize: 16,
+                      fontSize: [1, 1, 2],
                       pb: 1,
                     }}
                   >
@@ -568,7 +476,7 @@ const IndexPage = ({ data }) => (
                   <p
                     sx={{
                       variant: "styles.p",
-                      fontSize: 16,
+                      fontSize: [1, 1, 2],
                       mb: 0,
                     }}
                   >
@@ -587,7 +495,7 @@ const IndexPage = ({ data }) => (
                   <p
                     sx={{
                       variant: "styles.p",
-                      fontSize: 16,
+                      fontSize: [1, 1, 2],
                       mb: 0,
                     }}
                   >
@@ -606,7 +514,7 @@ const IndexPage = ({ data }) => (
                   <p
                     sx={{
                       variant: "styles.p",
-                      fontSize: 16,
+                      fontSize: [1, 1, 2],
                       mb: 0,
                     }}
                   >
@@ -626,7 +534,7 @@ const IndexPage = ({ data }) => (
                   <p
                     sx={{
                       variant: "styles.p",
-                      fontSize: 16,
+                      fontSize: [1, 1, 2],
                       mb: 0,
                     }}
                   >
@@ -646,7 +554,7 @@ const IndexPage = ({ data }) => (
                   <p
                     sx={{
                       variant: "styles.p",
-                      fontSize: 16,
+                      fontSize: [1, 1, 2],
                       mb: 0,
                     }}
                   >
@@ -660,38 +568,45 @@ const IndexPage = ({ data }) => (
             </Box>
           </Grid>
           <Flex sx={{ justifyContent: "center", pt: 6, pb: 2 }}>
-            <BerberThree sx={{ height: 150, width: "auto" }}></BerberThree>
+            <BerberThree
+              sx={{ height: [75, 100, 140], width: "auto" }}
+            ></BerberThree>
           </Flex>
         </div>
       </div>
 
       {/* Stay */}
-
       <div
         sx={{
-          variant: "layout.primaryContainer",
+          paddingTop: "4rem",
+          paddingBottom: "4rem",
           bg: "tertiary",
         }}
       >
-        <div
-          css={{
-            display: "flex",
-            flexDirection: "row-reverse",
-          }}
-        >
+        <Grid columns={[1, 1, "1.5fr 1fr"]}>
+          <AspectRatio
+            ratio={16 / 9}
+            sx={{
+              overflow: "hidden",
+            }}
+          >
+            {" "}
+            <SlideShow images={stayImages} />
+          </AspectRatio>
           <div
-            css={{
-              flexBasis: "40%",
-              maxWidth: "40%",
-              paddingLeft: "3rem",
-              height: "640px",
+            sx={{
+              paddingLeft: [null, null, "2rem"],
+              paddingRight: [null, null, "2rem"],
+              width: [null, null, "550px"],
+              marginRight: ["auto"],
+              height: ["auto", "auto", "auto"],
+              maxHeight: [null, null, "600px"],
             }}
           >
             <div
-              css={{
-                width: "500px",
-                position: "relative",
-                marginRight: "auto",
+              sx={{
+                width: ["100%", "100%", "100%"],
+                px: [3, 3, 0],
               }}
             >
               <h2 sx={{ variant: "styles.h2" }}>Stay by the sea</h2>
@@ -709,18 +624,10 @@ const IndexPage = ({ data }) => (
               </p>
             </div>
           </div>
-
-          <div css={{ flexBasis: "60%", maxWidth: "60%" }}>
-            {" "}
-            <SlideShow
-              data={data.stay}
-              images={stayImages}
-              data2={data.staying}
-            />
-          </div>
-        </div>
+        </Grid>
       </div>
-      <div sx={{ bg: "tertiary", pb: 2 }}>
+
+      <div sx={{ bg: "tertiary", pb: 2, px: [3, 3, 0] }}>
         <Container sx={{ maxWidth: "container" }} justify="center">
           <Box>
             <h3
@@ -732,7 +639,7 @@ const IndexPage = ({ data }) => (
               What's in your stay?
             </h3>
           </Box>
-          <Grid sx={{ pt: 2 }} gap={6} columns={[1, 1, 2]}>
+          <Grid sx={{ pt: 2 }} gap={[0, 0, 6]} columns={[1, 1, 2]}>
             <Box>
               <Flex sx={{ pb: 4 }}>
                 <div css={{ display: "flex" }}>
@@ -847,13 +754,68 @@ const IndexPage = ({ data }) => (
               </Flex>
             </Box>
           </Grid>
-          <Flex sx={{ justifyContent: "center", pt: 5, pb: 2 }}>
-            <BerberTwo sx={{ width: 130, height: "auto" }}></BerberTwo>
+          <Flex sx={{ justifyContent: "center", pt: 6, pb: 2 }}>
+            <BerberTwo
+              sx={{ height: [75, 100, 140], width: "auto" }}
+            ></BerberTwo>
           </Flex>
         </Container>
       </div>
       {/* Eat */}
       <div
+        sx={{
+          variant: "layout.primaryContainer",
+          background: "linear-gradient(to bottom, #f7f0e1 0%, white)",
+        }}
+      >
+        <Grid columns={[1, 1, "1fr 1.5fr"]}>
+          <div
+            sx={{
+              paddingLeft: [null, null, "2rem"],
+              paddingRight: [null, null, "2rem"],
+              width: [null, null, "550px"],
+              marginLeft: ["auto"],
+              height: ["auto", "auto", "auto"],
+              maxHeight: [null, null, "600px"],
+            }}
+          >
+            <div
+              sx={{
+                width: ["100%", "100%", "100%"],
+                px: [3, 3, 0],
+              }}
+            >
+              <h2 sx={{ variant: "styles.h2" }}>
+                Eat local food made with love
+              </h2>
+              <p sx={{ variant: "styles.p", py: 3 }}>
+                Attached to Singlefin is our beachside restaurant: Seafood
+                Kitchen. Our local chefs take pride in serving our guests a
+                healthy fusion of Moroccan and European cuisine.
+              </p>
+              <p sx={{ variant: "styles.p", pb: 3 }}>
+                Every morning we will serve you a delicious Moroccan breakfast
+                for you to enjoy by the sea or on the roof terrace. Throughout
+                the day and evening we are preparing tasty vegetarian,
+                non-vegetarian meals, and of course our specialty: seafood. We
+                also have an extensive menu of healthy smoothies, desserts,
+                teas, and coffee.
+              </p>
+            </div>
+          </div>
+
+          <AspectRatio
+            ratio={16 / 9}
+            sx={{
+              overflow: "hidden",
+            }}
+          >
+            {" "}
+            <SlideShow images={eatImages} />
+          </AspectRatio>
+        </Grid>
+      </div>
+      {/* <div
         sx={{
           variant: "layout.primaryContainer",
           background: "linear-gradient(to bottom, #f7f0e1 0%, white)",
@@ -907,7 +869,7 @@ const IndexPage = ({ data }) => (
             />
           </div>
         </div>
-      </div>
+      </div> */}
       <div
         sx={{
           variant: "layout.primaryContainer",
@@ -917,12 +879,18 @@ const IndexPage = ({ data }) => (
           position: "relative",
         }}
       >
-        <Container sx={{ maxWidth: "largeContainer" }} justify="center">
+        <Container
+          sx={{ maxWidth: "largeContainer", px: [3, 3, 3] }}
+          justify="center"
+        >
           <h2 sx={{ variant: "styles.h2", textAlign: "center" }}>
             What our guests say
           </h2>
         </Container>
-        <Container sx={{ maxWidth: "smallContainer", pb: 6 }} justify="center">
+        <Container
+          sx={{ maxWidth: "smallContainer", pb: 6, px: [3, 3, 3] }}
+          justify="center"
+        >
           <p
             sx={{
               variant: "styles.p",
