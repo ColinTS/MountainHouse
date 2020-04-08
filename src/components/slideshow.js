@@ -32,6 +32,8 @@ export default function SlideShow(props) {
   }
   const imageIndex = wrap(0, images.length, page)
 
+  console.log(images)
+
   return (
     <div
       sx={{
@@ -62,6 +64,7 @@ export default function SlideShow(props) {
           src={images[imageIndex]}
           // alt={node.name.replace(/-/g, " ").substring(2)}
         />
+        })}
       </AnimatePresence>
 
       <button
