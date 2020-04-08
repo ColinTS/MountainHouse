@@ -39,6 +39,9 @@ export default {
       paddingTop: "4rem",
       paddingBottom: "4rem",
     },
+    gutters: {
+      px: 3,
+    },
   },
   breakpoints: ["40em", "56em", "64em"],
   styles: {

@@ -149,7 +149,7 @@ const IndexPage = ({ data }) => (
               with open arms.
             </p>
           </Container>
-          <Flex sx={{ justifyContent: "center", pt: 6 }}>
+          <Flex sx={{ justifyContent: "center", pt: [5, 5, 6] }}>
             <BerberOne
               sx={{ height: [75, 100, 140], width: "auto" }}
             ></BerberOne>
@@ -160,7 +160,7 @@ const IndexPage = ({ data }) => (
       {/* surf */}
       <div
         sx={{
-          paddingTop: "4rem",
+          pt: [2, 2, 4],
           paddingBottom: "4rem",
           background: "#f7f0e1",
         }}
@@ -567,7 +567,7 @@ const IndexPage = ({ data }) => (
               </Box>
             </Box>
           </Grid>
-          <Flex sx={{ justifyContent: "center", pt: 6, pb: 2 }}>
+          <Flex sx={{ justifyContent: "center", pt: [5, 5, 6], pb: 2 }}>
             <BerberThree
               sx={{ height: [75, 100, 140], width: "auto" }}
             ></BerberThree>
@@ -754,7 +754,7 @@ const IndexPage = ({ data }) => (
               </Flex>
             </Box>
           </Grid>
-          <Flex sx={{ justifyContent: "center", pt: 6, pb: 2 }}>
+          <Flex sx={{ justifyContent: "center", pt: [5, 5, 5], pb: 2 }}>
             <BerberTwo
               sx={{ height: [75, 100, 140], width: "auto" }}
             ></BerberTwo>
@@ -815,61 +815,7 @@ const IndexPage = ({ data }) => (
           </AspectRatio>
         </Grid>
       </div>
-      {/* <div
-        sx={{
-          variant: "layout.primaryContainer",
-          background: "linear-gradient(to bottom, #f7f0e1 0%, white)",
-        }}
-      >
-        <div
-          css={{
-            display: "flex",
-          }}
-        >
-          <div
-            css={{
-              flexBasis: "40%",
-              maxWidth: "40%",
-              paddingRight: "3rem",
-              height: "640px",
-            }}
-          >
-            <div
-              css={{
-                width: "500px",
-                position: "relative",
-                marginLeft: "auto",
-              }}
-            >
-              <h2 sx={{ variant: "styles.h2" }}>
-                Eat local food made with love
-              </h2>
-              <p sx={{ variant: "styles.p", py: 3 }}>
-                Attached to Singlefin is our beachside restaurant: Seafood
-                Kitchen. Our local chefs take pride in serving our guests a
-                healthy fusion of Moroccan and European cuisine.
-              </p>
-              <p sx={{ variant: "styles.p", pb: 3 }}>
-                Every morning we will serve you a delicious Moroccan breakfast
-                for you to enjoy by the sea or on the roof terrace. Throughout
-                the day and evening we are preparing tasty vegetarian,
-                non-vegetarian meals, and of course our specialty: seafood. We
-                also have an extensive menu of healthy smoothies, desserts,
-                teas, and coffee.
-              </p>
-            </div>
-          </div>
 
-          <div css={{ flexBasis: "60%", maxWidth: "60%" }}>
-            {" "}
-            <SlideShow
-              data={data.eat}
-              images={eatImages}
-              data2={data.surfing}
-            />
-          </div>
-        </div>
-      </div> */}
       <div
         sx={{
           variant: "layout.primaryContainer",
@@ -932,20 +878,20 @@ const IndexPage = ({ data }) => (
           <Dunes style={{ width: "100%", height: "auto" }} />
         </div>
       </div>
-      <div sx={{ bg: "secondary" }}>
+      <div sx={{ bg: "secondary", px: 3 }}>
         <Container sx={{ maxWidth: "largeContainer", pb: 5 }} justify="center">
           <Grid gap={4} columns={[1, 1, 3]}>
             <div>
               <LogoDark
-                style={{
-                  width: "240px",
+                sx={{
+                  width: ["140px", "200px", "240px"],
                   height: "auto",
                 }}
               />
               <p sx={{ variant: "styles.p", pt: 2 }}>
                 Singlefin is a holiday retreat in Taghazout, Morocco
               </p>
-              <p sx={{ variant: "styles.p", fontSize: 14, pt: 4 }}>
+              <p sx={{ variant: "styles.p", fontSize: 14, pt: [1, 1, 4] }}>
                 © 2020 Singlefin
               </p>
             </div>
