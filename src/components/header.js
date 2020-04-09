@@ -35,6 +35,7 @@ function Header({ siteTitle }) {
           margin: "0 auto",
           maxWidth: 1760,
           py: 3,
+          px: 3,
         }}
       >
         <div>

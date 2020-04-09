@@ -76,7 +76,11 @@ export default function SlideShow(props) {
         ))}
       </div>
 
-      <button
+      <motion.button
+        whileTap={{
+          scale: 0.8,
+        }}
+        whileHover={{ scale: 1.2 }}
         css={{
           position: "absolute",
           top: "47%",
@@ -85,6 +89,7 @@ export default function SlideShow(props) {
           border: "none",
           outline: "none",
           zIndex: 2,
+          "-webkit-tap-highlight-color": "rgba(255, 255, 255, 0)",
         }}
       >
         <Arrow
@@ -93,16 +98,15 @@ export default function SlideShow(props) {
             height: "auto",
             cursor: "pointer",
             transform: "rotate(180deg) scale(1)",
-            transition: "all .3s ease",
-            ":hover": {
-              transform: "rotate(180deg) scale(1.2)",
-              transition: "all .3s ease",
-            },
           }}
           onClick={() => paginate(1)}
         ></Arrow>
-      </button>
-      <button
+      </motion.button>
+      <motion.button
+        whileTap={{
+          scale: 0.8,
+        }}
+        whileHover={{ scale: 1.2 }}
         css={{
           position: "absolute",
           top: "47%",
@@ -111,23 +115,18 @@ export default function SlideShow(props) {
           border: "none",
           outline: "none",
           zIndex: 2,
+          cursor: "pointer",
+          "-webkit-tap-highlight-color": "rgba(255, 255, 255, 0)",
         }}
       >
         <Arrow
           css={{
             width: "70px",
             height: "auto",
-            cursor: "pointer",
-            transform: "scale(1)",
-            transition: "all .3s ease",
-            ":hover": {
-              transform: "scale(1.2)",
-              transition: "all .3s ease",
-            },
           }}
           onClick={() => paginate(-1)}
         ></Arrow>
-      </button>
+      </motion.button>
     </div>
   )
 }
