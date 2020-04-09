@@ -32,8 +32,6 @@ export default function SlideShow(props) {
   }
   const imageIndex = wrap(0, images.length, page)
 
-  console.log(images)
-
   return (
     <div
       sx={{
@@ -66,6 +64,17 @@ export default function SlideShow(props) {
         />
         })}
       </AnimatePresence>
+
+      <div>
+        {images.map(image => (
+          <img
+            src={image}
+            key={image + 1}
+            sx={{ width: "1px", height: "1px" }}
+            alt={image}
+          />
+        ))}
+      </div>
 
       <button
         css={{
