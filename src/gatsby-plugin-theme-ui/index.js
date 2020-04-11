@@ -73,7 +73,7 @@ export default {
       marginBottom: "0.5rem",
     },
     p: {
-      color: "blackText",
+      color: "text",
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "body",

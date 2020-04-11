@@ -127,7 +127,7 @@ const IndexPage = ({ data }) => (
     </div>
 
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Singlefin - Surf Resort in Taghazout, Morocco" />
       <div css={{}}>
         <div
           sx={{

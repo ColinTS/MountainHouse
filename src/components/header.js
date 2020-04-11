@@ -16,6 +16,11 @@ function Header({ siteTitle }) {
     })
   })
 
+  // const openCrisp = e => {
+  //   e.preventDefault()
+  //   $crisp.push(["do", "chat:open"])
+  // }
+
   // if (isTop) {
   return (
     <div
@@ -38,6 +43,21 @@ function Header({ siteTitle }) {
           px: 3,
         }}
       >
+        <span
+          sx={{
+            variant: "styles.button",
+            color: "white",
+            cursor: "pointer",
+            pr: 4,
+            userSelect: "none",
+          }}
+          onClick={function() {
+            window.$crisp.push(["do", "chat:open"])
+          }}
+        >
+          Contact Us
+        </span>
+
         <div>
           <ButtonLink name="Book Now" textColor="white" bg="blue" />
         </div>
