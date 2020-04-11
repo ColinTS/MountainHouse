@@ -51,7 +51,7 @@ const SecondPage = ({ data }) => (
           transform: "translate(-50%, -50%)",
         }}
       >
-        Surf, Eat and Stay in Morocco
+        Terms & Conditions
       </h1>
     </div>
 

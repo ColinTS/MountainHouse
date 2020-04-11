@@ -26,7 +26,7 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  console.log(window.location.href)
+  // console.log(window.location.href)
 
   return (
     <Helmet
@@ -68,10 +68,10 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
-        {
-          name: `og:url`,
-          content: window.location.href,
-        },
+        // {
+        //   name: `og:url`,
+        //   content: window.location.href,
+        // },
       ].concat(meta)}
     />
   )
