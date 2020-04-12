@@ -13,7 +13,7 @@ export default function ButtonLink(props) {
       style={{
         textDecorationLine: "none",
       }}
-      to="/page-2/"
+      to="/terms-conditions"
     >
       <div
         sx={{

@@ -4,13 +4,13 @@ import { jsx, Box, Container, Grid, Flex, AspectRatio } from "theme-ui"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SlideShow from "../components/slideshow"
-import Logo from "../images/logo2.svg"
-import LogoDark from "../images/logoDark.svg"
+// import Logo from "../images/logo2.svg"
 import Check from "../images/check.svg"
 import BerberOne from "../images/berberOne.svg"
 import BerberTwo from "../images/berberTwo.svg"
 import BerberThree from "../images/berberThree.svg"
 import ButtonLink from "../components/button.js"
+import { Link } from "gatsby"
 
 import SEO from "../components/seo"
 import Dunes from "../images/dunes.svg"
@@ -109,7 +109,7 @@ const IndexPage = ({ data }) => (
         <Dunes style={{ width: "100%", height: "auto" }} />
       </div>
 
-      <div
+      {/* <div
         css={{
           position: "absolute",
           top: "40%",
@@ -123,7 +123,7 @@ const IndexPage = ({ data }) => (
             height: "auto",
           }}
         />
-      </div>
+      </div> */}
     </div>
 
     <Layout>
@@ -141,11 +141,18 @@ const IndexPage = ({ data }) => (
               Singlefin is a holiday retreat in Taghazout, Morocco{" "}
             </h1>
 
-            <p sx={{ variant: "styles.p", textAlign: "center", pt: 2 }}>
+            <p
+              sx={{
+                variant: "styles.p",
+                textAlign: "center",
+                pt: 2,
+                fontSize: [2, 2, 3],
+              }}
+            >
               We offer an authentic moroccan stay for guests from around the
               globe. Whether you want to have a memorable time surfing southern
               Morocco, have a relaxed holiday exploring the country, or eat
-              healthy, local food from our restaurant, Single Fin welcomes you
+              healthy, local food from our restaurant, Singlefin welcomes you
               with open arms.
             </p>
           </Container>
@@ -865,40 +872,6 @@ const IndexPage = ({ data }) => (
           >
             James - Australia
           </p>
-        </Container>
-        <div
-          css={{
-            width: "100vw",
-            margin: 0,
-            padding: 0,
-
-            marginBottom: "-2%",
-          }}
-        >
-          <Dunes style={{ width: "100%", height: "auto" }} />
-        </div>
-      </div>
-      <div sx={{ bg: "secondary", px: 3 }}>
-        <Container sx={{ maxWidth: "largeContainer", pb: 5 }} justify="center">
-          <Grid gap={4} columns={[1, 1, 3]}>
-            <div>
-              <LogoDark
-                sx={{
-                  width: ["140px", "200px", "240px"],
-                  height: "auto",
-                }}
-              />
-              <p sx={{ variant: "styles.p", pt: 2 }}>
-                Singlefin is a holiday retreat in Taghazout, Morocco
-              </p>
-              <p sx={{ variant: "styles.p", fontSize: 14, pt: [1, 1, 4] }}>
-                © 2020 Singlefin
-              </p>
-            </div>
-
-            <div></div>
-            <div></div>
-          </Grid>
         </Container>
       </div>
     </Layout>

@@ -51,11 +51,9 @@ export default function SlideShow(props) {
           exit="exit"
           transition={{
             x: { type: "spring", stiffness: 300, damping: 200 },
-            opacity: { duration: 0.7 },
           }}
           sx={{
-            borderRadius: 4,
-            position: ["absolute", null, "absolute"],
+            position: ["absolute", "absolute", "absolute"],
             minHeight: [null, null, "600px"],
             objectFit: "cover",
           }}
@@ -83,21 +81,22 @@ export default function SlideShow(props) {
         whileHover={{ scale: 1.2 }}
         css={{
           position: "absolute",
-          top: "47%",
-          left: "5%",
+          top: "50%",
+          left: "3%",
           background: "none",
           border: "none",
           outline: "none",
           zIndex: 2,
+
           "-webkit-tap-highlight-color": "rgba(255, 255, 255, 0)",
         }}
       >
         <Arrow
           css={{
-            width: "70px",
-            height: "auto",
+            height: "28px",
+            width: "auto",
             cursor: "pointer",
-            transform: "rotate(180deg) scale(1)",
+            transform: "rotate(180deg)",
           }}
           onClick={() => paginate(1)}
         ></Arrow>
@@ -109,21 +108,17 @@ export default function SlideShow(props) {
         whileHover={{ scale: 1.2 }}
         css={{
           position: "absolute",
-          top: "47%",
-          right: "5%",
+          top: "50%",
+          right: "3%",
           background: "none",
           border: "none",
           outline: "none",
           zIndex: 2,
-          cursor: "pointer",
           "-webkit-tap-highlight-color": "rgba(255, 255, 255, 0)",
         }}
       >
         <Arrow
-          css={{
-            width: "70px",
-            height: "auto",
-          }}
+          css={{ height: "28px", width: "auto", cursor: "pointer" }}
           onClick={() => paginate(-1)}
         ></Arrow>
       </motion.button>

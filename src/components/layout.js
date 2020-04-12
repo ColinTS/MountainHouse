@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Helmet from "react-helmet"
+import Footer from "./footer.js"
 
 import Header from "./header"
 import "./layout.css"
@@ -32,6 +33,8 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
 
       <main style={{ overflowX: "hidden" }}>{children}</main>
+
+      <Footer />
     </>
   )
 }

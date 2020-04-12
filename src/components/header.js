@@ -3,6 +3,8 @@ import { jsx, Flex } from "theme-ui"
 import PropTypes from "prop-types"
 import { useState, useEffect } from "react"
 import ButtonLink from "./button.js"
+import Logo from "../images/logo2.svg"
+import { Link } from "gatsby"
 
 function Header({ siteTitle }) {
   const [isTop, setIsTop] = useState(true)
@@ -36,31 +38,43 @@ function Header({ siteTitle }) {
       <Flex
         sx={{
           alignItems: "center",
-          justifyContent: "flex-end",
+          justifyContent: "space-between",
           margin: "0 auto",
           maxWidth: 1760,
           py: 3,
           px: 3,
         }}
       >
-        <span
-          sx={{
-            variant: "styles.button",
-            color: "white",
-            cursor: "pointer",
-            pr: 4,
-            userSelect: "none",
-          }}
-          onClick={function() {
-            window.$crisp.push(["do", "chat:open"])
-          }}
-        >
-          Contact Us
-        </span>
+        <Flex>
+          <Link sx={{ display: "flex", alignItems: "center" }} to="/">
+            <Logo
+              sx={{
+                width: ["100px", "125px", "150px"],
+                height: "auto",
+              }}
+            />
+          </Link>
+        </Flex>
+        <Flex sx={{ alignItems: "center" }}>
+          <span
+            sx={{
+              variant: "styles.button",
+              color: "white",
+              cursor: "pointer",
+              pr: 4,
+              userSelect: "none",
+            }}
+            onClick={function() {
+              window.$crisp.push(["do", "chat:open"])
+            }}
+          >
+            Contact Us
+          </span>
 
-        <div>
-          <ButtonLink name="Book Now" textColor="white" bg="blue" />
-        </div>
+          <div>
+            <ButtonLink name="Book Now" textColor="white" bg="blue" />
+          </div>
+        </Flex>
       </Flex>
     </div>
   )

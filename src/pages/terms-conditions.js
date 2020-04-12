@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import React from "react"
-import { jsx } from "theme-ui"
+
+import { jsx, Container } from "theme-ui"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundImage from "gatsby-background-image"
@@ -19,9 +19,9 @@ export const data = graphql`
     }
   }
 `
-const SecondPage = ({ data }) => (
+const TermsAndConditions = ({ data }) => (
   <Layout>
-    <SEO title="Page two" />
+    <SEO title="Terms & Conditions" />
     <div
       sx={{
         position: "relative",
@@ -55,10 +55,29 @@ const SecondPage = ({ data }) => (
       </h1>
     </div>
 
-    <Link sx={{}} to="/">
-      Go back to the homepage
-    </Link>
+    <Container sx={{ px: 3, py: 5, maxWidth: "smallContainer" }}>
+      <div sx={{ pb: 4 }}>
+        <h2 sx={{ variant: "styles.h2" }}>Point 1</h2>
+        <p sx={{ variant: "styles.p" }}>Blah blah blah</p>
+      </div>
+      <div sx={{ pb: 4 }}>
+        <h2 sx={{ variant: "styles.h2" }}>Point 2</h2>
+        <p sx={{ variant: "styles.p" }}>Blah blah blah</p>
+      </div>
+      <div sx={{ pb: 4 }}>
+        <h2 sx={{ variant: "styles.h2" }}>Point 3</h2>
+        <p sx={{ variant: "styles.p" }}>Blah blah blah</p>
+      </div>
+      <div sx={{ pb: 4 }}>
+        <h2 sx={{ variant: "styles.h2" }}>Point 4</h2>
+        <p sx={{ variant: "styles.p" }}>Blah blah blah</p>
+      </div>
+      <div sx={{}}>
+        <h2 sx={{ variant: "styles.h2" }}>Point 5</h2>
+        <p sx={{ variant: "styles.p" }}>Blah blah blah</p>
+      </div>
+    </Container>
   </Layout>
 )
 
-export default SecondPage
+export default TermsAndConditions
