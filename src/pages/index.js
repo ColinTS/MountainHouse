@@ -10,12 +10,14 @@ import BerberOne from "../images/berberOne.svg"
 import BerberTwo from "../images/berberTwo.svg"
 import BerberThree from "../images/berberThree.svg"
 import ButtonLink from "../components/button.js"
+import instagram from "../components/instagram.js"
 import { Link } from "gatsby"
 
 import SEO from "../components/seo"
 import Dunes from "../images/dunes.svg"
 
 import video from "../images/Tag.mp4"
+import Instagram from "../components/instagram.js"
 
 const surfImages = [
   "//images.ctfassets.net/qlhp1q6elgxs/16NM1a7FJI0IcByEiwRAvb/0bb8fb72a8f9264dbb2359bc7d54e8d3/surf4__1_.jpg",
@@ -66,11 +68,25 @@ export const data = graphql`
         }
       }
     }
+    instagram: allInstaNode {
+      edges {
+        node {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 4000) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
   }
 `
 
 const IndexPage = ({ data }) => (
   <div>
+    <Instagram data={data.instagram} />
     <div
       css={{
         margin: 0,
@@ -217,7 +233,7 @@ const IndexPage = ({ data }) => (
             }}
           >
             {" "}
-            <SlideShow images={surfImages} />
+            <SlideShow data={data.surfing} images={surfImages} />
           </AspectRatio>
         </Grid>
       </div>
@@ -598,7 +614,7 @@ const IndexPage = ({ data }) => (
             }}
           >
             {" "}
-            <SlideShow images={stayImages} />
+            <SlideShow data={data.surfing} images={stayImages} />
           </AspectRatio>
           <div
             sx={{
@@ -818,7 +834,7 @@ const IndexPage = ({ data }) => (
             }}
           >
             {" "}
-            <SlideShow images={eatImages} />
+            <SlideShow data={data.surfing} images={eatImages} />
           </AspectRatio>
         </Grid>
       </div>

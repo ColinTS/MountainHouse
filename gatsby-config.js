@@ -9,6 +9,12 @@ module.exports = {
     author: `Singlefin`,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `single.fin.taghazout`,
+      },
+    },
     "gatsby-plugin-theme-ui",
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-resolve-src`,
