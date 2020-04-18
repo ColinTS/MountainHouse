@@ -68,7 +68,7 @@ export const data = graphql`
         }
       }
     }
-    instagram: allInstaNode {
+    instagram: allInstaNode(sort: { fields: timestamp, order: DESC }) {
       edges {
         node {
           localFile {
@@ -86,7 +86,6 @@ export const data = graphql`
 
 const IndexPage = ({ data }) => (
   <div>
-    <Instagram data={data.instagram} />
     <div
       css={{
         margin: 0,
@@ -888,6 +887,15 @@ const IndexPage = ({ data }) => (
           >
             James - Australia
           </p>
+        </Container>
+        <Container
+          sx={{ maxWidth: "largeContainer", px: [3, 3, 3], pb: 6 }}
+          justify="center"
+        >
+          <h2 sx={{ variant: "styles.h2", pb: 4, textAlign: "center" }}>
+            Find us on the gram
+          </h2>
+          <Instagram data={data.instagram} />
         </Container>
       </div>
     </Layout>
