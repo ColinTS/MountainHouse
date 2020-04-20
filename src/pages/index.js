@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { graphql } from "gatsby"
-import { jsx, Box, Container, Grid, Flex, AspectRatio } from "theme-ui"
+import { jsx, Box, Container, Grid, Flex, AspectRatio, Button } from "theme-ui"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SlideShow from "../components/slideshow"
@@ -9,7 +9,6 @@ import Check from "../images/check.svg"
 import BerberOne from "../images/berberOne.svg"
 import BerberTwo from "../images/berberTwo.svg"
 import BerberThree from "../images/berberThree.svg"
-import ButtonLink from "../components/button.js"
 import instagram from "../components/instagram.js"
 import { Link } from "gatsby"
 
@@ -421,7 +420,7 @@ const IndexPage = ({ data }) => (
                   </p>
                 </Flex>
                 <Flex sx={{ pt: "1rem", pb: "1rem" }}>
-                  <ButtonLink name="Book Now" textColor="white" bg="blue" />
+                  <Button>Book now</Button>
                 </Flex>
               </Box>
             </Box>
@@ -584,7 +583,7 @@ const IndexPage = ({ data }) => (
                   </p>
                 </Flex>
                 <Flex sx={{ pt: "1rem", pb: "1rem" }}>
-                  <ButtonLink name="Book Now" textColor="white" bg="blue" />
+                  <Button>Book now</Button>
                 </Flex>
               </Box>
             </Box>

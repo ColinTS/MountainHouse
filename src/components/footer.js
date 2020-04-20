@@ -38,14 +38,37 @@ export default function Footer(props) {
               <p sx={{ variant: "styles.p", pt: 2 }}>
                 Singlefin is a holiday retreat in Taghazout, Morocco
               </p>
-              <p sx={{ variant: "styles.p", fontSize: 14, pt: [1, 1, 4] }}>
-                © 2020 Singlefin
-              </p>
             </div>
 
-            <div></div>
+            <div>
+              <Link to="/terms-conditions" sx={{ textDecoration: "none" }}>
+                <p
+                  sx={{
+                    variant: "styles.button",
+                    color: "text",
+                    pb: 2,
+                  }}
+                >
+                  Terms & Conditions
+                </p>
+              </Link>
+              <Link to="/terms-conditions" sx={{ textDecoration: "none" }}>
+                <p
+                  sx={{
+                    variant: "styles.button",
+                    color: "text",
+                    pb: 2,
+                  }}
+                >
+                  Privacy policy
+                </p>
+              </Link>
+            </div>
             <div></div>
           </Grid>
+          <p sx={{ variant: "styles.p", fontSize: 14, pt: [1, 1, 4] }}>
+            © 2020 Singlefin
+          </p>
         </Container>
       </div>
     </div>

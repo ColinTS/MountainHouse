@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import { jsx, Flex } from "theme-ui"
+import { jsx, Flex, Button } from "theme-ui"
 import PropTypes from "prop-types"
 import { useState, useEffect } from "react"
-import ButtonLink from "./button.js"
 import Logo from "../images/logo2.svg"
 import { Link } from "gatsby"
 
@@ -17,11 +16,6 @@ function Header({ siteTitle }) {
       }
     })
   })
-
-  // const openCrisp = e => {
-  //   e.preventDefault()
-  //   $crisp.push(["do", "chat:open"])
-  // }
 
   // if (isTop) {
   return (
@@ -56,6 +50,19 @@ function Header({ siteTitle }) {
           </Link>
         </Flex>
         <Flex sx={{ alignItems: "center" }}>
+          <Link
+            to="/location"
+            sx={{
+              variant: "styles.button",
+              color: "white",
+              cursor: "pointer",
+              pr: 4,
+              userSelect: "none",
+              textDecoration: "none",
+            }}
+          >
+            Location
+          </Link>
           <span
             sx={{
               variant: "styles.button",
@@ -72,7 +79,7 @@ function Header({ siteTitle }) {
           </span>
 
           <div>
-            <ButtonLink name="Book Now" textColor="white" bg="blue" />
+            <Button sx={{ variant: "buttons.primary" }}>Book now</Button>
           </div>
         </Flex>
       </Flex>

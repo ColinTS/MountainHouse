@@ -1,12 +1,13 @@
 export default {
   colors: {
-    text: "#604218",
+    text: "#473831",
     blackText: "#2e2e2e",
     background: "#fff",
     primary: "#333",
     secondary: "#FFCF8A",
     tertiary: "#f7f0e1",
     blue: "#428DA4",
+    lightBlue: "#4b96ad",
   },
   fonts: {
     body:
@@ -41,6 +42,22 @@ export default {
     },
     gutters: {
       px: 3,
+    },
+  },
+  buttons: {
+    primary: {
+      bg: "blue",
+      px: 4,
+      py: 3,
+      borderRadius: 4,
+      color: "white",
+      cursor: "pointer",
+      fontSize: 2,
+      fontFamily: "body",
+      fontWeight: "subHeading",
+      "&:hover": {
+        bg: "lightBlue",
+      },
     },
   },
   breakpoints: ["40em", "56em", "64em"],
