@@ -1,6 +1,7 @@
 /** @jsx jsx */
 
 import { jsx, Container, Grid, Button, Flex } from "theme-ui"
+import GoogleMapReact from "google-map-react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
@@ -8,6 +9,8 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundImage from "gatsby-background-image"
+
+const isClient = typeof window !== "undefined"
 
 export const data = graphql`
   query {
@@ -41,6 +44,7 @@ export const data = graphql`
     }
   }
 `
+
 const Location = ({ data }) => (
   <Layout>
     <SEO title="Taghazout" />
@@ -200,6 +204,15 @@ const Location = ({ data }) => (
         <Button>Explore activities</Button>
       </Flex>
     </Container>
+    <div style={{ height: "600px", width: "100%" }}>
+      {isClient && (
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: process.env.GOOGLE_API_KEY }}
+          defaultCenter={[11.0168, 76.9558]}
+          defaultZoom={11}
+        ></GoogleMapReact>
+      )}
+    </div>
   </Layout>
 )
 
