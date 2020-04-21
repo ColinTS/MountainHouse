@@ -207,7 +207,7 @@ const Location = ({ data }) => (
     <div style={{ height: "600px", width: "100%" }}>
       {isClient && (
         <GoogleMapReact
-          bootstrapURLKeys={{ key: process.env.GOOGLE_API_KEY }}
+          bootstrapURLKeys={{ key: process.env.GATSBY_GOOGLE_API_KEY }}
           defaultCenter={[11.0168, 76.9558]}
           defaultZoom={11}
         ></GoogleMapReact>
