@@ -9,6 +9,7 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundImage from "gatsby-background-image"
+import Marker from "../images/location/Marker.svg"
 
 const isClient = typeof window !== "undefined"
 
@@ -204,15 +205,29 @@ const Location = ({ data }) => (
         <Button>Explore activities</Button>
       </Flex>
     </Container>
-    <div style={{ height: "600px", width: "100%" }}>
-      {isClient && (
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: process.env.GATSBY_GOOGLE_API_KEY }}
-          defaultCenter={[11.0168, 76.9558]}
-          defaultZoom={11}
-        ></GoogleMapReact>
-      )}
-    </div>
+    <Container>
+      <div style={{ height: "600px", width: "100%" }}>
+        {isClient && (
+          <GoogleMapReact
+            bootstrapURLKeys={{
+              key: process.env.GATSBY_GOOGLE_API_KEY,
+            }}
+            defaultCenter={[30.544194, -9.708767]}
+            defaultZoom={17}
+          >
+            <Marker
+              lat={30.544194}
+              lng={-9.708767}
+              sx={{
+                height: "64px",
+                position: "absolute",
+                transform: "translate(-50%, -50%)",
+              }}
+            />
+          </GoogleMapReact>
+        )}
+      </div>
+    </Container>
   </Layout>
 )
 
