@@ -205,7 +205,11 @@ const Location = ({ data }) => (
         <Button>Explore activities</Button>
       </Flex>
     </Container>
-    <Container>
+    <Container sx={{ pb: 6, pt: [5, 0, 0] }}>
+      <h1 sx={{ variant: "styles.h1", textAlign: "center" }}>Find us</h1>
+      <p sx={{ variant: "styles.p", textAlign: "center", pb: 4 }}>
+        65 Tayought Street, Taghazout 80022
+      </p>
       <div style={{ height: "600px", width: "100%" }}>
         {isClient && (
           <GoogleMapReact
