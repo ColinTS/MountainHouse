@@ -51,6 +51,19 @@ function Header({ siteTitle }) {
         </Flex>
         <Flex sx={{ alignItems: "center" }}>
           <Link
+            to="/explore"
+            sx={{
+              variant: "styles.button",
+              color: "white",
+              cursor: "pointer",
+              pr: 4,
+              userSelect: "none",
+              textDecoration: "none",
+            }}
+          >
+            Explore
+          </Link>
+          <Link
             to="/location"
             sx={{
               variant: "styles.button",
