@@ -38,13 +38,23 @@ const exploreData = [
   },
 ]
 
-const exploreContent = content => {
+const Content = ({ content }) => {
   const contentData = exploreData.find(object => object.name === content)
-  return <div></div>
+  console.log("content", contentData)
+  return (
+    <div>
+      <h2 sx={{ variant: "styles.h2" }}>{contentData.header}</h2>
+    </div>
+  )
 }
 
 const Explore = ({ data }) => {
   const [content, setContent] = useState("surf1")
+
+  const createContent = content => {
+    setContent(content)
+  }
+
   return (
     <Layout>
       <SEO title="Explore things to do around Taghazout" />
@@ -97,83 +107,48 @@ const Explore = ({ data }) => {
           </p>
         </div>
       </div>
-      <div sx={{ py: 6 }}>
-        <Grid columns={[1, 1, "1fr 1.5fr"]}>
-          <div
-            sx={{
-              paddingLeft: [null, null, "2rem"],
-              paddingRight: [null, null, "2rem"],
-              width: [null, null, "550px"],
-              marginLeft: ["auto"],
-              height: ["auto", "auto", "auto"],
-              maxHeight: [null, null, "600px"],
-            }}
-          >
-            <div
-              sx={{
-                width: ["100%", "100%", "100%"],
-                px: [3, 3, 3],
+      <div sx={{ height: "100vh", position: "relative" }}>
+        <div sx={{ position: "absolute", zIndex: 1000, top: 200, left: 200 }}>
+          {" "}
+          <Content content={content} />
+        </div>
+        <div sx={{ zIndex: 1, height: "100vh" }}>
+          {isClient && (
+            <GoogleMapReact
+              bootstrapURLKeys={{
+                key: process.env.GATSBY_GOOGLE_API_KEY,
               }}
+              defaultCenter={[30.544194, -9.708767]}
+              defaultZoom={17}
+              options={{ gestureHandling: "greedy", scrollwheel: false }}
             >
-              <h2 sx={{ variant: "styles.h2" }}>
-                Surf the coastal paradise of southern Morocco
-              </h2>
-              <p sx={{ variant: "styles.p", py: 3 }}>
-                There is surfing all-year round in Morocco and Taghazout is at
-                the center of it all. Just within a few km of the village there
-                are 10 beautiful surfing spots, for beginners and pros.
-              </p>
-              <p sx={{ variant: "styles.p", pb: 3 }}>
-                Right in front of our beach house there are 2 spots - Hash point
-                and Panorama. Just a quick walk down the beach and you'll find
-                Anchor point - One of Morocco's most famous places to surf. In
-                fact, you can check the surf from our roof terrace.
-              </p>
-              <p sx={{ variant: "styles.p" }}>
-                We offer surf lessons for beginners and guided surf trips for
-                those with more experience. No matter your skill level you'll be
-                surfing your heart out when you stay with us.
-              </p>
-            </div>
-          </div>
-
-          <div style={{ height: "700px", width: "100%" }}>
-            {isClient && (
-              <GoogleMapReact
-                bootstrapURLKeys={{
-                  key: process.env.GATSBY_GOOGLE_API_KEY,
+              <div
+                lat={30.544194}
+                lng={-9.708767}
+                onClick={() => createContent("surf1")}
+                sx={{
+                  height: "30px",
+                  width: "30px",
+                  bg: "black",
+                  position: "absolute",
+                  transform: "translate(-50%, -50%)",
                 }}
-                defaultCenter={[30.544194, -9.708767]}
-                defaultZoom={17}
-              >
-                <div
-                  lat={30.544194}
-                  lng={-9.708767}
-                  onClick={() => setContent("surf1")}
-                  sx={{
-                    height: "30px",
-                    width: "30px",
-                    bg: "blue",
-                    position: "absolute",
-                    transform: "translate(-50%, -50%)",
-                  }}
-                />
-                <div
-                  lat={30.542194}
-                  lng={-9.705767}
-                  onClick={() => setContent("surf2")}
-                  sx={{
-                    height: "30px",
-                    width: "30px",
-                    bg: "black",
-                    position: "absolute",
-                    transform: "translate(-50%, -50%)",
-                  }}
-                />
-              </GoogleMapReact>
-            )}
-          </div>
-        </Grid>
+              />
+              <div
+                lat={30.542194}
+                lng={-9.705767}
+                onClick={() => createContent("surf2")}
+                sx={{
+                  height: "30px",
+                  width: "30px",
+                  bg: "black",
+                  position: "absolute",
+                  transform: "translate(-50%, -50%)",
+                }}
+              />
+            </GoogleMapReact>
+          )}
+        </div>
       </div>
     </Layout>
   )
