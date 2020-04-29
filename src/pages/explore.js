@@ -6,7 +6,7 @@ import { graphql } from "gatsby"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import React, { useState } from "react"
-
+import { motion } from "framer-motion"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundImage from "gatsby-background-image"
@@ -27,13 +27,15 @@ export const data = graphql`
 `
 const exploreData = [
   {
-    name: "surf1",
-    header: "Surf 1",
-    body: "This is some text about surf 1",
+    name: "hashpointSurf",
+    category: "surfing",
+    header: "Hashpoint",
+    body: "Hashpoint is the closest surf spot to Singlefin.",
   },
   {
-    name: "surf2",
-    header: "This be Surf 2",
+    name: "skatepark",
+    category: "skatepark",
+    header: "Skatepark",
     body: "This is some text about surf 1",
   },
 ]
@@ -49,10 +51,38 @@ const Content = ({ content }) => {
 }
 
 const Explore = ({ data }) => {
-  const [content, setContent] = useState("surf1")
+  const [content, setContent] = useState("hashpointSurf")
+  const [lat, setLat] = useState(30.544194)
+  const [long, setLong] = useState(-9.708767)
 
-  const createContent = content => {
+  const createContent = (content, newLat, newLong) => {
     setContent(content)
+    setLat(newLat)
+    setLong(newLong)
+  }
+
+  const Marker = ({ name, newLat, newLong }) => {
+    return (
+      <div sx={{ position: "absolute", transform: "translate(-50%, -50%)" }}>
+        <motion.div
+          whileTap={{
+            scale: 0.8,
+          }}
+          whileHover={{ scale: 1.2 }}
+          sx={{
+            bg: name === content ? "blue" : "white",
+            width: 35,
+            height: 35,
+            borderStyle: "solid",
+            borderColor: "blue",
+            boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+            borderRadius: "100%",
+            cursor: "pointer",
+          }}
+          onClick={() => createContent(name, newLat, newLong)}
+        ></motion.div>
+      </div>
+    )
   }
 
   return (
@@ -108,9 +138,20 @@ const Explore = ({ data }) => {
         </div>
       </div>
       <div sx={{ height: "100vh", position: "relative" }}>
-        <div sx={{ position: "absolute", zIndex: 1000, top: 200, left: 200 }}>
+        <div sx={{ position: "absolute", zIndex: 1000, top: 100, left: 150 }}>
           {" "}
-          <Content content={content} />
+          <div
+            sx={{
+              height: "600px",
+              width: "500px",
+              p: 4,
+              bg: "white",
+              borderRadius: 4,
+              boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+            }}
+          >
+            <Content content={content} />
+          </div>
         </div>
         <div sx={{ zIndex: 1, height: "100vh" }}>
           {isClient && (
@@ -119,32 +160,23 @@ const Explore = ({ data }) => {
                 key: process.env.GATSBY_GOOGLE_API_KEY,
               }}
               defaultCenter={[30.544194, -9.708767]}
-              defaultZoom={17}
-              options={{ gestureHandling: "greedy", scrollwheel: false }}
+              center={[lat, long]}
+              defaultZoom={13}
+              options={{ gestureHandling: "cooperative" }}
             >
-              <div
-                lat={30.544194}
-                lng={-9.708767}
-                onClick={() => createContent("surf1")}
-                sx={{
-                  height: "30px",
-                  width: "30px",
-                  bg: "black",
-                  position: "absolute",
-                  transform: "translate(-50%, -50%)",
-                }}
+              <Marker
+                lat={30.544757}
+                lng={-9.711671}
+                name={"hashpointSurf"}
+                newLat={30.544757}
+                newLong={-9.711671}
               />
-              <div
-                lat={30.542194}
-                lng={-9.705767}
-                onClick={() => createContent("surf2")}
-                sx={{
-                  height: "30px",
-                  width: "30px",
-                  bg: "black",
-                  position: "absolute",
-                  transform: "translate(-50%, -50%)",
-                }}
+              <Marker
+                lat={30.548887}
+                lng={-9.712487}
+                name={"skatepark"}
+                newLat={30.548887}
+                newLong={-9.712487}
               />
             </GoogleMapReact>
           )}
