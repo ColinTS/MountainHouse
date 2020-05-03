@@ -23,6 +23,20 @@ export const data = graphql`
         }
       }
     }
+    panoramaSurf: file(relativePath: { eq: "explore/panoramaSurf.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 3000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    skatepark: file(relativePath: { eq: "explore/skatepark.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 3000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 `
 const exploreData = [
@@ -33,6 +47,12 @@ const exploreData = [
     body: "Hashpoint is the closest surf spot to Singlefin.",
   },
   {
+    name: "panoramaSurf",
+    category: "surfing",
+    header: "Panorama",
+    body: "Panorama is the closest surf spot to Singlefin.",
+  },
+  {
     name: "skatepark",
     category: "skatepark",
     header: "Skatepark",
@@ -40,18 +60,28 @@ const exploreData = [
   },
 ]
 
-const Content = ({ content }) => {
+const Content = ({ content, data }) => {
   const contentData = exploreData.find(object => object.name === content)
-  console.log("content", contentData)
+  console.log("content", data[content])
   return (
     <div>
-      <h2 sx={{ variant: "styles.h2" }}>{contentData.header}</h2>
+      <Img
+        style={{
+          borderRadius: "4px 4px 0px 0px",
+          maxHeight: "240px",
+          width: "auto",
+        }}
+        fluid={data[content].childImageSharp.fluid}
+      />
+      <div sx={{ p: 4 }}>
+        <h2 sx={{ variant: "styles.h2" }}>{contentData.header}</h2>
+      </div>
     </div>
   )
 }
 
 const Explore = ({ data }) => {
-  const [content, setContent] = useState("hashpointSurf")
+  const [content, setContent] = useState("panoramaSurf")
   const [lat, setLat] = useState(30.544194)
   const [long, setLong] = useState(-9.708767)
 
@@ -144,13 +174,12 @@ const Explore = ({ data }) => {
             sx={{
               height: "600px",
               width: "500px",
-              p: 4,
               bg: "white",
               borderRadius: 4,
               boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
             }}
           >
-            <Content content={content} />
+            <Content content={content} data={data} />
           </div>
         </div>
         <div sx={{ zIndex: 1, height: "100vh" }}>
@@ -162,7 +191,11 @@ const Explore = ({ data }) => {
               defaultCenter={[30.544194, -9.708767]}
               center={[lat, long]}
               defaultZoom={13}
-              options={{ gestureHandling: "cooperative" }}
+              options={{
+                gestureHandling: "cooperative",
+                fullscreenControl: false,
+                zoomControl: false,
+              }}
             >
               <Marker
                 lat={30.544757}
@@ -170,6 +203,13 @@ const Explore = ({ data }) => {
                 name={"hashpointSurf"}
                 newLat={30.544757}
                 newLong={-9.711671}
+              />
+              <Marker
+                lat={30.542439}
+                lng={-9.7038}
+                name={"panoramaSurf"}
+                newLat={30.542439}
+                newLong={-9.7038}
               />
               <Marker
                 lat={30.548887}
