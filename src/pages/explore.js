@@ -62,7 +62,7 @@ const exploreData = [
   },
   {
     name: "skatepark",
-    category: "skatepark",
+    category: "taghazout skatepark",
     header: "Skatepark",
     body: "This is some text about surf 1",
   },
@@ -82,7 +82,22 @@ const Content = ({ content, data }) => {
         fluid={data[content].childImageSharp.fluid}
       />
       <div sx={{ p: 4 }}>
-        <h2 sx={{ variant: "styles.h2" }}>{contentData.header}</h2>
+        <p
+          sx={{
+            variant: "styles.p",
+            fontSize: [1, 1, 2],
+            fontWeight: "heading",
+            letterSpacing: 1.6,
+
+            color: "blue",
+          }}
+        >
+          {contentData.category.toUpperCase()}
+        </p>
+        <h2 sx={{ variant: "styles.h3" }}>{contentData.header}</h2>
+        <p sx={{ variant: "styles.p", fontSize: [1, 1, 2] }}>
+          {contentData.body}
+        </p>
       </div>
     </div>
   )
@@ -147,32 +162,6 @@ const Explore = ({ data }) => {
             borderRadius: "100%",
             cursor: "pointer",
             position: "relative",
-
-            // "&::after": {
-            //   content: `''`,
-            //   position: "absolute",
-            //   transform: "translateX(-50%) ",
-            //   top: "96%",
-            //   left: "50%",
-            //   width: 0,
-            //   height: 0,
-            //   borderLeft: "10px solid transparent",
-            //   borderRight: "10px solid transparent",
-            //   borderTop: "10px solid white",
-            //   borderBottomRightRadius: "10px",
-            // },
-            // "&::before": {
-            //   content: `''`,
-            //   position: "absolute",
-            //   transform: "translateX(-50%) ",
-            //   top: "100%",
-            //   left: "50%",
-            //   width: 0,
-            //   height: 0,
-            //   borderLeft: "14px solid transparent",
-            //   borderRight: "14px solid transparent",
-            //   borderTop: "14px solid #428DA4",
-            // },
           }}
           onClick={() => createContent(name, newLat, newLong)}
         >
