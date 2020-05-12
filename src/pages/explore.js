@@ -1,6 +1,7 @@
 /** @jsx jsx */
 
 import { jsx, Container, Grid, Button, Flex, AspectRatio } from "theme-ui"
+import withSizes from "react-sizes"
 import GoogleMapReact from "google-map-react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
@@ -45,6 +46,34 @@ export const data = graphql`
         }
       }
     }
+    anchorSurf: file(relativePath: { eq: "explore/panoramaSurf.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 3000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    mysteriesSurf: file(relativePath: { eq: "explore/panoramaSurf.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 3000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    laSourceSurf: file(relativePath: { eq: "explore/panoramaSurf.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 3000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    killerSurf: file(relativePath: { eq: "explore/panoramaSurf.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 3000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     paradiseValley: file(relativePath: { eq: "explore/paradiseValley.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 3000) {
@@ -66,6 +95,30 @@ const exploreData = [
     superHeader: "surfing",
     header: "Panorama",
     body: "Panorama is the closest surf spot to Singlefin.",
+  },
+  {
+    name: "anchorSurf",
+    superHeader: "surfing",
+    header: "Anchor Point",
+    body: "Anchor Point is the closest surf spot to Singlefin.",
+  },
+  {
+    name: "mysteriesSurf",
+    superHeader: "surfing",
+    header: "Mysteries",
+    body: "Mysteries is the closest surf spot to Singlefin.",
+  },
+  {
+    name: "laSourceSurf",
+    superHeader: "surfing",
+    header: "La Source",
+    body: "La source is the closest surf spot to Singlefin.",
+  },
+  {
+    name: "killerSurf",
+    superHeader: "surfing",
+    header: "Killer Point",
+    body: "Killer Point is the closest surf spot to Singlefin.",
   },
   {
     name: "skatepark",
@@ -116,7 +169,7 @@ const Content = ({ content, data }) => {
   )
 }
 
-const Explore = ({ data }) => {
+const Explore = ({ data, isMobile }) => {
   const [content, setContent] = useState("panoramaSurf")
   const [lat, setLat] = useState(30.544194)
   const [long, setLong] = useState(-9.708767)
@@ -221,8 +274,8 @@ const Explore = ({ data }) => {
           whileHover={{ scale: 1.2 }}
           sx={{
             bg: name === content ? "blue" : "white",
-            height: 50,
-            width: 50,
+            height: 40,
+            width: 40,
             borderStyle: "solid",
             borderColor: "blue",
             boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
@@ -244,19 +297,19 @@ const Explore = ({ data }) => {
               {
                 surf: (
                   <SurfIcon
-                    width={"24px"}
+                    width={"22px"}
                     fill={name === content ? "white" : "#428DA4"}
                   />
                 ),
                 skate: (
                   <SkateIcon
-                    width={"24px"}
+                    width={"22px"}
                     fill={name === content ? "white" : "#428DA4"}
                   />
                 ),
                 paradise: (
                   <ParadiseIcon
-                    width={"24px"}
+                    width={"22px"}
                     fill={name === content ? "white" : "#428DA4"}
                   />
                 ),
@@ -321,20 +374,23 @@ const Explore = ({ data }) => {
         </div>
       </div>
       <div sx={{ height: "100vh", position: "relative" }}>
-        <div sx={{ position: "absolute", zIndex: 1000, top: 100, left: 150 }}>
-          {" "}
-          <div
-            sx={{
-              height: "600px",
-              width: "500px",
-              bg: "white",
-              borderRadius: 4,
-              boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
-            }}
-          >
-            <Content content={content} data={data} />
+        {!isMobile && (
+          <div sx={{ position: "absolute", zIndex: 1000, top: 100, left: 150 }}>
+            {" "}
+            <div
+              sx={{
+                height: "600px",
+                width: "500px",
+                bg: "white",
+                borderRadius: 4,
+                boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+              }}
+            >
+              <Content content={content} data={data} />
+            </div>
           </div>
-        </div>
+        )}
+
         <div sx={{ zIndex: 1, height: "100vh" }}>
           {isClient && (
             <GoogleMapReact
@@ -343,7 +399,7 @@ const Explore = ({ data }) => {
               }}
               defaultCenter={[30.544194, -9.708767]}
               center={[lat, long]}
-              defaultZoom={12}
+              defaultZoom={13}
               options={{
                 gestureHandling: "cooperative",
                 fullscreenControl: false,
@@ -365,6 +421,38 @@ const Explore = ({ data }) => {
                 category={"surf"}
                 newLat={30.542439}
                 newLong={-9.7038}
+              />
+              <Marker
+                lat={30.54517}
+                lng={-9.726857}
+                name={"anchorSurf"}
+                category={"surf"}
+                newLat={30.54517}
+                newLong={-9.726857}
+              />
+              <Marker
+                lat={30.548198}
+                lng={-9.729592}
+                name={"mysteriesSurf"}
+                category={"surf"}
+                newLat={30.548198}
+                newLong={-9.729592}
+              />
+              <Marker
+                lat={30.550545}
+                lng={-9.73369}
+                name={"laSourceSurf"}
+                category={"surf"}
+                newLat={30.550545}
+                newLong={-9.73369}
+              />
+              <Marker
+                lat={30.551533}
+                lng={-9.739244}
+                name={"killerSurf"}
+                category={"surf"}
+                newLat={30.551533}
+                newLong={-9.739244}
               />
               <Marker
                 lat={30.548887}
@@ -391,4 +479,8 @@ const Explore = ({ data }) => {
   )
 }
 
-export default Explore
+const mapSizesToProps = ({ width }) => ({
+  isMobile: width < 880,
+})
+
+export default withSizes(mapSizesToProps)(Explore)
