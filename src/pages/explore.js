@@ -474,7 +474,25 @@ const Explore = ({ data, isMobile }) => {
           )}
         </div>
       </div>
-      <SurfIcon width={"32px"} />
+      {isMobile && (
+        <Flex sx={{ justifyContent: "center" }}>
+          <div sx={{ marginTop: "-200px" }}>
+            {" "}
+            <div
+              sx={{
+                height: "600px",
+                width: "500px",
+                bg: "white",
+                borderRadius: 4,
+                boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+              }}
+            >
+              <Content content={content} data={data} />
+            </div>
+          </div>
+        </Flex>
+      )}
+      <div sx={{ variant: "layout.primaryContainer" }}></div>
     </Layout>
   )
 }
