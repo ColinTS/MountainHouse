@@ -481,7 +481,7 @@ const Explore = ({ data, isMobile }) => {
             <div
               sx={{
                 height: "600px",
-                width: "500px",
+                width: ["340px", "600px"],
                 bg: "white",
                 borderRadius: 4,
                 boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
