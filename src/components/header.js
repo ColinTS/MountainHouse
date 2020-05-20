@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import Logo from "../images/logo2.svg"
 import { Link } from "gatsby"
 import withSizes from "react-sizes"
+import Navigation from "./navigation.js"
 
 function Header({ siteTitle, isMobile }) {
   const [isTop, setIsTop] = useState(true)
@@ -41,6 +42,7 @@ function Header({ siteTitle, isMobile }) {
           }}
         >
           <Link sx={{ display: "flex", alignItems: "center" }} to="/">
+            <Navigation />
             <Logo
               sx={{
                 width: ["100px", "125px", "150px"],
