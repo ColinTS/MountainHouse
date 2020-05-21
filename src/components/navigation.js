@@ -1,8 +1,6 @@
 import * as React from "react"
-// import { useRef } from "react";
 import { motion, useCycle } from "framer-motion"
 import { useEffect, useRef } from "react"
-// import { useDimensions } from "./use-dimensions";
 
 const useDimensions = ref => {
   const dimensions = useRef({ width: 0, height: 0 })

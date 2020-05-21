@@ -41,15 +41,18 @@ function Header({ siteTitle, isMobile }) {
             px: 3,
           }}
         >
-          <Link sx={{ display: "flex", alignItems: "center" }} to="/">
+          <Flex>
             <Navigation />
-            <Logo
-              sx={{
-                width: ["100px", "125px", "150px"],
-                height: "auto",
-              }}
-            />
-          </Link>
+            <Link sx={{ display: "flex", alignItems: "center" }} to="/">
+              <Logo
+                sx={{
+                  width: ["100px", "125px", "150px"],
+                  height: "auto",
+                }}
+              />
+            </Link>
+          </Flex>
+
           <div>
             <Button sx={{ variant: "buttons.primary" }}>Book now</Button>
           </div>
