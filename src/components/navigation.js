@@ -83,38 +83,55 @@ const MenuToggle = ({ toggle }) => (
   </button>
 )
 
+const Menu = () => (
+  <div
+    sx={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      p: 4,
+      background: "white",
+      height: "100vh",
+      width: "300px",
+    }}
+  ></div>
+)
+
 const Navigation = () => {
   const [isOpen, toggleOpen] = useCycle(false, true)
   const containerRef = useRef(null)
   const { height } = useDimensions(containerRef)
 
   return (
-    <motion.nav
-      sx={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        bottom: 0,
-        width: "300px",
-      }}
-      initial={false}
-      animate={isOpen ? "open" : "closed"}
-      custom={height}
-      ref={containerRef}
-    >
-      <motion.div
+    <div>
+      <motion.nav
         sx={{
           position: "absolute",
           top: 0,
           left: 0,
           bottom: 0,
           width: "300px",
-          background: "#fff",
         }}
-        variants={sidebar}
-      />
-      <MenuToggle toggle={() => toggleOpen()} />
-    </motion.nav>
+        initial={false}
+        animate={isOpen ? "open" : "closed"}
+        custom={height}
+        ref={containerRef}
+      >
+        <motion.div
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            bottom: 0,
+            width: "300px",
+            background: "#fff",
+          }}
+          variants={sidebar}
+        />
+        <MenuToggle toggle={() => toggleOpen()} />
+      </motion.nav>
+      <Menu />
+    </div>
   )
 }
 
