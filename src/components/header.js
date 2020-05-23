@@ -8,30 +8,16 @@ import withSizes from "react-sizes"
 import Navigation from "./navigation.js"
 import { motion, useCycle } from "framer-motion"
 
-const Menu = () => (
-  <div
-    sx={{
-      position: "absolute",
-      top: 0,
-      left: 0,
-      p: 4,
-      background: "white",
-      height: "100vh",
-      width: "300px",
-    }}
-  ></div>
-)
+// const useDimensions = ref => {
+//   const dimensions = useRef({ width: 0, height: 0 })
 
-const useDimensions = ref => {
-  const dimensions = useRef({ width: 0, height: 0 })
+//   useEffect(() => {
+//     dimensions.current.width = ref.current.offsetWidth
+//     dimensions.current.height = ref.current.offsetHeight
+//   }, [])
 
-  useEffect(() => {
-    dimensions.current.width = ref.current.offsetWidth
-    dimensions.current.height = ref.current.offsetHeight
-  }, [])
-
-  return dimensions.current
-}
+//   return dimensions.current
+// }
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -45,7 +31,7 @@ const sidebar = {
   closed: {
     clipPath: "circle(30px at 40px 40px)",
     transition: {
-      delay: 0.5,
+      delay: 0.1,
       type: "spring",
       stiffness: 400,
       damping: 40,
@@ -107,17 +93,8 @@ const MenuToggle = ({ toggle }) => (
 function Header({ siteTitle, isMobile }) {
   const [isTop, setIsTop] = useState(true)
   const [isOpen, toggleOpen] = useCycle(false, true)
-  const containerRef = useRef(null)
-  const { height } = useDimensions(containerRef)
-
-  useEffect(() => {
-    document.addEventListener("scroll", () => {
-      const isTopCheck = window.scrollY < 1
-      if (isTopCheck !== isTop) {
-        setIsTop(isTopCheck)
-      }
-    })
-  })
+  // const containerRef = useRef(null)
+  // const { height } = useDimensions(containerRef)
 
   return (
     <div
@@ -151,12 +128,11 @@ function Header({ siteTitle, isMobile }) {
                 left: 0,
                 bottom: 0,
                 height: "100vh",
-                width: "200px",
               }}
               initial={false}
               animate={isOpen ? "open" : "closed"}
-              custom={height}
-              ref={containerRef}
+              // custom={height}
+              // ref={containerRef}
             >
               <motion.div
                 sx={{
@@ -164,7 +140,7 @@ function Header({ siteTitle, isMobile }) {
                   top: 0,
                   left: 0,
                   bottom: 0,
-                  width: "200px",
+                  width: "100vw",
                   background: "#fff",
                 }}
                 variants={sidebar}
