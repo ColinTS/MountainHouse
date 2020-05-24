@@ -7,6 +7,7 @@ import { Link } from "gatsby"
 import withSizes from "react-sizes"
 import Navigation from "./navigation.js"
 import { motion, useCycle } from "framer-motion"
+import Helmet from "react-helmet"
 
 // const useDimensions = ref => {
 //   const dimensions = useRef({ width: 0, height: 0 })
@@ -50,50 +51,60 @@ const Path = props => (
 )
 
 const MenuToggle = ({ toggle, isOpen }) => {
-  isOpen
-    ? (document.body.style.position = "fixed")
-    : (document.body.style.position = null)
+  // isOpen
+  //   ? (document.body.style.position = "fixed")
+  //   : (document.body.style.position = null)
   return (
-    <button
-      css={{
-        outline: "none",
-        border: "none",
-        cursor: "pointer",
-        width: "50px",
-        height: "50px",
-        borderRadius: "50%",
-        position: "absolute",
-        top: "15px",
-        left: "15px",
-        display: "flex",
-        justifyContent: "center",
-        background: "white",
-      }}
-      onClick={toggle}
-    >
-      <svg width="23" height="23" viewBox="0 0 23 23">
-        <Path
-          variants={{
-            closed: { d: "M 2 2.5 L 20 2.5" },
-            open: { d: "M 3 16.5 L 17 2.5" },
-          }}
-        />
-        <Path
-          d="M 2 9.423 L 20 9.423"
-          variants={{
-            closed: { opacity: 1 },
-            open: { opacity: 0 },
-          }}
-          transition={{ duration: 0.1 }}
-        />
-        <Path
-          variants={{
-            closed: { d: "M 2 16.346 L 20 16.346" },
-            open: { d: "M 3 2.5 L 17 16.346" },
-          }}
-        />
-      </svg>
-    </button>
+    <div>
+      <Helmet>
+        (
+        <style type="text/css">{`
+        body {
+            position: fixed;
+        }
+    `}</style>
+      </Helmet>
+      <button
+        css={{
+          outline: "none",
+          border: "none",
+          cursor: "pointer",
+          width: "50px",
+          height: "50px",
+          borderRadius: "50%",
+          position: "absolute",
+          top: "15px",
+          left: "15px",
+          display: "flex",
+          justifyContent: "center",
+          background: "white",
+        }}
+        onClick={toggle}
+      >
+        <svg width="23" height="23" viewBox="0 0 23 23">
+          <Path
+            variants={{
+              closed: { d: "M 2 2.5 L 20 2.5" },
+              open: { d: "M 3 16.5 L 17 2.5" },
+            }}
+          />
+          <Path
+            d="M 2 9.423 L 20 9.423"
+            variants={{
+              closed: { opacity: 1 },
+              open: { opacity: 0 },
+            }}
+            transition={{ duration: 0.1 }}
+          />
+          <Path
+            variants={{
+              closed: { d: "M 2 16.346 L 20 16.346" },
+              open: { d: "M 3 2.5 L 17 16.346" },
+            }}
+          />
+        </svg>
+      </button>
+    </div>
   )
 }
 
