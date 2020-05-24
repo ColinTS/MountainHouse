@@ -102,7 +102,7 @@ const IndexPage = ({ data }) => (
           left: "50%",
           minHeight: "100%",
           minWidth: "100%",
-          position: "relative",
+          position: "absolute",
           top: "50%",
           transform: "translate(-50%, -50%)",
           overflow: "hidden",

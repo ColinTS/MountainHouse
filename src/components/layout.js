@@ -15,6 +15,7 @@ import Header from "./header"
 import "./layout.css"
 
 const Layout = ({ children }) => {
+  document.body.style.overflowX = "hidden"
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {

@@ -29,7 +29,7 @@ const sidebar = {
     },
   }),
   closed: {
-    clipPath: "circle(30px at 40px 40px)",
+    clipPath: "circle(28px at 40px 40px)",
     transition: {
       delay: 0.1,
       type: "spring",
@@ -43,52 +43,59 @@ const Path = props => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
-    stroke="hsl(0, 0%, 18%)"
+    stroke="#428DA4"
     strokeLinecap="round"
     {...props}
   />
 )
 
-const MenuToggle = ({ toggle }) => (
-  <button
-    css={{
-      outline: "none",
-      border: "none",
-      cursor: "pointer",
-      width: "50px",
-      height: "50px",
-      borderRadius: "50%",
-      position: "absolute",
-      top: "18px",
-      left: "15px",
-      background: "white",
-    }}
-    onClick={toggle}
-  >
-    <svg width="23" height="23" viewBox="0 0 23 23">
-      <Path
-        variants={{
-          closed: { d: "M 2 2.5 L 20 2.5" },
-          open: { d: "M 3 16.5 L 17 2.5" },
-        }}
-      />
-      <Path
-        d="M 2 9.423 L 20 9.423"
-        variants={{
-          closed: { opacity: 1 },
-          open: { opacity: 0 },
-        }}
-        transition={{ duration: 0.1 }}
-      />
-      <Path
-        variants={{
-          closed: { d: "M 2 16.346 L 20 16.346" },
-          open: { d: "M 3 2.5 L 17 16.346" },
-        }}
-      />
-    </svg>
-  </button>
-)
+const MenuToggle = ({ toggle, isOpen }) => {
+  isOpen
+    ? (document.body.style.position = "fixed")
+    : (document.body.style.position = null)
+  return (
+    <button
+      css={{
+        outline: "none",
+        border: "none",
+        cursor: "pointer",
+        width: "50px",
+        height: "50px",
+        borderRadius: "50%",
+        position: "absolute",
+        top: "15px",
+        left: "15px",
+        display: "flex",
+        justifyContent: "center",
+        background: "white",
+      }}
+      onClick={toggle}
+    >
+      <svg width="23" height="23" viewBox="0 0 23 23">
+        <Path
+          variants={{
+            closed: { d: "M 2 2.5 L 20 2.5" },
+            open: { d: "M 3 16.5 L 17 2.5" },
+          }}
+        />
+        <Path
+          d="M 2 9.423 L 20 9.423"
+          variants={{
+            closed: { opacity: 1 },
+            open: { opacity: 0 },
+          }}
+          transition={{ duration: 0.1 }}
+        />
+        <Path
+          variants={{
+            closed: { d: "M 2 16.346 L 20 16.346" },
+            open: { d: "M 3 2.5 L 17 16.346" },
+          }}
+        />
+      </svg>
+    </button>
+  )
+}
 
 function Header({ siteTitle, isMobile }) {
   const [isTop, setIsTop] = useState(true)
@@ -145,14 +152,18 @@ function Header({ siteTitle, isMobile }) {
                 }}
                 variants={sidebar}
               />
-              <MenuToggle toggle={() => toggleOpen()} />
+              <MenuToggle isOpen={isOpen} toggle={() => toggleOpen()} />
             </motion.nav>
             {/* <Navigation /> */}
             <Link sx={{ display: "flex", alignItems: "center" }} to="/">
               <Logo
                 sx={{
-                  width: ["100px", "125px", "150px"],
+                  width: ["125px", "125px", "150px"],
                   height: "auto",
+                  position: "absolute",
+                  top: "20px",
+                  left: "72px",
+                  zIndex: isOpen ? -1 : 1,
                 }}
               />
             </Link>
