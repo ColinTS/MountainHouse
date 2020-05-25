@@ -5,7 +5,6 @@ import { useState, useEffect, useRef } from "react"
 import Logo from "../images/logo2.svg"
 import { Link } from "gatsby"
 import withSizes from "react-sizes"
-import Navigation from "./navigation.js"
 import { motion, useCycle } from "framer-motion"
 import Helmet from "react-helmet"
 
@@ -51,19 +50,19 @@ const Path = props => (
 )
 
 const MenuToggle = ({ toggle, isOpen }) => {
-  // isOpen
-  //   ? (document.body.style.position = "fixed")
-  //   : (document.body.style.position = null)
   return (
     <div>
-      <Helmet>
-        (
-        <style type="text/css">{`
-        body {
-            position: fixed;
-        }
-    `}</style>
-      </Helmet>
+      {isOpen ? (
+        <Helmet>
+          (
+          <style type="text/css">{`
+         body {
+             position: fixed;
+         }
+     `}</style>
+        </Helmet>
+      ) : null}
+
       <button
         css={{
           outline: "none",
@@ -108,6 +107,163 @@ const MenuToggle = ({ toggle, isOpen }) => {
   )
 }
 
+const Navigation = () => {
+  const navVariants = {
+    open: {
+      transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+    },
+    closed: {
+      transition: { staggerChildren: 0.05, staggerDirection: -1 },
+    },
+  }
+
+  const itemVariants = {
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { stiffness: 1000, velocity: -100 },
+      },
+    },
+    closed: {
+      y: 50,
+      opacity: 0,
+      transition: {
+        y: { stiffness: 1000 },
+      },
+    },
+  }
+
+  return (
+    <motion.ul
+      variants={navVariants}
+      sx={{
+        padding: "25px",
+        position: "absolute",
+        top: "100px",
+        width: "230px",
+        zIndex: 5,
+      }}
+    >
+      <motion.li
+        variants={itemVariants}
+        sx={{
+          listStyle: "none",
+          marginBottom: "20px",
+          display: "flex",
+          alignItems: "center",
+          cursor: "pointer",
+          zIndex: 5,
+        }}
+      >
+        <Link
+          to="/"
+          sx={{
+            variant: "styles.button",
+            fontSize: 24,
+            color: "text",
+            cursor: "pointer",
+            pr: 4,
+            userSelect: "none",
+            textDecoration: "none",
+          }}
+        >
+          Home
+        </Link>
+      </motion.li>
+      <motion.li
+        variants={itemVariants}
+        sx={{
+          listStyle: "none",
+          marginBottom: "20px",
+          display: "flex",
+          alignItems: "center",
+          cursor: "pointer",
+          zIndex: 5,
+        }}
+      >
+        <Link
+          to="/explore"
+          sx={{
+            variant: "styles.button",
+            fontSize: 24,
+            color: "text",
+            cursor: "pointer",
+            pr: 4,
+            userSelect: "none",
+            textDecoration: "none",
+          }}
+        >
+          Explore
+        </Link>
+      </motion.li>
+      <motion.li
+        variants={itemVariants}
+        sx={{
+          listStyle: "none",
+          marginBottom: "20px",
+          display: "flex",
+          alignItems: "center",
+          cursor: "pointer",
+        }}
+      >
+        <Link
+          to="/location"
+          sx={{
+            variant: "styles.button",
+            fontSize: 24,
+            color: "text",
+            cursor: "pointer",
+            pr: 4,
+            userSelect: "none",
+            textDecoration: "none",
+          }}
+        >
+          Location
+        </Link>
+      </motion.li>
+      <motion.li
+        variants={itemVariants}
+        sx={{
+          listStyle: "none",
+          marginBottom: "20px",
+          display: "flex",
+          alignItems: "center",
+          cursor: "pointer",
+        }}
+      >
+        <span
+          sx={{
+            variant: "styles.button",
+            fontSize: 24,
+            color: "text",
+            cursor: "pointer",
+            pr: 4,
+            userSelect: "none",
+          }}
+          onClick={function() {
+            window.$crisp.push(["do", "chat:open"])
+          }}
+        >
+          Contact Us
+        </span>
+      </motion.li>
+      <motion.li
+        variants={itemVariants}
+        sx={{
+          listStyle: "none",
+          marginBottom: "20px",
+          display: "flex",
+          alignItems: "center",
+          cursor: "pointer",
+        }}
+      >
+        <Button sx={{ variant: "buttons.primary", mt: 4 }}>Book now</Button>
+      </motion.li>
+    </motion.ul>
+  )
+}
+
 function Header({ siteTitle, isMobile }) {
   const [isTop, setIsTop] = useState(true)
   const [isOpen, toggleOpen] = useCycle(false, true)
@@ -117,7 +273,7 @@ function Header({ siteTitle, isMobile }) {
   return (
     <div
       style={{
-        zIndex: 5000,
+        zIndex: 1,
         background: `none`,
         marginBottom: `1.0rem`,
         width: "100%",
@@ -163,6 +319,7 @@ function Header({ siteTitle, isMobile }) {
                 }}
                 variants={sidebar}
               />
+              <Navigation sx={{ zIndex: 5 }} />
               <MenuToggle isOpen={isOpen} toggle={() => toggleOpen()} />
             </motion.nav>
             {/* <Navigation /> */}
@@ -173,16 +330,12 @@ function Header({ siteTitle, isMobile }) {
                   height: "auto",
                   position: "absolute",
                   top: "20px",
-                  left: "72px",
+                  left: "74px",
                   zIndex: isOpen ? -1 : 1,
                 }}
               />
             </Link>
           </Flex>
-
-          <div>
-            <Button sx={{ variant: "buttons.primary" }}>Book now</Button>
-          </div>
         </Flex>
       )}
       {!isMobile && (

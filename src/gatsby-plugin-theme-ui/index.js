@@ -47,8 +47,8 @@ export default {
   buttons: {
     primary: {
       bg: "blue",
-      px: [2, 2, 4],
-      py: [2, 2, 3],
+      px: 4,
+      py: 3,
       borderRadius: 4,
       color: "white",
       cursor: "pointer",
