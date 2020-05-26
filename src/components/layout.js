@@ -28,11 +28,6 @@ const Layout = ({ children }) => {
   return (
     <>
       <Helmet>
-        <style type="text/css">{`
-         body {
-             overflowX: hidden;
-         }
-     `}</style>
         <script type="text/javascript">{`window.$crisp=[];window.CRISP_WEBSITE_ID="3f96f73e-9f2d-40ac-81d8-12ba7e9462b4";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`}</script>
       </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />

@@ -74,6 +74,20 @@ export const data = graphql`
         }
       }
     }
+    bananaSurf: file(relativePath: { eq: "explore/panoramaSurf.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 3000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    devilsrockSurf: file(relativePath: { eq: "explore/panoramaSurf.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 3000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     paradiseValley: file(relativePath: { eq: "explore/paradiseValley.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 3000) {
@@ -119,6 +133,18 @@ const exploreData = [
     superHeader: "surfing",
     header: "Killer Point",
     body: "Killer Point is the closest surf spot to Singlefin.",
+  },
+  {
+    name: "bananaSurf",
+    superHeader: "surfing",
+    header: "Banana Point",
+    body: "Banana surf is the closest surf spot to Singlefin.",
+  },
+  {
+    name: "devilsrockSurf",
+    superHeader: "surfing",
+    header: "Devil's Rock",
+    body: "Devil's Rock is the closest surf spot to Singlefin.",
   },
   {
     name: "skatepark",
@@ -453,6 +479,22 @@ const Explore = ({ data, isMobile }) => {
                 category={"surf"}
                 newLat={30.551533}
                 newLong={-9.739244}
+              />
+              <Marker
+                lat={30.495989}
+                lng={-9.67711}
+                name={"bananaSurf"}
+                category={"surf"}
+                newLat={30.495989}
+                newLong={-9.67711}
+              />
+              <Marker
+                lat={30.50677}
+                lng={-9.688515}
+                name={"devilsrockSurf"}
+                category={"surf"}
+                newLat={30.50677}
+                newLong={-9.688515}
               />
               <Marker
                 lat={30.548887}
