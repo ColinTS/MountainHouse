@@ -46,28 +46,28 @@ export const data = graphql`
         }
       }
     }
-    anchorSurf: file(relativePath: { eq: "explore/panoramaSurf.jpg" }) {
+    anchorSurf: file(relativePath: { eq: "explore/anchorPoint.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 3000) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    mysteriesSurf: file(relativePath: { eq: "explore/panoramaSurf.jpg" }) {
+    mysteriesSurf: file(relativePath: { eq: "explore/mysteriesSurf.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 3000) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    laSourceSurf: file(relativePath: { eq: "explore/panoramaSurf.jpg" }) {
+    laSourceSurf: file(relativePath: { eq: "explore/laSource.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 3000) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    killerSurf: file(relativePath: { eq: "explore/panoramaSurf.jpg" }) {
+    killerSurf: file(relativePath: { eq: "explore/killerPoint.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 3000) {
           ...GatsbyImageSharpFluid
@@ -75,6 +75,13 @@ export const data = graphql`
       }
     }
     bananaSurf: file(relativePath: { eq: "explore/panoramaSurf.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 3000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    boilersSurf: file(relativePath: { eq: "explore/panoramaSurf.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 3000) {
           ...GatsbyImageSharpFluid
@@ -112,27 +119,37 @@ const exploreData = [
   },
   {
     name: "anchorSurf",
-    superHeader: "surfing",
+    superHeader: "advanced surfing",
     header: "Anchor Point",
-    body: "Anchor Point is the closest surf spot to Singlefin.",
+    body:
+      "Chances are if you are coming to Morocco, you already know about this wave. Well known as the most famous wave in Morocco, Anchor Point is packed with long and fast barrels when it's working. They start working at 1 meter and can pick up to over 10 meters. Although it is for advanced surfers, don't be afraid to give it a go when the swell is small. It's only a 15 minute walk from Singlefin. In fact, you can check the surf in the morning from the roof terrace!",
   },
   {
     name: "mysteriesSurf",
-    superHeader: "surfing",
+    superHeader: "intermediate surfing",
     header: "Mysteries",
-    body: "Mysteries is the closest surf spot to Singlefin.",
+    body:
+      "Mysteries is an exposed reef break for intermediate surfers. The reef at the bottom and a giant rock in the water forms these 1- 5 meter waves that break to the right. Mysteries is only a 15 minute walk from Singlefin.",
   },
   {
     name: "laSourceSurf",
+    superHeader: "intermediate surfing",
+    header: "La Source",
+    body:
+      "La source is a beautiful reef break with 1 - 3 meter waves, breaking both from the left and right. Depending on the swell you can sometimes see all levels of surfers out there. It's only a 25 minute walk from Singlefin.",
+  },
+  {
+    name: "boilersSurf",
     superHeader: "surfing",
     header: "La Source",
     body: "La source is the closest surf spot to Singlefin.",
   },
   {
     name: "killerSurf",
-    superHeader: "surfing",
+    superHeader: "Advanced Surfing",
     header: "Killer Point",
-    body: "Killer Point is the closest surf spot to Singlefin.",
+    body:
+      "Strong, fast waves makes this spot a challenging spot to surf and quite a wave to witness. But its not the powerful waves that gives it it's name, it gets its name from the Killer Whales that have been known to pass nearby this point! Killers is typically a right-hand break although it can sometimes break left. The surf ranges between 1 - 5 meters and if you're so inclined to take these on, it's about a 30 minute walk from the Singlefin Surfhouse.",
   },
   {
     name: "bananaSurf",
@@ -168,7 +185,8 @@ const Content = ({ content, data }) => {
       <Img
         style={{
           borderRadius: "4px 4px 0px 0px",
-          maxHeight: "240px",
+          height: "220px",
+
           width: "auto",
         }}
         fluid={data[content].childImageSharp.fluid}
@@ -427,9 +445,11 @@ const Explore = ({ data, isMobile }) => {
               center={[lat, long]}
               defaultZoom={13}
               options={{
-                gestureHandling: "cooperative",
+                // gestureHandling: "cooperative",
                 fullscreenControl: false,
                 zoomControl: false,
+                scrollwheel: false,
+                // draggable: true,
               }}
             >
               <Marker
@@ -496,6 +516,14 @@ const Explore = ({ data, isMobile }) => {
                 newLat={30.50677}
                 newLong={-9.688515}
               />
+              {/* <Marker
+                lat={30.628845}
+                lng={-9.886865}
+                name={"boilersSurf"}
+                category={"surf"}
+                newLat={30.628845}
+                newLong={-9.886865}
+              /> */}
               <Marker
                 lat={30.548887}
                 lng={-9.712487}
