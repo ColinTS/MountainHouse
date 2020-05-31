@@ -72,10 +72,9 @@ const MenuToggle = ({ toggle, isOpen }) => {
           height: "50px",
           borderRadius: "50%",
           position: "absolute",
-          top: "15px",
+          top: "18px",
           left: "15px",
-          display: "flex",
-          justifyContent: "center",
+
           background: "white",
         }}
         onClick={toggle}

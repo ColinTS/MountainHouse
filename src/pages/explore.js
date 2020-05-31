@@ -13,6 +13,7 @@ import SEO from "../components/seo"
 import BackgroundImage from "gatsby-background-image"
 import Marker from "../images/location/Marker.svg"
 // import SurfIcon from "../images/explore/SurfIcon.svg"
+import BoardDivider from "../images/explore/board.svg"
 
 const isClient = typeof window !== "undefined"
 
@@ -39,7 +40,7 @@ export const data = graphql`
         }
       }
     }
-    hashpointSurf: file(relativePath: { eq: "explore/panoramaSurf.jpg" }) {
+    hashpointSurf: file(relativePath: { eq: "explore/hashpointSurf.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 3000) {
           ...GatsbyImageSharpFluid
@@ -74,7 +75,7 @@ export const data = graphql`
         }
       }
     }
-    bananaSurf: file(relativePath: { eq: "explore/panoramaSurf.jpg" }) {
+    bananaSurf: file(relativePath: { eq: "explore/bananaSurf.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 3000) {
           ...GatsbyImageSharpFluid
@@ -88,7 +89,7 @@ export const data = graphql`
         }
       }
     }
-    devilsrockSurf: file(relativePath: { eq: "explore/panoramaSurf.jpg" }) {
+    devilsrockSurf: file(relativePath: { eq: "explore/devilsSurf.jpeg" }) {
       childImageSharp {
         fluid(maxWidth: 3000) {
           ...GatsbyImageSharpFluid
@@ -102,20 +103,29 @@ export const data = graphql`
         }
       }
     }
+    surfTaghazout: file(relativePath: { eq: "explore/surfTaghazout.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 3000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 `
 const exploreData = [
   {
     name: "hashpointSurf",
-    superHeader: "surfing",
+    superHeader: "Beginner Surfing",
     header: "Hashpoint",
-    body: "Hashpoint is the closest surf spot to Singlefin.",
+    body:
+      "The local surfing spot, for everyone. Just a few steps out the door from Singlefin, into the water, and you will be riding the waves at Hashpoint. Popular for its laid back sunset surf sessions, Hashpoint sees waves from 0.5 to 2 meters and comes with good vibes and smiles.",
   },
   {
     name: "panoramaSurf",
-    superHeader: "surfing",
+    superHeader: "Beginner Surfing",
     header: "Panorama",
-    body: "Panorama is the closest surf spot to Singlefin.",
+    body:
+      "Panorama is the neighborhood surf spot. It's only a few minute walk to this big, open beach break and when the swell is strong it turns into a sweet point break with 0.5 - 2 meter waves. It's friendly to beginners just as much as it is to advanced surfers.",
   },
   {
     name: "anchorSurf",
@@ -153,27 +163,31 @@ const exploreData = [
   },
   {
     name: "bananaSurf",
-    superHeader: "surfing",
+    superHeader: "beginner surfing",
     header: "Banana Point",
-    body: "Banana surf is the closest surf spot to Singlefin.",
+    body:
+      "With all the bananas being grown by this beach you won't wonder how it got it's name. The sandy, rocky bottom forms an easy point break for beginners and a nice beach break as well. The waves here are easy to paddle on and can be anywhere from 0.5 - 2 meters.",
   },
   {
     name: "devilsrockSurf",
-    superHeader: "surfing",
+    superHeader: "beginner surfing",
     header: "Devil's Rock",
-    body: "Devil's Rock is the closest surf spot to Singlefin.",
+    body:
+      "The sandy bottom and rock that the waves wedge off of produce easy left and right hand breaks. There are cafes nearby, local families hanging on the beach, making this the perfect place for beginners and children to learn how to surf.",
   },
   {
     name: "skatepark",
-    superHeader: "taghazout skatepark",
+    superHeader: "Skate above the sea",
     header: "Skatepark",
-    body: "This is some text about surf 1",
+    body:
+      "Arguably one of the most iconic skateparks in the world. Sitting on top of the mountain, with an infnite view of the Moroccan sea below, the Taghazout skatepark is quite the place to be, even if you don't skate. Often you will see local kids and tourists skating this park together, enjoying the sun and good company. ",
   },
   {
     name: "paradiseValley",
     superHeader: "An Oasis in the mountains",
     header: "Paradise Valley",
-    body: "Welcome to Paradise Valley",
+    body:
+      "Tucked up in the foothills of the Atlas mountains is an oasis with fresh natural pools of water, surrounded by palm trees and views of the mountains. Day trips are often made here and when the surf is slow (or not), Paradise Valley is the pefrect place to come and relax by the tranquil waters, espeecially to cool off on a hot day and even go cliff jumping.",
   },
 ]
 
@@ -214,7 +228,7 @@ const Content = ({ content, data }) => {
 }
 
 const Explore = ({ data, isMobile }) => {
-  const [content, setContent] = useState("panoramaSurf")
+  const [content, setContent] = useState("killerSurf")
   const [lat, setLat] = useState(30.544194)
   const [long, setLong] = useState(-9.708767)
 
@@ -562,7 +576,34 @@ const Explore = ({ data, isMobile }) => {
           </div>
         </Flex>
       )}
-      <div sx={{ variant: "layout.primaryContainer" }}></div>
+
+      <Container
+        sx={{
+          variant: "layout.primaryContainer",
+        }}
+      >
+        <Img
+          style={{
+            height: "400px",
+            opacity: "1 !important",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "50% 25%",
+          }}
+          fluid={data.surfTaghazout.childImageSharp.fluid}
+        />
+        <Flex
+          sx={{
+            justifyContent: "center",
+            alignItems: "center",
+            pt: 4,
+            flexDirection: "column",
+          }}
+        >
+          <h1 sx={{ variant: "styles.h1", letterSpacing: 1.8 }}>SURF</h1>
+          <BoardDivider sx={{ width: "75px" }} />
+        </Flex>
+      </Container>
     </Layout>
   )
 }
