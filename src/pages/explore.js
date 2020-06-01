@@ -110,6 +110,13 @@ export const data = graphql`
         }
       }
     }
+    sandboard: file(relativePath: { eq: "explore/sandboard.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 3000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 `
 const exploreData = [
@@ -576,7 +583,49 @@ const Explore = ({ data, isMobile }) => {
           </div>
         </Flex>
       )}
+      <Container
+        sx={{
+          variant: "layout.primaryContainer",
+          width: "smallContainer",
+        }}
+      >
+        <Flex
+          sx={{
+            justifyContent: "center",
+            alignItems: "center",
+            pt: 4,
 
+            flexDirection: "column",
+          }}
+        >
+          <h1
+            sx={{
+              variant: "styles.h1",
+
+              textAlign: "center",
+              pb: 2,
+            }}
+          >
+            Discover all the fun things to do around Taghazout
+          </h1>
+          <BoardDivider sx={{ width: "75px" }} />
+          <p
+            sx={{
+              variant: "styles.p",
+              textAlign: "center",
+              color: "text",
+              pt: 4,
+            }}
+          >
+            Let's address the elephant in the room and say that when people
+            think of Taghazout, the first thing they think is: Surfing. With
+            waves year-round, and sets that make you feel there must be a hidden
+            wave machine below the water, Taghazout is rightfully known for it's
+            surf. However, there is so much more to see and do in Taghazout, and
+            we at Singlefin love to show travelers like you!
+          </p>
+        </Flex>
+      </Container>
       <Container
         sx={{
           variant: "layout.primaryContainer",
@@ -602,6 +651,159 @@ const Explore = ({ data, isMobile }) => {
         >
           <h1 sx={{ variant: "styles.h1", letterSpacing: 1.8 }}>SURF</h1>
           <BoardDivider sx={{ width: "75px" }} />
+          <Grid sx={{ pt: 4 }} gap={[2, 3, 5]} columns={[1, 1, 2]}>
+            <div>
+              <p
+                sx={{
+                  variant: "styles.p",
+                }}
+              >
+                Come to Morocco and you will soon realize it is a surfer's
+                paradise, and that Taghazout is at the center of it all. People
+                come from all over the world to enjoy these near perfect waves -
+                the sun is out year-around and during Winter, when the weather
+                is warm and waves are fully formed, Taghazout beocomes a
+                surfer's dream.
+              </p>
+            </div>
+            <div>
+              <p
+                sx={{
+                  variant: "styles.p",
+                }}
+              >
+                There are over 10 surfing spots within a 30 minute walk from
+                Singlefin, and there is a spot for everyone. Whether you are
+                learning to surf for the first time or looking to hop a ride in
+                a fast barrell.
+              </p>
+              <p
+                p
+                sx={{
+                  variant: "styles.p",
+                }}
+              >
+                Singlefin offers surf lessons, coaching, and day trips. You can
+                also check out our{" "}
+                {
+                  <span
+                    sx={{ variant: "styles.p", color: "blue", fontWeight: 700 }}
+                  >
+                    surf packages
+                  </span>
+                }
+                .
+              </p>
+            </div>
+          </Grid>
+        </Flex>
+      </Container>
+      <Container
+        sx={{
+          variant: "layout.primaryContainer",
+        }}
+      >
+        <BackgroundImage
+          css={{
+            height: "400px",
+            opacity: "1 !important",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "50% 75%",
+          }}
+          fluid={data.sandboard.childImageSharp.fluid}
+        />
+        <Flex
+          sx={{
+            justifyContent: "center",
+            alignItems: "center",
+            pt: 4,
+            flexDirection: "column",
+          }}
+        >
+          <h1 sx={{ variant: "styles.h1", letterSpacing: 1.8 }}>
+            SANDBOARDING
+          </h1>
+          <BoardDivider sx={{ width: "75px" }} />
+          <Grid sx={{ pt: 4 }} gap={[2, 3, 5]} columns={[1, 1, 2]}>
+            <div>
+              <p
+                sx={{
+                  variant: "styles.p",
+                }}
+              >
+                Who says surfing needs to be in water? Just outside of Taghazout
+                is the sahara desert, full of untouched dunes, ripe for the
+                adventurous soul to barrel down them on a sandboard.
+              </p>
+            </div>
+            <div>
+              <p
+                sx={{
+                  variant: "styles.p",
+                }}
+              >
+                Do you have the adventurous spirit to try sandboarding? Just let
+                us know and we can organize a day trip for you and your friends.
+              </p>
+            </div>
+          </Grid>
+        </Flex>
+      </Container>
+      <Container
+        sx={{
+          variant: "layout.primaryContainer",
+        }}
+      >
+        <BackgroundImage
+          css={{
+            height: "400px",
+            opacity: "1 !important",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "50% 80%",
+          }}
+          fluid={data.paradiseValley.childImageSharp.fluid}
+        />
+        <Flex
+          sx={{
+            justifyContent: "center",
+            alignItems: "center",
+            pt: 4,
+            flexDirection: "column",
+          }}
+        >
+          <h1 sx={{ variant: "styles.h1", letterSpacing: 1.8 }}>
+            PARADISE VALLEY
+          </h1>
+          <BoardDivider sx={{ width: "75px" }} />
+          <Grid sx={{ pt: 4 }} gap={[2, 3, 5]} columns={[1, 1, 2]}>
+            <div>
+              <p
+                sx={{
+                  variant: "styles.p",
+                }}
+              >
+                Tucked up in the foothills of the Atlas mountains is an oasis
+                with fresh natural pools of water, surrounded by palm trees and
+                views of the mountains. Day trips are often made here and when
+                the surf is slow (or not), Paradise Valley is the pefrect place
+                to come and relax by the tranquil waters, espeecially to cool
+                off on a hot day and even go cliff jumping.
+              </p>
+            </div>
+            <div>
+              <p
+                sx={{
+                  variant: "styles.p",
+                }}
+              >
+                Singlefin offers our guests day trips to this beautiful oasis in
+                the mountains, included with food, transportation, and good
+                vibes. Just let us know if you and your friends want to go!
+              </p>
+            </div>
+          </Grid>
         </Flex>
       </Container>
     </Layout>
