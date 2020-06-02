@@ -117,6 +117,13 @@ export const data = graphql`
         }
       }
     }
+    souk: file(relativePath: { eq: "explore/souk.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 3000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 `
 const exploreData = [
@@ -801,6 +808,113 @@ const Explore = ({ data, isMobile }) => {
                 Singlefin offers our guests day trips to this beautiful oasis in
                 the mountains, included with food, transportation, and good
                 vibes. Just let us know if you and your friends want to go!
+              </p>
+            </div>
+          </Grid>
+        </Flex>
+      </Container>
+      <Container
+        sx={{
+          variant: "layout.primaryContainer",
+        }}
+      >
+        <BackgroundImage
+          css={{
+            height: "400px",
+            opacity: "1 !important",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "20% 50%",
+          }}
+          fluid={data.souk.childImageSharp.fluid}
+        />
+        <Flex
+          sx={{
+            justifyContent: "center",
+            alignItems: "center",
+            pt: 4,
+            flexDirection: "column",
+          }}
+        >
+          <h1 sx={{ variant: "styles.h1", letterSpacing: 1.8 }}>SOUK </h1>
+          <BoardDivider sx={{ width: "75px" }} />
+          <Grid sx={{ pt: 4 }} gap={[2, 3, 5]} columns={[1, 1, 2]}>
+            <div>
+              <p
+                sx={{
+                  variant: "styles.p",
+                }}
+              >
+                A Souk is a tradtional Moroccan market where you will find fresh
+                fruit, vegetables, spices, rugs, artistic crafts, and pretty
+                much anything useful for the home! More than just a market, the
+                Souk is central gathering place for all Moroccans and is as
+                diverse with people as it is diverse with scents and sensations.
+                There are just two things to know about the Souk...If you go
+                there you will not leave empty handed and the only price tag is
+                bargaining.
+              </p>
+            </div>
+            <div>
+              <p
+                sx={{
+                  variant: "styles.p",
+                }}
+              >
+                The local Souk takes place every Wednesday. We at Singlefin love
+                to take our guests there, just let us know anytime!
+              </p>
+            </div>
+          </Grid>
+        </Flex>
+      </Container>
+      <Container
+        sx={{
+          variant: "layout.primaryContainer",
+        }}
+      >
+        <BackgroundImage
+          css={{
+            height: "400px",
+            opacity: "1 !important",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "20% 50%",
+          }}
+          fluid={data.skatepark.childImageSharp.fluid}
+        />
+        <Flex
+          sx={{
+            justifyContent: "center",
+            alignItems: "center",
+            pt: 4,
+            flexDirection: "column",
+          }}
+        >
+          <h1 sx={{ variant: "styles.h1", letterSpacing: 1.8 }}>SKATEPARK </h1>
+          <BoardDivider sx={{ width: "75px" }} />
+          <Grid sx={{ pt: 4 }} gap={[2, 3, 5]} columns={[1, 1, 2]}>
+            <div>
+              <p
+                sx={{
+                  variant: "styles.p",
+                }}
+              >
+                Arguably one of the most iconic skateparks in the world. Sitting
+                on top of the mountain, with an infnite view of the Moroccan sea
+                below, the Taghazout skatepark is quite the place to be, even if
+                you don't skate. Often you will see local kids and tourists
+                skating this park together, enjoying the sun and good company.
+              </p>
+            </div>
+            <div>
+              <p
+                sx={{
+                  variant: "styles.p",
+                }}
+              >
+                It must be mentioned that this is an epic place to watch the
+                sunsets over the expansive ocean.
               </p>
             </div>
           </Grid>
