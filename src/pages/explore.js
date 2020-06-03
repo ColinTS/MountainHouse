@@ -593,7 +593,7 @@ const Explore = ({ data, isMobile }) => {
       <Container
         sx={{
           variant: "layout.primaryContainer",
-          width: "smallContainer",
+          maxWidth: "smallContainer",
         }}
       >
         <Flex
@@ -601,7 +601,7 @@ const Explore = ({ data, isMobile }) => {
             justifyContent: "center",
             alignItems: "center",
             pt: 4,
-
+            px: [3, 3, 3],
             flexDirection: "column",
           }}
         >
@@ -639,8 +639,8 @@ const Explore = ({ data, isMobile }) => {
         }}
       >
         <Img
-          style={{
-            height: "400px",
+          sx={{
+            height: ["200px", "250px", "300px"],
             opacity: "1 !important",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
@@ -654,6 +654,7 @@ const Explore = ({ data, isMobile }) => {
             alignItems: "center",
             pt: 4,
             flexDirection: "column",
+            px: [3, 3, 3],
           }}
         >
           <h1 sx={{ variant: "styles.h1", letterSpacing: 1.8 }}>SURF</h1>
@@ -711,8 +712,8 @@ const Explore = ({ data, isMobile }) => {
         }}
       >
         <BackgroundImage
-          css={{
-            height: "400px",
+          sx={{
+            height: ["200px", "250px", "300px"],
             opacity: "1 !important",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
@@ -726,6 +727,7 @@ const Explore = ({ data, isMobile }) => {
             alignItems: "center",
             pt: 4,
             flexDirection: "column",
+            px: [3, 3, 3],
           }}
         >
           <h1 sx={{ variant: "styles.h1", letterSpacing: 1.8 }}>
@@ -763,8 +765,8 @@ const Explore = ({ data, isMobile }) => {
         }}
       >
         <BackgroundImage
-          css={{
-            height: "400px",
+          sx={{
+            height: ["200px", "250px", "300px"],
             opacity: "1 !important",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
@@ -778,6 +780,7 @@ const Explore = ({ data, isMobile }) => {
             alignItems: "center",
             pt: 4,
             flexDirection: "column",
+            px: [3, 3, 3],
           }}
         >
           <h1 sx={{ variant: "styles.h1", letterSpacing: 1.8 }}>
@@ -819,8 +822,8 @@ const Explore = ({ data, isMobile }) => {
         }}
       >
         <BackgroundImage
-          css={{
-            height: "400px",
+          sx={{
+            height: ["200px", "250px", "300px"],
             opacity: "1 !important",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
@@ -834,6 +837,7 @@ const Explore = ({ data, isMobile }) => {
             alignItems: "center",
             pt: 4,
             flexDirection: "column",
+            px: [3, 3, 3],
           }}
         >
           <h1 sx={{ variant: "styles.h1", letterSpacing: 1.8 }}>SOUK </h1>
@@ -874,8 +878,8 @@ const Explore = ({ data, isMobile }) => {
         }}
       >
         <BackgroundImage
-          css={{
-            height: "400px",
+          sx={{
+            height: ["200px", "250px", "300px"],
             opacity: "1 !important",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
@@ -889,6 +893,7 @@ const Explore = ({ data, isMobile }) => {
             alignItems: "center",
             pt: 4,
             flexDirection: "column",
+            px: [3, 3, 3],
           }}
         >
           <h1 sx={{ variant: "styles.h1", letterSpacing: 1.8 }}>SKATEPARK </h1>
