@@ -883,7 +883,7 @@ const Explore = ({ data, isMobile }) => {
             opacity: "1 !important",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "20% 50%",
+            backgroundPosition: "40% 45%",
           }}
           fluid={data.skatepark.childImageSharp.fluid}
         />
