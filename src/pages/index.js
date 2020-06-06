@@ -9,7 +9,6 @@ import Check from "../images/check.svg"
 import BerberOne from "../images/berberOne.svg"
 import BerberTwo from "../images/berberTwo.svg"
 import BerberThree from "../images/berberThree.svg"
-import instagram from "../components/instagram.js"
 import { Link } from "gatsby"
 
 import SEO from "../components/seo"
@@ -64,19 +63,6 @@ export const data = graphql`
       childImageSharp {
         fluid(maxWidth: 4000) {
           ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    instagram: allInstaNode(sort: { fields: timestamp, order: DESC }) {
-      edges {
-        node {
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 4000) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
         }
       }
     }
@@ -894,7 +880,11 @@ const IndexPage = ({ data }) => (
           <h2 sx={{ variant: "styles.h2", pb: 4, textAlign: "center" }}>
             Find us on the gram
           </h2>
-          <Instagram data={data.instagram} />
+          <Instagram
+            userId={22225142971}
+            thumbnailWidth={640}
+            photoCount={12}
+          />
         </Container>
       </div>
     </Layout>

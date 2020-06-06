@@ -106,13 +106,12 @@ const Location = ({ data }) => (
                 variant: "styles.p",
               }}
             >
-              Taghazout is a fishing village on Morocco's Atlantic coast, north
-              of the city of Agadir. It’s known for its surf beaches. Killer
-              Point is a powerful point break. To the south, La Source is named
-              for the fresh water that bubbles up from the rocks. Anchor Point
-              has barrel waves. Cafes and surf shops line the main street.
-              Inland, Paradise Valley, on the Tamraght River, is a palm-lined
-              gorge with pools and waterfalls.
+              Singlefin is located in the heart of Taghazout, a seaside Berber
+              village in Southern Morocco. Up until the 1970's, Taghazout was a
+              small fishing village until its epic surf was discovered by the
+              Hippies. Ever since then, the surfing scene has grown and while it
+              is now considered to be a world-class destination for surf, the
+              village has retained its laid back roots.
             </p>
           </div>
           <div>
@@ -121,13 +120,11 @@ const Location = ({ data }) => (
                 variant: "styles.p",
               }}
             >
-              Taghazout is a fishing village on Morocco's Atlantic coast, north
-              of the city of Agadir. It’s known for its surf beaches. Killer
-              Point is a powerful point break. To the south, La Source is named
-              for the fresh water that bubbles up from the rocks. Anchor Point
-              has barrel waves. Cafes and surf shops line the main street.
-              Inland, Paradise Valley, on the Tamraght River, is a palm-lined
-              gorge with pools and waterfalls.
+              Taghazout is sunny and warm almost every day of the year. Winter
+              is when the swell peaks and sufing is at its best, and while
+              there's surf all-year-round, it's in the Summer when you'll see
+              people ennjoying the beaches and chilling in all of the cafes and
+              restaurants that face the sea.
             </p>
           </div>
         </Grid>

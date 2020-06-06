@@ -1,84 +1,61 @@
 /** @jsx jsx */
 import { jsx, Grid, AspectRatio, Link } from "theme-ui"
-import { useEffect } from "react"
 import Img from "gatsby-image"
+import React, { Component } from "react"
 
-export default function Instagram(props) {
-  const { data } = props
-  const node = data.edges
-  console.log("node", node)
+export default class extends Component {
+  state = { photos: [] }
 
-  useEffect(() => {})
+  async componentDidMount() {
+    try {
+      // Hack from https://stackoverflow.com/a/47243409/2217533
+      const response = await fetch(
+        `https://www.instagram.com/graphql/query?query_id=17888483320059182&variables={"id":"${this.props.userId}","first":${this.props.photoCount},"after":null}`
+      )
+      const { data } = await response.json()
+      const photos = data.user.edge_owner_to_timeline_media.edges.map(
+        ({ node }) => {
+          const { id } = node
+          const caption = node.edge_media_to_caption.edges[0].node.text
+          const thumbnail = node.thumbnail_resources.find(
+            thumbnail => thumbnail.config_width === this.props.thumbnailWidth
+          )
+          const { src, config_width: width, config_height: height } = thumbnail
+          const url = `https://www.instagram.com/p/${node.shortcode}`
+          return {
+            id,
+            caption,
+            src,
+            width,
+            height,
+            url,
+          }
+        }
+      )
+      this.setState({ photos })
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
-  return (
-    <Grid gap={2} columns={[2, 2, 3]}>
-      <Link
-        href="https://www.instagram.com/single.fin.taghazout/"
-        target="_blank"
-      >
-        <AspectRatio ratio={3 / 3}>
-          <Img
-            fluid={data.edges[0].node.localFile.childImageSharp.fluid}
-            sx={{ height: "100%" }}
-          />
-        </AspectRatio>
-      </Link>
-      <Link
-        href="https://www.instagram.com/single.fin.taghazout/"
-        target="_blank"
-      >
-        <AspectRatio ratio={3 / 3}>
-          <Img
-            fluid={data.edges[1].node.localFile.childImageSharp.fluid}
-            sx={{ height: "100%" }}
-          />
-        </AspectRatio>
-      </Link>
-      <Link
-        href="https://www.instagram.com/single.fin.taghazout/"
-        target="_blank"
-      >
-        <AspectRatio ratio={3 / 3}>
-          <Img
-            sx={{ height: "100%" }}
-            fluid={data.edges[2].node.localFile.childImageSharp.fluid}
-          />
-        </AspectRatio>
-      </Link>
-
-      <Link
-        href="https://www.instagram.com/single.fin.taghazout/"
-        target="_blank"
-      >
-        <AspectRatio ratio={3 / 3}>
-          <Img
-            fluid={data.edges[3].node.localFile.childImageSharp.fluid}
-            sx={{ height: "100%" }}
-          />
-        </AspectRatio>
-      </Link>
-      <Link
-        href="https://www.instagram.com/single.fin.taghazout/"
-        target="_blank"
-      >
-        <AspectRatio ratio={3 / 3}>
-          <Img
-            fluid={data.edges[4].node.localFile.childImageSharp.fluid}
-            sx={{ height: "100%" }}
-          />
-        </AspectRatio>
-      </Link>
-      <Link
-        href="https://www.instagram.com/single.fin.taghazout/"
-        target="_blank"
-      >
-        <AspectRatio ratio={3 / 3}>
-          <Img
-            sx={{ height: "100%" }}
-            fluid={data.edges[5].node.localFile.childImageSharp.fluid}
-          />
-        </AspectRatio>
-      </Link>
-    </Grid>
-  )
+  render() {
+    return (
+      <div sx={{ columnCount: [3, 3, 4], columnGap: "1em" }}>
+        {this.state.photos &&
+          this.state.photos.map(({ src, url }) => (
+            <a href={url} target="_blank">
+              <img
+                sx={{
+                  backgroundColor: "#eee",
+                  display: "inline-block",
+                  marginBottom: "1em",
+                  width: "100%",
+                }}
+                src={src}
+              />
+            </a>
+          ))}
+      </div>
+    )
+  }
 }
