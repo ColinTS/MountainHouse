@@ -199,7 +199,10 @@ const Location = ({ data }) => (
             />
           </div>
         </Grid>
-        <Flex sx={{ justifyContent: "center", pt: 5 }}>
+        <h1 sx={{ variant: "styles.h1", textAlign: "center", pt: 6 }}>
+          Want to learn more?
+        </h1>
+        <Flex sx={{ justifyContent: "center", pt: 3 }}>
           <Button>Explore activities</Button>
         </Flex>
       </Container>

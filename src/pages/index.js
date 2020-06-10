@@ -163,11 +163,195 @@ const IndexPage = ({ data }) => (
           </Flex>
         </div>
       </div>
+      {/* Stay */}
+      <div
+        sx={{
+          paddingTop: "4rem",
+          paddingBottom: "4rem",
+          bg: "tertiary",
+        }}
+      >
+        <Grid columns={[1, 1, "1.5fr 1fr"]}>
+          <AspectRatio
+            ratio={16 / 9}
+            sx={{
+              overflow: "hidden",
+            }}
+          >
+            {" "}
+            <SlideShow data={data.surfing} images={stayImages} />
+          </AspectRatio>
+          <div
+            sx={{
+              paddingLeft: [null, null, "2rem"],
+              paddingRight: [null, null, "2rem"],
+              width: [null, null, "550px"],
+              marginRight: ["auto"],
+              height: ["auto", "auto", "auto"],
+              maxHeight: [null, null, "600px"],
+            }}
+          >
+            <div
+              sx={{
+                width: ["100%", "100%", "100%"],
+                px: [3, 3, 0],
+              }}
+            >
+              <h2 sx={{ variant: "styles.h2" }}>Stay by the sea</h2>
+              <p sx={{ variant: "styles.p", py: 3 }}>
+                The Singlefin beach house is your front-row seat to the Alantic
+                ocean. Located right on Taghazout beach and facing the sea, our
+                rooms are bright, airy, and got a view you'll remember.
+              </p>
+              <p sx={{ variant: "styles.p", pb: 3 }}>
+                Built on multiple levels, the house is designed and decorated
+                with a tradtional Berber style, and whether you want to check
+                the surf from your room, relax on the roof top terrace with some
+                tea, or fill up on home-cooked meals at our restaurant below you
+                will find yourself at home.
+              </p>
+            </div>
+          </div>
+        </Grid>
+      </div>
+      <div sx={{ bg: "tertiary", pb: 2, px: [3, 3, 0] }}>
+        <Container sx={{ maxWidth: "container" }} justify="center">
+          <Box>
+            <h3
+              sx={{
+                variant: "styles.h3",
+                pb: 3,
+              }}
+            >
+              What's in your stay?
+            </h3>
+          </Box>
+          <Grid sx={{ pt: 2 }} gap={[0, 0, 6]} columns={[1, 1, 2]}>
+            <Box>
+              <Flex sx={{ pb: 4 }}>
+                <div css={{ display: "flex" }}>
+                  <Check
+                    sx={{
+                      height: "auto",
+                      width: "20px",
+                      fill: "blue",
+                      mr: 3,
+                    }}
+                  />
+                </div>
 
+                <p
+                  sx={{
+                    variant: "styles.p",
+                    mb: 0,
+                  }}
+                >
+                  Bright, airy rooms with views to the sea
+                </p>
+              </Flex>
+              <Flex sx={{ pb: 4 }}>
+                <div css={{ display: "flex" }}>
+                  <Check
+                    sx={{
+                      height: "auto",
+                      width: "20px",
+                      fill: "blue",
+                      mr: 3,
+                    }}
+                  />
+                </div>
+
+                <p
+                  sx={{
+                    variant: "styles.p",
+                    mb: 0,
+                  }}
+                >
+                  Daily, healthy breakfast served at our restaurant by the beach
+                </p>
+              </Flex>
+              <Flex sx={{ pb: 4 }}>
+                <div css={{ display: "flex" }}>
+                  <Check
+                    sx={{
+                      height: "auto",
+                      width: "20px",
+
+                      fill: "blue",
+                      mr: 3,
+                    }}
+                  />
+                </div>
+
+                <p
+                  sx={{
+                    variant: "styles.p",
+                    mb: 0,
+                  }}
+                >
+                  Roof-top terrace with a covered space to lounge, eat food, and
+                  watch the sunset
+                </p>
+              </Flex>
+            </Box>
+            <Box>
+              <Flex sx={{ alignItems: "center", pb: 4 }}>
+                <div css={{ display: "flex" }}>
+                  <Check
+                    sx={{
+                      height: "auto",
+                      width: "20px",
+
+                      fill: "blue",
+                      mr: 3,
+                    }}
+                  />
+                </div>
+
+                <p
+                  sx={{
+                    variant: "styles.p",
+                    mb: 0,
+                  }}
+                >
+                  Blazing 200/20 Mbps internet
+                </p>
+              </Flex>
+              <Flex sx={{ alignItems: "center", pb: 4 }}>
+                <div css={{ display: "flex" }}>
+                  <Check
+                    sx={{
+                      height: "auto",
+                      width: "20px",
+
+                      fill: "blue",
+                      mr: 3,
+                    }}
+                  />
+                </div>
+
+                <p
+                  sx={{
+                    variant: "styles.p",
+                    mb: 0,
+                  }}
+                >
+                  Fully equipped kitchen to cook your own food
+                </p>
+              </Flex>
+            </Box>
+          </Grid>
+          <Flex sx={{ justifyContent: "center", pt: [5, 5, 5], pb: 2 }}>
+            <BerberTwo
+              sx={{ height: [75, 100, 140], width: "auto" }}
+            ></BerberTwo>
+          </Flex>
+        </Container>
+      </div>
       {/* surf */}
       <div
         sx={{
-          pt: [2, 2, 4],
+          pt: [2, 2, 6],
           paddingBottom: "4rem",
           background: "#f7f0e1",
         }}
@@ -574,7 +758,7 @@ const IndexPage = ({ data }) => (
               </Box>
             </Box>
           </Grid>
-          <Flex sx={{ justifyContent: "center", pt: [5, 5, 6], pb: 2 }}>
+          <Flex sx={{ justifyContent: "center", pt: [5, 5, 6], pb: 5 }}>
             <BerberThree
               sx={{ height: [75, 100, 140], width: "auto" }}
             ></BerberThree>
@@ -582,12 +766,11 @@ const IndexPage = ({ data }) => (
         </div>
       </div>
 
-      {/* Stay */}
+      {/* Eat */}
       <div
         sx={{
-          paddingTop: "4rem",
-          paddingBottom: "4rem",
-          bg: "tertiary",
+          variant: "layout.primaryContainer",
+          background: "linear-gradient(to bottom, #f7f0e1 0%, white)",
         }}
       >
         <Grid columns={[1, 1, "1.5fr 1fr"]}>
@@ -598,7 +781,7 @@ const IndexPage = ({ data }) => (
             }}
           >
             {" "}
-            <SlideShow data={data.surfing} images={stayImages} />
+            <SlideShow data={data.surfing} images={eatImages} />
           </AspectRatio>
           <div
             sx={{
@@ -606,182 +789,6 @@ const IndexPage = ({ data }) => (
               paddingRight: [null, null, "2rem"],
               width: [null, null, "550px"],
               marginRight: ["auto"],
-              height: ["auto", "auto", "auto"],
-              maxHeight: [null, null, "600px"],
-            }}
-          >
-            <div
-              sx={{
-                width: ["100%", "100%", "100%"],
-                px: [3, 3, 0],
-              }}
-            >
-              <h2 sx={{ variant: "styles.h2" }}>Stay by the sea</h2>
-              <p sx={{ variant: "styles.p", py: 3 }}>
-                The Singlefin beach house is your front-row seat to the Alantic
-                ocean. Located right on Taghazout beach and facing the sea, our
-                rooms are bright, airy, and got a view you'll remember.
-              </p>
-              <p sx={{ variant: "styles.p", pb: 3 }}>
-                Built on multiple levels, the house is designed and decorated
-                with a tradtional Berber style, and whether you want to check
-                the surf from your room, relax on the roof top terrace with some
-                tea, or fill up on home-cooked meals at our restaurant below you
-                will find yourself at home.
-              </p>
-            </div>
-          </div>
-        </Grid>
-      </div>
-
-      <div sx={{ bg: "tertiary", pb: 2, px: [3, 3, 0] }}>
-        <Container sx={{ maxWidth: "container" }} justify="center">
-          <Box>
-            <h3
-              sx={{
-                variant: "styles.h3",
-                pb: 3,
-              }}
-            >
-              What's in your stay?
-            </h3>
-          </Box>
-          <Grid sx={{ pt: 2 }} gap={[0, 0, 6]} columns={[1, 1, 2]}>
-            <Box>
-              <Flex sx={{ pb: 4 }}>
-                <div css={{ display: "flex" }}>
-                  <Check
-                    sx={{
-                      height: "auto",
-                      width: "20px",
-                      fill: "blue",
-                      mr: 3,
-                    }}
-                  />
-                </div>
-
-                <p
-                  sx={{
-                    variant: "styles.p",
-                    mb: 0,
-                  }}
-                >
-                  Bright, airy rooms with views to the sea
-                </p>
-              </Flex>
-              <Flex sx={{ pb: 4 }}>
-                <div css={{ display: "flex" }}>
-                  <Check
-                    sx={{
-                      height: "auto",
-                      width: "20px",
-                      fill: "blue",
-                      mr: 3,
-                    }}
-                  />
-                </div>
-
-                <p
-                  sx={{
-                    variant: "styles.p",
-                    mb: 0,
-                  }}
-                >
-                  Daily, healthy breakfast served at our restaurant by the beach
-                </p>
-              </Flex>
-              <Flex sx={{ pb: 4 }}>
-                <div css={{ display: "flex" }}>
-                  <Check
-                    sx={{
-                      height: "auto",
-                      width: "20px",
-
-                      fill: "blue",
-                      mr: 3,
-                    }}
-                  />
-                </div>
-
-                <p
-                  sx={{
-                    variant: "styles.p",
-                    mb: 0,
-                  }}
-                >
-                  Roof-top terrace with a covered space to lounge, eat food, and
-                  watch the sunset
-                </p>
-              </Flex>
-            </Box>
-            <Box>
-              <Flex sx={{ alignItems: "center", pb: 4 }}>
-                <div css={{ display: "flex" }}>
-                  <Check
-                    sx={{
-                      height: "auto",
-                      width: "20px",
-
-                      fill: "blue",
-                      mr: 3,
-                    }}
-                  />
-                </div>
-
-                <p
-                  sx={{
-                    variant: "styles.p",
-                    mb: 0,
-                  }}
-                >
-                  Blazing 200/20 Mbps internet
-                </p>
-              </Flex>
-              <Flex sx={{ alignItems: "center", pb: 4 }}>
-                <div css={{ display: "flex" }}>
-                  <Check
-                    sx={{
-                      height: "auto",
-                      width: "20px",
-
-                      fill: "blue",
-                      mr: 3,
-                    }}
-                  />
-                </div>
-
-                <p
-                  sx={{
-                    variant: "styles.p",
-                    mb: 0,
-                  }}
-                >
-                  Fully equipped kitchen to cook your own food
-                </p>
-              </Flex>
-            </Box>
-          </Grid>
-          <Flex sx={{ justifyContent: "center", pt: [5, 5, 5], pb: 2 }}>
-            <BerberTwo
-              sx={{ height: [75, 100, 140], width: "auto" }}
-            ></BerberTwo>
-          </Flex>
-        </Container>
-      </div>
-      {/* Eat */}
-      <div
-        sx={{
-          variant: "layout.primaryContainer",
-          background: "linear-gradient(to bottom, #f7f0e1 0%, white)",
-        }}
-      >
-        <Grid columns={[1, 1, "1fr 1.5fr"]}>
-          <div
-            sx={{
-              paddingLeft: [null, null, "2rem"],
-              paddingRight: [null, null, "2rem"],
-              width: [null, null, "550px"],
-              marginLeft: ["auto"],
               height: ["auto", "auto", "auto"],
               maxHeight: [null, null, "600px"],
             }}
@@ -810,16 +817,6 @@ const IndexPage = ({ data }) => (
               </p>
             </div>
           </div>
-
-          <AspectRatio
-            ratio={16 / 9}
-            sx={{
-              overflow: "hidden",
-            }}
-          >
-            {" "}
-            <SlideShow data={data.surfing} images={eatImages} />
-          </AspectRatio>
         </Grid>
       </div>
 
