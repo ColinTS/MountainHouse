@@ -360,6 +360,22 @@ function Header({ siteTitle, isMobile }) {
           </Flex>
           <Flex sx={{ alignItems: "center" }}>
             <Link
+              to="/"
+              sx={{
+                variant: "styles.button",
+                color: "white",
+                cursor: "pointer",
+                pr: 4,
+                userSelect: "none",
+                textDecoration: "none",
+                "&:hover": {
+                  color: "blue",
+                },
+              }}
+            >
+              Home
+            </Link>
+            <Link
               to="/explore"
               sx={{
                 variant: "styles.button",
@@ -368,6 +384,9 @@ function Header({ siteTitle, isMobile }) {
                 pr: 4,
                 userSelect: "none",
                 textDecoration: "none",
+                "&:hover": {
+                  color: "blue",
+                },
               }}
             >
               Explore
@@ -381,6 +400,9 @@ function Header({ siteTitle, isMobile }) {
                 pr: 4,
                 userSelect: "none",
                 textDecoration: "none",
+                "&:hover": {
+                  color: "blue",
+                },
               }}
             >
               Location
@@ -392,6 +414,9 @@ function Header({ siteTitle, isMobile }) {
                 cursor: "pointer",
                 pr: 4,
                 userSelect: "none",
+                "&:hover": {
+                  color: "blue",
+                },
               }}
               onClick={function() {
                 window.$crisp.push(["do", "chat:open"])

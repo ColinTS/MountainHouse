@@ -199,7 +199,7 @@ const Location = ({ data }) => (
             />
           </div>
         </Grid>
-        <h1 sx={{ variant: "styles.h1", textAlign: "center", pt: 6 }}>
+        <h1 sx={{ variant: "styles.h2", textAlign: "center", pt: 6 }}>
           Want to learn more?
         </h1>
         <Flex sx={{ justifyContent: "center", pt: 3 }}>
@@ -209,7 +209,7 @@ const Location = ({ data }) => (
     </div>
 
     <Container sx={{ pb: 6, pt: [5, 6, 6] }}>
-      <h1 sx={{ variant: "styles.h1", textAlign: "center" }}>Find us</h1>
+      <h1 sx={{ variant: "styles.h2", textAlign: "center" }}>Find us</h1>
       <p sx={{ variant: "styles.p", textAlign: "center", pb: 4 }}>
         65 Tayought Street, Taghazout 80022
       </p>

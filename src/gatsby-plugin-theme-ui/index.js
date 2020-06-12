@@ -58,6 +58,8 @@ export default {
       "&:hover": {
         bg: "lightBlue",
       },
+      outline: "none",
+      border: 0,
     },
   },
   breakpoints: ["40em", "56em", "64em"],

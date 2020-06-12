@@ -41,12 +41,29 @@ export default function Footer(props) {
             </div>
 
             <div>
+              <Link to="/" sx={{ textDecoration: "none" }}>
+                <p
+                  sx={{
+                    variant: "styles.button",
+                    color: "text",
+                    pb: 2,
+                    "&:hover": {
+                      color: "blue",
+                    },
+                  }}
+                >
+                  Home
+                </p>
+              </Link>
               <Link to="/explore" sx={{ textDecoration: "none" }}>
                 <p
                   sx={{
                     variant: "styles.button",
                     color: "text",
                     pb: 2,
+                    "&:hover": {
+                      color: "blue",
+                    },
                   }}
                 >
                   Explore
@@ -58,6 +75,9 @@ export default function Footer(props) {
                     variant: "styles.button",
                     color: "text",
                     pb: 2,
+                    "&:hover": {
+                      color: "blue",
+                    },
                   }}
                 >
                   Location
@@ -69,6 +89,9 @@ export default function Footer(props) {
                     variant: "styles.button",
                     color: "text",
                     pb: 2,
+                    "&:hover": {
+                      color: "blue",
+                    },
                   }}
                 >
                   Terms & Conditions
@@ -80,6 +103,9 @@ export default function Footer(props) {
                     variant: "styles.button",
                     color: "text",
                     pb: 2,
+                    "&:hover": {
+                      color: "blue",
+                    },
                   }}
                 >
                   Privacy policy
