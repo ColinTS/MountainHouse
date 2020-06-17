@@ -105,7 +105,23 @@ export default function Footer(props) {
                   Location
                 </p>
               </Link>
-              <Link to="/terms-conditions" sx={{ textDecoration: "none" }}>
+              <p
+                sx={{
+                  variant: "styles.button",
+                  color: "text",
+                  pb: 2,
+                  cursor: "pointer",
+                  "&:hover": {
+                    color: "blue",
+                  },
+                }}
+                onClick={function() {
+                  window.$crisp.push(["do", "chat:open"])
+                }}
+              >
+                Contact Us
+              </p>
+              {/* <Link to="/terms-conditions" sx={{ textDecoration: "none" }}>
                 <p
                   sx={{
                     variant: "styles.button",
@@ -132,7 +148,7 @@ export default function Footer(props) {
                 >
                   Privacy policy
                 </p>
-              </Link>
+              </Link> */}
               <a
                 target="_blank"
                 href="https://www.instagram.com/single.fin.taghazout/"
