@@ -105,6 +105,20 @@ export default function Footer(props) {
                   Location
                 </p>
               </Link>
+              <Link to="/faq" sx={{ textDecoration: "none" }}>
+                <p
+                  sx={{
+                    variant: "styles.button",
+                    color: "text",
+                    pb: 2,
+                    "&:hover": {
+                      color: "blue",
+                    },
+                  }}
+                >
+                  FAQ
+                </p>
+              </Link>
               <p
                 sx={{
                   variant: "styles.button",

@@ -407,6 +407,22 @@ function Header({ siteTitle, isMobile }) {
             >
               Location
             </Link>
+            <Link
+              to="/faq"
+              sx={{
+                variant: "styles.button",
+                color: "white",
+                cursor: "pointer",
+                pr: 4,
+                userSelect: "none",
+                textDecoration: "none",
+                "&:hover": {
+                  color: "blue",
+                },
+              }}
+            >
+              FAQ
+            </Link>
             <span
               sx={{
                 variant: "styles.button",
