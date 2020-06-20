@@ -23,7 +23,6 @@ export const data = graphql`
 `
 const Accordion = ({ i, expanded, setExpanded }) => {
   const isOpen = i === expanded
-
   // By using `AnimatePresence` to mount and unmount the contents, we can animate
   // them in and out while also only rendering the contents of open accordions
   return (
@@ -48,32 +47,61 @@ const Accordion = ({ i, expanded, setExpanded }) => {
             initial="collapsed"
             animate="open"
             exit="collapsed"
+            sx={{ overflow: "hidden" }}
             variants={{
               open: { opacity: 1, height: "auto" },
               collapsed: { opacity: 0, height: 0 },
             }}
-            transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+            transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
           >
             {/* <ContentPlaceholder /> */}
+            <motion.div
+              variants={{ collapsed: { scale: 0.9 }, open: { scale: 1 } }}
+              transition={{ duration: 0.5 }}
+              sx={{
+                padding: "20px",
+                transformOrigin: "top center",
+              }}
+            >
+              <p sx={{ variant: "styles.p", marginBottom: "20px" }}>
+                Blah blah blah Blah blah blahBlah blah blahvBlah blah blahBlah
+                blah blahBlah blah blahBlah blah blahBlah blah blahBlah blah
+                blahBlah blah blahBlah blah blahBlah blah blahBlah blah blah
+                Blah blah blah Blah blah blahBlah blah blahvBlah blah blahBlah
+                blah blahBlah blah blahBlah blah blahBlah blah blahBlah blah
+                blahBlah blah blahBlah blah blahBlah blah blahBlah blah blah
+                Blah blah blah Blah blah blahBlah blah blahvBlah blah blahBlah
+                blah blahBlah blah blahBlah blah blahBlah blah blahBlah blah
+                blahBlah blah blahBlah blah blahBlah blah blahBlah blah blah
+              </p>
+            </motion.div>
           </motion.section>
         )}
       </AnimatePresence>
     </>
   )
 }
-const accordionIds = [0, 1, 2, 3]
-
-export const FirstFaqs = () => {
-  // This approach is if you only want max one section open at a time. If you want multiple
-  // sections to potentially be open simultaneously, they can all be given their own `useState`.
-  const [expanded, setExpanded] = useState(false)
-  return accordionIds.map(i => (
-    <Accordion i={i} expanded={expanded} setExpanded={setExpanded} />
-  ))
+const Faqs = () => {
+  const accordionIds = [0, 1, 2, 3]
+  const accordionIds2 = [4, 5, 6, 7]
+  const [expanded, setExpanded] = useState(0)
+  return (
+    <div>
+      <div>
+        {accordionIds.map(i => (
+          <Accordion i={i} expanded={expanded} setExpanded={setExpanded} />
+        ))}
+      </div>
+      <div>
+        {accordionIds2.map(i => (
+          <Accordion i={i} expanded={expanded} setExpanded={setExpanded} />
+        ))}
+      </div>
+    </div>
+  )
 }
 
 const FAQ = ({ data }) => {
-  const [expanded, setExpanded] = useState(false)
   return (
     <Layout>
       <SEO title="FAQ" />
@@ -128,7 +156,7 @@ const FAQ = ({ data }) => {
 
       <Container sx={{ px: 3, py: 5, maxWidth: "smallContainer" }}>
         <div sx={{ pb: 4 }}>
-          <FirstFaqs />
+          <Faqs />
         </div>
         <div sx={{ pb: 4 }}>
           <h2 sx={{ variant: "styles.h2" }}>Point 2</h2>
