@@ -21,7 +21,7 @@ export const data = graphql`
     }
   }
 `
-const Accordion = ({ i, expanded, setExpanded }) => {
+const Accordion = ({ i, expanded, setExpanded, question, answer }) => {
   const isOpen = i === expanded
   // By using `AnimatePresence` to mount and unmount the contents, we can animate
   // them in and out while also only rendering the contents of open accordions
@@ -29,17 +29,29 @@ const Accordion = ({ i, expanded, setExpanded }) => {
     <>
       <motion.div
         initial={false}
-        animate={{ backgroundColor: isOpen ? "#FF0088" : "#0055FF" }}
+        animate={{ backgroundColor: isOpen ? "#428DA4" : "white" }}
         onClick={() => setExpanded(isOpen ? false : i)}
         sx={{
-          background: " #0055ff",
+          background: " white",
+          borderStyle: "solid",
+          borderWidth: "4px",
+          borderColor: "#4b96ad",
           borderRadius: "10px",
           color: "white",
           cursor: "pointer",
-          height: "40px",
+          height: "60px",
           marginBottom: "20px",
+          display: "flex",
+          alignItems: "center",
         }}
-      />
+      >
+        <motion.p
+          animate={{ color: isOpen ? "white" : "#473831" }}
+          sx={{ variant: "styles.p", margin: 0, pl: "20px" }}
+        >
+          {question}
+        </motion.p>
+      </motion.div>
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.section
@@ -54,7 +66,6 @@ const Accordion = ({ i, expanded, setExpanded }) => {
             }}
             transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
           >
-            {/* <ContentPlaceholder /> */}
             <motion.div
               variants={{ collapsed: { scale: 0.9 }, open: { scale: 1 } }}
               transition={{ duration: 0.5 }}
@@ -63,17 +74,7 @@ const Accordion = ({ i, expanded, setExpanded }) => {
                 transformOrigin: "top center",
               }}
             >
-              <p sx={{ variant: "styles.p", marginBottom: "20px" }}>
-                Blah blah blah Blah blah blahBlah blah blahvBlah blah blahBlah
-                blah blahBlah blah blahBlah blah blahBlah blah blahBlah blah
-                blahBlah blah blahBlah blah blahBlah blah blahBlah blah blah
-                Blah blah blah Blah blah blahBlah blah blahvBlah blah blahBlah
-                blah blahBlah blah blahBlah blah blahBlah blah blahBlah blah
-                blahBlah blah blahBlah blah blahBlah blah blahBlah blah blah
-                Blah blah blah Blah blah blahBlah blah blahvBlah blah blahBlah
-                blah blahBlah blah blahBlah blah blahBlah blah blahBlah blah
-                blahBlah blah blahBlah blah blahBlah blah blahBlah blah blah
-              </p>
+              <p sx={{ variant: "styles.p", marginBottom: "20px" }}>{answer}</p>
             </motion.div>
           </motion.section>
         )}
@@ -82,19 +83,45 @@ const Accordion = ({ i, expanded, setExpanded }) => {
   )
 }
 const Faqs = () => {
-  const accordionIds = [0, 1, 2, 3]
-  const accordionIds2 = [4, 5, 6, 7]
+  const accordionIds = [
+    { id: 0, question: "What is Taghaout?", answer: "How come there is more?" },
+    {
+      id: 1,
+      question: "How many fish are there?",
+      answer: "Dont talk about fish",
+    },
+  ]
+  const accordionIds2 = [
+    { id: 2, question: "What is Taghaout?", answer: "How come there is more?" },
+    {
+      id: 3,
+      question: "How many fish are there?",
+      answer: "Dont talk about fish",
+    },
+  ]
   const [expanded, setExpanded] = useState(0)
   return (
     <div>
       <div>
         {accordionIds.map(i => (
-          <Accordion i={i} expanded={expanded} setExpanded={setExpanded} />
+          <Accordion
+            i={i.id}
+            question={i.question}
+            answer={i.answer}
+            expanded={expanded}
+            setExpanded={setExpanded}
+          />
         ))}
       </div>
       <div>
         {accordionIds2.map(i => (
-          <Accordion i={i} expanded={expanded} setExpanded={setExpanded} />
+          <Accordion
+            i={i.id}
+            question={i.question}
+            answer={i.answer}
+            expanded={expanded}
+            setExpanded={setExpanded}
+          />
         ))}
       </div>
     </div>
