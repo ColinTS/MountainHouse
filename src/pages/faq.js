@@ -29,14 +29,14 @@ const Accordion = ({ i, expanded, setExpanded, question, answer }) => {
     <>
       <motion.div
         initial={false}
-        animate={{ backgroundColor: isOpen ? "#428DA4" : "white" }}
+        animate={{ backgroundColor: isOpen ? "#4b96ad" : "white" }}
         onClick={() => setExpanded(isOpen ? false : i)}
         sx={{
           background: " white",
           borderStyle: "solid",
-          borderWidth: "4px",
-          borderColor: "#4b96ad",
-          borderRadius: "10px",
+          borderWidth: "5px",
+          borderColor: "#428DA4",
+          borderRadius: "3px",
           color: "white",
           cursor: "pointer",
           height: "60px",
@@ -83,8 +83,13 @@ const Accordion = ({ i, expanded, setExpanded, question, answer }) => {
   )
 }
 const Faqs = () => {
-  const accordionIds = [
-    { id: 0, question: "What is Taghaout?", answer: "How come there is more?" },
+  const morocco = [
+    {
+      id: 0,
+      question: "Do I need a visa?",
+      answer:
+        "EU and US passport holders do not require a visa to enter Morocco for tourist purposes. Your passport must be valid for the duration of your stay. If you hold a passport from outside the European Union we strongly recommend that you check with your nearest Moroccan Embassy.",
+    },
     {
       id: 1,
       question: "How many fish are there?",
@@ -102,8 +107,11 @@ const Faqs = () => {
   const [expanded, setExpanded] = useState(0)
   return (
     <div>
+      <div sx={{ pb: 4, display: "flex", justifyContent: "center" }}>
+        <h2 sx={{ variant: "styles.h2" }}>About Morocco</h2>
+      </div>
       <div>
-        {accordionIds.map(i => (
+        {morocco.map(i => (
           <Accordion
             i={i.id}
             question={i.question}
@@ -112,6 +120,9 @@ const Faqs = () => {
             setExpanded={setExpanded}
           />
         ))}
+      </div>
+      <div sx={{ pt: 6, pb: 4, display: "flex", justifyContent: "center" }}>
+        <h2 sx={{ variant: "styles.h2" }}>About Taghazout</h2>
       </div>
       <div>
         {accordionIds2.map(i => (
@@ -184,22 +195,6 @@ const FAQ = ({ data }) => {
       <Container sx={{ px: 3, py: 5, maxWidth: "smallContainer" }}>
         <div sx={{ pb: 4 }}>
           <Faqs />
-        </div>
-        <div sx={{ pb: 4 }}>
-          <h2 sx={{ variant: "styles.h2" }}>Point 2</h2>
-          <p sx={{ variant: "styles.p" }}>Blah blah blah</p>
-        </div>
-        <div sx={{ pb: 4 }}>
-          <h2 sx={{ variant: "styles.h2" }}>Point 3</h2>
-          <p sx={{ variant: "styles.p" }}>Blah blah blah</p>
-        </div>
-        <div sx={{ pb: 4 }}>
-          <h2 sx={{ variant: "styles.h2" }}>Point 4</h2>
-          <p sx={{ variant: "styles.p" }}>Blah blah blah</p>
-        </div>
-        <div sx={{}}>
-          <h2 sx={{ variant: "styles.h2" }}>Point 5</h2>
-          <p sx={{ variant: "styles.p" }}>Blah blah blah</p>
         </div>
       </Container>
     </Layout>

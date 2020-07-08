@@ -9,8 +9,9 @@ import Check from "../images/check.svg"
 import BerberOne from "../images/berberOne.svg"
 import BerberTwo from "../images/berberTwo.svg"
 import BerberThree from "../images/berberThree.svg"
+import BackgroundImage from "gatsby-background-image"
 import { Link } from "gatsby"
-
+import BoardDivider from "../images/explore/board.svg"
 import SEO from "../components/seo"
 import Dunes from "../images/dunes.svg"
 
@@ -136,25 +137,178 @@ const IndexPage = ({ data }) => (
             px: [3, 3, 3],
           }}
         >
-          <Container sx={{ maxWidth: "smallContainer" }} justify="center">
-            <h1 sx={{ variant: "styles.h1", textAlign: "center" }}>
-              Singlefin is a holiday retreat in Taghazout, Morocco{" "}
-            </h1>
-
-            <p
+          <Container sx={{ maxWidth: "smallContainer" }}>
+            <Flex
               sx={{
-                variant: "styles.p",
-                textAlign: "center",
-                pt: 2,
-                fontSize: [2, 2, 3],
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
               }}
             >
-              We offer an authentic moroccan stay for guests from around the
-              globe. Whether you want to have a memorable time surfing southern
-              Morocco, have a relaxed holiday exploring the country, or eat
-              healthy, local food from our restaurant, Singlefin welcomes you
-              with open arms.
-            </p>
+              <h1 sx={{ variant: "styles.h1", textAlign: "center", pb: 2 }}>
+                Singlefin is a holiday retreat in Taghazout, Morocco{" "}
+              </h1>
+              <BoardDivider sx={{ width: "75px" }} />
+              <p
+                sx={{
+                  variant: "styles.p",
+                  textAlign: "center",
+                  pt: 4,
+                  fontSize: [2, 2, 3],
+                }}
+              >
+                We offer an authentic moroccan stay for guests from around the
+                globe. Whether you want to have a memorable time surfing
+                southern Morocco, have a relaxed holiday exploring the country,
+                or eat healthy, local food from our restaurant, Singlefin
+                welcomes you with open arms.
+              </p>
+            </Flex>
+          </Container>
+          <Container sx={{ pt: 6, px: [3, 3, 3] }} justify="center">
+            <h3
+              sx={{
+                variant: "styles.h3",
+                pb: 3,
+                textAlign: "center",
+              }}
+            >
+              Our Locations
+            </h3>
+            <Grid sx={{ pt: 4 }} gap={4} columns={[1, 1, 3]}>
+              <div
+                sx={{
+                  position: "relative",
+                  borderRadius: 4,
+                  height: "500px",
+                  cursor: "pointer",
+                  background:
+                    "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
+                  transform: "translate(0, 0px)",
+                  transition: "all .3s ease",
+                  ":hover": {
+                    transform: "translate(0, -8px)",
+                    transition: "all .3 ease",
+                    boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+                  },
+                }}
+              >
+                <Img
+                  sx={{
+                    cursor: "pointer",
+                    opacity: "1 !important",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    borderRadius: 4,
+                    height: "500px",
+                  }}
+                  fluid={data.surfStay.childImageSharp.fluid}
+                />
+                <h2
+                  sx={{
+                    variant: "styles.h2",
+
+                    textAlign: "center",
+                    color: "white",
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  The Mountainhouse
+                </h2>
+              </div>
+              <div
+                sx={{
+                  position: "relative",
+                  borderRadius: 4,
+                  height: "500px",
+                  cursor: "pointer",
+                  background:
+                    "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
+                  transform: "translate(0, 0px)",
+                  transition: "all .3s ease",
+                  ":hover": {
+                    transform: "translate(0, -8px)",
+                    transition: "all .3 ease",
+                    boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+                  },
+                }}
+              >
+                <Img
+                  sx={{
+                    cursor: "pointer",
+                    opacity: "1 !important",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    borderRadius: 4,
+                    height: "500px",
+                  }}
+                  fluid={data.surfStay.childImageSharp.fluid}
+                />
+                <h2
+                  sx={{
+                    variant: "styles.h2",
+
+                    textAlign: "center",
+                    color: "white",
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  The Beachhouse
+                </h2>
+              </div>
+              <div
+                sx={{
+                  position: "relative",
+                  borderRadius: 4,
+                  height: "500px",
+                  cursor: "pointer",
+                  background:
+                    "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
+                  transform: "translate(0, 0px)",
+                  transition: "all .3s ease",
+                  ":hover": {
+                    transform: "translate(0, -8px)",
+                    transition: "all .3 ease",
+                    boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+                  },
+                }}
+              >
+                <Img
+                  sx={{
+                    cursor: "pointer",
+                    opacity: "1 !important",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    borderRadius: 4,
+                    height: "500px",
+                  }}
+                  fluid={data.surfStay.childImageSharp.fluid}
+                />
+                <h2
+                  sx={{
+                    variant: "styles.h2",
+
+                    textAlign: "center",
+                    color: "white",
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  The Villas
+                </h2>
+              </div>
+            </Grid>
           </Container>
           <Flex sx={{ justifyContent: "center", pt: [5, 5, 6] }}>
             <BerberOne
