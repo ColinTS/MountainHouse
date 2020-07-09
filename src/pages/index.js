@@ -176,50 +176,52 @@ const IndexPage = ({ data }) => (
               Our Locations
             </h3>
             <Grid sx={{ pt: 4 }} gap={4} columns={[1, 1, 3]}>
-              <div
-                sx={{
-                  position: "relative",
-                  borderRadius: 4,
-                  height: "500px",
-                  cursor: "pointer",
-                  background:
-                    "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
-                  transform: "translate(0, 0px)",
-                  transition: "all .3s ease",
-                  ":hover": {
-                    transform: "translate(0, -8px)",
-                    transition: "all .3 ease",
-                    boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
-                  },
-                }}
-              >
-                <Img
+              <Link to="/mountain-house">
+                <div
                   sx={{
-                    cursor: "pointer",
-                    opacity: "1 !important",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
+                    position: "relative",
                     borderRadius: 4,
                     height: "500px",
-                  }}
-                  fluid={data.surfStay.childImageSharp.fluid}
-                />
-                <h2
-                  sx={{
-                    variant: "styles.h2",
-
-                    textAlign: "center",
-                    color: "white",
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
+                    cursor: "pointer",
+                    background:
+                      "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
+                    transform: "translate(0, 0px)",
+                    transition: "all .3s ease",
+                    ":hover": {
+                      transform: "translate(0, -8px)",
+                      transition: "all .3 ease",
+                      boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+                    },
                   }}
                 >
-                  The Mountainhouse
-                </h2>
-              </div>
+                  <Img
+                    sx={{
+                      cursor: "pointer",
+                      opacity: "1 !important",
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "center",
+                      borderRadius: 4,
+                      height: "500px",
+                    }}
+                    fluid={data.surfStay.childImageSharp.fluid}
+                  />
+                  <h2
+                    sx={{
+                      variant: "styles.h2",
+
+                      textAlign: "center",
+                      color: "white",
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                    }}
+                  >
+                    The Mountainhouse
+                  </h2>
+                </div>
+              </Link>
               <div
                 sx={{
                   position: "relative",
@@ -264,6 +266,7 @@ const IndexPage = ({ data }) => (
                   The Beachhouse
                 </h2>
               </div>
+
               <div
                 sx={{
                   position: "relative",

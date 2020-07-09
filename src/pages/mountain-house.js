@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { jsx, Container, Flex } from "theme-ui"
+import { jsx, Container, Flex, AspectRatio } from "theme-ui"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
 import { useState } from "react"
@@ -9,7 +9,15 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundImage from "gatsby-background-image"
 import BoardDivider from "../images/explore/board.svg"
+import SlideShow from "../components/slideshow"
 import { motion, AnimatePresence } from "framer-motion"
+
+const surfImages = [
+  "//images.ctfassets.net/qlhp1q6elgxs/16NM1a7FJI0IcByEiwRAvb/0bb8fb72a8f9264dbb2359bc7d54e8d3/surf4__1_.jpg",
+  "//images.ctfassets.net/qlhp1q6elgxs/5wUx0XFkFjIKnj12dwOJOI/144ae6c5dc08eeb927701ac63c2b4a8e/surf3__1_.jpg",
+  "//images.ctfassets.net/qlhp1q6elgxs/5vc4HttUmh4n6W1GynB9y3/0288c946282fd76c09ee44bb97bcf68f/surf2__1_.jpg",
+  "//images.ctfassets.net/qlhp1q6elgxs/OjI0Pf4TQlMgHIfQwbEm8/91912ff2b7e4418d7c9fde000fbcb24d/surf1__1_.jpg",
+]
 
 export const data = graphql`
   query {
@@ -60,7 +68,7 @@ const MountainHouse = ({ data }) => {
               fontSize: [5, 6, 7],
             }}
           >
-            Frequently asked questions
+            The Mountainhouse
           </h1>
           <p
             sx={{
@@ -71,7 +79,7 @@ const MountainHouse = ({ data }) => {
               fontSize: [2, 2, 4],
             }}
           >
-            Common questions about Singlefin, Taghazout, and more.
+            Your home in the quiet mountains above Taghazout
           </p>
         </div>
       </div>
@@ -113,6 +121,17 @@ const MountainHouse = ({ data }) => {
             Short bio about the mountain house
           </p>
         </Flex>
+      </Container>
+      <Container>
+        <AspectRatio
+          ratio={16 / 9}
+          sx={{
+            overflow: "hidden",
+          }}
+        >
+          {" "}
+          <SlideShow images={surfImages} />
+        </AspectRatio>
       </Container>
     </Layout>
   )
