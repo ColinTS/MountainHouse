@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { jsx, Container, Flex, AspectRatio } from "theme-ui"
+import { jsx, Container, Flex, AspectRatio, Grid } from "theme-ui"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
 import { useState } from "react"
@@ -87,10 +87,40 @@ const MountainHouse = ({ data }) => {
       <Container
         sx={{
           variant: "layout.primaryContainer",
-          maxWidth: "smallContainer",
+          px: 3,
+          py: [4, 4, 6],
         }}
       >
-        <Flex
+        <Grid gap={[2, 3, 5]} columns={[1, 1, 2]}>
+          <div>
+            <p
+              sx={{
+                variant: "styles.p",
+              }}
+            >
+              Singlefin is located in the heart of Taghazout, a seaside Berber
+              village in Southern Morocco. Up until the 1970's, Taghazout was a
+              small fishing village until its epic surf was discovered by the
+              Hippies. Ever since then, the surfing scene has grown and while it
+              is now considered to be a world-class destination for surf, the
+              village has retained its laid back roots.
+            </p>
+          </div>
+          <div>
+            <p
+              sx={{
+                variant: "styles.p",
+              }}
+            >
+              Taghazout is sunny and warm almost every day of the year. Winter
+              is when the swell peaks and sufing is at its best, and while
+              there's surf all-year-round, it's in the Summer when you'll see
+              people ennjoying the beaches and chilling in all of the cafes and
+              restaurants that face the sea.
+            </p>
+          </div>
+        </Grid>
+        {/* <Flex
           sx={{
             justifyContent: "center",
             alignItems: "center",
@@ -120,7 +150,7 @@ const MountainHouse = ({ data }) => {
           >
             Short bio about the mountain house
           </p>
-        </Flex>
+        </Flex> */}
       </Container>
       <Container>
         <AspectRatio

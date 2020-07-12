@@ -124,6 +124,34 @@ export const data = graphql`
         }
       }
     }
+    taghazout: file(relativePath: { eq: "location/taghazoutTown.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 3000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    taghazoutSurf: file(relativePath: { eq: "location/taghazoutSurf.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 3000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    taghazoutView: file(relativePath: { eq: "location/taghazoutView.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 3000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    taghazoutYoga: file(relativePath: { eq: "location/taghazoutYoga.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 3000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 `
 const exploreData = [
@@ -409,9 +437,9 @@ const Explore = ({ data, isMobile }) => {
             opacity: "1 !important",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "50% 25%",
+            backgroundPosition: "50% 50%",
           }}
-          fluid={data.sunsetSurf.childImageSharp.fluid}
+          fluid={data.taghazout.childImageSharp.fluid}
         />
         <div
           sx={{
@@ -590,10 +618,127 @@ const Explore = ({ data, isMobile }) => {
           </div>
         </Flex>
       )}
+      <div sx={{ background: "rgba(247, 240, 225, 0.3)" }}>
+        <Container>
+          <Grid sx={{ pt: 5, px: [5, 0, 0] }} gap={5} columns={[1, 3, 3]}>
+            <div
+              sx={{
+                display: "relative",
+                bg: "text",
+                height: ["300px", "350px", "375px"],
+                "-webkit-clip-path": " polygon(50% 0%, 0% 100%, 100% 100%)",
+                clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
+              }}
+            >
+              <Img
+                fluid={data.taghazoutView.childImageSharp.fluid}
+                sx={{
+                  position: "absolute",
+                  height: "94%",
+                  width: "93%",
+                  top: "4%",
+                  left: "3.5%",
+                  "-webkit-clip-path": " polygon(50% 0%, 0% 100%, 100% 100%)",
+                  clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
+                }}
+              />
+            </div>
+            <div
+              sx={{
+                display: "relative",
+                bg: "text",
+                height: ["300px", "350px", "375px"],
+                borderTopRightRadius: "50%",
+                borderTopLeftRadius: "50%",
+              }}
+            >
+              <Img
+                fluid={data.taghazoutYoga.childImageSharp.fluid}
+                sx={{
+                  height: "100%",
+                  position: "absolute",
+                  height: "96%",
+                  width: "95%",
+                  top: "2%",
+                  left: "2.7%",
+                  borderTopRightRadius: "50%",
+                  borderTopLeftRadius: "50%",
+                }}
+              />
+            </div>
+            <div
+              sx={{
+                display: "relative",
+                bg: "text",
+                height: ["300px", "350px", "375px"],
+                "-webkit-clip-path":
+                  "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+                clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+              }}
+            >
+              <Img
+                fluid={data.taghazoutSurf.childImageSharp.fluid}
+                sx={{
+                  position: "absolute",
+                  height: "94%",
+                  width: "94%",
+                  top: "3.2%",
+                  left: "3%",
+                  "-webkit-clip-path":
+                    "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+                  clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+                }}
+              />
+            </div>
+          </Grid>
+        </Container>
+        <Container
+          sx={{
+            variant: "layout.primaryContainer",
+            maxWidth: "smallContainer",
+          }}
+        >
+          <Flex
+            sx={{
+              justifyContent: "center",
+              alignItems: "center",
+              pt: 4,
+              px: [3, 3, 3],
+              flexDirection: "column",
+            }}
+          >
+            <h1
+              sx={{
+                variant: "styles.h1",
+
+                textAlign: "center",
+                pb: 2,
+              }}
+            >
+              The little bohemiam surfing village by the sea
+            </h1>
+            <BoardDivider sx={{ width: "75px" }} />
+            <p
+              sx={{
+                variant: "styles.p",
+                textAlign: "center",
+                color: "text",
+                pt: 4,
+              }}
+            >
+              Singlefin is located in the heart of Taghazout, a seaside Berber
+              village in Southern Morocco. Up until the 1970's, Taghazout was a
+              small fishing village until its epic surf was discovered by the
+              Hippies. Ever since then, the surfing scene has grown and while it
+              is now considered to be a world-class destination for surf, the
+              village has retained its laid back roots.
+            </p>
+          </Flex>
+        </Container>
+      </div>
       <Container
         sx={{
           variant: "layout.primaryContainer",
-          maxWidth: "smallContainer",
         }}
       >
         <Flex
@@ -601,6 +746,7 @@ const Explore = ({ data, isMobile }) => {
             justifyContent: "center",
             alignItems: "center",
             pt: 4,
+            pb: 5,
             px: [3, 3, 3],
             flexDirection: "column",
           }}
@@ -613,52 +759,45 @@ const Explore = ({ data, isMobile }) => {
               pb: 2,
             }}
           >
-            Discover all the fun things to do around Taghazout
+            Things to do
           </h1>
           <BoardDivider sx={{ width: "75px" }} />
-          <p
+        </Flex>
+        <div>
+          <Img
             sx={{
-              variant: "styles.p",
+              height: ["200px", "250px", "300px"],
+              opacity: "1 !important",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "50% 25%",
+            }}
+            fluid={data.surfTaghazout.childImageSharp.fluid}
+          />
+          <div
+            sx={{
+              p: 4,
+              bg: "white",
+              borderRadius: 5,
+              maxWidth: ["300px", "400px", "500px"],
+              position: "relative",
               textAlign: "center",
-              color: "text",
-              pt: 4,
+              margin: "-30px auto",
             }}
           >
-            Let's address the elephant in the room and say that when people
-            think of Taghazout, the first thing they think is: Surfing. With
-            waves year-round, and sets that make you feel there must be a hidden
-            wave machine below the water, Taghazout is rightfully known for it's
-            surf. However, there is so much more to see and do in Taghazout, and
-            we at Singlefin love to show travelers like you!
-          </p>
-        </Flex>
-      </Container>
-      <Container
-        sx={{
-          variant: "layout.primaryContainer",
-        }}
-      >
-        <Img
-          sx={{
-            height: ["200px", "250px", "300px"],
-            opacity: "1 !important",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "50% 25%",
-          }}
-          fluid={data.surfTaghazout.childImageSharp.fluid}
-        />
+            <h1 sx={{ variant: "styles.h2", letterSpacing: 1.8 }}>Surf</h1>
+          </div>
+        </div>
         <Flex
           sx={{
             justifyContent: "center",
             alignItems: "center",
-            pt: 4,
+            pt: 3,
             flexDirection: "column",
             px: [3, 3, 3],
           }}
         >
-          <h1 sx={{ variant: "styles.h1", letterSpacing: 1.8 }}>SURF</h1>
-          <BoardDivider sx={{ width: "75px" }} />
+          {/* <BoardDivider sx={{ width: "75px" }} /> */}
           <Grid sx={{ pt: 4 }} gap={[2, 3, 5]} columns={[1, 1, 2]}>
             <div>
               <p
@@ -711,16 +850,31 @@ const Explore = ({ data, isMobile }) => {
           variant: "layout.primaryContainer",
         }}
       >
-        <BackgroundImage
-          sx={{
-            height: ["200px", "250px", "300px"],
-            opacity: "1 !important",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "50% 75%",
-          }}
-          fluid={data.sandboard.childImageSharp.fluid}
-        />
+        <div>
+          <BackgroundImage
+            sx={{
+              height: ["200px", "250px", "300px"],
+              opacity: "1 !important",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "50% 75%",
+            }}
+            fluid={data.sandboard.childImageSharp.fluid}
+          />
+          <div
+            sx={{
+              p: 4,
+              bg: "white",
+              borderRadius: 5,
+              maxWidth: ["300px", "400px", "500px"],
+              position: "relative",
+              textAlign: "center",
+              margin: "-30px auto",
+            }}
+          >
+            <h1 sx={{ variant: "styles.h2", letterSpacing: 1.8 }}>Sandboard</h1>
+          </div>
+        </div>
         <Flex
           sx={{
             justifyContent: "center",
@@ -730,11 +884,7 @@ const Explore = ({ data, isMobile }) => {
             px: [3, 3, 3],
           }}
         >
-          <h1 sx={{ variant: "styles.h1", letterSpacing: 1.8 }}>
-            SANDBOARDING
-          </h1>
-          <BoardDivider sx={{ width: "75px" }} />
-          <Grid sx={{ pt: 4 }} gap={[2, 3, 5]} columns={[1, 1, 2]}>
+          <Grid sx={{ pt: 3 }} gap={[2, 3, 5]} columns={[1, 1, 2]}>
             <div>
               <p
                 sx={{
@@ -764,29 +914,42 @@ const Explore = ({ data, isMobile }) => {
           variant: "layout.primaryContainer",
         }}
       >
-        <BackgroundImage
-          sx={{
-            height: ["200px", "250px", "300px"],
-            opacity: "1 !important",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "50% 80%",
-          }}
-          fluid={data.paradiseValley.childImageSharp.fluid}
-        />
+        <div>
+          <BackgroundImage
+            sx={{
+              height: ["200px", "250px", "300px"],
+              opacity: "1 !important",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "50% 80%",
+            }}
+            fluid={data.paradiseValley.childImageSharp.fluid}
+          />
+          <div
+            sx={{
+              p: 4,
+              bg: "white",
+              borderRadius: 5,
+              maxWidth: ["300px", "400px", "500px"],
+              position: "relative",
+              textAlign: "center",
+              margin: "-30px auto",
+            }}
+          >
+            <h1 sx={{ variant: "styles.h2", letterSpacing: 1.8 }}>
+              Paradise Valley
+            </h1>
+          </div>
+        </div>
         <Flex
           sx={{
             justifyContent: "center",
             alignItems: "center",
-            pt: 4,
+            pt: 3,
             flexDirection: "column",
             px: [3, 3, 3],
           }}
         >
-          <h1 sx={{ variant: "styles.h1", letterSpacing: 1.8 }}>
-            PARADISE VALLEY
-          </h1>
-          <BoardDivider sx={{ width: "75px" }} />
           <Grid sx={{ pt: 4 }} gap={[2, 3, 5]} columns={[1, 1, 2]}>
             <div>
               <p
@@ -821,27 +984,40 @@ const Explore = ({ data, isMobile }) => {
           variant: "layout.primaryContainer",
         }}
       >
-        <BackgroundImage
-          sx={{
-            height: ["200px", "250px", "300px"],
-            opacity: "1 !important",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "20% 50%",
-          }}
-          fluid={data.souk.childImageSharp.fluid}
-        />
+        <div>
+          <BackgroundImage
+            sx={{
+              height: ["200px", "250px", "300px"],
+              opacity: "1 !important",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "20% 50%",
+            }}
+            fluid={data.souk.childImageSharp.fluid}
+          />
+          <div
+            sx={{
+              p: 4,
+              bg: "white",
+              borderRadius: 5,
+              maxWidth: ["300px", "400px", "500px"],
+              position: "relative",
+              textAlign: "center",
+              margin: "-30px auto",
+            }}
+          >
+            <h1 sx={{ variant: "styles.h2", letterSpacing: 1.8 }}>Souk </h1>
+          </div>
+        </div>
         <Flex
           sx={{
             justifyContent: "center",
             alignItems: "center",
-            pt: 4,
+            pt: 3,
             flexDirection: "column",
             px: [3, 3, 3],
           }}
         >
-          <h1 sx={{ variant: "styles.h1", letterSpacing: 1.8 }}>SOUK </h1>
-          <BoardDivider sx={{ width: "75px" }} />
           <Grid sx={{ pt: 4 }} gap={[2, 3, 5]} columns={[1, 1, 2]}>
             <div>
               <p
@@ -877,27 +1053,40 @@ const Explore = ({ data, isMobile }) => {
           variant: "layout.primaryContainer",
         }}
       >
-        <BackgroundImage
-          sx={{
-            height: ["200px", "250px", "300px"],
-            opacity: "1 !important",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "40% 45%",
-          }}
-          fluid={data.skatepark.childImageSharp.fluid}
-        />
+        <div>
+          <BackgroundImage
+            sx={{
+              height: ["200px", "250px", "300px"],
+              opacity: "1 !important",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "40% 45%",
+            }}
+            fluid={data.skatepark.childImageSharp.fluid}
+          />
+          <div
+            sx={{
+              p: 4,
+              bg: "white",
+              borderRadius: 5,
+              maxWidth: ["300px", "400px", "500px"],
+              position: "relative",
+              textAlign: "center",
+              margin: "-30px auto",
+            }}
+          >
+            <h1 sx={{ variant: "styles.h2", letterSpacing: 1.8 }}>Skatepark</h1>
+          </div>
+        </div>
         <Flex
           sx={{
             justifyContent: "center",
             alignItems: "center",
-            pt: 4,
+            pt: 3,
             flexDirection: "column",
             px: [3, 3, 3],
           }}
         >
-          <h1 sx={{ variant: "styles.h1", letterSpacing: 1.8 }}>SKATEPARK </h1>
-          <BoardDivider sx={{ width: "75px" }} />
           <Grid sx={{ pt: 4 }} gap={[2, 3, 5]} columns={[1, 1, 2]}>
             <div>
               <p
