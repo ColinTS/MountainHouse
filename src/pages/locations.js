@@ -82,7 +82,7 @@ const Location = ({ data }) => (
             fontSize: [5, 6, 7],
           }}
         >
-          Welcome to Taghazout
+          Our Locations
         </h1>
         <p
           sx={{
@@ -93,7 +93,7 @@ const Location = ({ data }) => (
             fontSize: [2, 2, 4],
           }}
         >
-          The little bohemian village by the Moroccan sea
+          From sea to mountains
         </p>
       </div>
     </div>
@@ -106,12 +106,24 @@ const Location = ({ data }) => (
                 variant: "styles.p",
               }}
             >
-              Singlefin is located in the heart of Taghazout, a seaside Berber
-              village in Southern Morocco. Up until the 1970's, Taghazout was a
-              small fishing village until its epic surf was discovered by the
-              Hippies. Ever since then, the surfing scene has grown and while it
-              is now considered to be a world-class destination for surf, the
-              village has retained its laid back roots.
+              Singlefin offers 3 uniquely different places to stay, all of which
+              are in and around Taghazout - a bohemian, seaside village on the
+              Southern Moroccan coast. In the center of the village and a stone
+              throw away from the surf and the sea, is the Singlefin Beachhouse.
+              {""}
+            </p>
+            <p
+              sx={{
+                variant: "styles.p",
+                pt: 3,
+              }}
+            >
+              The Beachhouse is perfect for guests who want to be at the center
+              of the buzz in Taghazout, while being as close to the surf as
+              possibe. All rooms are private with a rooftop terrace on the top
+              floor, perfect for watching sunsets over the sea, and our
+              restaurant attached to the house serving local, health-conscious
+              food.
             </p>
           </div>
           <div>
@@ -120,11 +132,11 @@ const Location = ({ data }) => (
                 variant: "styles.p",
               }}
             >
-              Taghazout is sunny and warm almost every day of the year. Winter
-              is when the swell peaks and sufing is at its best, and while
-              there's surf all-year-round, it's in the Summer when you'll see
-              people ennjoying the beaches and chilling in all of the cafes and
-              restaurants that face the sea.
+              The Mountainhouse is the place for guests to escape the Taghazout
+              buzz and find themselves in the peaceful, tranquil surroundings of
+              the Atlas mountains. While only a 10 minute drive from the
+              Beachhouse, the Mountainhouse feels like you are far away from the
+              village when in reality you never left.
             </p>
           </div>
         </Grid>

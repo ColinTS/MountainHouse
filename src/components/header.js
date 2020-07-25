@@ -392,7 +392,7 @@ function Header({ siteTitle, isMobile }) {
               Explore
             </Link>
             <Link
-              to="/location"
+              to="/locations"
               sx={{
                 variant: "styles.button",
                 color: "white",

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { jsx, Container, Flex, AspectRatio, Grid } from "theme-ui"
+import { jsx, Container, Flex, AspectRatio, Grid, Box } from "theme-ui"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
 import { useState } from "react"
@@ -11,6 +11,8 @@ import BackgroundImage from "gatsby-background-image"
 import BoardDivider from "../images/explore/board.svg"
 import SlideShow from "../components/slideshow"
 import { motion, AnimatePresence } from "framer-motion"
+import Check from "../images/check.svg"
+import BerberOne from "../images/berberOne.svg"
 
 const surfImages = [
   "//images.ctfassets.net/qlhp1q6elgxs/16NM1a7FJI0IcByEiwRAvb/0bb8fb72a8f9264dbb2359bc7d54e8d3/surf4__1_.jpg",
@@ -163,6 +165,138 @@ const MountainHouse = ({ data }) => {
           <SlideShow images={surfImages} />
         </AspectRatio>
       </Container>
+      <div sx={{ py: 5, px: [3, 3, 0] }}>
+        <Container sx={{ maxWidth: "container" }} justify="center">
+          <Box>
+            <h3
+              sx={{
+                variant: "styles.h3",
+                pb: 3,
+              }}
+            >
+              What's in your stay?
+            </h3>
+          </Box>
+          <Grid sx={{ pt: 2 }} gap={[0, 0, 6]} columns={[1, 1, 2]}>
+            <Box>
+              <Flex sx={{ pb: 4 }}>
+                <div css={{ display: "flex" }}>
+                  <Check
+                    sx={{
+                      height: "auto",
+                      width: "20px",
+                      fill: "blue",
+                      mr: 3,
+                    }}
+                  />
+                </div>
+
+                <p
+                  sx={{
+                    variant: "styles.p",
+                    mb: 0,
+                  }}
+                >
+                  Bright, airy rooms with views to the sea
+                </p>
+              </Flex>
+              <Flex sx={{ pb: 4 }}>
+                <div css={{ display: "flex" }}>
+                  <Check
+                    sx={{
+                      height: "auto",
+                      width: "20px",
+                      fill: "blue",
+                      mr: 3,
+                    }}
+                  />
+                </div>
+
+                <p
+                  sx={{
+                    variant: "styles.p",
+                    mb: 0,
+                  }}
+                >
+                  Daily, healthy breakfast served at our restaurant by the beach
+                </p>
+              </Flex>
+              <Flex sx={{ pb: 4 }}>
+                <div css={{ display: "flex" }}>
+                  <Check
+                    sx={{
+                      height: "auto",
+                      width: "20px",
+
+                      fill: "blue",
+                      mr: 3,
+                    }}
+                  />
+                </div>
+
+                <p
+                  sx={{
+                    variant: "styles.p",
+                    mb: 0,
+                  }}
+                >
+                  Roof-top terrace with a covered space to lounge, eat food, and
+                  watch the sunset
+                </p>
+              </Flex>
+            </Box>
+            <Box>
+              <Flex sx={{ alignItems: "center", pb: 4 }}>
+                <div css={{ display: "flex" }}>
+                  <Check
+                    sx={{
+                      height: "auto",
+                      width: "20px",
+
+                      fill: "blue",
+                      mr: 3,
+                    }}
+                  />
+                </div>
+
+                <p
+                  sx={{
+                    variant: "styles.p",
+                    mb: 0,
+                  }}
+                >
+                  Blazing 200/20 Mbps internet
+                </p>
+              </Flex>
+              <Flex sx={{ alignItems: "center", pb: 4 }}>
+                <div css={{ display: "flex" }}>
+                  <Check
+                    sx={{
+                      height: "auto",
+                      width: "20px",
+
+                      fill: "blue",
+                      mr: 3,
+                    }}
+                  />
+                </div>
+
+                <p
+                  sx={{
+                    variant: "styles.p",
+                    mb: 0,
+                  }}
+                >
+                  Fully equipped kitchen to cook your own food
+                </p>
+              </Flex>
+            </Box>
+          </Grid>
+        </Container>
+        <Flex sx={{ justifyContent: "center", pt: [2, 2, 4] }}>
+          <BerberOne sx={{ height: [75, 100, 140], width: "auto" }}></BerberOne>
+        </Flex>
+      </div>
     </Layout>
   )
 }
