@@ -297,6 +297,56 @@ const MountainHouse = ({ data }) => {
           <BerberOne sx={{ height: [75, 100, 140], width: "auto" }}></BerberOne>
         </Flex>
       </div>
+      {/* Stay */}
+      <div
+        sx={{
+          paddingTop: "4rem",
+          paddingBottom: "4rem",
+        }}
+      >
+        <Grid columns={[1, 1, "1.5fr 1fr"]}>
+          <AspectRatio
+            ratio={16 / 9}
+            sx={{
+              overflow: "hidden",
+            }}
+          >
+            {" "}
+            <SlideShow data={data.surfing} images={surfImages} />
+          </AspectRatio>
+          <div
+            sx={{
+              paddingLeft: [null, null, "2rem"],
+              paddingRight: [null, null, "2rem"],
+              width: [null, null, "550px"],
+              marginRight: ["auto"],
+              height: ["auto", "auto", "auto"],
+              maxHeight: [null, null, "600px"],
+            }}
+          >
+            <div
+              sx={{
+                width: ["100%", "100%", "100%"],
+                px: [3, 3, 0],
+              }}
+            >
+              <h2 sx={{ variant: "styles.h2" }}>Stay by the sea</h2>
+              <p sx={{ variant: "styles.p", py: 3 }}>
+                The Singlefin beach house is your front-row seat to the Alantic
+                ocean. Located right on Taghazout beach and facing the sea, our
+                rooms are bright, airy, and got a view you'll remember.
+              </p>
+              <p sx={{ variant: "styles.p", pb: 3 }}>
+                Built on multiple levels, the house is designed and decorated
+                with a tradtional Berber style, and whether you want to check
+                the surf from your room, relax on the roof top terrace with some
+                tea, or fill up on home-cooked meals at our restaurant below you
+                will find yourself at home.
+              </p>
+            </div>
+          </div>
+        </Grid>
+      </div>
     </Layout>
   )
 }
