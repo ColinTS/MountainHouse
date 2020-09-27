@@ -347,6 +347,96 @@ const MountainHouse = ({ data }) => {
           </div>
         </Grid>
       </div>
+      <div
+        sx={{
+          pt: [2, 2, 6],
+          paddingBottom: "4rem",
+        }}
+      >
+        <Grid columns={[1, 1, "1fr 1.5fr"]}>
+          <div
+            sx={{
+              paddingLeft: [null, null, "2rem"],
+              paddingRight: [null, null, "2rem"],
+              width: [null, null, "550px"],
+              marginLeft: ["auto"],
+              height: ["auto", "auto", "auto"],
+              maxHeight: [null, null, "600px"],
+            }}
+          >
+            <div
+              sx={{
+                width: ["100%", "100%", "100%"],
+                px: [3, 3, 3],
+              }}
+            >
+              <h2 sx={{ variant: "styles.h2" }}>
+                Surf the coastal paradise of southern Morocco
+              </h2>
+              <p sx={{ variant: "styles.p", py: 3 }}>
+                There is surfing all-year round in Morocco and Taghazout is at
+                the center of it all. Just within a few km of the village there
+                are 10 beautiful surfing spots, for beginners and pros.
+              </p>
+              <p sx={{ variant: "styles.p", pb: 3 }}>
+                Right in front of our beach house there are 2 spots - Hash point
+                and Panorama. Just a quick walk down the beach and you'll find
+                Anchor point - One of Morocco's most famous places to surf. In
+                fact, you can check the surf from our roof terrace.
+              </p>
+              <p sx={{ variant: "styles.p" }}>
+                We offer surf lessons for beginners and guided surf trips for
+                those with more experience. No matter your skill level you'll be
+                surfing your heart out when you stay with us.
+              </p>
+            </div>
+          </div>
+          <AspectRatio
+            ratio={16 / 9}
+            sx={{
+              overflow: "hidden",
+            }}
+          >
+            {" "}
+            <SlideShow data={data.surfing} images={surfImages} />
+          </AspectRatio>
+        </Grid>
+      </div>
+      <div
+        sx={{
+          bg: "tertiary",
+          display: "flex",
+          justifyContent: "center",
+          px: [3, 3, 0],
+          paddingTop: "4rem",
+          paddingBottom: "4rem",
+        }}
+      >
+        <Container sx={{ maxWidth: "smallContainer" }} justify="center">
+          <h2 sx={{ variant: "styles.h2", textAlign: "center", pb: 3 }}>
+            Our rooms
+          </h2>
+          <Grid gap={4} columns={[1, 1, 1]}>
+            <Box
+              bg="white"
+              sx={{
+                cursor: "pointer",
+                borderRadius: 4,
+                transform: "translate(0, 0px)",
+                transition: "all .3s ease",
+                height: "400px",
+                maxWidth: "100%",
+
+                ":hover": {
+                  transform: "translate(0, -8px)",
+                  transition: "all .3 ease",
+                  boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+                },
+              }}
+            ></Box>
+          </Grid>
+        </Container>
+      </div>
     </Layout>
   )
 }

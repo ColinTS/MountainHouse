@@ -91,7 +91,7 @@ export default function Footer(props) {
                   Explore
                 </p>
               </Link>
-              <Link to="/location" sx={{ textDecoration: "none" }}>
+              <Link to="/locations" sx={{ textDecoration: "none" }}>
                 <p
                   sx={{
                     variant: "styles.button",
