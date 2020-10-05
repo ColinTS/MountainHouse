@@ -412,7 +412,7 @@ const MountainHouse = ({ data }) => {
           paddingBottom: "4rem",
         }}
       >
-        <Container sx={{ maxWidth: "smallContainer" }} justify="center">
+        <Container sx={{ maxWidth: "mediumContainer" }} justify="center">
           <h2 sx={{ variant: "styles.h2", textAlign: "center", pb: 3 }}>
             Our rooms
           </h2>
@@ -433,7 +433,39 @@ const MountainHouse = ({ data }) => {
                   boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
                 },
               }}
-            ></Box>
+            >
+              <Grid columns={[1, 1, "1.5fr 1fr"]}>
+                <AspectRatio
+                  ratio={16 / 9}
+                  sx={{
+                    overflow: "hidden",
+                    maxHeight: "400px",
+                  }}
+                >
+                  {" "}
+                  <SlideShow
+                    sx={{ height: "400px" }}
+                    data={data.surfing}
+                    images={surfImages}
+                  />
+                </AspectRatio>
+
+                <div
+                  sx={{
+                    height: ["auto", "auto", "auto"],
+                    height: "400px",
+                  }}
+                >
+                  <p
+                    sx={{
+                      variant: "styles.p",
+                    }}
+                  >
+                    Test
+                  </p>
+                </div>
+              </Grid>
+            </Box>
           </Grid>
         </Container>
       </div>

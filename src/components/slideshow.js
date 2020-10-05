@@ -37,7 +37,6 @@ export default function SlideShow(props) {
       sx={{
         position: ["relative", null, "relative"],
         height: "100%",
-        width: "auto",
         overflow: ["hidden", null, "hidden"],
       }}
     >
@@ -54,7 +53,7 @@ export default function SlideShow(props) {
           }}
           sx={{
             position: ["absolute", "absolute", "absolute"],
-            minHeight: [null, null, "600px"],
+            minHeight: [null, null, "400px"],
             objectFit: "cover",
           }}
           src={images[imageIndex]}
