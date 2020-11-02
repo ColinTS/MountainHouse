@@ -456,13 +456,19 @@ const MountainHouse = ({ data }) => {
                     height: "400px",
                   }}
                 >
-                  <p
-                    sx={{
-                      variant: "styles.p",
-                    }}
-                  >
-                    Test
-                  </p>
+                  <Box sx={{ pt: "2rem", px: "1rem" }}>
+                    <h3
+                      sx={{
+                        variant: "styles.h3",
+                        pb: 3,
+                        fontWeight: 500,
+                        fontSize: [2, 2, 3],
+                        opacity: 0.5,
+                      }}
+                    >
+                      BASIC ROOM
+                    </h3>
+                  </Box>
                 </div>
               </Grid>
             </Box>
