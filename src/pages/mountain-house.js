@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { jsx, Container, Flex, AspectRatio, Grid, Box } from "theme-ui"
+import { jsx, Container, Flex, AspectRatio, Grid, Box, Button } from "theme-ui"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
 import { useState } from "react"
@@ -456,18 +456,55 @@ const MountainHouse = ({ data }) => {
                     height: "400px",
                   }}
                 >
-                  <Box sx={{ pt: "2rem", px: "1rem" }}>
-                    <h3
-                      sx={{
-                        variant: "styles.h3",
-                        pb: 3,
-                        fontWeight: 500,
-                        fontSize: [2, 2, 3],
-                        opacity: 0.5,
-                      }}
-                    >
-                      BASIC ROOM
-                    </h3>
+                  <Box
+                    sx={{
+                      py: "2rem",
+                      px: "1rem",
+                      height: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <div>
+                      <h3
+                        sx={{
+                          variant: "styles.h3",
+                          pb: 3,
+                          fontWeight: 500,
+                          fontSize: [2, 2, 3],
+                          opacity: 0.5,
+                        }}
+                      >
+                        BASIC ROOM
+                      </h3>
+                      <p
+                        sx={{
+                          variant: "styles.p",
+                          fontSize: [1, 1, 2],
+                          pb: 1,
+                        }}
+                      >
+                        Are you a surfer with some experience and want to surf
+                        the sweetest waves of Southern Morocco? Our experienced
+                        guides will take you to their favorite places to surf.
+                      </p>
+                    </div>
+                    <div>
+                      <Button>Book now</Button>
+                      <p
+                        sx={{
+                          variant: "styles.p",
+                          fontSize: [1, 1, 2],
+                          margin: 0,
+                          pt: 2,
+                        }}
+                      >
+                        Starting from{" "}
+                        <span style={{ fontWeight: "900" }}>370 EUR</span>{" "}
+                        per/week
+                      </p>
+                    </div>
                   </Box>
                 </div>
               </Grid>
