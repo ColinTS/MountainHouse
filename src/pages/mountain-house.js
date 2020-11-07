@@ -13,6 +13,7 @@ import SlideShow from "../components/slideshow"
 import { motion, AnimatePresence } from "framer-motion"
 import Check from "../images/check.svg"
 import BerberOne from "../images/berberOne.svg"
+import RoomCard from "../components/roomCard"
 
 const surfImages = [
   "//images.ctfassets.net/qlhp1q6elgxs/16NM1a7FJI0IcByEiwRAvb/0bb8fb72a8f9264dbb2359bc7d54e8d3/surf4__1_.jpg",
@@ -417,7 +418,9 @@ const MountainHouse = ({ data }) => {
             Our rooms
           </h2>
           <Grid gap={4} columns={[1, 1, 1]}>
-            <Box
+            <RoomCard data={data.surfing} images={surfImages} />
+            <RoomCard data={data.surfing} images={surfImages} />
+            {/* <Box
               bg="white"
               sx={{
                 cursor: "pointer",
@@ -508,7 +511,7 @@ const MountainHouse = ({ data }) => {
                   </Box>
                 </div>
               </Grid>
-            </Box>
+            </Box> */}
           </Grid>
         </Container>
       </div>
