@@ -29,7 +29,7 @@ const sidebar = {
     },
   }),
   closed: {
-    clipPath: "circle(28px at 40px 40px)",
+    clipPath: "circle(20px at 35px 50px)",
     transition: {
       delay: 0.1,
       type: "spring",
@@ -43,7 +43,7 @@ const Path = props => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
-    stroke="#428DA4"
+    stroke="white"
     strokeLinecap="round"
     {...props}
   />
@@ -68,18 +68,18 @@ const MenuToggle = ({ toggle, isOpen }) => {
           outline: "none",
           border: "none",
           cursor: "pointer",
-          width: "50px",
-          height: "50px",
+          width: "40px",
+          height: "40px",
           borderRadius: "50%",
           position: "absolute",
-          top: "18px",
+          top: "30px",
           left: "15px",
 
-          background: "white",
+          background: "#428DA4",
         }}
         onClick={toggle}
       >
-        <svg width="23" height="23" viewBox="0 0 23 23">
+        <svg width="22" height="22" viewBox="0 0 22 22" css={{ marginTop: 8 }}>
           <Path
             variants={{
               closed: { d: "M 2 2.5 L 20 2.5" },
@@ -274,7 +274,7 @@ function Header({ siteTitle, isMobile }) {
       style={{
         zIndex: 1,
         background: `none`,
-        marginBottom: `1.0rem`,
+
         width: "100%",
         top: 0,
         position: "absolute",
@@ -325,11 +325,11 @@ function Header({ siteTitle, isMobile }) {
             <Link sx={{ display: "flex", alignItems: "center" }} to="/">
               <Logo
                 sx={{
-                  width: ["125px", "125px", "150px"],
+                  width: ["150px", "150px", "150px"],
                   height: "auto",
                   position: "absolute",
                   top: "18px",
-                  left: "80px",
+                  left: "70px",
                   zIndex: isOpen ? -1 : 1,
                 }}
               />
@@ -352,7 +352,7 @@ function Header({ siteTitle, isMobile }) {
             <Link sx={{ display: "flex", alignItems: "center" }} to="/">
               <Logo
                 sx={{
-                  width: ["100px", "125px", "150px"],
+                  width: ["100px", "125px", "225px"],
                   height: "auto",
                 }}
               />
