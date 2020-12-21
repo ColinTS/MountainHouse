@@ -4,11 +4,12 @@ import { jsx, Box, Container, Grid, Flex, AspectRatio, Button } from "theme-ui"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SlideShow from "../components/slideshow"
-// import Logo from "../images/logo2.svg"
+import TextLogo from "../images/textLogo.svg"
 import Check from "../images/check.svg"
 import BerberOne from "../images/berberOne.svg"
 import BerberTwo from "../images/berberTwo.svg"
 import BerberThree from "../images/berberThree.svg"
+import BeachHouseTitle from "../images/BeachHouseTitle.svg"
 import BackgroundImage from "gatsby-background-image"
 import { Link } from "gatsby"
 import BoardDivider from "../images/explore/board.svg"
@@ -40,6 +41,13 @@ const eatImages = [
 export const data = graphql`
   query {
     surfStay: file(relativePath: { eq: "surfStay.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 4000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    locationThumb: file(relativePath: { eq: "locationThumb.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 4000) {
           ...GatsbyImageSharpFluid
@@ -145,9 +153,20 @@ const IndexPage = ({ data }) => (
                 flexDirection: "column",
               }}
             >
-              <h1 sx={{ variant: "styles.h1", textAlign: "center", pb: 2 }}>
-                Singlefin is a holiday retreat in Taghazout, Morocco{" "}
-              </h1>
+              <div>
+                <h1 sx={{ variant: "styles.h1", textAlign: "center", pb: 2 }}>
+                  <TextLogo
+                    sx={{
+                      mr: 1,
+                      mb: -2,
+                      width: ["150px", "200px", "170px"],
+                      height: "auto",
+                    }}
+                  />{" "}
+                  is a holiday retreat in Taghazout, Morocco
+                </h1>
+              </div>
+
               <BoardDivider sx={{ width: "75px" }} />
               <p
                 sx={{
@@ -204,9 +223,20 @@ const IndexPage = ({ data }) => (
                       borderRadius: 4,
                       height: "500px",
                     }}
-                    fluid={data.surfStay.childImageSharp.fluid}
+                    fluid={data.locationThumb.childImageSharp.fluid}
                   />
-                  <h2
+                  <BeachHouseTitle
+                    sx={{
+                      width: "250px",
+                      textAlign: "center",
+
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                    }}
+                  />
+                  {/* <h2
                     sx={{
                       variant: "styles.h2",
 
@@ -219,7 +249,7 @@ const IndexPage = ({ data }) => (
                     }}
                   >
                     The Mountainhouse
-                  </h2>
+                  </h2> */}
                 </div>
               </Link>
               <div
@@ -249,7 +279,7 @@ const IndexPage = ({ data }) => (
                     borderRadius: 4,
                     height: "500px",
                   }}
-                  fluid={data.surfStay.childImageSharp.fluid}
+                  fluid={data.locationThumb.childImageSharp.fluid}
                 />
                 <h2
                   sx={{
@@ -294,7 +324,7 @@ const IndexPage = ({ data }) => (
                     borderRadius: 4,
                     height: "500px",
                   }}
-                  fluid={data.surfStay.childImageSharp.fluid}
+                  fluid={data.locationThumb.childImageSharp.fluid}
                 />
                 <h2
                   sx={{
