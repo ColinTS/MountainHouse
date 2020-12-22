@@ -10,6 +10,7 @@ import BerberOne from "../images/berberOne.svg"
 import BerberTwo from "../images/berberTwo.svg"
 import BerberThree from "../images/berberThree.svg"
 import BeachHouseTitle from "../images/BeachHouseTitle.svg"
+import MountainVillaTitle from "../images/mountainVillaTitle.svg"
 import BackgroundImage from "gatsby-background-image"
 import { Link } from "gatsby"
 import BoardDivider from "../images/explore/board.svg"
@@ -194,13 +195,58 @@ const IndexPage = ({ data }) => (
             >
               Our Locations
             </h3>
-            <Grid sx={{ pt: 4 }} gap={4} columns={[1, 1, 3]}>
+            <Link to="/mountain-house">
+              <div
+                sx={{
+                  position: "relative",
+                  borderRadius: 4,
+                  mt: 4,
+                  height: "425px",
+                  width: "100%",
+                  cursor: "pointer",
+                  background:
+                    "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
+                  transform: "translate(0, 0px)",
+                  transition: "all .3s ease",
+                  ":hover": {
+                    transform: "translate(0, -8px)",
+                    transition: "all .3 ease",
+                    boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+                  },
+                }}
+              >
+                <Img
+                  sx={{
+                    cursor: "pointer",
+                    opacity: "1 !important",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    borderRadius: 4,
+                    height: "425px",
+                  }}
+                  fluid={data.locationThumb.childImageSharp.fluid}
+                />
+                <MountainVillaTitle
+                  sx={{
+                    width: "300px",
+                    textAlign: "center",
+
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                />
+              </div>
+            </Link>
+            <Grid sx={{ pt: 4 }} gap={4} columns={[1, 1, 2]}>
               <Link to="/mountain-house">
                 <div
                   sx={{
                     position: "relative",
                     borderRadius: 4,
-                    height: "500px",
+                    height: "350px",
                     cursor: "pointer",
                     background:
                       "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
@@ -221,7 +267,7 @@ const IndexPage = ({ data }) => (
                       backgroundRepeat: "no-repeat",
                       backgroundPosition: "center",
                       borderRadius: 4,
-                      height: "500px",
+                      height: "350px",
                     }}
                     fluid={data.locationThumb.childImageSharp.fluid}
                   />
@@ -236,27 +282,13 @@ const IndexPage = ({ data }) => (
                       transform: "translate(-50%, -50%)",
                     }}
                   />
-                  {/* <h2
-                    sx={{
-                      variant: "styles.h2",
-
-                      textAlign: "center",
-                      color: "white",
-                      position: "absolute",
-                      top: "50%",
-                      left: "50%",
-                      transform: "translate(-50%, -50%)",
-                    }}
-                  >
-                    The Mountainhouse
-                  </h2> */}
                 </div>
               </Link>
               <div
                 sx={{
                   position: "relative",
                   borderRadius: 4,
-                  height: "500px",
+                  height: "350px",
                   cursor: "pointer",
                   background:
                     "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
@@ -277,7 +309,7 @@ const IndexPage = ({ data }) => (
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
                     borderRadius: 4,
-                    height: "500px",
+                    height: "350px",
                   }}
                   fluid={data.locationThumb.childImageSharp.fluid}
                 />
@@ -294,51 +326,6 @@ const IndexPage = ({ data }) => (
                   }}
                 >
                   The Beachhouse
-                </h2>
-              </div>
-
-              <div
-                sx={{
-                  position: "relative",
-                  borderRadius: 4,
-                  height: "500px",
-                  cursor: "pointer",
-                  background:
-                    "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
-                  transform: "translate(0, 0px)",
-                  transition: "all .3s ease",
-                  ":hover": {
-                    transform: "translate(0, -8px)",
-                    transition: "all .3 ease",
-                    boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
-                  },
-                }}
-              >
-                <Img
-                  sx={{
-                    cursor: "pointer",
-                    opacity: "1 !important",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                    borderRadius: 4,
-                    height: "500px",
-                  }}
-                  fluid={data.locationThumb.childImageSharp.fluid}
-                />
-                <h2
-                  sx={{
-                    variant: "styles.h2",
-
-                    textAlign: "center",
-                    color: "white",
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                  }}
-                >
-                  The Villas
                 </h2>
               </div>
             </Grid>
