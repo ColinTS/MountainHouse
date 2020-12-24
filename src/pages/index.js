@@ -11,6 +11,7 @@ import BerberTwo from "../images/berberTwo.svg"
 import BerberThree from "../images/berberThree.svg"
 import BeachHouseTitle from "../images/BeachHouseTitle.svg"
 import MountainVillaTitle from "../images/mountainVillaTitle.svg"
+import StudiosTitle from "../images/studiosTitle.svg"
 import BackgroundImage from "gatsby-background-image"
 import { Link } from "gatsby"
 import BoardDivider from "../images/explore/board.svg"
@@ -49,6 +50,13 @@ export const data = graphql`
       }
     }
     locationThumb: file(relativePath: { eq: "locationThumb.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 4000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    locationThumbBW: file(relativePath: { eq: "locationThumbBW.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 4000) {
           ...GatsbyImageSharpFluid
@@ -311,22 +319,19 @@ const IndexPage = ({ data }) => (
                     borderRadius: 4,
                     height: "350px",
                   }}
-                  fluid={data.locationThumb.childImageSharp.fluid}
+                  fluid={data.locationThumbBW.childImageSharp.fluid}
                 />
-                <h2
+                <StudiosTitle
                   sx={{
-                    variant: "styles.h2",
-
+                    width: "250px",
                     textAlign: "center",
-                    color: "white",
+
                     position: "absolute",
                     top: "50%",
                     left: "50%",
                     transform: "translate(-50%, -50%)",
                   }}
-                >
-                  The Beachhouse
-                </h2>
+                />
               </div>
             </Grid>
           </Container>

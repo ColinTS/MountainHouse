@@ -3,7 +3,7 @@ import { jsx, Container, Grid } from "theme-ui"
 import { Link } from "gatsby"
 import { useEffect, useState } from "react"
 import Dunes from "../images/dunes.svg"
-import LogoDark from "../images/logoDark.svg"
+import LogoDark from "../images/logo2Dark.svg"
 
 export default function Footer(props) {
   useEffect(() => {})
