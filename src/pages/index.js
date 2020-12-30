@@ -584,7 +584,7 @@ const IndexPage = ({ data }) => (
           </AspectRatio>
         </Grid>
       </div>
-      <div
+      {/* <div
         sx={{
           bg: "tertiary",
           display: "flex",
@@ -943,7 +943,7 @@ const IndexPage = ({ data }) => (
             ></BerberThree>
           </Flex>
         </div>
-      </div>
+      </div> */}
 
       {/* Eat */}
       <div
@@ -952,6 +952,11 @@ const IndexPage = ({ data }) => (
           background: "linear-gradient(to bottom, #f7f0e1 0%, white)",
         }}
       >
+        <Flex sx={{ justifyContent: "center", pt: [4, 4, 4], pb: 6 }}>
+          <BerberThree
+            sx={{ height: [75, 100, 140], width: "auto" }}
+          ></BerberThree>
+        </Flex>
         <Grid columns={[1, 1, "1.5fr 1fr"]}>
           <AspectRatio
             ratio={16 / 9}
