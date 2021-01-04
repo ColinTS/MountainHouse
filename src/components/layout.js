@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Helmet from "react-helmet"
 import Footer from "./footer.js"
+import { ParallaxProvider } from "react-scroll-parallax"
 
 import Header from "./header"
 import "./layout.css"
@@ -26,7 +27,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <ParallaxProvider>
       <Helmet>
         <script type="text/javascript">{`window.$crisp=[];window.CRISP_WEBSITE_ID="3f96f73e-9f2d-40ac-81d8-12ba7e9462b4";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`}</script>
       </Helmet>
@@ -35,7 +36,7 @@ const Layout = ({ children }) => {
       <main style={{ overflowX: "hidden" }}>{children}</main>
 
       <Footer />
-    </>
+    </ParallaxProvider>
   )
 }
 

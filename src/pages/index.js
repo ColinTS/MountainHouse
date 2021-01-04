@@ -17,6 +17,7 @@ import { Link } from "gatsby"
 import BoardDivider from "../images/explore/board.svg"
 import SEO from "../components/seo"
 import Dunes from "../images/dunes.svg"
+import { Parallax } from "react-scroll-parallax"
 
 import video from "../images/Tag.mp4"
 import Instagram from "../components/instagram.js"
@@ -194,62 +195,108 @@ const IndexPage = ({ data }) => (
             </Flex>
           </Container>
           <Container sx={{ pt: 6, px: [3, 3, 3] }} justify="center">
-            <h3
-              sx={{
-                variant: "styles.h3",
-                pb: 3,
-                textAlign: "center",
-              }}
-            >
-              Our Locations
-            </h3>
-            <Link to="/mountain-house">
-              <div
+            <Parallax y={[-20, 20]} tagOuter="figure">
+              <h3
                 sx={{
-                  position: "relative",
-                  borderRadius: 4,
-                  mt: 4,
-                  height: "425px",
-                  width: "100%",
-                  cursor: "pointer",
-                  background:
-                    "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
-                  transform: "translate(0, 0px)",
-                  transition: "all .3s ease",
-                  ":hover": {
-                    transform: "translate(0, -8px)",
-                    transition: "all .3 ease",
-                    boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
-                  },
+                  variant: "styles.h3",
+                  pb: 3,
+                  textAlign: "center",
                 }}
               >
-                <Img
-                  sx={{
-                    cursor: "pointer",
-                    opacity: "1 !important",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                    borderRadius: 4,
-                    height: "425px",
-                  }}
-                  fluid={data.locationThumb.childImageSharp.fluid}
-                />
-                <MountainVillaTitle
-                  sx={{
-                    width: "300px",
-                    textAlign: "center",
-
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                  }}
-                />
-              </div>
-            </Link>
-            <Grid sx={{ pt: 4 }} gap={4} columns={[1, 1, 2]}>
+                Our Locations
+              </h3>
+            </Parallax>
+            <Parallax y={[20, -20]} tagOuter="figure">
               <Link to="/mountain-house">
+                <div
+                  sx={{
+                    position: "relative",
+                    borderRadius: 4,
+                    mt: 4,
+                    height: "425px",
+                    width: "100%",
+                    cursor: "pointer",
+                    background:
+                      "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
+                    transform: "translate(0, 0px)",
+                    transition: "all .3s ease",
+                    ":hover": {
+                      transform: "translate(0, -8px)",
+                      transition: "all .3 ease",
+                      boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+                    },
+                  }}
+                >
+                  <Img
+                    sx={{
+                      cursor: "pointer",
+                      opacity: "1 !important",
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "center",
+                      borderRadius: 4,
+                      height: "425px",
+                    }}
+                    fluid={data.locationThumb.childImageSharp.fluid}
+                  />
+                  <MountainVillaTitle
+                    sx={{
+                      width: "300px",
+                      textAlign: "center",
+
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                    }}
+                  />
+                </div>
+              </Link>
+
+              <Grid sx={{ pt: 4 }} gap={4} columns={[1, 1, 2]}>
+                <Link to="/mountain-house">
+                  <div
+                    sx={{
+                      position: "relative",
+                      borderRadius: 4,
+                      height: "350px",
+                      cursor: "pointer",
+                      background:
+                        "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
+                      transform: "translate(0, 0px)",
+                      transition: "all .3s ease",
+                      ":hover": {
+                        transform: "translate(0, -8px)",
+                        transition: "all .3 ease",
+                        boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+                      },
+                    }}
+                  >
+                    <Img
+                      sx={{
+                        cursor: "pointer",
+                        opacity: "1 !important",
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center",
+                        borderRadius: 4,
+                        height: "350px",
+                      }}
+                      fluid={data.locationThumb.childImageSharp.fluid}
+                    />
+                    <BeachHouseTitle
+                      sx={{
+                        width: "250px",
+                        textAlign: "center",
+
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                      }}
+                    />
+                  </div>
+                </Link>
                 <div
                   sx={{
                     position: "relative",
@@ -277,9 +324,9 @@ const IndexPage = ({ data }) => (
                       borderRadius: 4,
                       height: "350px",
                     }}
-                    fluid={data.locationThumb.childImageSharp.fluid}
+                    fluid={data.locationThumbBW.childImageSharp.fluid}
                   />
-                  <BeachHouseTitle
+                  <StudiosTitle
                     sx={{
                       width: "250px",
                       textAlign: "center",
@@ -291,49 +338,8 @@ const IndexPage = ({ data }) => (
                     }}
                   />
                 </div>
-              </Link>
-              <div
-                sx={{
-                  position: "relative",
-                  borderRadius: 4,
-                  height: "350px",
-                  cursor: "pointer",
-                  background:
-                    "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
-                  transform: "translate(0, 0px)",
-                  transition: "all .3s ease",
-                  ":hover": {
-                    transform: "translate(0, -8px)",
-                    transition: "all .3 ease",
-                    boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
-                  },
-                }}
-              >
-                <Img
-                  sx={{
-                    cursor: "pointer",
-                    opacity: "1 !important",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                    borderRadius: 4,
-                    height: "350px",
-                  }}
-                  fluid={data.locationThumbBW.childImageSharp.fluid}
-                />
-                <StudiosTitle
-                  sx={{
-                    width: "250px",
-                    textAlign: "center",
-
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                  }}
-                />
-              </div>
-            </Grid>
+              </Grid>
+            </Parallax>
           </Container>
           <Flex sx={{ justifyContent: "center", pt: [5, 5, 6] }}>
             <BerberOne
@@ -351,15 +357,17 @@ const IndexPage = ({ data }) => (
         }}
       >
         <Grid columns={[1, 1, "1.5fr 1fr"]}>
-          <AspectRatio
-            ratio={16 / 9}
-            sx={{
-              overflow: "hidden",
-            }}
-          >
-            {" "}
-            <SlideShow data={data.surfing} images={stayImages} />
-          </AspectRatio>
+          <Parallax y={[20, -20]} tagOuter="figure">
+            <AspectRatio
+              ratio={16 / 9}
+              sx={{
+                overflow: "hidden",
+              }}
+            >
+              {" "}
+              <SlideShow data={data.surfing} images={stayImages} />
+            </AspectRatio>
+          </Parallax>
           <div
             sx={{
               paddingLeft: [null, null, "2rem"],
@@ -573,15 +581,17 @@ const IndexPage = ({ data }) => (
               </p>
             </div>
           </div>
-          <AspectRatio
-            ratio={16 / 9}
-            sx={{
-              overflow: "hidden",
-            }}
-          >
-            {" "}
-            <SlideShow data={data.surfing} images={surfImages} />
-          </AspectRatio>
+          <Parallax y={[20, -20]} tagOuter="figure">
+            <AspectRatio
+              ratio={16 / 9}
+              sx={{
+                overflow: "hidden",
+              }}
+            >
+              {" "}
+              <SlideShow data={data.surfing} images={surfImages} />
+            </AspectRatio>
+          </Parallax>
         </Grid>
       </div>
       {/* <div
@@ -958,15 +968,17 @@ const IndexPage = ({ data }) => (
           ></BerberThree>
         </Flex>
         <Grid columns={[1, 1, "1.5fr 1fr"]}>
-          <AspectRatio
-            ratio={16 / 9}
-            sx={{
-              overflow: "hidden",
-            }}
-          >
-            {" "}
-            <SlideShow data={data.surfing} images={eatImages} />
-          </AspectRatio>
+          <Parallax y={[20, -20]} tagOuter="figure">
+            <AspectRatio
+              ratio={16 / 9}
+              sx={{
+                overflow: "hidden",
+              }}
+            >
+              {" "}
+              <SlideShow data={data.surfing} images={eatImages} />
+            </AspectRatio>
+          </Parallax>
           <div
             sx={{
               paddingLeft: [null, null, "2rem"],
