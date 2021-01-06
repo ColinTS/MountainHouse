@@ -7,6 +7,8 @@ import SlideShow from "../components/slideshow"
 import TextLogo from "../images/textLogo.svg"
 import Check from "../images/check.svg"
 import BerberOne from "../images/berberOne.svg"
+import StarOne from "../images/StarOne.svg"
+import StarTwo from "../images/StarTwo.svg"
 import BerberTwo from "../images/berberTwo.svg"
 import BerberThree from "../images/berberThree.svg"
 import BeachHouseTitle from "../images/BeachHouseTitle.svg"
@@ -87,6 +89,10 @@ export const data = graphql`
     }
   }
 `
+
+function getRandomStar(min, max) {
+  return Math.random() * (max - min) + min
+}
 
 const IndexPage = ({ data }) => (
   <div>
@@ -1022,19 +1028,63 @@ const IndexPage = ({ data }) => (
           background: "white",
           pb: 0,
           overflow: "hidden",
-          position: "relative",
         }}
       >
+        {" "}
+        {[...Array(10)].map(x => (
+          <Parallax
+            sx={{ position: "absolute" }}
+            y={[getRandomStar(0, 300), getRandomStar(0, -300)]}
+          >
+            <StarOne
+              sx={{
+                size: getRandomStar(20, 75),
+                top: getRandomStar(0, 1500),
+                left: getRandomStar(0, 2000),
+                position: "relative",
+              }}
+            ></StarOne>
+          </Parallax>
+        ))}
+        {[...Array(10)].map((x, i) => (
+          <Parallax
+            sx={{ position: "absolute" }}
+            y={[getRandomStar(0, 300), getRandomStar(0, -300)]}
+          >
+            <StarTwo
+              sx={{
+                size: getRandomStar(20, 75),
+                top: getRandomStar(0, 1500),
+                left: getRandomStar(0, 2000),
+                position: "relative",
+              }}
+            ></StarTwo>
+          </Parallax>
+        ))}
         <Container
           sx={{ maxWidth: "largeContainer", px: [3, 3, 3] }}
           justify="center"
         >
-          <h2 sx={{ variant: "styles.h2", textAlign: "center" }}>
+          <h2
+            sx={{
+              variant: "styles.h2",
+              textAlign: "center",
+              zIndex: 1,
+              position: "relative",
+            }}
+          >
             What our guests say
           </h2>
         </Container>
         <Container
-          sx={{ maxWidth: "smallContainer", pb: 6, px: [3, 3, 3] }}
+          sx={{
+            maxWidth: "smallContainer",
+            pb: 6,
+            px: [3, 3, 3],
+            zIndex: 1,
+
+            position: "relative",
+          }}
           justify="center"
         >
           <p
@@ -1067,7 +1117,14 @@ const IndexPage = ({ data }) => (
           </p>
         </Container>
         <Container
-          sx={{ maxWidth: "largeContainer", px: [3, 3, 3], pb: 6 }}
+          sx={{
+            maxWidth: "largeContainer",
+            px: [3, 3, 3],
+            pb: 6,
+            zIndex: 1,
+
+            position: "relative",
+          }}
           justify="center"
         >
           <h2 sx={{ variant: "styles.h2", pb: 4, textAlign: "center" }}>

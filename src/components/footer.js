@@ -28,7 +28,14 @@ export default function Footer(props) {
   )
 
   return (
-    <div sx={{ width: "100%", overflow: "hidden" }}>
+    <div
+      sx={{
+        width: "100%",
+        overflow: "hidden",
+        zIndex: 1,
+        position: "relative",
+      }}
+    >
       <div
         css={{
           width: "100vw",
