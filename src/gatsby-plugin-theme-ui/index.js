@@ -29,7 +29,7 @@ export default {
   },
   lineHeights: {
     body: 1.5,
-    heading: 1.2,
+    heading: 1.3,
   },
   letterSpacings: {
     body: 1.0,

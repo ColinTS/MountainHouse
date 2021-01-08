@@ -173,9 +173,9 @@ const IndexPage = ({ data }) => (
                 <h1 sx={{ variant: "styles.h1", textAlign: "center", pb: 2 }}>
                   <TextLogo
                     sx={{
-                      mr: 1,
+                      mr: [0, 0, 1],
                       mb: -2,
-                      width: ["150px", "200px", "170px"],
+                      width: ["120px", "1500px", "170px"],
                       height: "auto",
                     }}
                   />{" "}
@@ -200,26 +200,25 @@ const IndexPage = ({ data }) => (
               </p>
             </Flex>
           </Container>
-          <Container sx={{ pt: 6, px: [3, 3, 3] }} justify="center">
-            <Parallax y={[-20, 20]} tagOuter="figure">
-              <h3
-                sx={{
-                  variant: "styles.h3",
-                  pb: 3,
-                  textAlign: "center",
-                }}
-              >
-                Our Locations
-              </h3>
-            </Parallax>
-            <Parallax y={[20, -20]} tagOuter="figure">
+          <Container sx={{ pt: [4, 4, 6], pb: 1 }} justify="center">
+            <h3
+              sx={{
+                variant: "styles.h3",
+                pb: 3,
+                textAlign: "center",
+              }}
+            >
+              Our Locations
+            </h3>
+
+            <Parallax y={[5, -10]}>
               <Link to="/mountain-house">
                 <div
                   sx={{
                     position: "relative",
                     borderRadius: 4,
                     mt: 4,
-                    height: "425px",
+                    height: "470px",
                     width: "100%",
                     cursor: "pointer",
                     background:
@@ -241,15 +240,14 @@ const IndexPage = ({ data }) => (
                       backgroundRepeat: "no-repeat",
                       backgroundPosition: "center",
                       borderRadius: 4,
-                      height: "425px",
+                      height: ["470px"],
                     }}
                     fluid={data.locationThumb.childImageSharp.fluid}
                   />
                   <MountainVillaTitle
                     sx={{
-                      width: "300px",
+                      width: ["225px", "300px", "300px"],
                       textAlign: "center",
-
                       position: "absolute",
                       top: "50%",
                       left: "50%",
@@ -292,7 +290,7 @@ const IndexPage = ({ data }) => (
                     />
                     <BeachHouseTitle
                       sx={{
-                        width: "250px",
+                        width: ["200px", "300px", "300px"],
                         textAlign: "center",
 
                         position: "absolute",
@@ -303,53 +301,56 @@ const IndexPage = ({ data }) => (
                     />
                   </div>
                 </Link>
-                <div
-                  sx={{
-                    position: "relative",
-                    borderRadius: 4,
-                    height: "350px",
-                    cursor: "pointer",
-                    background:
-                      "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
-                    transform: "translate(0, 0px)",
-                    transition: "all .3s ease",
-                    ":hover": {
-                      transform: "translate(0, -8px)",
-                      transition: "all .3 ease",
-                      boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
-                    },
-                  }}
-                >
-                  <Img
+
+                <Link to="/mountain-house">
+                  <div
                     sx={{
-                      cursor: "pointer",
-                      opacity: "1 !important",
-                      backgroundSize: "cover",
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: "center",
+                      position: "relative",
                       borderRadius: 4,
                       height: "350px",
+                      cursor: "pointer",
+                      background:
+                        "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
+                      transform: "translate(0, 0px)",
+                      transition: "all .3s ease",
+                      ":hover": {
+                        transform: "translate(0, -8px)",
+                        transition: "all .3 ease",
+                        boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+                      },
                     }}
-                    fluid={data.locationThumbBW.childImageSharp.fluid}
-                  />
-                  <StudiosTitle
-                    sx={{
-                      width: "250px",
-                      textAlign: "center",
+                  >
+                    <Img
+                      sx={{
+                        cursor: "pointer",
+                        opacity: "1 !important",
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center",
+                        borderRadius: 4,
+                        height: "350px",
+                      }}
+                      fluid={data.locationThumbBW.childImageSharp.fluid}
+                    />
+                    <StudiosTitle
+                      sx={{
+                        width: ["200px", "300px", "300px"],
+                        textAlign: "center",
 
-                      position: "absolute",
-                      top: "50%",
-                      left: "50%",
-                      transform: "translate(-50%, -50%)",
-                    }}
-                  />
-                </div>
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                      }}
+                    />
+                  </div>
+                </Link>
               </Grid>
             </Parallax>
           </Container>
-          <Flex sx={{ justifyContent: "center", pt: [5, 5, 6] }}>
+          <Flex sx={{ justifyContent: "center", pt: [2, 4, 6] }}>
             <BerberOne
-              sx={{ height: [75, 100, 140], width: "auto" }}
+              sx={{ height: [100, 100, 140], width: "auto" }}
             ></BerberOne>
           </Flex>
         </div>
@@ -357,7 +358,7 @@ const IndexPage = ({ data }) => (
       {/* Stay */}
       <div
         sx={{
-          paddingTop: "4rem",
+          paddingTop: ["2rem", "3rem", "4rem"],
           paddingBottom: "4rem",
           bg: "tertiary",
         }}
@@ -1028,6 +1029,7 @@ const IndexPage = ({ data }) => (
           background: "white",
           pb: 0,
           overflow: "hidden",
+          position: "relative ",
         }}
       >
         {" "}
