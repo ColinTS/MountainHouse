@@ -21,7 +21,8 @@ import Helmet from "react-helmet"
 
 const sidebar = {
   open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+    clipPath: `circle(${height * 2 +
+      200}px at calc(95% - 20px) calc(5% + 20px))`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -29,7 +30,9 @@ const sidebar = {
     },
   }),
   closed: {
-    clipPath: "circle(20px at 35px 50px)",
+    clipPath: "circle(20px at calc(95% - 20px) calc(5% + 20px))",
+    position: "absolute",
+    top: 0,
     transition: {
       delay: 0.1,
       type: "spring",
@@ -72,9 +75,9 @@ const MenuToggle = ({ toggle, isOpen }) => {
           height: "40px",
           borderRadius: "50%",
           position: "absolute",
-          top: "30px",
-          left: "15px",
+          top: "5%",
 
+          right: "5%",
           background: "#428DA4",
         }}
         onClick={toggle}
@@ -281,61 +284,42 @@ function Header({ siteTitle, isMobile }) {
       }}
     >
       {isMobile && (
-        <Flex
-          sx={{
-            alignItems: "center",
-            justifyContent: "space-between",
-            margin: "0 auto",
-            maxWidth: 1760,
-            py: 3,
-            px: 3,
-          }}
-        >
-          {/* <Menu /> */}
-          <Flex>
-            {/*Navigation */}
-            <motion.nav
+        <div>
+          <motion.nav
+            sx={{
+              height: "100vh",
+            }}
+            initial={false}
+            animate={isOpen ? "open" : "closed"}
+          >
+            <motion.div
               sx={{
                 position: "absolute",
                 top: 0,
                 left: 0,
                 bottom: 0,
-                height: "100vh",
+                width: "100vw",
+                background: "#fff",
               }}
-              initial={false}
-              animate={isOpen ? "open" : "closed"}
-              // custom={height}
-              // ref={containerRef}
-            >
-              <motion.div
-                sx={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  bottom: 0,
-                  width: "100vw",
-                  background: "#fff",
-                }}
-                variants={sidebar}
-              />
-              <Navigation sx={{ zIndex: 5 }} />
-              <MenuToggle isOpen={isOpen} toggle={() => toggleOpen()} />
-            </motion.nav>
-            {/* <Navigation /> */}
-            <Link sx={{ display: "flex", alignItems: "center" }} to="/">
-              <Logo
-                sx={{
-                  width: ["150px", "150px", "150px"],
-                  height: "auto",
-                  position: "absolute",
-                  top: "18px",
-                  left: "70px",
-                  zIndex: isOpen ? -1 : 1,
-                }}
-              />
-            </Link>
-          </Flex>
-        </Flex>
+              variants={sidebar}
+            />
+            <Navigation sx={{ zIndex: 5 }} />
+            <MenuToggle isOpen={isOpen} toggle={() => toggleOpen()} />
+          </motion.nav>
+
+          <Link sx={{ display: "flex", alignItems: "center" }} to="/">
+            <Logo
+              sx={{
+                width: ["150px", "150px", "150px"],
+                height: "auto",
+                position: "absolute",
+                top: "18px",
+                left: "70px",
+                zIndex: isOpen ? -1 : 1,
+              }}
+            />
+          </Link>
+        </div>
       )}
       {!isMobile && (
         <Flex

@@ -360,7 +360,7 @@ const IndexPage = ({ data, isMobile }) => (
       <div
         sx={{
           paddingTop: ["1rem", "3rem", "4rem"],
-          paddingBottom: "4rem",
+          paddingBottom: ["1rem", "3rem", "4rem"],
           bg: "tertiary",
         }}
       >
@@ -548,7 +548,7 @@ const IndexPage = ({ data, isMobile }) => (
       <div
         sx={{
           pt: [2, 2, 6],
-          paddingBottom: "4rem",
+          paddingBottom: ["1rem", "3rem", "4rem"],
           background: "#f7f0e1",
         }}
       >
@@ -980,22 +980,16 @@ const IndexPage = ({ data, isMobile }) => (
           background: "linear-gradient(to bottom, #f7f0e1 0%, white)",
         }}
       >
-        <Flex sx={{ justifyContent: "center", pt: [4, 4, 4], pb: 6 }}>
+        <Flex sx={{ justifyContent: "center", pt: [0, 4, 4], pb: [5, 6, 6] }}>
           <BerberThree
             sx={{ height: [75, 100, 140], width: "auto" }}
           ></BerberThree>
         </Flex>
         <Grid columns={[1, 1, "1.5fr 1fr"]}>
           <Parallax y={[20, -20]} tagOuter="figure">
-            <AspectRatio
-              ratio={16 / 9}
-              sx={{
-                overflow: "hidden",
-              }}
-            >
-              {" "}
+            <div sx={{ height: ["300px", "400px", "650px"] }}>
               <SlideShow data={data.surfing} images={eatImages} />
-            </AspectRatio>
+            </div>
           </Parallax>
           <div
             sx={{
@@ -1043,7 +1037,6 @@ const IndexPage = ({ data, isMobile }) => (
           position: "relative ",
         }}
       >
-        {" "}
         {[...Array(10)].map(x => (
           <Parallax
             sx={{ position: "absolute" }}
@@ -1052,7 +1045,7 @@ const IndexPage = ({ data, isMobile }) => (
             <StarOne
               sx={{
                 size: getRandomStar(20, 75),
-                top: getRandomStar(0, 1500),
+                top: getRandomStar(0, 1000),
                 left: getRandomStar(0, 2000),
                 position: "relative",
               }}

@@ -37,8 +37,8 @@ export default {
   },
   layout: {
     primaryContainer: {
-      paddingTop: "4rem",
-      paddingBottom: "4rem",
+      paddingTop: ["2rem", "4rem", "4rem"],
+      paddingBottom: ["2rem", "4rem", "4rem"],
     },
     gutters: {
       px: 3,
