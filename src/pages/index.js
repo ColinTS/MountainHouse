@@ -20,6 +20,7 @@ import BoardDivider from "../images/explore/board.svg"
 import SEO from "../components/seo"
 import Dunes from "../images/dunes.svg"
 import { Parallax } from "react-scroll-parallax"
+import withSizes from "react-sizes"
 
 import video from "../images/Tag.mp4"
 import Instagram from "../components/instagram.js"
@@ -94,7 +95,7 @@ function getRandomStar(min, max) {
   return Math.random() * (max - min) + min
 }
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({ data, isMobile }) => (
   <div>
     <div
       css={{
@@ -200,7 +201,7 @@ const IndexPage = ({ data }) => (
               </p>
             </Flex>
           </Container>
-          <Container sx={{ pt: [4, 4, 6], pb: 1 }} justify="center">
+          <Container sx={{ pt: [4, 4, 6] }} justify="center">
             <h3
               sx={{
                 variant: "styles.h3",
@@ -263,7 +264,7 @@ const IndexPage = ({ data }) => (
                     sx={{
                       position: "relative",
                       borderRadius: 4,
-                      height: "350px",
+                      height: ["300px", "300px", "350px"],
                       cursor: "pointer",
                       background:
                         "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
@@ -284,7 +285,7 @@ const IndexPage = ({ data }) => (
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "center",
                         borderRadius: 4,
-                        height: "350px",
+                        height: ["300px", "300px", "350px"],
                       }}
                       fluid={data.locationThumb.childImageSharp.fluid}
                     />
@@ -307,7 +308,7 @@ const IndexPage = ({ data }) => (
                     sx={{
                       position: "relative",
                       borderRadius: 4,
-                      height: "350px",
+                      height: ["300px", "300px", "350px"],
                       cursor: "pointer",
                       background:
                         "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
@@ -328,7 +329,7 @@ const IndexPage = ({ data }) => (
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "center",
                         borderRadius: 4,
-                        height: "350px",
+                        height: ["300px", "300px", "350px"],
                       }}
                       fluid={data.locationThumbBW.childImageSharp.fluid}
                     />
@@ -348,9 +349,9 @@ const IndexPage = ({ data }) => (
               </Grid>
             </Parallax>
           </Container>
-          <Flex sx={{ justifyContent: "center", pt: [2, 4, 6] }}>
+          <Flex sx={{ justifyContent: "center", pt: [0, 3, 6] }}>
             <BerberOne
-              sx={{ height: [100, 100, 140], width: "auto" }}
+              sx={{ height: [90, 100, 140], width: "auto" }}
             ></BerberOne>
           </Flex>
         </div>
@@ -358,22 +359,23 @@ const IndexPage = ({ data }) => (
       {/* Stay */}
       <div
         sx={{
-          paddingTop: ["2rem", "3rem", "4rem"],
+          paddingTop: ["1rem", "3rem", "4rem"],
           paddingBottom: "4rem",
           bg: "tertiary",
         }}
       >
         <Grid columns={[1, 1, "1.5fr 1fr"]}>
           <Parallax y={[20, -20]} tagOuter="figure">
-            <AspectRatio
+            {/* <AspectRatio
               ratio={16 / 9}
               sx={{
                 overflow: "hidden",
               }}
-            >
-              {" "}
+            > */}{" "}
+            <div sx={{ height: ["300px", "400px", "650px"] }}>
               <SlideShow data={data.surfing} images={stayImages} />
-            </AspectRatio>
+              {/* </AspectRatio> */}
+            </div>
           </Parallax>
           <div
             sx={{
@@ -535,7 +537,7 @@ const IndexPage = ({ data }) => (
               </Flex>
             </Box>
           </Grid>
-          <Flex sx={{ justifyContent: "center", pt: [5, 5, 5], pb: 2 }}>
+          <Flex sx={{ justifyContent: "center", pt: [4, 4, 6], pb: [5, 2, 4] }}>
             <BerberTwo
               sx={{ height: [75, 100, 140], width: "auto" }}
             ></BerberTwo>
@@ -551,6 +553,13 @@ const IndexPage = ({ data }) => (
         }}
       >
         <Grid columns={[1, 1, "1fr 1.5fr"]}>
+          {isMobile && (
+            <Parallax y={[20, -20]} tagOuter="figure">
+              <div sx={{ height: ["300px", "400px", "650px"] }}>
+                <SlideShow data={data.surfing} images={surfImages} />
+              </div>
+            </Parallax>
+          )}
           <div
             sx={{
               paddingLeft: [null, null, "2rem"],
@@ -588,17 +597,19 @@ const IndexPage = ({ data }) => (
               </p>
             </div>
           </div>
-          <Parallax y={[20, -20]} tagOuter="figure">
-            <AspectRatio
-              ratio={16 / 9}
-              sx={{
-                overflow: "hidden",
-              }}
-            >
-              {" "}
-              <SlideShow data={data.surfing} images={surfImages} />
-            </AspectRatio>
-          </Parallax>
+          {!isMobile && (
+            <Parallax y={[20, -20]} tagOuter="figure">
+              <AspectRatio
+                ratio={16 / 9}
+                sx={{
+                  overflow: "hidden",
+                }}
+              >
+                {" "}
+                <SlideShow data={data.surfing} images={surfImages} />
+              </AspectRatio>
+            </Parallax>
+          )}
         </Grid>
       </div>
       {/* <div
@@ -1143,4 +1154,8 @@ const IndexPage = ({ data }) => (
   </div>
 )
 
-export default IndexPage
+const mapSizesToProps = ({ width }) => ({
+  isMobile: width < 880,
+})
+
+export default withSizes(mapSizesToProps)(IndexPage)
