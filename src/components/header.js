@@ -2,7 +2,7 @@
 import { jsx, Flex, Button } from "theme-ui"
 import PropTypes from "prop-types"
 import { useState, useEffect, useRef } from "react"
-import Logo from "../images/logo2.svg"
+import Logo from "../images/logo.svg"
 import { Link } from "gatsby"
 import withSizes from "react-sizes"
 import { motion, useCycle } from "framer-motion"
@@ -22,7 +22,7 @@ import Helmet from "react-helmet"
 const sidebar = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 +
-      200}px at calc(95% - 20px) calc(5% + 20px))`,
+      200}px at calc(95% - 20px) calc(3.5% + 20px))`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -30,7 +30,7 @@ const sidebar = {
     },
   }),
   closed: {
-    clipPath: "circle(20px at calc(95% - 20px) calc(5% + 20px))",
+    clipPath: "circle(20px at calc(95% - 20px) calc(3.5% + 20px))",
     position: "absolute",
     top: 0,
     transition: {
@@ -46,7 +46,7 @@ const Path = props => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
-    stroke="white"
+    stroke="#428DA4"
     strokeLinecap="round"
     {...props}
   />
@@ -75,10 +75,10 @@ const MenuToggle = ({ toggle, isOpen }) => {
           height: "40px",
           borderRadius: "50%",
           position: "absolute",
-          top: "5%",
+          top: "3.5%",
 
           right: "5%",
-          background: "#428DA4",
+          background: "#fff",
         }}
         onClick={toggle}
       >
@@ -310,11 +310,11 @@ function Header({ siteTitle, isMobile }) {
           <Link sx={{ display: "flex", alignItems: "center" }} to="/">
             <Logo
               sx={{
-                width: ["150px", "150px", "150px"],
+                width: ["160px"],
                 height: "auto",
                 position: "absolute",
                 top: "18px",
-                left: "70px",
+                left: "5%",
                 zIndex: isOpen ? -1 : 1,
               }}
             />

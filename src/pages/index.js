@@ -154,15 +154,17 @@ const IndexPage = ({ data, isMobile }) => (
 
     <Layout>
       <SEO title="Singlefin - Surf Resort in Taghazout, Morocco" />
-      <div css={{}}>
+      <div>
         <div
           sx={{
-            background: "linear-gradient(to bottom, #FFCF8A 0%, #f7f0e1 80%)",
+            background: "linear-gradient(to bottom, #FFCF8A 0%, #fff 100%)",
             variant: "layout.primaryContainer",
             px: [3, 3, 3],
           }}
         >
-          <Container sx={{ maxWidth: "smallContainer" }}>
+          <Container
+            sx={{ maxWidth: "smallContainer", pb: ["2rem", "2rem", "6rem"] }}
+          >
             <Flex
               sx={{
                 justifyContent: "center",
@@ -171,7 +173,14 @@ const IndexPage = ({ data, isMobile }) => (
               }}
             >
               <div>
-                <h1 sx={{ variant: "styles.h1", textAlign: "center", pb: 2 }}>
+                <h1
+                  sx={{
+                    variant: "styles.h1",
+                    textAlign: "center",
+                    pb: 2,
+                    fontSize: [4, 5, 6],
+                  }}
+                >
                   <TextLogo
                     sx={{
                       mr: [0, 0, 1],
@@ -201,7 +210,9 @@ const IndexPage = ({ data, isMobile }) => (
               </p>
             </Flex>
           </Container>
-          <Container sx={{ pt: [4, 4, 6] }} justify="center">
+        </div>
+        <div sx={{ px: [3, 3, 3] }}>
+          <Container justify="center">
             <h3
               sx={{
                 variant: "styles.h3",
@@ -348,12 +359,12 @@ const IndexPage = ({ data, isMobile }) => (
                 </Link>
               </Grid>
             </Parallax>
+            <Flex sx={{ justifyContent: "center", pt: [0, 3, 6] }}>
+              <BerberOne
+                sx={{ height: [90, 100, 140], width: "auto" }}
+              ></BerberOne>
+            </Flex>
           </Container>
-          <Flex sx={{ justifyContent: "center", pt: [0, 3, 6] }}>
-            <BerberOne
-              sx={{ height: [90, 100, 140], width: "auto" }}
-            ></BerberOne>
-          </Flex>
         </div>
       </div>
       {/* Stay */}
