@@ -21,6 +21,7 @@ import SEO from "../components/seo"
 import Dunes from "../images/dunes.svg"
 import { Parallax } from "react-scroll-parallax"
 import withSizes from "react-sizes"
+import ImageCarousel from "../components/imageCarousel"
 
 import video from "../images/Tag.mp4"
 import Instagram from "../components/instagram.js"
@@ -211,6 +212,7 @@ const IndexPage = ({ data, isMobile }) => (
             </Flex>
           </Container>
         </div>
+
         <div sx={{ px: [3, 3, 3] }}>
           <Container justify="center">
             <h3
@@ -372,20 +374,14 @@ const IndexPage = ({ data, isMobile }) => (
         sx={{
           paddingTop: ["1rem", "3rem", "4rem"],
           paddingBottom: ["1rem", "3rem", "4rem"],
-          bg: "tertiary",
         }}
       >
+        <ImageCarousel images={stayImages} />
+
         <Grid columns={[1, 1, "1.5fr 1fr"]}>
           <Parallax y={[20, -20]} tagOuter="figure">
-            {/* <AspectRatio
-              ratio={16 / 9}
-              sx={{
-                overflow: "hidden",
-              }}
-            > */}{" "}
             <div sx={{ height: ["300px", "400px", "650px"] }}>
               <SlideShow data={data.surfing} images={stayImages} />
-              {/* </AspectRatio> */}
             </div>
           </Parallax>
           <div
@@ -421,7 +417,7 @@ const IndexPage = ({ data, isMobile }) => (
           </div>
         </Grid>
       </div>
-      <div sx={{ bg: "tertiary", pb: 2, px: [3, 3, 0] }}>
+      <div sx={{ pb: 2, px: [3, 3, 0] }}>
         <Container sx={{ maxWidth: "container" }} justify="center">
           <Box>
             <h3
@@ -560,7 +556,6 @@ const IndexPage = ({ data, isMobile }) => (
         sx={{
           pt: [2, 2, 6],
           paddingBottom: ["1rem", "3rem", "4rem"],
-          background: "#f7f0e1",
         }}
       >
         <Grid columns={[1, 1, "1fr 1.5fr"]}>
@@ -988,7 +983,6 @@ const IndexPage = ({ data, isMobile }) => (
       <div
         sx={{
           variant: "layout.primaryContainer",
-          background: "linear-gradient(to bottom, #f7f0e1 0%, white)",
         }}
       >
         <Flex sx={{ justifyContent: "center", pt: [0, 4, 4], pb: [5, 6, 6] }}>
@@ -1055,9 +1049,9 @@ const IndexPage = ({ data, isMobile }) => (
           >
             <StarOne
               sx={{
-                size: getRandomStar(20, 75),
-                top: getRandomStar(0, 1000),
-                left: getRandomStar(0, 2000),
+                size: [getRandomStar(10, 50), getRandomStar(20, 75)],
+                top: [getRandomStar(0, 900), getRandomStar(0, 1000)],
+                left: [getRandomStar(0, 500), getRandomStar(0, 2000)],
                 position: "relative",
               }}
             ></StarOne>
@@ -1070,9 +1064,9 @@ const IndexPage = ({ data, isMobile }) => (
           >
             <StarTwo
               sx={{
-                size: getRandomStar(20, 75),
-                top: getRandomStar(0, 1500),
-                left: getRandomStar(0, 2000),
+                size: [getRandomStar(10, 50), getRandomStar(20, 75)],
+                top: [getRandomStar(0, 900), getRandomStar(0, 1000)],
+                left: [getRandomStar(0, 500), getRandomStar(0, 2000)],
                 position: "relative",
               }}
             ></StarTwo>
