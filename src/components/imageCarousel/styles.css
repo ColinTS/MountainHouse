@@ -43,6 +43,7 @@
     -ms-flex-direction: row;
     flex-direction: row;
     box-sizing: border-box;
+   
   }
   .alice-carousel__stage-item {
     width: 100%;
@@ -117,15 +118,6 @@
     animation-name: fadeOut;
   }
   
-  @keyframes fadeOut {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      visibility: hidden;
-    }
-  }
 
 
   

@@ -61,7 +61,19 @@ const MenuToggle = ({ toggle, isOpen }) => {
           <style type="text/css">{`
          body {
              position: fixed;
+             
          }
+
+         .alice-carousel__stage {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+         
+          display: none;
+          
+        }
      `}</style>
         </Helmet>
       ) : null}

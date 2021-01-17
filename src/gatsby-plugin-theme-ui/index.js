@@ -23,7 +23,7 @@ export default {
   },
   fontWeights: {
     body: 400,
-    heading: 700,
+    heading: 500,
     subHeading: 700,
     bold: 700,
   },
@@ -33,7 +33,7 @@ export default {
   },
   letterSpacings: {
     body: 1.0,
-    heading: 1.2,
+    heading: 1.0,
   },
   layout: {
     primaryContainer: {
@@ -69,8 +69,8 @@ export default {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      fontSize: [3, 5, 6],
-      letterSpacing: "heading",
+      fontSize: [5, 5, 6],
+      letterSpacing: 0.8,
       marginBottom: "0.5rem",
     },
     h2: {
@@ -78,8 +78,8 @@ export default {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      fontSize: [3, 4, 5],
-      letterSpacing: "heading",
+      fontSize: [4, 4, 5],
+      letterSpacing: 0.8,
       marginBottom: "0.5rem",
     },
     h3: {
@@ -87,7 +87,7 @@ export default {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "subHeading",
-      fontSize: [3, 4, 4],
+      fontSize: [4, 4, 4],
       letterSpacing: "body",
       marginBottom: "0.5rem",
     },
@@ -97,8 +97,30 @@ export default {
       lineHeight: "body",
       fontWeight: "body",
       fontSize: [1, 2, 3],
-      letterSpacing: "body",
+      letterSpacing: 0.8,
       marginBottom: "0.5rem",
+      opacity: 0.9,
+    },
+    pPlus: {
+      color: "text",
+      fontFamily: "body",
+      lineHeight: "body",
+      fontWeight: 500,
+      fontSize: [2, 2, 3],
+      letterSpacing: 0.8,
+      marginBottom: "0.5rem",
+      opacity: 0.9,
+    },
+    subHeader: {
+      color: "text",
+      fontFamily: "body",
+      lineHeight: "body",
+      fontWeight: 600,
+      fontSize: [0, 1, 2],
+      letterSpacing: 3,
+      marginBottom: "0.5rem",
+      textTransform: "uppercase",
+      opacity: 0.7,
     },
     button: {
       fontFamily: "body",
@@ -107,6 +129,6 @@ export default {
       marginBottom: 0,
     },
   },
-  fontSizes: [12, 14, 16, 18, 24, 32, 40, 48, 64, 72],
+  fontSizes: [12, 14, 16, 18, 22, 26, 32, 40, 48, 64, 72],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
 }

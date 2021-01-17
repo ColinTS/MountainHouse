@@ -179,7 +179,6 @@ const IndexPage = ({ data, isMobile }) => (
                     variant: "styles.h1",
                     textAlign: "center",
                     pb: 2,
-                    fontSize: [4, 5, 6],
                   }}
                 >
                   <TextLogo
@@ -197,10 +196,9 @@ const IndexPage = ({ data, isMobile }) => (
               <BoardDivider sx={{ width: "75px" }} />
               <p
                 sx={{
-                  variant: "styles.p",
+                  variant: "styles.pPlus",
                   textAlign: "center",
                   pt: 4,
-                  fontSize: [2, 2, 3],
                 }}
               >
                 We offer an authentic moroccan stay for guests from around the
@@ -215,15 +213,25 @@ const IndexPage = ({ data, isMobile }) => (
 
         <div sx={{ px: [3, 3, 3] }}>
           <Container justify="center">
-            <h3
+            <p
               sx={{
-                variant: "styles.h3",
-                pb: 3,
+                variant: "styles.subHeader",
+                pb: 1,
                 textAlign: "center",
               }}
             >
               Our Locations
-            </h3>
+            </p>
+            <h2
+              sx={{
+                variant: "styles.h2",
+                pb: 3,
+                textAlign: "center",
+              }}
+            >
+              Mountains or Beach – The choice is{" "}
+              <span sx={{ fontWeight: 700 }}>yours </span>
+            </h2>
 
             <Parallax y={[5, -10]}>
               <Link to="/mountain-house">
@@ -370,6 +378,7 @@ const IndexPage = ({ data, isMobile }) => (
         </div>
       </div>
       {/* Stay */}
+
       <div
         sx={{
           paddingTop: ["1rem", "3rem", "4rem"],
@@ -377,7 +386,6 @@ const IndexPage = ({ data, isMobile }) => (
         }}
       >
         <ImageCarousel images={stayImages} />
-
         <Grid columns={[1, 1, "1.5fr 1fr"]}>
           <Parallax y={[20, -20]} tagOuter="figure">
             <div sx={{ height: ["300px", "400px", "650px"] }}>

@@ -11,7 +11,6 @@ export default function ImageCarousel(props) {
     <div>
       <AliceCarousel paddingRight={20}>
         {images.map(image => (
-          // <img className="sliderimg" src={image} key={image + 1} alt={image} />
           <AspectImage
             sx={{
               height: "100%",
