@@ -3,8 +3,6 @@ import { AspectImage } from "theme-ui"
 
 import AliceCarousel from "react-alice-carousel"
 
-import "./styles.css"
-
 export default function ImageCarousel(props) {
   const { images } = props
   return (

@@ -325,7 +325,7 @@ function Header({ siteTitle, isMobile }) {
                 width: ["160px"],
                 height: "auto",
                 position: "absolute",
-                top: "18px",
+                top: "24px",
                 left: "5%",
                 zIndex: isOpen ? -1 : 1,
               }}

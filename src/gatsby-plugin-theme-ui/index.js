@@ -37,11 +37,11 @@ export default {
   },
   layout: {
     primaryContainer: {
-      paddingTop: ["2rem", "4rem", "4rem"],
+      paddingTop: ["4rem", "4rem", "4rem"],
       paddingBottom: ["2rem", "4rem", "4rem"],
     },
     gutters: {
-      px: 3,
+      px: "1.5rem",
     },
   },
   buttons: {
@@ -68,18 +68,18 @@ export default {
       color: "text",
       fontFamily: "heading",
       lineHeight: "heading",
-      fontWeight: "heading",
+      fontWeight: 400,
       fontSize: [5, 5, 6],
-      letterSpacing: 0.8,
+      letterSpacing: 0.7,
       marginBottom: "0.5rem",
     },
     h2: {
       color: "text",
       fontFamily: "heading",
       lineHeight: "heading",
-      fontWeight: "heading",
+      fontWeight: 400,
       fontSize: [4, 4, 5],
-      letterSpacing: 0.8,
+      letterSpacing: 0.7,
       marginBottom: "0.5rem",
     },
     h3: {
@@ -94,9 +94,9 @@ export default {
     p: {
       color: "text",
       fontFamily: "body",
-      lineHeight: "body",
-      fontWeight: "body",
-      fontSize: [1, 2, 3],
+      lineHeight: 1.6,
+      fontWeight: 500,
+      fontSize: [1, 2, 2],
       letterSpacing: 0.8,
       marginBottom: "0.5rem",
       opacity: 0.9,
@@ -129,6 +129,6 @@ export default {
       marginBottom: 0,
     },
   },
-  fontSizes: [12, 14, 16, 18, 22, 26, 32, 40, 48, 64, 72],
+  fontSizes: [12, 15, 16, 18, 22, 26, 32, 40, 48, 64, 72],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
 }

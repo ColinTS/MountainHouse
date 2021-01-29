@@ -77,18 +77,21 @@
   }
   .alice-carousel__dots-item {
     display: inline-block;
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     cursor: pointer;
     border-radius: 50%;
-    background-color: #0f1ea7;
+    background-color: #ffffff;
+    opacity: 0.3;
+  
   }
   .alice-carousel__dots-item:not(:last-child) {
     margin-right: 15px;
   }
   .alice-carousel__dots-item:hover,
   .alice-carousel__dots-item.__active {
-    background-color: #6e7ebc;
+    background-color: #428DA4;
+    opacity: 1;
   }
   
   .alice-carousel__slide-info {

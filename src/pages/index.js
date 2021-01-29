@@ -22,6 +22,7 @@ import Dunes from "../images/dunes.svg"
 import { Parallax } from "react-scroll-parallax"
 import withSizes from "react-sizes"
 import ImageCarousel from "../components/imageCarousel"
+import CardCarousel from "../components/cardCarousel"
 
 import video from "../images/Tag.mp4"
 import Instagram from "../components/instagram.js"
@@ -135,22 +136,6 @@ const IndexPage = ({ data, isMobile }) => (
       >
         <Dunes style={{ width: "100%", height: "auto" }} />
       </div>
-
-      {/* <div
-        css={{
-          position: "absolute",
-          top: "40%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-        }}
-      >
-        <Logo
-          sx={{
-            width: ["250px", "400px", "500px"],
-            height: "auto",
-          }}
-        />
-      </div> */}
     </div>
 
     <Layout>
@@ -160,11 +145,15 @@ const IndexPage = ({ data, isMobile }) => (
           sx={{
             background: "linear-gradient(to bottom, #FFCF8A 0%, #fff 100%)",
             variant: "layout.primaryContainer",
-            px: [3, 3, 3],
+            variant: "layout.gutters",
           }}
         >
           <Container
-            sx={{ maxWidth: "smallContainer", pb: ["2rem", "2rem", "6rem"] }}
+            sx={{
+              maxWidth: "smallContainer",
+              pt: [4],
+              pb: ["2rem", "2rem", "6rem"],
+            }}
           >
             <Flex
               sx={{
@@ -211,12 +200,12 @@ const IndexPage = ({ data, isMobile }) => (
           </Container>
         </div>
 
-        <div sx={{ px: [3, 3, 3] }}>
+        <div sx={{ variant: "layout.gutters" }}>
           <Container justify="center">
             <p
               sx={{
                 variant: "styles.subHeader",
-                pb: 1,
+                py: 1,
                 textAlign: "center",
               }}
             >
@@ -232,144 +221,192 @@ const IndexPage = ({ data, isMobile }) => (
               Mountains or Beach – The choice is{" "}
               <span sx={{ fontWeight: 700 }}>yours </span>
             </h2>
+            <div sx={{ mx: "-1.5rem" }}>
+              {isMobile && (
+                <CardCarousel>
+                  <Link to="/mountain-house">
+                    <div sx={{ maxWidth: "92%" }}>
+                      <div
+                        sx={{
+                          position: "relative",
+                          // pl: "1rem",
+                          borderRadius: 4,
+                          mt: 4,
+                          height: "470px",
 
-            <Parallax y={[5, -10]}>
-              <Link to="/mountain-house">
-                <div
-                  sx={{
-                    position: "relative",
-                    borderRadius: 4,
-                    mt: 4,
-                    height: "470px",
-                    width: "100%",
-                    cursor: "pointer",
-                    background:
-                      "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
-                    transform: "translate(0, 0px)",
-                    transition: "all .3s ease",
-                    ":hover": {
-                      transform: "translate(0, -8px)",
-                      transition: "all .3 ease",
-                      boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
-                    },
-                  }}
-                >
-                  <Img
-                    sx={{
-                      cursor: "pointer",
-                      opacity: "1 !important",
-                      backgroundSize: "cover",
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: "center",
-                      borderRadius: 4,
-                      height: ["470px"],
-                    }}
-                    fluid={data.locationThumb.childImageSharp.fluid}
-                  />
-                  <MountainVillaTitle
-                    sx={{
-                      width: ["225px", "300px", "300px"],
-                      textAlign: "center",
-                      position: "absolute",
-                      top: "50%",
-                      left: "50%",
-                      transform: "translate(-50%, -50%)",
-                    }}
-                  />
-                </div>
-              </Link>
+                          cursor: "pointer",
+                          background:
+                            "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
+                          boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+                        }}
+                      >
+                        <Img
+                          sx={{
+                            cursor: "pointer",
+                            opacity: "1 !important",
 
-              <Grid sx={{ pt: 4 }} gap={4} columns={[1, 1, 2]}>
-                <Link to="/mountain-house">
-                  <div
-                    sx={{
-                      position: "relative",
-                      borderRadius: 4,
-                      height: ["300px", "300px", "350px"],
-                      cursor: "pointer",
-                      background:
-                        "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
-                      transform: "translate(0, 0px)",
-                      transition: "all .3s ease",
-                      ":hover": {
-                        transform: "translate(0, -8px)",
-                        transition: "all .3 ease",
-                        boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
-                      },
-                    }}
-                  >
-                    <Img
+                            backgroundSize: "cover",
+                            backgroundRepeat: "no-repeat",
+                            backgroundPosition: "center",
+                            borderRadius: 4,
+                            height: ["470px"],
+                          }}
+                          fluid={data.locationThumb.childImageSharp.fluid}
+                        />
+                        <MountainVillaTitle
+                          sx={{
+                            width: ["225px", "300px", "300px"],
+                            textAlign: "center",
+                            position: "absolute",
+                            top: "80%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%)",
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </Link>
+                  <Link to="/mountain-house">
+                    <div sx={{ maxWidth: "92%" }}>
+                      <div
+                        sx={{
+                          position: "relative",
+                          borderRadius: 4,
+                          mt: 4,
+                          height: "470px",
+                          width: "100%",
+                          cursor: "pointer",
+                          background:
+                            "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
+
+                          boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+                        }}
+                      >
+                        <Img
+                          sx={{
+                            cursor: "pointer",
+                            opacity: "1 !important",
+                            backgroundSize: "cover",
+                            backgroundRepeat: "no-repeat",
+                            backgroundPosition: "center",
+                            borderRadius: 4,
+                            height: ["470px"],
+                          }}
+                          fluid={data.locationThumb.childImageSharp.fluid}
+                        />
+                        <BeachHouseTitle
+                          sx={{
+                            width: ["200px", "300px", "300px"],
+                            textAlign: "center",
+
+                            position: "absolute",
+                            top: "80%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%)",
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </Link>
+                </CardCarousel>
+              )}
+            </div>
+            {!isMobile && (
+              <Parallax y={[5, -10]}>
+                <Grid sx={{ pt: 4 }} gap={4} columns={[2]}>
+                  <Link to="/mountain-house">
+                    <div
                       sx={{
-                        cursor: "pointer",
-                        opacity: "1 !important",
-                        backgroundSize: "cover",
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "center",
+                        position: "relative",
                         borderRadius: 4,
                         height: ["300px", "300px", "350px"],
-                      }}
-                      fluid={data.locationThumb.childImageSharp.fluid}
-                    />
-                    <BeachHouseTitle
-                      sx={{
-                        width: ["200px", "300px", "300px"],
-                        textAlign: "center",
-
-                        position: "absolute",
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-50%, -50%)",
-                      }}
-                    />
-                  </div>
-                </Link>
-
-                <Link to="/mountain-house">
-                  <div
-                    sx={{
-                      position: "relative",
-                      borderRadius: 4,
-                      height: ["300px", "300px", "350px"],
-                      cursor: "pointer",
-                      background:
-                        "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
-                      transform: "translate(0, 0px)",
-                      transition: "all .3s ease",
-                      ":hover": {
-                        transform: "translate(0, -8px)",
-                        transition: "all .3 ease",
-                        boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
-                      },
-                    }}
-                  >
-                    <Img
-                      sx={{
                         cursor: "pointer",
-                        opacity: "1 !important",
-                        backgroundSize: "cover",
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "center",
+                        background:
+                          "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
+                        transform: "translate(0, 0px)",
+                        transition: "all .3s ease",
+                        ":hover": {
+                          transform: "translate(0, -8px)",
+                          transition: "all .3 ease",
+                          boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+                        },
+                      }}
+                    >
+                      <Img
+                        sx={{
+                          cursor: "pointer",
+                          opacity: "1 !important",
+                          backgroundSize: "cover",
+                          backgroundRepeat: "no-repeat",
+                          backgroundPosition: "center",
+                          borderRadius: 4,
+                          height: ["300px", "300px", "350px"],
+                        }}
+                        fluid={data.locationThumb.childImageSharp.fluid}
+                      />
+                      <MountainVillaTitle
+                        sx={{
+                          width: ["200px", "300px", "300px"],
+                          textAlign: "center",
+
+                          position: "absolute",
+                          top: "50%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
+                        }}
+                      />
+                    </div>
+                  </Link>
+
+                  <Link to="/mountain-house">
+                    <div
+                      sx={{
+                        position: "relative",
                         borderRadius: 4,
                         height: ["300px", "300px", "350px"],
+                        cursor: "pointer",
+                        background:
+                          "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
+                        transform: "translate(0, 0px)",
+                        transition: "all .3s ease",
+                        ":hover": {
+                          transform: "translate(0, -8px)",
+                          transition: "all .3 ease",
+                          boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+                        },
                       }}
-                      fluid={data.locationThumbBW.childImageSharp.fluid}
-                    />
-                    <StudiosTitle
-                      sx={{
-                        width: ["200px", "300px", "300px"],
-                        textAlign: "center",
+                    >
+                      <Img
+                        sx={{
+                          cursor: "pointer",
+                          opacity: "1 !important",
+                          backgroundSize: "cover",
+                          backgroundRepeat: "no-repeat",
+                          backgroundPosition: "center",
+                          borderRadius: 4,
+                          height: ["300px", "300px", "350px"],
+                        }}
+                        fluid={data.locationThumb.childImageSharp.fluid}
+                      />
+                      <BeachHouseTitle
+                        sx={{
+                          width: ["200px", "300px", "300px"],
+                          textAlign: "center",
 
-                        position: "absolute",
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-50%, -50%)",
-                      }}
-                    />
-                  </div>
-                </Link>
-              </Grid>
-            </Parallax>
-            <Flex sx={{ justifyContent: "center", pt: [0, 3, 6] }}>
+                          position: "absolute",
+                          top: "50%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
+                        }}
+                      />
+                    </div>
+                  </Link>
+                </Grid>
+              </Parallax>
+            )}
+            <Flex
+              sx={{ justifyContent: "center", pt: [3, 3, 5], pb: [4, 0, 3] }}
+            >
               <BerberOne
                 sx={{ height: [90, 100, 140], width: "auto" }}
               ></BerberOne>
@@ -385,13 +422,38 @@ const IndexPage = ({ data, isMobile }) => (
           paddingBottom: ["1rem", "3rem", "4rem"],
         }}
       >
-        <ImageCarousel images={stayImages} />
-        <Grid columns={[1, 1, "1.5fr 1fr"]}>
-          <Parallax y={[20, -20]} tagOuter="figure">
-            <div sx={{ height: ["300px", "400px", "650px"] }}>
-              <SlideShow data={data.surfing} images={stayImages} />
+        {isMobile && (
+          <div>
+            <div sx={{ variant: "layout.gutters" }}>
+              <p
+                sx={{
+                  variant: "styles.subHeader",
+                  py: 1,
+                }}
+              >
+                The Mountains
+              </p>
+              <h2
+                sx={{
+                  variant: "styles.h2",
+                  pb: 3,
+                }}
+              >
+                In the mountains, not far from the
+                <span sx={{ fontWeight: 700 }}> beach </span>
+              </h2>
             </div>
-          </Parallax>
+            <ImageCarousel images={stayImages} />
+          </div>
+        )}
+        <Grid columns={[1, 1, "1.5fr 1fr"]}>
+          {!isMobile && (
+            <Parallax y={[20, -20]} tagOuter="figure">
+              <div sx={{ height: ["300px", "400px", "650px"] }}>
+                <SlideShow data={data.surfing} images={stayImages} />
+              </div>
+            </Parallax>
+          )}
           <div
             sx={{
               paddingLeft: [null, null, "2rem"],
@@ -405,11 +467,38 @@ const IndexPage = ({ data, isMobile }) => (
             <div
               sx={{
                 width: ["100%", "100%", "100%"],
-                px: [3, 3, 0],
+                variant: "layout.gutters",
               }}
             >
-              <h2 sx={{ variant: "styles.h2" }}>Stay by the sea</h2>
-              <p sx={{ variant: "styles.p", py: 3 }}>
+              {!isMobile && (
+                <div>
+                  <p
+                    sx={{
+                      variant: "styles.subHeader",
+                      py: 1,
+                    }}
+                  >
+                    The Mountains
+                  </p>
+                  <h2
+                    sx={{
+                      variant: "styles.h2",
+                      pb: 3,
+                    }}
+                  >
+                    In the mountains, not far from the
+                    <span sx={{ fontWeight: 700 }}> beach </span>
+                  </h2>
+                </div>
+              )}
+              <p
+                sx={{
+                  variant: "styles.p",
+                  fontSize: "16px",
+                  pt: [0, 2, 3],
+                  pb: [2, 2, 3],
+                }}
+              >
                 The Singlefin beach house is your front-row seat to the Alantic
                 ocean. Located right on Taghazout beach and facing the sea, our
                 rooms are bright, airy, and got a view you'll remember.
@@ -430,7 +519,7 @@ const IndexPage = ({ data, isMobile }) => (
           <Box>
             <h3
               sx={{
-                variant: "styles.h3",
+                variant: "styles.h2",
                 pb: 3,
               }}
             >
