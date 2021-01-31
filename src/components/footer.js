@@ -46,9 +46,15 @@ export default function Footer(props) {
       >
         <Dunes style={{ width: "100%", height: "auto" }} />
       </div>
-      <div sx={{ bg: "secondary", px: 3, overflowX: "hidden" }}>
+      <div
+        sx={{ bg: "secondary", variant: "layout.gutters", overflowX: "hidden" }}
+      >
         <Container
-          sx={{ maxWidth: "largeContainer", pb: 5, overflowX: "hidden" }}
+          sx={{
+            maxWidth: "largeContainer",
+            pb: [3, 4, 5],
+            overflowX: "hidden",
+          }}
           justify="center"
         >
           <Grid gap={4} columns={[1, 1, 3]}>

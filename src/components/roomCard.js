@@ -1,7 +1,19 @@
 /** @jsx jsx */
-import { jsx, Container, Flex, AspectRatio, Grid, Box, Button } from "theme-ui"
+import {
+  jsx,
+  Container,
+  Flex,
+  AspectRatio,
+  Grid,
+  Box,
+  Button,
+  Image,
+} from "theme-ui"
 import { useState } from "react"
 import SlideShow from "./slideshow"
+import { AspectImage } from "theme-ui"
+import AliceCarousel from "react-alice-carousel"
+// import "react-alice-carousel/lib/alice-carousel.css"
 
 export default function RoomCard(props) {
   const { images, data } = props
@@ -10,22 +22,23 @@ export default function RoomCard(props) {
     <Box
       bg="white"
       sx={{
-        cursor: "pointer",
+        // cursor: "pointer",
         borderRadius: 4,
-        transform: "translate(0, 0px)",
-        transition: "all .3s ease",
-        height: "400px",
+        // transform: "translate(0, 0px)",
+        // transition: "all .3s ease",
+        // height: ["600px", "400px"],
         maxWidth: "100%",
-
-        ":hover": {
-          transform: "translate(0, -8px)",
-          transition: "all .3 ease",
-          boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
-        },
+        overflowX: "hidden",
+        boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+        // ":hover": {
+        //   transform: "translate(0, -8px)",
+        //   transition: "all .3 ease",
+        //   boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
+        // },
       }}
     >
       <Grid columns={[1, 1, "1.5fr 1fr"]}>
-        <AspectRatio
+        {/* <AspectRatio
           ratio={16 / 9}
           sx={{
             overflow: "hidden",
@@ -34,20 +47,29 @@ export default function RoomCard(props) {
         >
           {" "}
           <SlideShow sx={{ height: "400px" }} data={data} images={images} />
-        </AspectRatio>
+        </AspectRatio> */}
 
-        <div
-          sx={{
-            height: ["auto", "auto", "auto"],
-            height: "400px",
-          }}
-        >
+        <AliceCarousel>
+          {images.map(image => (
+            <AspectRatio ratio={4 / 3}>
+              <Image
+                sx={{
+                  height: "100%",
+                  width: "100%",
+                }}
+                src={image}
+              />
+            </AspectRatio>
+          ))}
+        </AliceCarousel>
+
+        <div>
           <Box
             sx={{
               py: "2rem",
               px: "1rem",
-              height: "100%",
               display: "flex",
+              height: ["300px", "400px"],
               flexDirection: "column",
               justifyContent: "space-between",
             }}
@@ -72,8 +94,7 @@ export default function RoomCard(props) {
                 }}
               >
                 Are you a surfer with some experience and want to surf the
-                sweetest waves of Southern Morocco? Our experienced guides will
-                take you to their favorite places to surf.
+                sweetest waves of Southern Morocco?
               </p>
             </div>
             <div>

@@ -415,7 +415,6 @@ const IndexPage = ({ data, isMobile }) => (
         </div>
       </div>
       {/* Stay */}
-
       <div
         sx={{
           paddingTop: ["1rem", "3rem", "4rem"],
@@ -514,8 +513,12 @@ const IndexPage = ({ data, isMobile }) => (
           </div>
         </Grid>
       </div>
-      <div sx={{ pb: 2, px: [3, 3, 0] }}>
-        <Container sx={{ maxWidth: "container" }} justify="center">
+      {/* Stay */}
+      <div sx={{ pb: 2 }}>
+        <Container
+          sx={{ maxWidth: "container", variant: "layout.gutters" }}
+          justify="center"
+        >
           <Box>
             <h3
               sx={{
@@ -651,18 +654,35 @@ const IndexPage = ({ data, isMobile }) => (
       {/* surf */}
       <div
         sx={{
-          pt: [2, 2, 6],
+          paddingTop: ["1rem", "3rem", "4rem"],
           paddingBottom: ["1rem", "3rem", "4rem"],
         }}
       >
+        {isMobile && (
+          <div>
+            <div sx={{ variant: "layout.gutters" }}>
+              <p
+                sx={{
+                  variant: "styles.subHeader",
+                  py: 1,
+                }}
+              >
+                The Mountains
+              </p>
+              <h2
+                sx={{
+                  variant: "styles.h2",
+                  pb: 3,
+                }}
+              >
+                In the mountains, not far from the
+                <span sx={{ fontWeight: 700 }}> beach </span>
+              </h2>
+            </div>
+            <ImageCarousel images={stayImages} />
+          </div>
+        )}
         <Grid columns={[1, 1, "1fr 1.5fr"]}>
-          {isMobile && (
-            <Parallax y={[20, -20]} tagOuter="figure">
-              <div sx={{ height: ["300px", "400px", "650px"] }}>
-                <SlideShow data={data.surfing} images={surfImages} />
-              </div>
-            </Parallax>
-          )}
           <div
             sx={{
               paddingLeft: [null, null, "2rem"],
@@ -676,45 +696,65 @@ const IndexPage = ({ data, isMobile }) => (
             <div
               sx={{
                 width: ["100%", "100%", "100%"],
-                px: [3, 3, 3],
+                variant: "layout.gutters",
               }}
             >
-              <h2 sx={{ variant: "styles.h2" }}>
-                Surf the coastal paradise of southern Morocco
-              </h2>
-              <p sx={{ variant: "styles.p", py: 3 }}>
-                There is surfing all-year round in Morocco and Taghazout is at
-                the center of it all. Just within a few km of the village there
-                are 10 beautiful surfing spots, for beginners and pros.
+              {!isMobile && (
+                <div>
+                  <p
+                    sx={{
+                      variant: "styles.subHeader",
+                      py: 1,
+                    }}
+                  >
+                    The Mountains
+                  </p>
+                  <h2
+                    sx={{
+                      variant: "styles.h2",
+                      pb: 3,
+                    }}
+                  >
+                    In the mountains, not far from the
+                    <span sx={{ fontWeight: 700 }}> beach </span>
+                  </h2>
+                </div>
+              )}
+              <p
+                sx={{
+                  variant: "styles.p",
+                  fontSize: "16px",
+                  pt: [0, 2, 3],
+                  pb: [2, 2, 3],
+                }}
+              >
+                The Singlefin beach house is your front-row seat to the Alantic
+                ocean. Located right on Taghazout beach and facing the sea, our
+                rooms are bright, airy, and got a view you'll remember.
               </p>
               <p sx={{ variant: "styles.p", pb: 3 }}>
-                Right in front of our beach house there are 2 spots - Hash point
-                and Panorama. Just a quick walk down the beach and you'll find
-                Anchor point - One of Morocco's most famous places to surf. In
-                fact, you can check the surf from our roof terrace.
-              </p>
-              <p sx={{ variant: "styles.p" }}>
-                We offer surf lessons for beginners and guided surf trips for
-                those with more experience. No matter your skill level you'll be
-                surfing your heart out when you stay with us.
+                Built on multiple levels, the house is designed and decorated
+                with a tradtional Berber style, and whether you want to check
+                the surf from your room, relax on the roof top terrace with some
+                tea, or fill up on home-cooked meals at our restaurant below you
+                will find yourself at home.
               </p>
             </div>
           </div>
           {!isMobile && (
             <Parallax y={[20, -20]} tagOuter="figure">
-              <AspectRatio
-                ratio={16 / 9}
-                sx={{
-                  overflow: "hidden",
-                }}
-              >
-                {" "}
-                <SlideShow data={data.surfing} images={surfImages} />
-              </AspectRatio>
+              <div sx={{ height: ["300px", "400px", "650px"] }}>
+                <SlideShow data={data.surfing} images={stayImages} />
+              </div>
             </Parallax>
           )}
         </Grid>
       </div>
+      <Flex sx={{ justifyContent: "center", pt: [4, 4, 4], pb: [5, 4, 4] }}>
+        <BerberThree
+          sx={{ height: [75, 100, 140], width: "auto" }}
+        ></BerberThree>
+      </Flex>
       {/* <div
         sx={{
           bg: "tertiary",
@@ -1079,20 +1119,42 @@ const IndexPage = ({ data, isMobile }) => (
       {/* Eat */}
       <div
         sx={{
-          variant: "layout.primaryContainer",
+          paddingTop: ["1rem", "3rem", "4rem"],
+          paddingBottom: ["1rem", "3rem", "4rem"],
         }}
       >
-        <Flex sx={{ justifyContent: "center", pt: [0, 4, 4], pb: [5, 6, 6] }}>
-          <BerberThree
-            sx={{ height: [75, 100, 140], width: "auto" }}
-          ></BerberThree>
-        </Flex>
-        <Grid columns={[1, 1, "1.5fr 1fr"]}>
-          <Parallax y={[20, -20]} tagOuter="figure">
-            <div sx={{ height: ["300px", "400px", "650px"] }}>
-              <SlideShow data={data.surfing} images={eatImages} />
+        {isMobile && (
+          <div>
+            <div sx={{ variant: "layout.gutters" }}>
+              <p
+                sx={{
+                  variant: "styles.subHeader",
+                  py: 1,
+                }}
+              >
+                The Mountains
+              </p>
+              <h2
+                sx={{
+                  variant: "styles.h2",
+                  pb: 3,
+                }}
+              >
+                In the mountains, not far from the
+                <span sx={{ fontWeight: 700 }}> beach </span>
+              </h2>
             </div>
-          </Parallax>
+            <ImageCarousel images={stayImages} />
+          </div>
+        )}
+        <Grid columns={[1, 1, "1.5fr 1fr"]}>
+          {!isMobile && (
+            <Parallax y={[20, -20]} tagOuter="figure">
+              <div sx={{ height: ["300px", "400px", "650px"] }}>
+                <SlideShow data={data.surfing} images={stayImages} />
+              </div>
+            </Parallax>
+          )}
           <div
             sx={{
               paddingLeft: [null, null, "2rem"],
@@ -1106,24 +1168,48 @@ const IndexPage = ({ data, isMobile }) => (
             <div
               sx={{
                 width: ["100%", "100%", "100%"],
-                px: [3, 3, 0],
+                variant: "layout.gutters",
               }}
             >
-              <h2 sx={{ variant: "styles.h2" }}>
-                Eat local food made with love
-              </h2>
-              <p sx={{ variant: "styles.p", py: 3 }}>
-                Attached to Singlefin is our beachside restaurant: Seafood
-                Kitchen. Our local chefs take pride in serving our guests a
-                healthy fusion of Moroccan and European cuisine.
+              {!isMobile && (
+                <div>
+                  <p
+                    sx={{
+                      variant: "styles.subHeader",
+                      py: 1,
+                    }}
+                  >
+                    The Mountains
+                  </p>
+                  <h2
+                    sx={{
+                      variant: "styles.h2",
+                      pb: 3,
+                    }}
+                  >
+                    In the mountains, not far from the
+                    <span sx={{ fontWeight: 700 }}> beach </span>
+                  </h2>
+                </div>
+              )}
+              <p
+                sx={{
+                  variant: "styles.p",
+                  fontSize: "16px",
+                  pt: [0, 2, 3],
+                  pb: [2, 2, 3],
+                }}
+              >
+                The Singlefin beach house is your front-row seat to the Alantic
+                ocean. Located right on Taghazout beach and facing the sea, our
+                rooms are bright, airy, and got a view you'll remember.
               </p>
               <p sx={{ variant: "styles.p", pb: 3 }}>
-                Every morning we will serve you a delicious Moroccan breakfast
-                for you to enjoy by the sea or on the roof terrace. Throughout
-                the day and evening we are preparing tasty vegetarian,
-                non-vegetarian meals, and of course our specialty: seafood. We
-                also have an extensive menu of healthy smoothies, desserts,
-                teas, and coffee.
+                Built on multiple levels, the house is designed and decorated
+                with a tradtional Berber style, and whether you want to check
+                the surf from your room, relax on the roof top terrace with some
+                tea, or fill up on home-cooked meals at our restaurant below you
+                will find yourself at home.
               </p>
             </div>
           </div>
@@ -1170,7 +1256,7 @@ const IndexPage = ({ data, isMobile }) => (
           </Parallax>
         ))}
         <Container
-          sx={{ maxWidth: "largeContainer", px: [3, 3, 3] }}
+          sx={{ maxWidth: "largeContainer", variant: "layout.gutters" }}
           justify="center"
         >
           <h2
@@ -1188,7 +1274,7 @@ const IndexPage = ({ data, isMobile }) => (
           sx={{
             maxWidth: "smallContainer",
             pb: 6,
-            px: [3, 3, 3],
+            variant: "layout.gutters",
             zIndex: 1,
 
             position: "relative",
@@ -1227,8 +1313,8 @@ const IndexPage = ({ data, isMobile }) => (
         <Container
           sx={{
             maxWidth: "largeContainer",
-            px: [3, 3, 3],
-            pb: 6,
+
+            pb: [4, 5, 6],
             zIndex: 1,
 
             position: "relative",
@@ -1250,7 +1336,7 @@ const IndexPage = ({ data, isMobile }) => (
 )
 
 const mapSizesToProps = ({ width }) => ({
-  isMobile: width < 880,
+  isMobile: width < 780,
 })
 
 export default withSizes(mapSizesToProps)(IndexPage)

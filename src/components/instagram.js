@@ -40,7 +40,13 @@ export default class extends Component {
 
   render() {
     return (
-      <div sx={{ columnCount: [3, 3, 4], columnGap: "1em" }}>
+      <div
+        sx={{
+          columnCount: [3, 3, 4],
+          columnGap: "1em",
+          variant: "layout.gutters",
+        }}
+      >
         {this.state.photos &&
           this.state.photos.map(({ src, url }) => (
             <a href={url} target="_blank">
