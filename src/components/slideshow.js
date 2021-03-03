@@ -53,13 +53,14 @@ export default function SlideShow(props) {
           }}
           sx={{
             position: ["absolute", "absolute", "absolute"],
-            minHeight: ["300px", "400px", "450px"],
+            height: "100%",
+            width: "auto",
+            // minHeight: ["300px", "400px", "650px"],
             objectFit: "cover",
           }}
           src={images[imageIndex]}
           // alt={node.name.replace(/-/g, " ").substring(2)}
         />
-        })}
       </AnimatePresence>
 
       <div>

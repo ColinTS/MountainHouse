@@ -17,6 +17,10 @@ import RoomCard from "../components/roomCard"
 import withSizes from "react-sizes"
 import ImageCarousel from "../components/imageCarousel"
 import { Parallax } from "react-scroll-parallax"
+import GoogleMapReact from "google-map-react"
+import Marker from "../images/location/Marker.svg"
+
+const isClient = typeof window !== "undefined"
 
 const surfImages = [
   "//images.ctfassets.net/qlhp1q6elgxs/16NM1a7FJI0IcByEiwRAvb/0bb8fb72a8f9264dbb2359bc7d54e8d3/surf4__1_.jpg",
@@ -63,6 +67,8 @@ const MountainHouse = ({ data, isMobile }) => {
             position: "absolute",
             top: "50%",
             left: "50%",
+            width: "100vw",
+            px: 3,
             transform: "translate(-50%, -50%)",
           }}
         >
@@ -71,21 +77,11 @@ const MountainHouse = ({ data, isMobile }) => {
               variant: "styles.h1",
               textAlign: "center",
               color: "white",
+              fontSize: [6, 7, 8],
             }}
           >
             The Mountain Villa
           </h1>
-          {/* <p
-            sx={{
-              variant: "styles.p",
-              textAlign: "center",
-              opacity: 0.9,
-              color: "white",
-              fontSize: [2, 2, 4],
-            }}
-          >
-            Your home in the quiet mountains above Taghazout
-          </p> */}
         </div>
       </div>
 
@@ -203,7 +199,6 @@ const MountainHouse = ({ data, isMobile }) => {
               <p
                 sx={{
                   variant: "styles.p",
-                  fontSize: "16px",
                   pt: [0, 2, 3],
                   pb: [2, 2, 3],
                 }}
@@ -230,118 +225,114 @@ const MountainHouse = ({ data, isMobile }) => {
           display: "flex",
           justifyContent: "center",
           variant: "layout.gutters",
-          paddingTop: "4rem",
-          paddingBottom: "4rem",
+          py: [5, 5, 6],
         }}
       >
         <Container sx={{ maxWidth: "mediumContainer" }} justify="center">
-          <h2 sx={{ variant: "styles.h2", textAlign: "center", pb: 3 }}>
-            Our rooms
-          </h2>
-          <Grid gap={4} columns={[1, 1, 1]}>
-            <RoomCard data={data.surfing} images={surfImages} />
-            <RoomCard data={data.surfing} images={surfImages} />
-            {/* <Box
-              bg="white"
+          <div>
+            <p
               sx={{
-                cursor: "pointer",
-                borderRadius: 4,
-                transform: "translate(0, 0px)",
-                transition: "all .3s ease",
-                height: "400px",
-                maxWidth: "100%",
+                variant: "styles.subHeader",
 
-                ":hover": {
-                  transform: "translate(0, -8px)",
-                  transition: "all .3 ease",
-                  boxShadow: "0 0 10px 0px rgba(0, 0, 0, .125)",
-                },
+                textAlign: "center",
               }}
             >
-              <Grid columns={[1, 1, "1.5fr 1fr"]}>
-                <AspectRatio
-                  ratio={16 / 9}
-                  sx={{
-                    overflow: "hidden",
-                    maxHeight: "400px",
-                  }}
-                >
-                  {" "}
-                  <SlideShow
-                    sx={{ height: "400px" }}
-                    data={data.surfing}
-                    images={surfImages}
-                  />
-                </AspectRatio>
-
-                <div
-                  sx={{
-                    height: ["auto", "auto", "auto"],
-                    height: "400px",
-                  }}
-                >
-                  <Box
-                    sx={{
-                      py: "2rem",
-                      px: "1rem",
-                      height: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <div>
-                      <h3
-                        sx={{
-                          variant: "styles.h3",
-                          pb: 3,
-                          fontWeight: 500,
-                          fontSize: [2, 2, 3],
-                          opacity: 0.5,
-                        }}
-                      >
-                        BASIC ROOM
-                      </h3>
-                      <p
-                        sx={{
-                          variant: "styles.p",
-                          fontSize: [1, 1, 2],
-                          pb: 1,
-                        }}
-                      >
-                        Are you a surfer with some experience and want to surf
-                        the sweetest waves of Southern Morocco? Our experienced
-                        guides will take you to their favorite places to surf.
-                      </p>
-                    </div>
-                    <div>
-                      <Button>Book now</Button>
-                      <p
-                        sx={{
-                          variant: "styles.p",
-                          fontSize: [1, 1, 2],
-                          margin: 0,
-                          pt: 2,
-                        }}
-                      >
-                        Starting from{" "}
-                        <span style={{ fontWeight: "900" }}>370 EUR</span>{" "}
-                        per/week
-                      </p>
-                    </div>
-                  </Box>
-                </div>
-              </Grid>
-            </Box> */}
+              The Rooms
+            </p>
+            <h2
+              sx={{
+                variant: "styles.h2",
+                pb: 3,
+                textAlign: "center",
+              }}
+            >
+              A room for
+              <span sx={{ fontWeight: 700 }}> everyone </span>
+            </h2>
+          </div>
+          <Grid gap={4} columns={[1, 1, 1]}>
+            <RoomCard
+              data={data.surfing}
+              images={surfImages}
+              title="ROOM ONE"
+              description="Room one is a spacious room with a private terrace overlooking the peaceful garden and front seat to the sunrise and sunset."
+              price="30"
+            />
+            <RoomCard
+              data={data.surfing}
+              images={surfImages}
+              title="ROOM TWO"
+              description="Room one is a spacious room with a private terrace overlooking the peaceful garden and front seat to the sunrise and sunset."
+              price="40"
+            />
           </Grid>
         </Container>
       </div>
+      <Container
+        sx={{
+          variant: "layout.primaryContainer",
+          variant: "layout.gutters",
+          py: [5, 5, 6],
+        }}
+      >
+        <div>
+          <p
+            sx={{
+              variant: "styles.subHeader",
+              py: 1,
+            }}
+          >
+            How to get here
+          </p>
+          {/* <h2
+            sx={{
+              variant: "styles.h2",
+              pb: 3,
+            }}
+          >
+            In the mountains, not far from the
+            <span sx={{ fontWeight: 700 }}> beach </span>
+          </h2> */}
+        </div>
+        <div sx={{ height: "600px", width: "100%", px: "-1.5rem" }}>
+          {isClient && (
+            <GoogleMapReact
+              bootstrapURLKeys={{
+                key: process.env.GATSBY_GOOGLE_API_KEY,
+              }}
+              defaultCenter={[30.544194, -9.708767]}
+              defaultZoom={17}
+            >
+              <Marker
+                lat={30.544194}
+                lng={-9.708767}
+                sx={{
+                  height: "64px",
+                  position: "absolute",
+                  transform: "translate(-50%, -50%)",
+                }}
+              />
+            </GoogleMapReact>
+          )}
+        </div>
+        <p
+          sx={{
+            variant: "styles.p",
+            pt: [4, 2, 3],
+            pb: [2, 2, 3],
+          }}
+        >
+          The Singlefin beach house is your front-row seat to the Alantic ocean.
+          Located right on Taghazout beach and facing the sea, our rooms are
+          bright, airy, and got a view you'll remember.
+        </p>
+      </Container>
     </Layout>
   )
 }
 
 const mapSizesToProps = ({ width }) => ({
-  isMobile: width < 780,
+  isMobile: width < 600,
 })
 
 export default withSizes(mapSizesToProps)(MountainHouse)

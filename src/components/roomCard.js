@@ -13,11 +13,9 @@ import { useState } from "react"
 import SlideShow from "./slideshow"
 import { AspectImage } from "theme-ui"
 import AliceCarousel from "react-alice-carousel"
-// import "react-alice-carousel/lib/alice-carousel.css"
+import withSizes from "react-sizes"
 
-export default function RoomCard(props) {
-  const { images, data } = props
-
+const RoomCard = ({ images, data, isMobile, title, description, price }) => {
   return (
     <Box
       bg="white"
@@ -37,78 +35,80 @@ export default function RoomCard(props) {
         // },
       }}
     >
-      <Grid columns={[1, 1, "1.5fr 1fr"]}>
-        {/* <AspectRatio
-          ratio={16 / 9}
-          sx={{
-            overflow: "hidden",
-            maxHeight: "400px",
-          }}
-        >
-          {" "}
-          <SlideShow sx={{ height: "400px" }} data={data} images={images} />
-        </AspectRatio> */}
-
-        <AliceCarousel>
-          {images.map(image => (
-            <AspectRatio ratio={4 / 3}>
-              <Image
-                sx={{
-                  height: "100%",
-                  width: "100%",
-                }}
-                src={image}
-              />
-            </AspectRatio>
-          ))}
-        </AliceCarousel>
-
+      <Grid gap={0} columns={["minmax(0, 1fr)", "minmax(0, 1fr)", "1.5fr 1fr"]}>
+        {!isMobile && (
+          <AspectRatio
+            ratio={16 / 9}
+            sx={{
+              overflow: "hidden",
+              maxHeight: "400px",
+            }}
+          >
+            {" "}
+            <SlideShow data={data} images={images} />
+          </AspectRatio>
+        )}
+        {isMobile && (
+          <AliceCarousel>
+            {images.map(image => (
+              <AspectRatio ratio={4 / 3}>
+                <Image
+                  sx={{
+                    height: "100%",
+                  }}
+                  src={image}
+                />
+              </AspectRatio>
+            ))}
+          </AliceCarousel>
+        )}
         <div>
           <Box
             sx={{
-              py: "2rem",
+              py: [0, "2rem", "2rem"],
               px: "1rem",
+              pb: ["1rem", 0, 0],
               display: "flex",
-              height: ["300px", "400px"],
+              height: ["250px", "400px"],
               flexDirection: "column",
-              justifyContent: "space-between",
+              justifyContent: ["space-between"],
             }}
           >
             <div>
               <h3
                 sx={{
                   variant: "styles.h3",
-                  pb: 3,
+                  pb: [0],
                   fontWeight: 500,
                   fontSize: [2, 2, 3],
                   opacity: 0.5,
                 }}
               >
-                BASIC ROOM
+                {title}
               </h3>
               <p
                 sx={{
                   variant: "styles.p",
-                  fontSize: [1, 1, 2],
+                  fontSize: ["14px", 1, 2],
                   pb: 1,
                 }}
               >
-                Are you a surfer with some experience and want to surf the
-                sweetest waves of Southern Morocco?
+                {description}
               </p>
             </div>
             <div>
-              <Button>Book now</Button>
+              <Button>Book</Button>
               <p
                 sx={{
                   variant: "styles.p",
-                  fontSize: [1, 1, 2],
+                  fontSize: ["14px", 1, 2],
+
                   margin: 0,
                   pt: 2,
+                  pb: [0, 1, 3],
                 }}
               >
-                Starting from <span style={{ fontWeight: "900" }}>370 EUR</span>{" "}
-                per/week
+                <span style={{ fontWeight: "900" }}>{price} EUR</span> / night
               </p>
             </div>
           </Box>
@@ -117,3 +117,9 @@ export default function RoomCard(props) {
     </Box>
   )
 }
+
+const mapSizesToProps = ({ width }) => ({
+  isMobile: width < 600,
+})
+
+export default withSizes(mapSizesToProps)(RoomCard)
