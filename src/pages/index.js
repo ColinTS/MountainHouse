@@ -493,7 +493,7 @@ const IndexPage = ({ data, isMobile }) => (
               <p
                 sx={{
                   variant: "styles.p",
-                  fontSize: "16px",
+
                   pt: [0, 2, 3],
                   pb: [2, 2, 3],
                 }}
@@ -723,7 +723,7 @@ const IndexPage = ({ data, isMobile }) => (
               <p
                 sx={{
                   variant: "styles.p",
-                  fontSize: "16px",
+
                   pt: [0, 2, 3],
                   pb: [2, 2, 3],
                 }}
@@ -1195,7 +1195,7 @@ const IndexPage = ({ data, isMobile }) => (
               <p
                 sx={{
                   variant: "styles.p",
-                  fontSize: "16px",
+
                   pt: [0, 2, 3],
                   pb: [2, 2, 3],
                 }}
@@ -1225,36 +1225,27 @@ const IndexPage = ({ data, isMobile }) => (
           position: "relative ",
         }}
       >
-        {[...Array(10)].map(x => (
-          <Parallax
-            sx={{ position: "absolute" }}
-            y={[getRandomStar(0, 300), getRandomStar(0, -300)]}
-          >
-            <StarOne
-              sx={{
-                size: [getRandomStar(10, 50), getRandomStar(20, 75)],
-                top: [getRandomStar(0, 900), getRandomStar(0, 1000)],
-                left: [getRandomStar(0, 500), getRandomStar(0, 2000)],
-                position: "relative",
-              }}
-            ></StarOne>
-          </Parallax>
-        ))}
-        {[...Array(10)].map((x, i) => (
-          <Parallax
-            sx={{ position: "absolute" }}
-            y={[getRandomStar(0, 300), getRandomStar(0, -300)]}
-          >
-            <StarTwo
-              sx={{
-                size: [getRandomStar(10, 50), getRandomStar(20, 75)],
-                top: [getRandomStar(0, 900), getRandomStar(0, 1000)],
-                left: [getRandomStar(0, 500), getRandomStar(0, 2000)],
-                position: "relative",
-              }}
-            ></StarTwo>
-          </Parallax>
-        ))}
+        <Parallax sx={{ position: "absolute" }} y={[100, -100]}>
+          <StarOne
+            sx={{
+              size: [20, 20],
+              top: [10, 100],
+              left: [10, 100],
+              position: "relative",
+            }}
+          ></StarOne>
+        </Parallax>
+        <Parallax sx={{ position: "absolute" }} y={[100, -10]}>
+          <StarTwo
+            sx={{
+              size: [20, 20],
+              top: [10, 100],
+              left: [10, 100],
+              position: "relative",
+            }}
+          ></StarTwo>
+        </Parallax>
+
         <Container
           sx={{ maxWidth: "largeContainer", variant: "layout.gutters" }}
           justify="center"
@@ -1310,7 +1301,7 @@ const IndexPage = ({ data, isMobile }) => (
             James - Australia
           </p>
         </Container>
-        <Container
+        {/* <Container
           sx={{
             maxWidth: "largeContainer",
 
@@ -1329,7 +1320,7 @@ const IndexPage = ({ data, isMobile }) => (
             thumbnailWidth={640}
             photoCount={12}
           />
-        </Container>
+        </Container> */}
       </div>
     </Layout>
   </div>

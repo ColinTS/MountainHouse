@@ -12,7 +12,7 @@ module.exports = {
     {
       resolve: `gatsby-source-instagram`,
       options: {
-        username: `single.fin.taghazout`,
+        username: `22225142971`,
       },
     },
     "gatsby-plugin-theme-ui",
