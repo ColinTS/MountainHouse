@@ -20,7 +20,7 @@ import { Parallax } from "react-scroll-parallax"
 import GoogleMapReact from "google-map-react"
 import Marker from "../images/location/Marker.svg"
 
-const isClient = typeof window !== "undefined"
+// const isClient = typeof window !== "undefined"
 
 const surfImages = [
   "//images.ctfassets.net/qlhp1q6elgxs/16NM1a7FJI0IcByEiwRAvb/0bb8fb72a8f9264dbb2359bc7d54e8d3/surf4__1_.jpg",
@@ -295,25 +295,25 @@ const MountainHouse = ({ data, isMobile }) => {
           </h2> */}
         </div>
         <div sx={{ height: "600px", width: "100%", px: "-1.5rem" }}>
-          {isClient && (
-            <GoogleMapReact
-              bootstrapURLKeys={{
-                key: process.env.GATSBY_GOOGLE_API_KEY,
+          {/* {isClient && ( */}
+          <GoogleMapReact
+            bootstrapURLKeys={{
+              key: process.env.GATSBY_GOOGLE_API_KEY,
+            }}
+            defaultCenter={[30.544194, -9.708767]}
+            defaultZoom={17}
+          >
+            <Marker
+              lat={30.544194}
+              lng={-9.708767}
+              sx={{
+                height: "64px",
+                position: "absolute",
+                transform: "translate(-50%, -50%)",
               }}
-              defaultCenter={[30.544194, -9.708767]}
-              defaultZoom={17}
-            >
-              <Marker
-                lat={30.544194}
-                lng={-9.708767}
-                sx={{
-                  height: "64px",
-                  position: "absolute",
-                  transform: "translate(-50%, -50%)",
-                }}
-              />
-            </GoogleMapReact>
-          )}
+            />
+          </GoogleMapReact>
+          {/* )} */}
         </div>
         <p
           sx={{

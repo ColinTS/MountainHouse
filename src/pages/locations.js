@@ -11,7 +11,7 @@ import SEO from "../components/seo"
 import BackgroundImage from "gatsby-background-image"
 import Marker from "../images/location/Marker.svg"
 
-const isClient = typeof window !== "undefined"
+// const isClient = typeof window !== "undefined"
 
 export const data = graphql`
   query {
@@ -149,25 +149,25 @@ const Location = ({ data }) => (
         65 Tayought Street, Taghazout 80022
       </p>
       <div style={{ height: "600px", width: "100%" }}>
-        {isClient && (
-          <GoogleMapReact
-            bootstrapURLKeys={{
-              key: process.env.GATSBY_GOOGLE_API_KEY,
+        {/* {isClient && ( */}
+        <GoogleMapReact
+          bootstrapURLKeys={{
+            key: process.env.GATSBY_GOOGLE_API_KEY,
+          }}
+          defaultCenter={[30.544194, -9.708767]}
+          defaultZoom={17}
+        >
+          <Marker
+            lat={30.544194}
+            lng={-9.708767}
+            sx={{
+              height: "64px",
+              position: "absolute",
+              transform: "translate(-50%, -50%)",
             }}
-            defaultCenter={[30.544194, -9.708767]}
-            defaultZoom={17}
-          >
-            <Marker
-              lat={30.544194}
-              lng={-9.708767}
-              sx={{
-                height: "64px",
-                position: "absolute",
-                transform: "translate(-50%, -50%)",
-              }}
-            />
-          </GoogleMapReact>
-        )}
+          />
+        </GoogleMapReact>
+        {/* )} */}
       </div>
     </Container>
   </Layout>

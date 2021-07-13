@@ -143,7 +143,7 @@ export default function Footer(props) {
                   },
                 }}
                 onClick={function() {
-                  window.$crisp.push(["do", "chat:open"])
+                  // window.$crisp.push(["do", "chat:open"])
                 }}
               >
                 Contact Us

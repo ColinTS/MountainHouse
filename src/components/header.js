@@ -256,7 +256,7 @@ const Navigation = () => {
             userSelect: "none",
           }}
           onClick={function() {
-            window.$crisp.push(["do", "chat:open"])
+            // window.$crisp.push(["do", "chat:open"])
           }}
         >
           Contact Us
@@ -431,7 +431,7 @@ function Header({ siteTitle, isMobile }) {
                 },
               }}
               onClick={function() {
-                window.$crisp.push(["do", "chat:open"])
+                // window.$crisp.push(["do", "chat:open"])
               }}
             >
               Contact Us

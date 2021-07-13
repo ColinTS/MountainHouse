@@ -14,8 +14,9 @@ import BackgroundImage from "gatsby-background-image"
 import Marker from "../images/location/Marker.svg"
 // import SurfIcon from "../images/explore/SurfIcon.svg"
 import BoardDivider from "../images/explore/board.svg"
+import { useMediaQuery } from "react-responsive"
 
-const isClient = typeof window !== "undefined"
+// const isClient = typeof window !== "undefined"
 
 export const data = graphql`
   query {
@@ -280,6 +281,10 @@ const Explore = ({ data, isMobile }) => {
     setLong(newLong)
   }
 
+  const isBigScreen = useMediaQuery({ minDeviceWidth: 1824 })
+  const isTablet = useMediaQuery({ maxWidth: 1224 })
+  const isPhone = useMediaQuery({ maxWidth: 500 })
+
   const SurfIcon = ({ width, fill }) => (
     <svg
       width={width}
@@ -474,7 +479,7 @@ const Explore = ({ data, isMobile }) => {
         </div>
       </div>
       <div sx={{ height: "100vh", position: "relative" }}>
-        {!isMobile && (
+        {!isTablet && (
           <div sx={{ position: "absolute", zIndex: 1000, top: 100, left: 150 }}>
             {" "}
             <div
@@ -492,87 +497,87 @@ const Explore = ({ data, isMobile }) => {
         )}
 
         <div sx={{ zIndex: 1, height: "100vh" }}>
-          {isClient && (
-            <GoogleMapReact
-              bootstrapURLKeys={{
-                key: process.env.GATSBY_GOOGLE_API_KEY,
-              }}
-              defaultCenter={[30.544194, -9.708767]}
-              center={[lat, long]}
-              defaultZoom={13}
-              options={{
-                // gestureHandling: "cooperative",
-                fullscreenControl: false,
-                zoomControl: false,
-                scrollwheel: false,
-                // draggable: true,
-              }}
-            >
-              <Marker
-                lat={30.544757}
-                lng={-9.711671}
-                name={"hashpointSurf"}
-                category={"surf"}
-                newLat={30.544757}
-                newLong={-9.711671}
-              />
-              <Marker
-                lat={30.542439}
-                lng={-9.7038}
-                name={"panoramaSurf"}
-                category={"surf"}
-                newLat={30.542439}
-                newLong={-9.7038}
-              />
-              <Marker
-                lat={30.54517}
-                lng={-9.726857}
-                name={"anchorSurf"}
-                category={"surf"}
-                newLat={30.54517}
-                newLong={-9.726857}
-              />
-              <Marker
-                lat={30.548198}
-                lng={-9.729592}
-                name={"mysteriesSurf"}
-                category={"surf"}
-                newLat={30.548198}
-                newLong={-9.729592}
-              />
-              <Marker
-                lat={30.550545}
-                lng={-9.73369}
-                name={"laSourceSurf"}
-                category={"surf"}
-                newLat={30.550545}
-                newLong={-9.73369}
-              />
-              <Marker
-                lat={30.551533}
-                lng={-9.739244}
-                name={"killerSurf"}
-                category={"surf"}
-                newLat={30.551533}
-                newLong={-9.739244}
-              />
-              <Marker
-                lat={30.495989}
-                lng={-9.67711}
-                name={"bananaSurf"}
-                category={"surf"}
-                newLat={30.495989}
-                newLong={-9.67711}
-              />
-              <Marker
-                lat={30.50677}
-                lng={-9.688515}
-                name={"devilsrockSurf"}
-                category={"surf"}
-                newLat={30.50677}
-                newLong={-9.688515}
-              />
-              {/* <Marker
+          {/* {isClient && ( */}
+          <GoogleMapReact
+            bootstrapURLKeys={{
+              key: process.env.GATSBY_GOOGLE_API_KEY,
+            }}
+            defaultCenter={[30.544194, -9.708767]}
+            center={[lat, long]}
+            defaultZoom={13}
+            options={{
+              // gestureHandling: "cooperative",
+              fullscreenControl: false,
+              zoomControl: false,
+              scrollwheel: false,
+              // draggable: true,
+            }}
+          >
+            <Marker
+              lat={30.544757}
+              lng={-9.711671}
+              name={"hashpointSurf"}
+              category={"surf"}
+              newLat={30.544757}
+              newLong={-9.711671}
+            />
+            <Marker
+              lat={30.542439}
+              lng={-9.7038}
+              name={"panoramaSurf"}
+              category={"surf"}
+              newLat={30.542439}
+              newLong={-9.7038}
+            />
+            <Marker
+              lat={30.54517}
+              lng={-9.726857}
+              name={"anchorSurf"}
+              category={"surf"}
+              newLat={30.54517}
+              newLong={-9.726857}
+            />
+            <Marker
+              lat={30.548198}
+              lng={-9.729592}
+              name={"mysteriesSurf"}
+              category={"surf"}
+              newLat={30.548198}
+              newLong={-9.729592}
+            />
+            <Marker
+              lat={30.550545}
+              lng={-9.73369}
+              name={"laSourceSurf"}
+              category={"surf"}
+              newLat={30.550545}
+              newLong={-9.73369}
+            />
+            <Marker
+              lat={30.551533}
+              lng={-9.739244}
+              name={"killerSurf"}
+              category={"surf"}
+              newLat={30.551533}
+              newLong={-9.739244}
+            />
+            <Marker
+              lat={30.495989}
+              lng={-9.67711}
+              name={"bananaSurf"}
+              category={"surf"}
+              newLat={30.495989}
+              newLong={-9.67711}
+            />
+            <Marker
+              lat={30.50677}
+              lng={-9.688515}
+              name={"devilsrockSurf"}
+              category={"surf"}
+              newLat={30.50677}
+              newLong={-9.688515}
+            />
+            {/* <Marker
                 lat={30.628845}
                 lng={-9.886865}
                 name={"boilersSurf"}
@@ -580,27 +585,27 @@ const Explore = ({ data, isMobile }) => {
                 newLat={30.628845}
                 newLong={-9.886865}
               /> */}
-              <Marker
-                lat={30.548887}
-                lng={-9.712487}
-                name={"skatepark"}
-                category={"skate"}
-                newLat={30.548887}
-                newLong={-9.712487}
-              />
-              <Marker
-                lat={30.588435}
-                lng={-9.526074}
-                name={"paradiseValley"}
-                category={"paradise"}
-                newLat={30.588435}
-                newLong={-9.526074}
-              />
-            </GoogleMapReact>
-          )}
+            <Marker
+              lat={30.548887}
+              lng={-9.712487}
+              name={"skatepark"}
+              category={"skate"}
+              newLat={30.548887}
+              newLong={-9.712487}
+            />
+            <Marker
+              lat={30.588435}
+              lng={-9.526074}
+              name={"paradiseValley"}
+              category={"paradise"}
+              newLat={30.588435}
+              newLong={-9.526074}
+            />
+          </GoogleMapReact>
+          {/* )} */}
         </div>
       </div>
-      {isMobile && (
+      {isTablet && (
         <Flex sx={{ justifyContent: "center" }}>
           <div sx={{ marginTop: "-200px" }}>
             {" "}
@@ -1119,7 +1124,7 @@ const Explore = ({ data, isMobile }) => {
 }
 
 const mapSizesToProps = ({ width }) => ({
-  isMobile: width < 880,
+  isMobile: width < 600,
 })
 
-export default withSizes(mapSizesToProps)(Explore)
+export default Explore
