@@ -55,7 +55,7 @@ const Path = props => (
 const MenuToggle = ({ toggle, isOpen }) => {
   return (
     <div>
-      {isOpen ? (
+      {/* {isOpen ? (
         <Helmet>
           (
           <style type="text/css">{`
@@ -76,7 +76,7 @@ const MenuToggle = ({ toggle, isOpen }) => {
         }
      `}</style>
         </Helmet>
-      ) : null}
+      ) : null} */}
 
       <button
         css={{
