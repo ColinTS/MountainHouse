@@ -1,12 +1,31 @@
 /** @jsx jsx */
 import { jsx, Flex, Button } from "theme-ui"
 import PropTypes from "prop-types"
+import React from "react"
 import { useState, useEffect, useRef } from "react"
 import Logo from "../images/logo.svg"
 import { Link } from "gatsby"
 import withSizes from "react-sizes"
 import { motion, useCycle } from "framer-motion"
 import Helmet from "react-helmet"
+import Media from "react-media"
+
+// const useViewport = () => {
+//   const [width, setWidth] = React.useState(window.innerWidth)
+
+//   React.useEffect(() => {
+//     const handleWindowResize = () => setWidth(window.innerWidth)
+//     window.addEventListener("resize", handleWindowResize)
+//     return () => window.removeEventListener("resize", handleWindowResize)
+//   }, [])
+
+//   // Return the width so we can use it in our components
+//   if (width < 880) {
+//     return true
+//   } else {
+//     return false
+//   }
+// }
 
 // const useDimensions = ref => {
 //   const dimensions = useRef({ width: 0, height: 0 })
@@ -255,9 +274,7 @@ const Navigation = () => {
             pr: 4,
             userSelect: "none",
           }}
-          onClick={function() {
-            // window.$crisp.push(["do", "chat:open"])
-          }}
+          onClick={function() {}}
         >
           Contact Us
         </span>
@@ -278,9 +295,10 @@ const Navigation = () => {
   )
 }
 
-function Header({ siteTitle, isMobile }) {
+function Header({ siteTitle }) {
   const [isTop, setIsTop] = useState(true)
   const [isOpen, toggleOpen] = useCycle(false, true)
+
   // const containerRef = useRef(null)
   // const { height } = useDimensions(containerRef)
 
@@ -295,161 +313,168 @@ function Header({ siteTitle, isMobile }) {
         position: "absolute",
       }}
     >
-      {isMobile && (
-        <div>
-          <motion.nav
-            sx={{
-              height: "100vh",
-            }}
-            initial={false}
-            animate={isOpen ? "open" : "closed"}
-          >
-            <motion.div
+      <Media
+        query="(max-width: 880px)"
+        render={() => (
+          <div>
+            <motion.nav
               sx={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                bottom: 0,
-                width: "100vw",
-                background: "#fff",
+                height: "100vh",
               }}
-              variants={sidebar}
-            />
-            <Navigation sx={{ zIndex: 5 }} />
-            <MenuToggle isOpen={isOpen} toggle={() => toggleOpen()} />
-          </motion.nav>
+              initial={false}
+              animate={isOpen ? "open" : "closed"}
+            >
+              <motion.div
+                sx={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  bottom: 0,
+                  width: "100vw",
+                  background: "#fff",
+                }}
+                variants={sidebar}
+              />
+              <Navigation sx={{ zIndex: 5 }} />
+              <MenuToggle isOpen={isOpen} toggle={() => toggleOpen()} />
+            </motion.nav>
 
-          <Link sx={{ display: "flex", alignItems: "center" }} to="/">
-            <Logo
-              sx={{
-                width: ["160px"],
-                height: "auto",
-                position: "absolute",
-                top: "24px",
-                left: "5%",
-                zIndex: isOpen ? -1 : 1,
-              }}
-            />
-          </Link>
-        </div>
-      )}
-      {!isMobile && (
-        <Flex
-          sx={{
-            alignItems: "center",
-            justifyContent: "space-between",
-            margin: "0 auto",
-            maxWidth: 1760,
-            py: 3,
-            px: 3,
-          }}
-        >
-          <Flex>
             <Link sx={{ display: "flex", alignItems: "center" }} to="/">
               <Logo
                 sx={{
-                  width: ["100px", "125px", "225px"],
+                  width: ["160px"],
                   height: "auto",
+                  position: "absolute",
+                  top: "24px",
+                  left: "5%",
+                  zIndex: isOpen ? -1 : 1,
                 }}
               />
             </Link>
-          </Flex>
-          <Flex sx={{ alignItems: "center" }}>
-            <Link
-              to="/"
-              sx={{
-                variant: "styles.button",
-                color: "white",
-                cursor: "pointer",
-                pr: 4,
-                userSelect: "none",
-                textDecoration: "none",
-                "&:hover": {
-                  color: "blue",
-                },
-              }}
-            >
-              Home
-            </Link>
-            <Link
-              to="/explore"
-              sx={{
-                variant: "styles.button",
-                color: "white",
-                cursor: "pointer",
-                pr: 4,
-                userSelect: "none",
-                textDecoration: "none",
-                "&:hover": {
-                  color: "blue",
-                },
-              }}
-            >
-              Explore
-            </Link>
-            <Link
-              to="/locations"
-              sx={{
-                variant: "styles.button",
-                color: "white",
-                cursor: "pointer",
-                pr: 4,
-                userSelect: "none",
-                textDecoration: "none",
-                "&:hover": {
-                  color: "blue",
-                },
-              }}
-            >
-              Location
-            </Link>
-            <Link
-              to="/faq"
-              sx={{
-                variant: "styles.button",
-                color: "white",
-                cursor: "pointer",
-                pr: 4,
-                userSelect: "none",
-                textDecoration: "none",
-                "&:hover": {
-                  color: "blue",
-                },
-              }}
-            >
-              FAQ
-            </Link>
-            <span
-              sx={{
-                variant: "styles.button",
-                color: "white",
-                cursor: "pointer",
-                pr: 4,
-                userSelect: "none",
-                "&:hover": {
-                  color: "blue",
-                },
-              }}
-              onClick={function() {
-                // window.$crisp.push(["do", "chat:open"])
-              }}
-            >
-              Contact Us
-            </span>
+          </div>
+        )}
+      />
 
-            <div>
-              <Button sx={{ variant: "buttons.primary" }}>Book now</Button>
-            </div>
+      <Media
+        query="(min-width: 880px)"
+        render={() => (
+          <Flex
+            sx={{
+              alignItems: "center",
+              justifyContent: "space-between",
+              margin: "0 auto",
+              maxWidth: 1760,
+              py: 3,
+              px: 3,
+            }}
+          >
+            <Flex>
+              <Link sx={{ display: "flex", alignItems: "center" }} to="/">
+                <Logo
+                  sx={{
+                    width: ["100px", "125px", "225px"],
+                    height: "auto",
+                  }}
+                />
+              </Link>
+            </Flex>
+            <Flex sx={{ alignItems: "center" }}>
+              <Link
+                to="/"
+                sx={{
+                  variant: "styles.button",
+                  color: "white",
+                  cursor: "pointer",
+                  pr: 4,
+                  userSelect: "none",
+                  textDecoration: "none",
+                  "&:hover": {
+                    color: "blue",
+                  },
+                }}
+              >
+                Home
+              </Link>
+              <Link
+                to="/explore"
+                sx={{
+                  variant: "styles.button",
+                  color: "white",
+                  cursor: "pointer",
+                  pr: 4,
+                  userSelect: "none",
+                  textDecoration: "none",
+                  "&:hover": {
+                    color: "blue",
+                  },
+                }}
+              >
+                Explore
+              </Link>
+              <Link
+                to="/locations"
+                sx={{
+                  variant: "styles.button",
+                  color: "white",
+                  cursor: "pointer",
+                  pr: 4,
+                  userSelect: "none",
+                  textDecoration: "none",
+                  "&:hover": {
+                    color: "blue",
+                  },
+                }}
+              >
+                Location
+              </Link>
+              <Link
+                to="/faq"
+                sx={{
+                  variant: "styles.button",
+                  color: "white",
+                  cursor: "pointer",
+                  pr: 4,
+                  userSelect: "none",
+                  textDecoration: "none",
+                  "&:hover": {
+                    color: "blue",
+                  },
+                }}
+              >
+                FAQ
+              </Link>
+              <span
+                sx={{
+                  variant: "styles.button",
+                  color: "white",
+                  cursor: "pointer",
+                  pr: 4,
+                  userSelect: "none",
+                  "&:hover": {
+                    color: "blue",
+                  },
+                }}
+                onClick={function() {
+                  // window.$crisp.push(["do", "chat:open"])
+                }}
+              >
+                Contact Us
+              </span>
+
+              <div>
+                <Button sx={{ variant: "buttons.primary" }}>Book now</Button>
+              </div>
+            </Flex>
           </Flex>
-        </Flex>
-      )}
+        )}
+      />
     </div>
   )
 }
 
-const mapSizesToProps = ({ width }) => ({
-  isMobile: width < 880,
-})
+// const mapSizesToProps = ({ width }) => ({
+//   isMobile: width < 880,
+// })
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
@@ -459,4 +484,4 @@ Header.defaultProps = {
   siteTitle: ``,
 }
 
-export default withSizes(mapSizesToProps)(Header)
+export default Header

@@ -222,7 +222,7 @@ const IndexPage = ({ data, isMobile }) => (
               <span sx={{ fontWeight: 700 }}>yours </span>
             </h2>
             <div sx={{ mx: "-1.5rem" }}>
-              {isMobile && (
+              {!isMobile && (
                 <CardCarousel>
                   <Link to="/mountain-house">
                     <div sx={{ maxWidth: "92%" }}>
@@ -311,7 +311,7 @@ const IndexPage = ({ data, isMobile }) => (
                 </CardCarousel>
               )}
             </div>
-            {!isMobile && (
+            {isMobile && (
               <Parallax y={[5, -10]}>
                 <Grid sx={{ pt: 4 }} gap={4} columns={[2]}>
                   <Link to="/mountain-house">
