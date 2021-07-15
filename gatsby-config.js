@@ -3,6 +3,9 @@ require("dotenv").config({
 })
 
 module.exports = {
+  flags: {
+    DEV_SSR: true,
+  },
   siteMetadata: {
     title: `Singlefin Surf & Stay Taghazout`,
     description: `Singlefin is a surf hotel located in Taghazout, Morocco.`,
@@ -19,6 +22,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-resolve-src`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

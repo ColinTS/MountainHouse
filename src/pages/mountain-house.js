@@ -29,16 +29,13 @@ const surfImages = [
   "//images.ctfassets.net/qlhp1q6elgxs/OjI0Pf4TQlMgHIfQwbEm8/91912ff2b7e4418d7c9fde000fbcb24d/surf1__1_.jpg",
 ]
 
-export const data = graphql`
-  query {
-    surfStay: file(relativePath: { eq: "surfStay.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 4000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+export const data = graphql`{
+  surfStay: file(relativePath: {eq: "surfStay.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(layout: FULL_WIDTH)
     }
   }
+}
 `
 
 const MountainHouse = ({ data, isMobile }) => {
@@ -60,7 +57,7 @@ const MountainHouse = ({ data, isMobile }) => {
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
           }}
-          fluid={data.surfStay.childImageSharp.fluid}
+          fluid={data.surfStay.childImageSharp.gatsbyImageData}
         />
         <div
           sx={{
@@ -328,7 +325,7 @@ const MountainHouse = ({ data, isMobile }) => {
         </p>
       </Container>
     </Layout>
-  )
+  );
 }
 
 const mapSizesToProps = ({ width }) => ({

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Grid, AspectRatio, Link } from "theme-ui"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import React, { Component } from "react"
 
 export default class extends Component {

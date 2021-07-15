@@ -4,7 +4,7 @@ import { jsx, Container, Grid, Button, Flex } from "theme-ui"
 import GoogleMapReact from "google-map-react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -13,37 +13,28 @@ import Marker from "../images/location/Marker.svg"
 
 // const isClient = typeof window !== "undefined"
 
-export const data = graphql`
-  query {
-    taghazout: file(relativePath: { eq: "location/taghazoutTown.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 3000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    taghazoutSurf: file(relativePath: { eq: "location/taghazoutSurf.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 3000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    taghazoutView: file(relativePath: { eq: "location/taghazoutView.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 3000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    taghazoutYoga: file(relativePath: { eq: "location/taghazoutYoga.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 3000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+export const data = graphql`{
+  taghazout: file(relativePath: {eq: "location/taghazoutTown.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(layout: FULL_WIDTH)
     }
   }
+  taghazoutSurf: file(relativePath: {eq: "location/taghazoutSurf.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(layout: FULL_WIDTH)
+    }
+  }
+  taghazoutView: file(relativePath: {eq: "location/taghazoutView.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(layout: FULL_WIDTH)
+    }
+  }
+  taghazoutYoga: file(relativePath: {eq: "location/taghazoutYoga.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(layout: FULL_WIDTH)
+    }
+  }
+}
 `
 
 const Location = ({ data }) => (
@@ -64,7 +55,7 @@ const Location = ({ data }) => (
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
         }}
-        fluid={data.taghazout.childImageSharp.fluid}
+        fluid={data.taghazout.childImageSharp.gatsbyImageData}
       />
       <div
         sx={{

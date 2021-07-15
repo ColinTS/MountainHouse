@@ -8,16 +8,13 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundImage from "gatsby-background-image"
 
-export const data = graphql`
-  query {
-    tos: file(relativePath: { eq: "tos.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 4000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+export const data = graphql`{
+  tos: file(relativePath: {eq: "tos.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(layout: FULL_WIDTH)
     }
   }
+}
 `
 const TermsAndConditions = ({ data }) => (
   <Layout>
@@ -37,7 +34,7 @@ const TermsAndConditions = ({ data }) => (
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
         }}
-        fluid={data.tos.childImageSharp.fluid}
+        fluid={data.tos.childImageSharp.gatsbyImageData}
       />
       <h1
         sx={{

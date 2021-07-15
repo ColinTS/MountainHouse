@@ -10,16 +10,13 @@ import SEO from "../components/seo"
 import BackgroundImage from "gatsby-background-image"
 import { motion, AnimatePresence } from "framer-motion"
 
-export const data = graphql`
-  query {
-    tos: file(relativePath: { eq: "tos.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 4000) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+export const data = graphql`{
+  tos: file(relativePath: {eq: "tos.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(layout: FULL_WIDTH)
     }
   }
+}
 `
 const Accordion = ({ i, expanded, setExpanded, question, answer }) => {
   const isOpen = i === expanded
@@ -158,7 +155,7 @@ const FAQ = ({ data }) => {
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
           }}
-          fluid={data.tos.childImageSharp.fluid}
+          fluid={data.tos.childImageSharp.gatsbyImageData}
         />
         <div
           sx={{
@@ -198,7 +195,7 @@ const FAQ = ({ data }) => {
         </div>
       </Container>
     </Layout>
-  )
+  );
 }
 
 export default FAQ
