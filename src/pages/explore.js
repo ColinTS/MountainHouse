@@ -5,7 +5,7 @@ import withSizes from "react-sizes"
 import GoogleMapReact from "google-map-react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 import React, { useState } from "react"
 import { motion } from "framer-motion"
 import Layout from "../components/layout"
@@ -15,106 +15,108 @@ import Marker from "../images/location/Marker.svg"
 // import SurfIcon from "../images/explore/SurfIcon.svg"
 import BoardDivider from "../images/explore/board.svg"
 import { useMediaQuery } from "react-responsive"
+import { StaticImage } from "gatsby-plugin-image"
 
 // const isClient = typeof window !== "undefined"
 
-export const data = graphql`{
-  sunsetSurf: file(relativePath: {eq: "explore/sunsetSurf.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
+export const data = graphql`
+  {
+    sunsetSurf: file(relativePath: { eq: "explore/sunsetSurf.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
+    panoramaSurf: file(relativePath: { eq: "explore/panoramaSurf.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
+    skatepark: file(relativePath: { eq: "explore/skatepark.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
+    hashpointSurf: file(relativePath: { eq: "explore/hashpointSurf.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
+    anchorSurf: file(relativePath: { eq: "explore/anchorPoint.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
+    mysteriesSurf: file(relativePath: { eq: "explore/mysteriesSurf.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
+    laSourceSurf: file(relativePath: { eq: "explore/laSource.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
+    killerSurf: file(relativePath: { eq: "explore/killerPoint.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
+    bananaSurf: file(relativePath: { eq: "explore/bananaSurf.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
+    boilersSurf: file(relativePath: { eq: "explore/panoramaSurf.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
+    devilsrockSurf: file(relativePath: { eq: "explore/devilsSurf.jpeg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
+    paradiseValley: file(relativePath: { eq: "explore/paradiseValley.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
+    surfTaghazout: file(relativePath: { eq: "explore/surfTaghazout.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
+    sandboard: file(relativePath: { eq: "explore/sandboard.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
+    souk: file(relativePath: { eq: "explore/souk.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    taghazout: file(relativePath: { eq: "location/taghazoutTown.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    taghazoutSurf: file(relativePath: { eq: "location/taghazoutSurf.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    taghazoutView: file(relativePath: { eq: "location/taghazoutView.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    taghazoutYoga: file(relativePath: { eq: "location/taghazoutYoga.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
     }
   }
-  panoramaSurf: file(relativePath: {eq: "explore/panoramaSurf.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  skatepark: file(relativePath: {eq: "explore/skatepark.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  hashpointSurf: file(relativePath: {eq: "explore/hashpointSurf.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  anchorSurf: file(relativePath: {eq: "explore/anchorPoint.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  mysteriesSurf: file(relativePath: {eq: "explore/mysteriesSurf.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  laSourceSurf: file(relativePath: {eq: "explore/laSource.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  killerSurf: file(relativePath: {eq: "explore/killerPoint.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  bananaSurf: file(relativePath: {eq: "explore/bananaSurf.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  boilersSurf: file(relativePath: {eq: "explore/panoramaSurf.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  devilsrockSurf: file(relativePath: {eq: "explore/devilsSurf.jpeg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  paradiseValley: file(relativePath: {eq: "explore/paradiseValley.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  surfTaghazout: file(relativePath: {eq: "explore/surfTaghazout.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  sandboard: file(relativePath: {eq: "explore/sandboard.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  souk: file(relativePath: {eq: "explore/souk.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  taghazout: file(relativePath: {eq: "location/taghazoutTown.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  taghazoutSurf: file(relativePath: {eq: "location/taghazoutSurf.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  taghazoutView: file(relativePath: {eq: "location/taghazoutView.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  taghazoutYoga: file(relativePath: {eq: "location/taghazoutYoga.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-}
 `
 const exploreData = [
   {
@@ -202,12 +204,14 @@ const Content = ({ content, data }) => {
     <div>
       <GatsbyImage
         image={data[content].childImageSharp.gatsbyImageData}
+        alt={data[content]}
         style={{
           borderRadius: "4px 4px 0px 0px",
           height: "220px",
 
           width: "auto",
-        }} />
+        }}
+      />
       <div sx={{ p: 4 }}>
         <p
           sx={{
@@ -227,7 +231,7 @@ const Content = ({ content, data }) => {
         </p>
       </div>
     </div>
-  );
+  )
 }
 
 const Explore = ({ data, isMobile }) => {
@@ -392,20 +396,37 @@ const Explore = ({ data, isMobile }) => {
       <div
         sx={{
           position: "relative",
-          background:
-            "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
+          // background:
+          //   "linear-gradient(to right,rgba(0,0,0,.5) 0%,transparent 100%)",
         }}
       >
-        <BackgroundImage
-          css={{
+        <div
+          sx={{
             height: "70vh",
             opacity: "1 !important",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "50% 50%",
+            position: "relative",
           }}
-          fluid={data.taghazout.childImageSharp.gatsbyImageData}
-        />
+        >
+          <div>
+            <StaticImage
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                minHeight: "100%",
+                minWidth: "100%",
+                transform: "translate(-50%, -50%)",
+              }}
+              src="../images/location/taghazoutTown.jpg"
+            ></StaticImage>
+          </div>
+
+          {/* // fluid={data.taghazout.childImageSharp} */}
+        </div>
+
         <div
           sx={{
             position: "absolute",
@@ -605,7 +626,8 @@ const Explore = ({ data, isMobile }) => {
                   left: "3.5%",
                   "-webkit-clip-path": " polygon(50% 0%, 0% 100%, 100% 100%)",
                   clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
-                }} />
+                }}
+              />
             </div>
             <div
               sx={{
@@ -627,7 +649,8 @@ const Explore = ({ data, isMobile }) => {
                   left: "2.7%",
                   borderTopRightRadius: "50%",
                   borderTopLeftRadius: "50%",
-                }} />
+                }}
+              />
             </div>
             <div
               sx={{
@@ -650,7 +673,8 @@ const Explore = ({ data, isMobile }) => {
                   "-webkit-clip-path":
                     "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
                   clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
-                }} />
+                }}
+              />
             </div>
           </Grid>
         </Container>
@@ -734,7 +758,8 @@ const Explore = ({ data, isMobile }) => {
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "50% 25%",
-            }} />
+            }}
+          />
           <div
             sx={{
               p: 4,
@@ -1076,7 +1101,7 @@ const Explore = ({ data, isMobile }) => {
         </Flex>
       </Container>
     </Layout>
-  );
+  )
 }
 
 const mapSizesToProps = ({ width }) => ({

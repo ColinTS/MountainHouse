@@ -3,12 +3,13 @@ import { jsx, Flex, Button } from "theme-ui"
 import PropTypes from "prop-types"
 import React from "react"
 import { useState, useEffect, useRef } from "react"
-import Logo from "../images/logo.svg"
+import Logo from "../../images/logo.svg"
 import { Link } from "gatsby"
 import withSizes from "react-sizes"
 import { motion, useCycle } from "framer-motion"
 import Helmet from "react-helmet"
 import Media from "react-media"
+import "./styles.css"
 
 // const useViewport = () => {
 //   const [width, setWidth] = React.useState(window.innerWidth)
@@ -313,161 +314,153 @@ function Header({ siteTitle }) {
         position: "absolute",
       }}
     >
-      <Media
-        query="(max-width: 880px)"
-        render={() => (
-          <div>
-            <motion.nav
-              sx={{
-                height: "100vh",
-              }}
-              initial={false}
-              animate={isOpen ? "open" : "closed"}
-            >
-              <motion.div
-                sx={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  bottom: 0,
-                  width: "100vw",
-                  background: "#fff",
-                }}
-                variants={sidebar}
-              />
-              <Navigation sx={{ zIndex: 5 }} />
-              <MenuToggle isOpen={isOpen} toggle={() => toggleOpen()} />
-            </motion.nav>
+      <div className="mobileNav">
+        <motion.nav
+          sx={{
+            height: "100vh",
+          }}
+          initial={false}
+          animate={isOpen ? "open" : "closed"}
+        >
+          <motion.div
+            sx={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              bottom: 0,
+              width: "100vw",
+              background: "#fff",
+            }}
+            variants={sidebar}
+          />
+          <Navigation sx={{ zIndex: 5 }} />
+          <MenuToggle isOpen={isOpen} toggle={() => toggleOpen()} />
+        </motion.nav>
 
+        <Link sx={{ display: "flex", alignItems: "center" }} to="/">
+          <Logo
+            sx={{
+              width: ["160px"],
+              height: "auto",
+              position: "absolute",
+              top: "24px",
+              left: "5%",
+              zIndex: isOpen ? -1 : 1,
+            }}
+          />
+        </Link>
+      </div>
+
+      <div className="desktopNav">
+        <Flex
+          sx={{
+            alignItems: "center",
+            justifyContent: "space-between",
+            margin: "0 auto",
+            maxWidth: 1760,
+            py: 3,
+            px: 3,
+          }}
+        >
+          <Flex>
             <Link sx={{ display: "flex", alignItems: "center" }} to="/">
               <Logo
                 sx={{
-                  width: ["160px"],
+                  width: ["100px", "125px", "225px"],
                   height: "auto",
-                  position: "absolute",
-                  top: "24px",
-                  left: "5%",
-                  zIndex: isOpen ? -1 : 1,
                 }}
               />
             </Link>
-          </div>
-        )}
-      />
-
-      <Media
-        query="(min-width: 880px)"
-        render={() => (
-          <Flex
-            sx={{
-              alignItems: "center",
-              justifyContent: "space-between",
-              margin: "0 auto",
-              maxWidth: 1760,
-              py: 3,
-              px: 3,
-            }}
-          >
-            <Flex>
-              <Link sx={{ display: "flex", alignItems: "center" }} to="/">
-                <Logo
-                  sx={{
-                    width: ["100px", "125px", "225px"],
-                    height: "auto",
-                  }}
-                />
-              </Link>
-            </Flex>
-            <Flex sx={{ alignItems: "center" }}>
-              <Link
-                to="/"
-                sx={{
-                  variant: "styles.button",
-                  color: "white",
-                  cursor: "pointer",
-                  pr: 4,
-                  userSelect: "none",
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "blue",
-                  },
-                }}
-              >
-                Home
-              </Link>
-              <Link
-                to="/explore"
-                sx={{
-                  variant: "styles.button",
-                  color: "white",
-                  cursor: "pointer",
-                  pr: 4,
-                  userSelect: "none",
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "blue",
-                  },
-                }}
-              >
-                Explore
-              </Link>
-              <Link
-                to="/locations"
-                sx={{
-                  variant: "styles.button",
-                  color: "white",
-                  cursor: "pointer",
-                  pr: 4,
-                  userSelect: "none",
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "blue",
-                  },
-                }}
-              >
-                Location
-              </Link>
-              <Link
-                to="/faq"
-                sx={{
-                  variant: "styles.button",
-                  color: "white",
-                  cursor: "pointer",
-                  pr: 4,
-                  userSelect: "none",
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: "blue",
-                  },
-                }}
-              >
-                FAQ
-              </Link>
-              <span
-                sx={{
-                  variant: "styles.button",
-                  color: "white",
-                  cursor: "pointer",
-                  pr: 4,
-                  userSelect: "none",
-                  "&:hover": {
-                    color: "blue",
-                  },
-                }}
-                onClick={function() {
-                  // window.$crisp.push(["do", "chat:open"])
-                }}
-              >
-                Contact Us
-              </span>
-
-              <div>
-                <Button sx={{ variant: "buttons.primary" }}>Book now</Button>
-              </div>
-            </Flex>
           </Flex>
-        )}
-      />
+          <Flex sx={{ alignItems: "center" }}>
+            <Link
+              to="/"
+              sx={{
+                variant: "styles.button",
+                color: "white",
+                cursor: "pointer",
+                pr: 4,
+                userSelect: "none",
+                textDecoration: "none",
+                "&:hover": {
+                  color: "blue",
+                },
+              }}
+            >
+              Home
+            </Link>
+            <Link
+              to="/explore"
+              sx={{
+                variant: "styles.button",
+                color: "white",
+                cursor: "pointer",
+                pr: 4,
+                userSelect: "none",
+                textDecoration: "none",
+                "&:hover": {
+                  color: "blue",
+                },
+              }}
+            >
+              Explore
+            </Link>
+            <Link
+              to="/locations"
+              sx={{
+                variant: "styles.button",
+                color: "white",
+                cursor: "pointer",
+                pr: 4,
+                userSelect: "none",
+                textDecoration: "none",
+                "&:hover": {
+                  color: "blue",
+                },
+              }}
+            >
+              Location
+            </Link>
+            <Link
+              to="/faq"
+              sx={{
+                variant: "styles.button",
+                color: "white",
+                cursor: "pointer",
+                pr: 4,
+                userSelect: "none",
+                textDecoration: "none",
+                "&:hover": {
+                  color: "blue",
+                },
+              }}
+            >
+              FAQ
+            </Link>
+            <span
+              sx={{
+                variant: "styles.button",
+                color: "white",
+                cursor: "pointer",
+                pr: 4,
+                userSelect: "none",
+                "&:hover": {
+                  color: "blue",
+                },
+              }}
+              onClick={function() {
+                // window.$crisp.push(["do", "chat:open"])
+              }}
+            >
+              Contact Us
+            </span>
+
+            <div>
+              <Button sx={{ variant: "buttons.primary" }}>Book now</Button>
+            </div>
+          </Flex>
+        </Flex>
+      </div>
     </div>
   )
 }

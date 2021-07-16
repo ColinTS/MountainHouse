@@ -12,7 +12,7 @@ import Helmet from "react-helmet"
 import Footer from "./footer.js"
 import { ParallaxProvider } from "react-scroll-parallax"
 
-import Header from "./header"
+import Header from "./Header/header.js"
 import "./layout.css"
 
 const Layout = ({ children }) => {
