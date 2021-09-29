@@ -28,6 +28,7 @@
     "gatsby-source-filesystem": "^2.1.9",
     "gatsby-source-instagram": "^0.7.0",
     "gatsby-transformer-sharp": "^2.2.6",
+    "gbimage-bridge": "^0.1.4",
     "google-map-react": "^1.1.7",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",

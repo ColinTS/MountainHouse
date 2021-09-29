@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { graphql } from "gatsby"
 import { jsx, Box, Container, Grid, Flex, AspectRatio, Button } from "theme-ui"
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import SlideShow from "../components/slideshow"
 import TextLogo from "../images/textLogo.svg"
@@ -23,6 +23,7 @@ import { Parallax } from "react-scroll-parallax"
 import withSizes from "react-sizes"
 import ImageCarousel from "../components/imageCarousel"
 import CardCarousel from "../components/cardCarousel"
+import "../styles/index.css"
 
 import video from "../images/Tag.mp4"
 import Instagram from "../components/instagram.js"
@@ -46,38 +47,39 @@ const eatImages = [
   "//images.ctfassets.net/qlhp1q6elgxs/71tzqqkxG9vjzn8xxpPSYD/50db9beba71b68ab90cc421e3551341d/eat2__1_.jpg",
 ]
 
-export const data = graphql`{
-  surfStay: file(relativePath: {eq: "surfStay.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
+export const data = graphql`
+  {
+    surfStay: file(relativePath: { eq: "surfStay.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    locationThumb: file(relativePath: { eq: "locationThumb.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    locationThumbBW: file(relativePath: { eq: "locationThumbBW.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    surfCoaching: file(relativePath: { eq: "surfCoaching.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    kitchenLogo: file(relativePath: { eq: "kitchenLogo.jpeg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    surfActivity: file(relativePath: { eq: "surfActivity.JPG" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
     }
   }
-  locationThumb: file(relativePath: {eq: "locationThumb.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  locationThumbBW: file(relativePath: {eq: "locationThumbBW.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  surfCoaching: file(relativePath: {eq: "surfCoaching.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  kitchenLogo: file(relativePath: {eq: "kitchenLogo.jpeg"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-  surfActivity: file(relativePath: {eq: "surfActivity.JPG"}) {
-    childImageSharp {
-      gatsbyImageData(layout: FULL_WIDTH)
-    }
-  }
-}
 `
 
 function getRandomStar(min, max) {
@@ -209,7 +211,7 @@ const IndexPage = ({ data, isMobile }) => (
               <span sx={{ fontWeight: 700 }}>yours </span>
             </h2>
             <div sx={{ mx: "-1.5rem" }}>
-              {isMobile && (
+              <div className="mobileHome">
                 <CardCarousel>
                   <Link to="/mountain-house">
                     <div sx={{ maxWidth: "92%" }}>
@@ -228,7 +230,9 @@ const IndexPage = ({ data, isMobile }) => (
                         }}
                       >
                         <GatsbyImage
-                          image={data.locationThumb.childImageSharp.gatsbyImageData}
+                          image={
+                            data.locationThumb.childImageSharp.gatsbyImageData
+                          }
                           sx={{
                             cursor: "pointer",
                             opacity: "1 !important",
@@ -238,7 +242,8 @@ const IndexPage = ({ data, isMobile }) => (
                             backgroundPosition: "center",
                             borderRadius: 4,
                             height: ["470px"],
-                          }} />
+                          }}
+                        />
                         <MountainVillaTitle
                           sx={{
                             width: ["225px", "300px", "300px"],
@@ -269,7 +274,9 @@ const IndexPage = ({ data, isMobile }) => (
                         }}
                       >
                         <GatsbyImage
-                          image={data.locationThumb.childImageSharp.gatsbyImageData}
+                          image={
+                            data.locationThumb.childImageSharp.gatsbyImageData
+                          }
                           sx={{
                             cursor: "pointer",
                             opacity: "1 !important",
@@ -278,7 +285,8 @@ const IndexPage = ({ data, isMobile }) => (
                             backgroundPosition: "center",
                             borderRadius: 4,
                             height: ["470px"],
-                          }} />
+                          }}
+                        />
                         <BeachHouseTitle
                           sx={{
                             width: ["200px", "300px", "300px"],
@@ -294,9 +302,9 @@ const IndexPage = ({ data, isMobile }) => (
                     </div>
                   </Link>
                 </CardCarousel>
-              )}
+              </div>
             </div>
-            {!isMobile && (
+            <div className="desktopHome">
               <Parallax y={[5, -10]}>
                 <Grid sx={{ pt: 4 }} gap={4} columns={[2]}>
                   <Link to="/mountain-house">
@@ -318,7 +326,9 @@ const IndexPage = ({ data, isMobile }) => (
                       }}
                     >
                       <GatsbyImage
-                        image={data.locationThumb.childImageSharp.gatsbyImageData}
+                        image={
+                          data.locationThumb.childImageSharp.gatsbyImageData
+                        }
                         sx={{
                           cursor: "pointer",
                           opacity: "1 !important",
@@ -327,7 +337,8 @@ const IndexPage = ({ data, isMobile }) => (
                           backgroundPosition: "center",
                           borderRadius: 4,
                           height: ["300px", "300px", "350px"],
-                        }} />
+                        }}
+                      />
                       <MountainVillaTitle
                         sx={{
                           width: ["200px", "300px", "300px"],
@@ -361,7 +372,9 @@ const IndexPage = ({ data, isMobile }) => (
                       }}
                     >
                       <GatsbyImage
-                        image={data.locationThumb.childImageSharp.gatsbyImageData}
+                        image={
+                          data.locationThumb.childImageSharp.gatsbyImageData
+                        }
                         sx={{
                           cursor: "pointer",
                           opacity: "1 !important",
@@ -370,7 +383,8 @@ const IndexPage = ({ data, isMobile }) => (
                           backgroundPosition: "center",
                           borderRadius: 4,
                           height: ["300px", "300px", "350px"],
-                        }} />
+                        }}
+                      />
                       <BeachHouseTitle
                         sx={{
                           width: ["200px", "300px", "300px"],
@@ -386,7 +400,7 @@ const IndexPage = ({ data, isMobile }) => (
                   </Link>
                 </Grid>
               </Parallax>
-            )}
+            </div>
             <Flex
               sx={{ justifyContent: "center", pt: [3, 3, 5], pb: [4, 0, 3] }}
             >
@@ -1313,4 +1327,4 @@ const mapSizesToProps = ({ width }) => ({
   isMobile: width < 780,
 })
 
-export default withSizes(mapSizesToProps)(IndexPage)
+export default IndexPage

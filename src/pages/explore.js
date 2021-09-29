@@ -1,7 +1,6 @@
 /** @jsx jsx */
 
 import { jsx, Container, Grid, Button, Flex, AspectRatio } from "theme-ui"
-import withSizes from "react-sizes"
 import GoogleMapReact from "google-map-react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
@@ -14,8 +13,9 @@ import BackgroundImage from "gatsby-background-image"
 import Marker from "../images/location/Marker.svg"
 // import SurfIcon from "../images/explore/SurfIcon.svg"
 import BoardDivider from "../images/explore/board.svg"
-import { useMediaQuery } from "react-responsive"
 import { StaticImage } from "gatsby-plugin-image"
+import "../styles/explore.css"
+import { convertToBgImage } from "gbimage-bridge"
 
 // const isClient = typeof window !== "undefined"
 
@@ -98,22 +98,22 @@ export const data = graphql`
     }
     taghazout: file(relativePath: { eq: "location/taghazoutTown.jpg" }) {
       childImageSharp {
-        gatsbyImageData(layout: FULL_WIDTH)
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     taghazoutSurf: file(relativePath: { eq: "location/taghazoutSurf.jpg" }) {
       childImageSharp {
-        gatsbyImageData(layout: FULL_WIDTH)
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     taghazoutView: file(relativePath: { eq: "location/taghazoutView.jpg" }) {
       childImageSharp {
-        gatsbyImageData(layout: FULL_WIDTH)
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     taghazoutYoga: file(relativePath: { eq: "location/taghazoutYoga.jpg" }) {
       childImageSharp {
-        gatsbyImageData(layout: FULL_WIDTH)
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
   }
@@ -234,10 +234,11 @@ const Content = ({ content, data }) => {
   )
 }
 
-const Explore = ({ data, isMobile }) => {
+const Explore = ({ data }) => {
   const [content, setContent] = useState("killerSurf")
   const [lat, setLat] = useState(30.544194)
   const [long, setLong] = useState(-9.708767)
+  const bgImage = convertToBgImage(data.surfTaghazout.childImageSharp)
 
   const createContent = (content, newLat, newLong) => {
     setContent(content)
@@ -245,9 +246,7 @@ const Explore = ({ data, isMobile }) => {
     setLong(newLong)
   }
 
-  const isBigScreen = useMediaQuery({ minDeviceWidth: 1824 })
-  const isTablet = useMediaQuery({ maxWidth: 1224 })
-  const isPhone = useMediaQuery({ maxWidth: 500 })
+  // const isTablet = useMediaQuery({ maxWidth: 1224 })
 
   const SurfIcon = ({ width, fill }) => (
     <svg
@@ -410,21 +409,17 @@ const Explore = ({ data, isMobile }) => {
             position: "relative",
           }}
         >
-          <div>
-            <StaticImage
-              sx={{
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                minHeight: "100%",
-                minWidth: "100%",
-                transform: "translate(-50%, -50%)",
-              }}
-              src="../images/location/taghazoutTown.jpg"
-            ></StaticImage>
-          </div>
-
-          {/* // fluid={data.taghazout.childImageSharp} */}
+          <StaticImage
+            sx={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              minHeight: "100%",
+              minWidth: "100%",
+              transform: "translate(-50%, -50%)",
+            }}
+            src="../images/explore/sunset.jpg"
+          ></StaticImage>
         </div>
 
         <div
@@ -460,7 +455,7 @@ const Explore = ({ data, isMobile }) => {
         </div>
       </div>
       <div sx={{ height: "100vh", position: "relative" }}>
-        {!isTablet && (
+        <div className="tablet">
           <div sx={{ position: "absolute", zIndex: 1000, top: 100, left: 150 }}>
             {" "}
             <div
@@ -475,7 +470,7 @@ const Explore = ({ data, isMobile }) => {
               <Content content={content} data={data} />
             </div>
           </div>
-        )}
+        </div>
 
         <div sx={{ zIndex: 1, height: "100vh" }}>
           {/* {isClient && ( */}
@@ -586,7 +581,7 @@ const Explore = ({ data, isMobile }) => {
           {/* )} */}
         </div>
       </div>
-      {isTablet && (
+      <div className="desktop">
         <Flex sx={{ justifyContent: "center" }}>
           <div sx={{ marginTop: "-200px" }}>
             {" "}
@@ -603,7 +598,7 @@ const Explore = ({ data, isMobile }) => {
             </div>
           </div>
         </Flex>
-      )}
+      </div>
       <div sx={{ background: "rgba(247, 240, 225, 0.3)" }}>
         <Container>
           <Grid sx={{ pt: 5, px: [5, 0, 0] }} gap={5} columns={[1, 3, 3]}>
@@ -613,21 +608,19 @@ const Explore = ({ data, isMobile }) => {
                 bg: "text",
                 height: ["300px", "350px", "375px"],
                 "-webkit-clip-path": " polygon(50% 0%, 0% 100%, 100% 100%)",
-                clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
               }}
             >
               <GatsbyImage
                 image={data.taghazoutView.childImageSharp.gatsbyImageData}
                 sx={{
-                  position: "absolute",
+                  // position: "absolute",
                   height: "94%",
                   width: "93%",
                   top: "4%",
                   left: "3.5%",
                   "-webkit-clip-path": " polygon(50% 0%, 0% 100%, 100% 100%)",
-                  clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
                 }}
-              />
+              ></GatsbyImage>
             </div>
             <div
               sx={{
@@ -642,7 +635,7 @@ const Explore = ({ data, isMobile }) => {
                 image={data.taghazoutYoga.childImageSharp.gatsbyImageData}
                 sx={{
                   height: "100%",
-                  position: "absolute",
+                  // position: "absolute",
                   height: "96%",
                   width: "95%",
                   top: "2%",
@@ -650,7 +643,7 @@ const Explore = ({ data, isMobile }) => {
                   borderTopRightRadius: "50%",
                   borderTopLeftRadius: "50%",
                 }}
-              />
+              ></GatsbyImage>
             </div>
             <div
               sx={{
@@ -659,22 +652,20 @@ const Explore = ({ data, isMobile }) => {
                 height: ["300px", "350px", "375px"],
                 "-webkit-clip-path":
                   "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
-                clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
               }}
             >
               <GatsbyImage
                 image={data.taghazoutSurf.childImageSharp.gatsbyImageData}
                 sx={{
-                  position: "absolute",
+                  // position: "absolute",
                   height: "94%",
                   width: "94%",
                   top: "3.2%",
                   left: "3%",
                   "-webkit-clip-path":
                     "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
-                  clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
                 }}
-              />
+              ></GatsbyImage>
             </div>
           </Grid>
         </Container>
@@ -837,7 +828,7 @@ const Explore = ({ data, isMobile }) => {
         }}
       >
         <div>
-          <BackgroundImage
+          <GatsbyImage
             sx={{
               height: ["200px", "250px", "300px"],
               opacity: "1 !important",
@@ -845,7 +836,7 @@ const Explore = ({ data, isMobile }) => {
               backgroundRepeat: "no-repeat",
               backgroundPosition: "50% 75%",
             }}
-            fluid={data.sandboard.childImageSharp.gatsbyImageData}
+            image={data.sandboard.childImageSharp.gatsbyImageData}
           />
           <div
             sx={{
@@ -901,7 +892,7 @@ const Explore = ({ data, isMobile }) => {
         }}
       >
         <div>
-          <BackgroundImage
+          <GatsbyImage
             sx={{
               height: ["200px", "250px", "300px"],
               opacity: "1 !important",
@@ -909,7 +900,7 @@ const Explore = ({ data, isMobile }) => {
               backgroundRepeat: "no-repeat",
               backgroundPosition: "50% 80%",
             }}
-            fluid={data.paradiseValley.childImageSharp.gatsbyImageData}
+            image={data.paradiseValley.childImageSharp.gatsbyImageData}
           />
           <div
             sx={{
@@ -971,7 +962,7 @@ const Explore = ({ data, isMobile }) => {
         }}
       >
         <div>
-          <BackgroundImage
+          <GatsbyImage
             sx={{
               height: ["200px", "250px", "300px"],
               opacity: "1 !important",
@@ -979,7 +970,7 @@ const Explore = ({ data, isMobile }) => {
               backgroundRepeat: "no-repeat",
               backgroundPosition: "20% 50%",
             }}
-            fluid={data.souk.childImageSharp.gatsbyImageData}
+            image={data.souk.childImageSharp.gatsbyImageData}
           />
           <div
             sx={{
@@ -1040,7 +1031,7 @@ const Explore = ({ data, isMobile }) => {
         }}
       >
         <div>
-          <BackgroundImage
+          <GatsbyImage
             sx={{
               height: ["200px", "250px", "300px"],
               opacity: "1 !important",
@@ -1048,7 +1039,7 @@ const Explore = ({ data, isMobile }) => {
               backgroundRepeat: "no-repeat",
               backgroundPosition: "40% 45%",
             }}
-            fluid={data.skatepark.childImageSharp.gatsbyImageData}
+            image={data.skatepark.childImageSharp.gatsbyImageData}
           />
           <div
             sx={{
@@ -1103,9 +1094,5 @@ const Explore = ({ data, isMobile }) => {
     </Layout>
   )
 }
-
-const mapSizesToProps = ({ width }) => ({
-  isMobile: width < 600,
-})
 
 export default Explore

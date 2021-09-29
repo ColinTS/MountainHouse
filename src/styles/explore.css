@@ -1,0 +1,11 @@
+@media (max-width: 1224px) {
+    .tablet {
+        display: none;
+    }
+  }
+
+  @media (min-width: 1224px) {
+    .desktop {
+        display: none;
+    }
+  }
